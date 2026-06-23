@@ -1,0 +1,1038 @@
+<!doctype html>
+<html lang="es" class="no-js">
+<head>
+<meta name="googlebot" content="noindex,nofollow,noarchive,nosnippet,noimageindex">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>InventivIA — Agencia SEO en Murcia | Posicionamiento Web + IA</title>
+<meta name="description" content="Agencia SEO en Murcia especializada en posicionamiento web, SEO local, diseño web estratégico y automatización con IA. Más visibilidad, más tráfico y más clientes.">
+<meta name="keywords" content="agencia SEO Murcia, SEO local Murcia, posicionamiento web Murcia, diseño web SEO Murcia, marketing digital Murcia, automatización con IA">
+<link rel="canonical" href="https://inventiviamarketing.com/">
+<meta name="robots" content="noindex,nofollow,noarchive,nosnippet,noimageindex">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="es_ES">
+<meta property="og:site_name" content="InventivIA Marketing">
+<meta property="og:title" content="Agencia SEO en Murcia | InventivIA Marketing">
+<meta property="og:description" content="SEO local, posicionamiento web, diseño web SEO y automatización con IA para empresas de Murcia.">
+<meta property="og:url" content="https://inventiviamarketing.com/">
+<meta property="og:image" content="https://inventiviamarketing.com/assets/logo-inventivia.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Agencia SEO en Murcia | InventivIA Marketing">
+<meta name="twitter:description" content="Agencia SEO en Murcia para empresas que quieren más visibilidad, tráfico y clientes.">
+<meta name="twitter:image" content="https://inventiviamarketing.com/assets/logo-inventivia.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<style>
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap");
+
+/* ============================ TOKENS ============================ */
+:root{
+  --gold:#c5a831; --gold-bright:#e4c552; --gold-deep:#95801f;
+  --ink:#0d0d18; --ink-900:#09090f; --ink-800:#0d0d18; --ink-700:#14141f; --ink-600:#1b1b29; --ink-500:#232333; --ink-400:#2e2e40;
+  --paper:#f3f2e5; --paper-100:#fbfaf2; --paper-200:#f3f2e5; --paper-300:#e7e5d2; --paper-line:rgba(13,13,24,.10);
+  --signal:#6fe3c2; --signal-deep:#2faf8d;
+  --gray-100:#ecebe0; --text-muted:#8a8a93; --text-faint:#4a4a55;
+  --font-display:"Space Grotesk",system-ui,sans-serif;
+  --font-body:"Manrope",system-ui,-apple-system,sans-serif;
+  --font-mono:"Space Mono",ui-monospace,Menlo,monospace;
+  --radius-sm:10px; --radius-md:16px; --radius-lg:22px; --radius-xl:30px; --radius-pill:999px;
+  --container:1200px; --container-wide:1400px; --gutter:clamp(1.25rem,4vw,3rem);
+  --section-y:clamp(4rem,9vw,9rem);
+  --ease-out:cubic-bezier(.16,1,.3,1); --ease-spring:cubic-bezier(.34,1.56,.64,1);
+  /* neumorphism on paper */
+  --neu-raised:8px 8px 18px rgba(13,13,24,.14), -8px -8px 18px rgba(255,255,255,.92);
+  --neu-raised-sm:4px 4px 10px rgba(13,13,24,.12), -4px -4px 10px rgba(255,255,255,.9);
+  --neu-inset:inset 4px 4px 9px rgba(13,13,24,.13), inset -4px -4px 9px rgba(255,255,255,.92);
+  --neu-pressed:inset 5px 5px 12px rgba(13,13,24,.17), inset -5px -5px 12px rgba(255,255,255,.85);
+  /* neumorphism on ink */
+  --neu-ink:7px 7px 16px rgba(0,0,0,.5), -5px -5px 14px rgba(255,255,255,.04);
+  --neu-ink-inset:inset 4px 4px 9px rgba(0,0,0,.55), inset -3px -3px 9px rgba(255,255,255,.04);
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper-200);color:var(--ink);font-family:var(--font-body);font-size:17px;line-height:1.55;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+h1,h2,h3{font-family:var(--font-display);margin:0;letter-spacing:-.03em;line-height:.95;text-wrap:balance}
+p{text-wrap:pretty}
+a{color:inherit;text-decoration:none}
+::selection{background:var(--gold);color:var(--ink-900)}
+img{max-width:100%}
+.wrap{max-width:var(--container-wide);margin:0 auto;padding:0 var(--gutter)}
+.wrap-n{max-width:var(--container);margin:0 auto;padding:0 var(--gutter)}
+.eyebrow{font-family:var(--font-mono);font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-deep)}
+
+/* ============================ KEYFRAMES ============================ */
+@keyframes kin-spin{to{transform:rotate(360deg)}}
+@keyframes kin-marq-l{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@keyframes kin-marq-r{from{transform:translateX(-50%)}to{transform:translateX(0)}}
+@keyframes kin-char-in{from{opacity:0;transform:translateY(.6em) rotate(5deg)}to{opacity:1;transform:none}}
+@keyframes kin-wave-bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-.18em)}}
+@keyframes kin-rise{from{opacity:0;transform:translateY(40px)}to{opacity:1;transform:translateY(0)}}
+@keyframes kin-wobble{0%,100%{transform:rotate(-6deg)}50%{transform:rotate(5deg)}}
+@keyframes kin-pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.09)}}
+@keyframes kin-tilt{0%,100%{transform:rotate(7deg)}50%{transform:rotate(14deg)}}
+@keyframes kin-float{0%,100%{transform:translateY(0)}50%{transform:translateY(-14px)}}
+@keyframes kin-bounce{0%,100%{transform:translateY(0)}50%{transform:translateY(-9px)}}
+@keyframes kin-bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-16px)}}
+@keyframes kin-drift{0%,100%{transform:translateY(0) rotate(0)}50%{transform:translateY(-26px) rotate(-3deg)}}
+@keyframes kin-scan{0%{transform:translateX(-110%)}100%{transform:translateX(110%)}}
+@keyframes kin-underline{0%,100%{transform:scaleX(.2);transform-origin:left}50%{transform:scaleX(1);transform-origin:left}}
+@keyframes kin-seal-in{0%{opacity:0;transform:scale(.4) rotate(-120deg)}100%{opacity:1;transform:scale(1) rotate(0)}}
+@keyframes kin-hint{0%,100%{transform:translateX(0)}50%{transform:translateX(7px)}}
+@keyframes kin-blink{0%,100%{opacity:1}50%{opacity:.3}}
+
+/* ============================ MARQUEE ============================ */
+.kin-marquee{overflow:hidden;width:100%}
+.kin-marquee-track{display:inline-flex;white-space:nowrap;will-change:transform}
+.kin-marquee-left{animation:kin-marq-l var(--mq,28s) linear infinite}
+.kin-marquee-right{animation:kin-marq-r var(--mq,34s) linear infinite}
+.kin-marquee:hover .kin-marquee-track{animation-duration:calc(var(--mq,28s) * 2.6)}
+
+/* ticker bar */
+.ticker{background:var(--ink-900);color:var(--paper-200);border-bottom:1px solid var(--ink-600)}
+.ticker .it{font-family:var(--font-mono);font-size:11px;letter-spacing:.18em;text-transform:uppercase;padding:8px 0;display:inline-flex;align-items:center}
+.ticker .sep{color:var(--gold);margin:0 1.1em}
+
+/* ============================ HEADLINE ============================ */
+.kin-mask{display:inline-block;vertical-align:top;padding:0 .02em .16em .02em;margin-bottom:-.16em}
+.kin-headline-char{display:inline-block;opacity:0;will-change:transform,opacity;animation:kin-char-in .7s var(--ease-out) both;animation-delay:calc(var(--i,0) * 40ms + 300ms)}
+.kin-headline-char.it{font-style:italic;padding-right:.04em}
+.kin-wave{display:inline-block;opacity:0;will-change:transform,opacity;animation:kin-char-in .7s var(--ease-out) both, kin-wave-bob 2.9s ease-in-out infinite;animation-delay:calc(var(--i,0) * 40ms + 700ms), calc(var(--i,0) * 85ms + 1700ms)}
+.kin-split{display:inline-block;opacity:0;transform:translateY(.5em) rotate(3deg);transition:opacity .55s var(--ease-out) calc(var(--i,0)*26ms), transform .55s var(--ease-out) calc(var(--i,0)*26ms);will-change:opacity,transform}
+.is-in .kin-split{opacity:1;transform:none}
+.kin-type-reveal{display:inline-block;opacity:0;animation:kin-rise .8s var(--ease-out) both;animation-delay:calc(var(--d,0) * 1ms)}
+
+/* ============================ SECTION REVEAL ============================ */
+.kin-section-reveal{opacity:0;transform:translateY(48px);transition:opacity 1s var(--ease-out),transform 1s var(--ease-out);will-change:opacity,transform}
+.kin-section-reveal.from-left{transform:translateX(-52px)}
+.kin-section-reveal.from-right{transform:translateX(52px)}
+.kin-section-reveal.scale{transform:translateY(40px) scale(.92)}
+.kin-section-reveal.is-in{opacity:1;transform:none}
+
+/* ============================ NEUMORPHISM ============================ */
+.kin-neu-card{background:var(--paper-200);border-radius:var(--radius-lg);box-shadow:var(--neu-raised);transition:box-shadow .4s var(--ease-out),transform .4s var(--ease-out)}
+.kin-neu-card:hover{transform:translateY(-6px);box-shadow:12px 14px 26px rgba(13,13,24,.18), -10px -10px 22px rgba(255,255,255,.95)}
+.kin-neu-button{background:var(--paper-200);border:none;border-radius:var(--radius-pill);box-shadow:var(--neu-raised-sm);font-family:var(--font-body);font-weight:600;font-size:16px;color:var(--ink-900);padding:15px 26px;cursor:pointer;transition:box-shadow .25s,transform .25s var(--ease-spring)}
+.kin-neu-button:hover{transform:translateY(-2px);box-shadow:6px 6px 14px rgba(13,13,24,.16), -6px -6px 14px rgba(255,255,255,.95)}
+.kin-neu-button:active{box-shadow:var(--neu-pressed);transform:translateY(0)}
+.kin-neu-button.gold{background:var(--gold);color:var(--ink-900);box-shadow:5px 5px 12px rgba(149,128,31,.4), -5px -5px 12px rgba(255,255,255,.6)}
+.kin-neu-button.ink{background:var(--ink-900);color:var(--paper-200);box-shadow:6px 6px 14px rgba(0,0,0,.4), -4px -4px 12px rgba(255,255,255,.06)}
+.kin-neu-inset{background:var(--paper-200);border:none;border-radius:var(--radius-sm);box-shadow:var(--neu-inset);padding:13px 15px;font-family:var(--font-body);font-size:15px;color:var(--ink-900);width:100%;outline:none;transition:box-shadow .25s}
+.kin-neu-inset:focus{box-shadow:var(--neu-pressed)}
+.kin-neu-inset::placeholder{color:var(--text-muted)}
+
+/* ============================ SITE NAV (shared modern capsule) ============================ */
+.sn-wrap{position:fixed;top:0;left:0;right:0;z-index:200;padding:14px var(--gutter) 0;transition:transform .5s cubic-bezier(.16,1,.3,1)}
+.sn-wrap *{box-sizing:border-box}
+.sn-wrap.sn-hidden{transform:translateY(-150%)}
+.sn-cap{max-width:var(--container-wide);margin:0 auto;display:flex;align-items:center;gap:18px;height:64px;padding:0 10px 0 14px;border-radius:999px;background:linear-gradient(135deg,rgba(13,13,24,.88),rgba(13,13,24,.66));-webkit-backdrop-filter:blur(22px) saturate(1.45);backdrop-filter:blur(22px) saturate(1.45);border:1px solid rgba(197,168,49,.38);box-shadow:0 18px 55px rgba(0,0,0,.34),inset 0 1px 0 rgba(255,255,255,.08),0 0 0 1px rgba(13,13,24,.35);transition:height .4s cubic-bezier(.16,1,.3,1),background .4s,box-shadow .4s}
+.sn-wrap.sn-scrolled .sn-cap{height:58px;background:linear-gradient(135deg,rgba(13,13,24,.94),rgba(13,13,24,.74));box-shadow:0 18px 55px rgba(0,0,0,.38),inset 0 1px 0 rgba(255,255,255,.08)}
+.sn-brand{display:flex;align-items:center;gap:12px;flex:none;text-decoration:none;color:var(--paper-200)}
+.sn-mark{width:42px;height:42px;border-radius:50%;background:var(--paper-200);object-fit:contain;padding:5px;border:1px solid rgba(197,168,49,.58);box-shadow:0 0 0 3px rgba(197,168,49,.11),0 8px 24px rgba(0,0,0,.22);animation:none!important}
+.sn-word{font-family:var(--font-display);font-weight:800;font-size:20px;letter-spacing:-.04em;color:var(--paper-200);line-height:1}.sn-word b{color:var(--gold)}
+.sn-links{display:flex;align-items:center;gap:6px;margin:0 auto;background:rgba(243,242,229,.06);padding:5px;border-radius:999px;border:1px solid rgba(255,255,255,.06)}
+.sn-link{font-family:var(--font-body);font-size:13px;letter-spacing:.015em;text-transform:none;font-weight:850;color:var(--paper-200);padding:13px 17px;border-radius:999px;white-space:nowrap;text-decoration:none;transition:background .25s,color .25s,transform .25s,box-shadow .25s}
+.sn-link:hover,.sn-link.sn-active{background:var(--gold);color:var(--ink-900);transform:translateY(-1px);box-shadow:0 8px 22px rgba(197,168,49,.24)}
+.sn-right{display:flex;align-items:center;gap:10px;flex:none}.sn-cta{font-family:var(--font-body);font-size:13px;letter-spacing:.015em;text-transform:none;font-weight:900;color:var(--ink-900);background:var(--paper-200);padding:13px 18px;border-radius:999px;display:inline-flex;align-items:center;gap:8px;border:1px solid rgba(197,168,49,.55);cursor:pointer;text-decoration:none;transition:background .25s,transform .25s,box-shadow .25s}.sn-cta:hover{background:var(--gold);transform:translateY(-1px);box-shadow:0 10px 24px -8px rgba(197,168,49,.7)}.sn-cta:active{transform:scale(.97)}
+.sn-burger{display:none;flex-direction:column;align-items:center;justify-content:center;gap:4px;width:44px;height:44px;border-radius:999px;border:0;background:var(--gold);cursor:pointer;box-shadow:0 8px 24px rgba(197,168,49,.24)}.sn-burger span{width:18px;height:2px;background:var(--ink-900);border-radius:2px;transition:transform .3s,opacity .3s}.sn-panel{display:none}
+@media(max-width:900px){.sn-links{display:none}.sn-cta-desktop{display:none}.sn-burger{display:flex}.sn-panel{display:flex;flex-direction:column;gap:8px;position:absolute;left:var(--gutter);right:var(--gutter);top:86px;background:rgba(13,13,24,.96);-webkit-backdrop-filter:blur(20px);backdrop-filter:blur(20px);border:1px solid rgba(197,168,49,.34);border-radius:24px;box-shadow:0 28px 64px -20px rgba(0,0,0,.55);padding:14px;opacity:0;transform:translateY(-12px) scale(.98);transform-origin:top right;pointer-events:none;transition:opacity .3s,transform .3s}.sn-wrap.sn-open .sn-panel{opacity:1;transform:none;pointer-events:auto}.sn-wrap.sn-open .sn-burger span:nth-child(1){transform:translateY(6px) rotate(45deg)}.sn-wrap.sn-open .sn-burger span:nth-child(2){opacity:0}.sn-wrap.sn-open .sn-burger span:nth-child(3){transform:translateY(-6px) rotate(-45deg)}.sn-panel a{display:flex;align-items:center;justify-content:space-between;font-family:var(--font-body);font-size:16px;font-weight:850;letter-spacing:.015em;text-transform:none;color:var(--paper-200);padding:15px 16px;border-radius:16px;text-decoration:none;background:rgba(255,255,255,.05)}.sn-panel a:hover,.sn-panel a.sn-active{background:var(--gold);color:var(--ink-900)}.sn-panel .sn-cta{justify-content:center;width:100%;margin-top:6px;font-size:16px;padding:15px;box-sizing:border-box;background:var(--paper-200);color:var(--ink-900)}}
+@media(max-width:760px){.sn-wrap{padding:10px max(12px,var(--gutter)) 0;transform:none!important}.sn-cap{height:58px;padding:0 8px 0 10px;gap:10px}.sn-wrap.sn-scrolled .sn-cap{height:56px}.sn-word{font-size:18px}.sn-mark{width:38px;height:38px}.sn-panel{left:max(12px,var(--gutter));right:max(12px,var(--gutter));top:74px;max-height:calc(100dvh - 90px);overflow:auto;border-radius:20px}}
+@media(max-width:380px){.sn-word{font-size:17px}.sn-burger{width:40px;height:40px}}
+@media(prefers-reduced-motion:reduce){.sn-link,.sn-cta{transition:none}}
+
+/* ============================ HERO ============================ */
+.hero{position:relative;min-height:100vh;display:flex;flex-direction:column;justify-content:center;overflow:hidden;padding:132px 0 50px}
+.hero .grid{position:absolute;inset:0;opacity:.5;background-image:linear-gradient(90deg,var(--paper-line) 1px,transparent 1px);background-size:calc(100%/12) 100%;-webkit-mask-image:linear-gradient(180deg,transparent,#000 18%,#000 82%,transparent);mask-image:linear-gradient(180deg,transparent,#000 18%,#000 82%,transparent)}
+.hero .bgword{position:absolute;right:-2%;top:6%;font-family:var(--font-display);font-weight:700;font-size:26vw;line-height:.8;color:var(--paper-300);opacity:.55;letter-spacing:-.05em;pointer-events:none;user-select:none;animation:kin-drift 9s ease-in-out infinite}
+.hero h1{font-family:var(--font-display);font-weight:700;font-size:clamp(3.2rem,11vw,11rem);line-height:.86;letter-spacing:-.05em;color:var(--ink-900);margin:0}
+.hero h1 .it{color:var(--gold-deep);font-style:italic}
+.kicker{display:flex;align-items:center;gap:14px;margin-bottom:26px}
+.kicker .line{width:60px;height:1.5px;background:var(--ink-900)}
+.kicker .lbl{font-family:var(--font-mono);font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-800)}
+.hero-sub{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:28px;margin-top:44px}
+.hero-sub p{max-width:460px;font-size:clamp(1.1rem,1.4vw,1.375rem);color:#2b2b38;line-height:1.5;margin:0}
+.hero-pieces{position:absolute;inset:0;pointer-events:none;z-index:5}
+.piece{position:absolute;pointer-events:auto}
+.chip{padding:10px 15px;border-radius:var(--radius-pill);font-family:var(--font-mono);font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;white-space:nowrap;box-shadow:var(--neu-raised-sm)}
+.chip.gold{background:var(--gold);color:var(--ink-900)}
+.chip.ink{background:var(--ink-900);color:var(--paper-200);box-shadow:4px 4px 10px rgba(0,0,0,.35)}
+.chip.signal{background:var(--signal);color:var(--ink-900)}
+.chip.paper{background:var(--paper-100);color:var(--ink-900)}
+
+/* seal */
+.seal-wrap{width:132px;height:132px;position:relative;display:grid;place-items:center;cursor:grab;touch-action:none;transition:transform .4s var(--ease-spring)}
+.seal-wrap:active{cursor:grabbing}
+.kin-seal-spin{position:absolute;inset:0;animation:kin-spin 10s linear infinite;transition:animation-duration .5s}
+.seal-wrap:hover .kin-seal-spin{animation-duration:3s}
+.seal-hub{position:absolute;width:42%;height:42%;border-radius:50%;background:var(--gold);display:grid;place-items:center;font-family:var(--font-display);font-weight:800;font-size:22px;color:var(--ink-900);box-shadow:var(--neu-raised-sm);border:2px solid rgba(13,13,24,.12)}
+.seal-wrap text{font-family:var(--font-mono);font-size:10.8px;letter-spacing:.16em;font-weight:700;text-transform:uppercase;fill:var(--ink-900)}
+
+/* ============================ BANDS ============================ */
+.band{background:var(--ink-900);padding:clamp(2.2rem,5vw,3.6rem) 0;overflow:hidden;border-top:2px solid var(--gold);border-bottom:2px solid var(--gold)}
+.band .big{font-family:var(--font-display);font-weight:700;font-size:clamp(2.2rem,6vw,5rem);letter-spacing:-.03em;line-height:1;color:var(--paper-200);text-transform:uppercase}
+.band .big.out{color:transparent;-webkit-text-stroke:1.5px var(--paper-200)}
+.band .sep{color:var(--gold);margin:0 .5em}
+
+/* ============================ SERVICES ============================ */
+.services{background:var(--paper-200);padding:var(--section-y) 0}
+.svc-head{display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:20px;margin-bottom:30px}
+.svc-head h2{font-size:clamp(2.2rem,5vw,4rem);letter-spacing:-.04em;color:var(--ink-900)}
+.svc-head .sup{font-family:var(--font-mono);font-size:.2em;font-weight:700;letter-spacing:.2em;vertical-align:super;color:var(--gold-deep)}
+.svc-stats{display:flex;gap:30px}
+.svc-stats .num{font-family:var(--font-display);font-weight:700;font-size:40px;line-height:1}
+.svc-stats .cap{font-family:var(--font-mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--text-faint);margin-top:4px}
+.svc-list{border-top:1px solid var(--ink-900)}
+.svc-row{position:relative;border-bottom:1px solid var(--ink-900);overflow:hidden;cursor:pointer}
+.svc-row .fill{position:absolute;inset:0;transform:translateY(101%);transition:transform .5s var(--ease-out)}
+.svc-row:hover .fill{transform:translateY(0)}
+.svc-row .inner{position:relative;display:grid;grid-template-columns:auto 1fr auto;gap:clamp(16px,3vw,48px);align-items:center;padding:clamp(20px,3vw,38px) 0}
+.svc-row .n{font-family:var(--font-mono);font-size:clamp(13px,1.4vw,16px);color:var(--ink-500);letter-spacing:.1em;width:40px;transition:color .4s}
+.svc-row:hover .n{color:var(--ink-900)}
+.svc-row h3{font-family:var(--font-display);font-weight:600;font-size:clamp(1.8rem,4.4vw,3.6rem);letter-spacing:-.03em;line-height:1;color:var(--ink-900);transition:transform .5s var(--ease-out)}
+.svc-row:hover h3{transform:translateX(18px)}
+.svc-row .desc{max-width:520px;overflow:hidden;height:0;opacity:0;transition:height .45s var(--ease-out),opacity .4s,margin .45s}
+.svc-row:hover .desc{height:48px;opacity:1;margin-top:10px}
+.svc-row .desc p{color:#2b2b38;font-size:15px;line-height:1.5;margin:0;transform:translateX(0);transition:transform .5s var(--ease-out)}
+.svc-row:hover .desc p{transform:translateX(18px)}
+.svc-row .tags{font-family:var(--font-mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-500);white-space:nowrap;transition:color .4s}
+.svc-row:hover .tags{color:var(--ink-900)}
+.svc-row .arr{font-size:30px;color:var(--ink-900);transform:rotate(-45deg);transition:transform .5s var(--ease-spring);display:inline-block}
+.svc-row:hover .arr{transform:rotate(0)}
+
+/* ============================ SEO+IA ============================ */
+.seo{background:var(--ink-900);color:var(--paper-200);padding:var(--section-y) 0;overflow:hidden}
+.seo .split{display:grid;grid-template-columns:1.05fr .95fr;gap:60px;align-items:center}
+.seo .k{display:flex;align-items:center;gap:12px;margin-bottom:22px}
+.seo .k .line{width:40px;height:1.5px;background:var(--signal)}
+.seo .k .lbl{font-family:var(--font-mono);font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--signal)}
+.seo h2{font-size:clamp(2.4rem,5.2vw,4.6rem);letter-spacing:-.04em;color:var(--paper-200)}
+.seo h2 .it{font-style:italic;color:var(--signal)}
+.seo p.lead{color:var(--gray-100);font-size:clamp(1.1rem,1.4vw,1.375rem);margin-top:22px;max-width:480px;line-height:1.5}
+.seo ul{list-style:none;padding:0;margin:28px 0 0;display:flex;flex-direction:column;gap:12px}
+.seo li{display:flex;gap:12px;align-items:center;color:var(--gray-100);font-size:15px;font-family:var(--font-mono)}
+.seo li b{color:var(--signal);font-weight:700}
+.orbit-stage{position:relative;display:grid;place-items:center;min-height:430px}
+.orbit{position:absolute;inset:0;display:grid;place-items:center}
+.orbit .ring{position:relative;width:440px;height:440px;animation:kin-spin 30s linear infinite}
+.orbit .oc{position:absolute;top:50%;left:50%}
+.orbit .oc .lbl{display:inline-block;padding:8px 13px;border-radius:var(--radius-pill);background:var(--ink-700);color:var(--paper-200);font-family:var(--font-mono);font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;animation:kin-spin 30s linear infinite reverse;box-shadow:var(--neu-ink)}
+.panel{position:relative;width:min(360px,82%);background:var(--ink-800);border-radius:var(--radius-lg);padding:22px;box-shadow:var(--neu-ink)}
+.panel .ph{display:flex;align-items:center;justify-content:space-between;margin-bottom:18px;font-family:var(--font-mono);font-size:12px;letter-spacing:.1em;color:var(--gray-100)}
+.panel .live{display:inline-flex;align-items:center;gap:6px;font-size:10px;letter-spacing:.12em;color:var(--signal);text-transform:uppercase}
+.panel .dot{width:6px;height:6px;border-radius:50%;background:var(--signal);box-shadow:0 0 8px var(--signal);animation:kin-blink 1.4s ease-in-out infinite}
+.panel .kw{display:flex;flex-direction:column;gap:13px}
+.panel .kwr .top{display:flex;justify-content:space-between;font-size:12px;margin-bottom:6px;font-family:var(--font-mono)}
+.panel .bar{height:7px;border-radius:99px;background:var(--ink-900);overflow:hidden;box-shadow:var(--neu-ink-inset)}
+.panel .bar i{display:block;height:100%;border-radius:99px;background:linear-gradient(90deg,var(--signal-deep),var(--signal))}
+.panel .note{margin-top:18px;padding:12px 14px;border-radius:var(--radius-md);background:rgba(111,227,194,.07);border:1px solid rgba(111,227,194,.18);font-family:var(--font-mono);font-size:11.5px;color:var(--gray-100);display:flex;align-items:center;gap:10px}
+
+/* ============================ PLAYGROUND ============================ */
+.play{background:var(--paper-200);padding:var(--section-y) 0;overflow:hidden}
+.play-head{display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:20px;margin-bottom:30px}
+.play-head h2{font-size:clamp(2.2rem,5vw,4rem);letter-spacing:-.04em;color:var(--ink-900);margin-top:14px}
+.play-head p{color:#2b2b38;margin-top:16px;max-width:500px}
+.play-hint{font-family:var(--font-mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-700);border-radius:var(--radius-pill);padding:9px 16px;background:var(--paper-200);box-shadow:var(--neu-raised-sm);display:inline-flex;align-items:center;gap:8px}
+.play-hint .star{display:inline-block;animation:kin-hint 1.6s ease-in-out infinite}
+.field{position:relative;height:clamp(380px,52vh,560px);border-radius:var(--radius-xl);overflow:hidden;background:var(--paper-100);box-shadow:var(--neu-inset);touch-action:none;cursor:grab}
+.field .dots{position:absolute;inset:0;opacity:.6;background-image:radial-gradient(var(--paper-300) 1.5px,transparent 1.5px);background-size:26px 26px}
+.field .tag{position:absolute;top:16px;left:20px;font-family:var(--font-mono);font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--text-faint)}
+.orb{position:absolute;top:0;left:0;border-radius:50%;display:grid;place-items:center;text-align:center;font-family:var(--font-mono);font-weight:700;letter-spacing:.06em;cursor:grab;touch-action:none;user-select:none;transition:scale .35s var(--ease-spring),rotate .35s var(--ease-out),box-shadow .35s var(--ease-out)}
+
+/* ============================ PROJECTS ============================ */
+.proj{background:var(--paper-200);padding:var(--section-y) 0;border-top:1px solid var(--ink-900)}
+.proj-head{display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:20px;margin-bottom:40px}
+.proj-head h2{font-size:clamp(2.2rem,5vw,4rem);letter-spacing:-.04em;color:var(--ink-900)}
+.proj-hint{font-family:var(--font-mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-700);display:inline-flex;gap:8px;align-items:center}
+.proj-hint .a1{display:inline-block;animation:kin-hint 1.6s ease-in-out infinite reverse}
+.proj-hint .a2{display:inline-block;animation:kin-hint 1.6s ease-in-out infinite}
+.track{display:flex;gap:22px;overflow-x:auto;scroll-snap-type:x proximity;padding:8px var(--gutter) 18px;cursor:grab;touch-action:pan-y;-ms-overflow-style:none;scrollbar-width:none}
+.track::-webkit-scrollbar{display:none}
+.card{flex:0 0 auto;width:clamp(280px,34vw,400px);scroll-snap-align:center}
+.card .inner{position:relative;border-radius:var(--radius-lg);overflow:hidden;aspect-ratio:4/5;box-shadow:var(--neu-raised);transition:transform .4s var(--ease-out),box-shadow .4s}
+.card:hover .inner{transform:translateY(-8px) rotate(-1deg);box-shadow:14px 16px 30px rgba(13,13,24,.22), -10px -10px 22px rgba(255,255,255,.9)}
+.card .img{position:absolute;inset:0;transition:transform .7s var(--ease-out)}
+.card:hover .img{transform:scale(1.07)}
+.card .shade{position:absolute;inset:0;background:linear-gradient(180deg,rgba(9,9,15,.1) 30%,rgba(9,9,15,.82))}
+.card .idx{position:absolute;top:14px;left:16px;font-family:var(--font-mono);font-size:11px;letter-spacing:.12em;color:var(--paper-200);text-transform:uppercase}
+.card .meta{position:absolute;left:18px;right:18px;bottom:18px}
+.card .cat{font-family:var(--font-mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--gold-bright);margin-bottom:6px}
+.card h3{font-family:var(--font-display);font-weight:600;font-size:clamp(1.4rem,2.6vw,2rem);letter-spacing:-.02em;color:var(--paper-200)}
+.card .more{overflow:hidden;height:0;opacity:0;transition:height .4s var(--ease-out),opacity .35s,margin .4s}
+.card:hover .more{height:22px;opacity:1;margin-top:8px}
+.card .more span{font-family:var(--font-mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-bright)}
+
+/* ============================ PROCESS ============================ */
+.process{background:var(--ink-900);color:var(--paper-200);padding:var(--section-y) 0}
+.process h2{font-size:clamp(2.2rem,5vw,4rem);letter-spacing:-.04em;color:var(--paper-200);margin-bottom:56px}
+.process .sup{font-family:var(--font-mono);font-size:.2em;font-weight:700;letter-spacing:.2em;vertical-align:super;color:var(--signal)}
+.steps{position:relative;padding-left:clamp(40px,8vw,90px)}
+.rail{position:absolute;left:clamp(18px,3.4vw,38px);top:8px;bottom:8px;width:2px;background:var(--ink-600)}
+.rail i{position:absolute;inset:0;background:var(--gold);transform-origin:top;transform:scaleY(0)}
+.step{position:relative;margin-bottom:clamp(30px,5vw,58px)}
+.step:last-child{margin-bottom:0}
+.step .pin{position:absolute;left:calc(clamp(40px,8vw,90px) * -1 + clamp(8px,1.8vw,28px));top:4px;width:22px;height:22px;border-radius:50%;background:var(--gold);border:3px solid var(--ink-900);box-shadow:0 0 0 2px var(--gold);animation:kin-pulse 2.6s ease-in-out infinite}
+.step .body{display:flex;gap:clamp(16px,3vw,40px);align-items:baseline;flex-wrap:wrap}
+.step .num{font-family:var(--font-display);font-weight:700;font-size:clamp(2.4rem,6vw,5rem);color:transparent;-webkit-text-stroke:1.5px var(--gold);line-height:.9;display:inline-block;animation:kin-float 5s ease-in-out infinite}
+.step .txt{flex:1;min-width:240px}
+.step h3{font-family:var(--font-display);font-weight:600;font-size:clamp(1.6rem,3.4vw,2.6rem);letter-spacing:-.02em;color:var(--paper-200)}
+.step p{color:var(--gray-100);font-size:17px;margin-top:10px;max-width:520px}
+
+/* ============================ CTA ============================ */
+.cta{background:var(--gold);color:var(--ink-900);padding:var(--section-y) 0;position:relative;overflow:hidden}
+.cta .lines{position:absolute;inset:0;pointer-events:none;opacity:.5;overflow:hidden}
+.cta .lines .v{position:absolute;top:0;bottom:0;left:-50%;width:200%;background-image:repeating-linear-gradient(90deg,transparent 0 119px,var(--ink-900) 119px 120px);animation:kin-marq-l 24s linear infinite;opacity:.14}
+.cta .split{position:relative;display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;z-index:3}
+.cta h2{font-size:clamp(2.6rem,6vw,5.2rem);letter-spacing:-.045em;line-height:.88;color:var(--ink-900);margin:14px 0 0}
+.cta h2 .it{font-style:italic}
+.cta p{color:#2b2b38;font-size:clamp(1.1rem,1.4vw,1.375rem);margin-top:22px;max-width:420px;line-height:1.5}
+.cta-seal{position:absolute;top:12%;right:6%;z-index:2}
+.form{display:flex;flex-direction:column;gap:16px;background:var(--paper-100);border-radius:var(--radius-lg);padding:28px;box-shadow:10px 10px 24px rgba(149,128,31,.35), -8px -8px 20px rgba(255,255,255,.55)}
+.form .frow{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.form label{display:flex;flex-direction:column;gap:6px}
+.form label span{font-family:var(--font-mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--text-faint)}
+
+/* ============================ FOOTER ============================ */
+.footer{background:var(--ink-900);color:var(--paper-200)}
+.footer .marq{border-bottom:1px solid var(--ink-600);padding:26px 0;overflow:hidden}
+.footer .marq .big{font-family:var(--font-display);font-weight:700;font-size:clamp(1.8rem,4vw,3.4rem);letter-spacing:-.03em;color:var(--paper-200)}
+.footer .marq .sep{color:var(--gold);margin:0 .6em}
+.footer .cols{display:grid;grid-template-columns:1.6fr repeat(3,1fr);gap:40px;padding:56px var(--gutter) 0;max-width:var(--container-wide);margin:0 auto}
+.footer .cols h4{font-family:var(--font-mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);margin:0 0 16px}
+.footer .cols ul{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:10px}
+.footer .cols a{color:var(--text-muted);font-size:15px;transition:color .25s}
+.footer .cols a:hover{color:var(--paper-200)}
+.footer .legal{max-width:var(--container-wide);margin:0 auto;padding:52px var(--gutter) 34px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:14px;margin-top:0}
+.footer .legal .l{color:var(--text-muted);font-size:13px;font-style:italic}
+.footer .legal .r{font-family:var(--font-mono);font-size:11px;color:var(--text-faint);letter-spacing:.08em}
+
+/* progress + cursor */
+.progress{position:fixed;top:0;left:0;right:0;height:3px;background:var(--gold);transform:scaleX(0);transform-origin:0 50%;z-index:300}
+.cur-dot{position:fixed;top:0;left:0;width:6px;height:6px;margin:-3px;border-radius:50%;background:var(--gold);pointer-events:none;z-index:9999}
+.cur-ring{position:fixed;top:0;left:0;width:30px;height:30px;margin:-15px;border-radius:50%;border:1.5px solid var(--ink-700);pointer-events:none;z-index:9998;display:grid;place-items:center;transition:width .25s,height .25s,border-color .25s}
+.cur-ring span{font-family:var(--font-mono);font-size:8px;letter-spacing:.1em;color:var(--gold-deep);opacity:0;transition:opacity .2s;white-space:nowrap}
+
+/* ============================ SEO LOCAL PILLS ============================ */
+.sl-pill{font-family:var(--font-mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-800);background:var(--paper-200);box-shadow:var(--neu-raised-sm);border-radius:var(--radius-pill);padding:12px 19px;transition:box-shadow .3s var(--ease-out),transform .3s var(--ease-spring)}
+.sl-pill:hover{transform:translateY(-3px);box-shadow:6px 6px 14px rgba(13,13,24,.16), -6px -6px 14px rgba(255,255,255,.95);color:var(--gold-deep)}
+
+/* ============================ RESPONSIVE ============================ */
+@media(max-width:900px){
+  .desktop,.nav .cta{display:none!important}
+  .nav-toggle{display:flex}
+  .nav .row{height:64px}
+  .nav-panel{top:84px}
+  .seo .split,.cta .split{grid-template-columns:1fr!important}
+  .footer .cols{grid-template-columns:1fr 1fr}
+}
+@media(max-width:680px){
+  .hero-chip{display:none!important}
+  .form .frow{grid-template-columns:1fr}
+  .footer .cols{grid-template-columns:1fr}
+  .svc-row .tags{display:none}
+  .cta-seal{display:none}
+}
+/* NOTE: we intentionally do NOT disable the brand's continuous motion under
+   prefers-reduced-motion — the seal, tickers and bands are core identity and
+   must always move. We only drop smooth-scroll, and guarantee that no content
+   is ever left stuck in a hidden pre-animation state. */
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+}
+/* Safety net: text must remain readable even while the kinetic animation runs. */
+.kin-headline-char,.kin-wave,.kin-type-reveal{opacity:1!important}
+.kin-headline-char{animation-delay:calc(var(--i,0) * 14ms + 80ms)!important}
+.kin-wave{animation-delay:calc(var(--i,0) * 18ms + 180ms), calc(var(--i,0) * 85ms + 1000ms)!important}
+.no-js .kin-section-reveal{opacity:1!important;transform:none!important}
+.no-js .kin-headline-char,.no-js .kin-type-reveal{opacity:1!important}
+@media(max-width:760px){
+  .hero{min-height:100svh;padding:104px 0 36px!important;justify-content:center}
+  .hero h1{font-size:clamp(2.8rem,18vw,5.3rem)!important;line-height:.9!important;letter-spacing:-.055em!important}
+  .mobile-headline{display:block;font-family:var(--font-display);font-weight:800;font-size:clamp(3.15rem,17vw,5.2rem);line-height:.86;letter-spacing:-.06em;color:var(--ink-900);text-wrap:balance}
+  .mobile-headline em{font-style:italic;color:var(--gold-deep);display:block;white-space:nowrap}
+  .mobile-headline small{display:block;margin-top:16px;font-family:var(--font-body);font-size:clamp(1rem,5vw,1.35rem);line-height:1.1;letter-spacing:-.02em;color:var(--ink-900);font-weight:850}
+  .hero-sub{margin-top:24px!important;gap:18px}
+  .hero-sub p{font-size:1.04rem!important;line-height:1.5!important;max-width:100%!important}
+  .kicker{margin-bottom:18px!important}
+  .hero .bgword{font-size:42vw!important;right:-18%!important;top:12%!important}
+  .hero-pieces .piece:not(:first-child){display:none!important}
+  .hero-pieces .piece:first-child{top:18%!important;right:8%!important;transform:scale(.72)}
+}
+
+/* HermentivIO page-polish pass: shared capsule nav + readable hero */
+#headline .headline-line{display:block;font-family:var(--font-display);font-weight:800;line-height:.86;letter-spacing:-.055em;animation:kin-rise .75s var(--ease-out) both}
+#headline .headline-line:nth-child(2){animation-delay:.08s}
+#headline em{font-style:italic;color:var(--gold-deep);position:relative;display:inline-block}
+#headline em::after{content:"";position:absolute;left:0;right:0;bottom:.04em;height:.07em;background:var(--gold-deep);transform-origin:left;animation:kin-underline 3.4s ease-in-out infinite}
+#headline .headline-small{display:block;margin-top:.28em;font-family:var(--font-body);font-size:.18em;line-height:1.1;letter-spacing:-.02em;font-weight:850;color:var(--ink-900);animation:kin-rise .75s var(--ease-out) .18s both}
+.home-seal-piece{top:15%!important;right:4%!important;transform:scale(1);transform-origin:center;opacity:1;filter:drop-shadow(0 14px 24px rgba(13,13,24,.16));pointer-events:auto!important}
+.home-seal-piece .seal-wrap{width:216px!important;height:216px!important;pointer-events:auto!important;cursor:grab!important}
+.home-seal-piece svg{width:216px!important;height:216px!important;overflow:visible}
+.home-seal-piece .seal-hub{width:50%!important;height:50%!important;font-size:34px!important;background:var(--ink-900)!important;color:var(--gold)!important;border:3px solid var(--gold)!important;box-shadow:0 10px 24px rgba(13,13,24,.28)}
+.home-seal-piece text{font-size:22px!important;letter-spacing:.02em!important;font-weight:900!important;fill:var(--ink-900)!important}
+@media(max-width:900px){.hero{padding-top:122px}.home-seal-piece{top:15%!important;right:1%!important;transform:scale(.72)!important}.sn-wrap{transform:none!important}.hero h1{font-size:clamp(3.1rem,16vw,6rem)!important;line-height:.88!important}.hero-sub{margin-top:28px}.hero-pieces{z-index:1}.wrap{position:relative}}
+@media(max-width:420px){#headline .headline-small{font-size:.22em}.hero{padding-top:118px!important}}
+
+
+/* mobile guard for readable decorative seal home-seal-piece */
+@media(max-width:760px){.home-seal-piece{display:none!important}}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "@id": "https://inventiviamarketing.com/#localbusiness",
+  "name": "InventivIA Marketing",
+  "legalName": "InventivIA Marketing",
+  "description": "Agencia SEO en Murcia especializada en SEO local, posicionamiento web, diseño web SEO y automatización con IA.",
+  "url": "https://inventiviamarketing.com/",
+  "email": "hola@inventiviamarketing.com",
+  "priceRange": "€€",
+  "image": "https://inventiviamarketing.com/assets/logo-inventivia.png",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Ctra. de Churra, 96, 2ª planta",
+    "postalCode": "30007",
+    "addressLocality": "Murcia",
+    "addressRegion": "Región de Murcia",
+    "addressCountry": "ES"
+  },
+  "areaServed": [
+    { "@type": "City", "name": "Murcia" },
+    { "@type": "AdministrativeArea", "name": "Región de Murcia" }
+  ],
+  "knowsAbout": ["SEO local", "posicionamiento web", "agencia SEO", "diseño web SEO", "Google Business Profile", "automatización con IA"],
+  "hasMap": "https://www.google.com/maps/search/?api=1&query=Ctra.%20de%20Churra%2096%2030007%20Murcia",
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Servicios SEO en Murcia",
+    "itemListElement": [
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "SEO local en Murcia", "areaServed": "Murcia" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Diseño web SEO en Murcia", "areaServed": "Murcia" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Posicionamiento web en Murcia", "areaServed": "Murcia" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Automatización con IA para captación", "areaServed": "Murcia" } }
+    ]
+  }
+}
+</script>
+</head>
+<body>
+<template id="__bundler_thumbnail" data-bg-color="#0d0d18">
+  <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+    <rect width="48" height="48" fill="#0d0d18"/>
+    <path d="M24 6 Q27 20.5 42 24 Q27 27.5 24 42 Q21 27.5 6 24 Q21 20.5 24 6 Z" fill="#c5a831"/>
+    <circle cx="24" cy="24" r="4.6" fill="#0d0d18"/>
+  </svg>
+</template>
+<div class="progress" id="progress"></div>
+
+<!-- ============ NAV + TICKER ============ -->
+<header class="sn-wrap" id="sitenav">
+  <div class="sn-cap">
+    <a href="index.html" class="sn-brand" data-cursor="ver" aria-label="InventivIA — inicio">
+      <img class="sn-mark" src="assets/mark-inventivia.svg" alt="InventivIA">
+      <span class="sn-word">Inventiv<b>IA</b></span>
+    </a>
+    <nav class="sn-links" aria-label="Menú principal">
+      <a href="index.html" class="sn-link sn-active" data-cursor="ver" aria-current="page">Inicio</a>
+      <a href="servicios.html" class="sn-link" data-cursor="ver">Servicios</a>
+      <a href="quienes-somos.html" class="sn-link" data-cursor="ver">Quiénes somos</a>
+      <a href="contacto.html" class="sn-link" data-cursor="ver">Contacto</a>
+    </nav>
+    <div class="sn-right">
+      <a href="contacto.html#form" class="sn-cta sn-cta-desktop" data-cursor="hablemos">Auditoría SEO</a>
+      <button type="button" class="sn-burger" aria-label="Menú" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+  <div class="sn-panel">
+    <a href="index.html" class="sn-active" data-cursor="ver">Inicio<span aria-hidden="true">→</span></a>
+    <a href="servicios.html" data-cursor="ver">Servicios<span aria-hidden="true">→</span></a>
+    <a href="quienes-somos.html" data-cursor="ver">Quiénes somos<span aria-hidden="true">→</span></a>
+    <a href="contacto.html" data-cursor="ver">Contacto<span aria-hidden="true">→</span></a>
+    <a href="contacto.html#form" class="sn-cta" data-cursor="hablemos">Solicitar auditoría SEO</a>
+  </div>
+</header>
+
+<!-- ============ HERO ============ -->
+<section class="hero" id="top">
+  <div class="grid"></div>
+  <div class="bgword" aria-hidden="true">ia</div>
+  <div class="hero-pieces" aria-hidden="true">
+    <div class="piece kin-draggable home-seal-piece" data-cursor="drag" style="top:16%;right:12%;animation:kin-seal-in 1.1s var(--ease-out) both">
+      <div class="seal-wrap" data-drag>
+        <div class="kin-seal-spin">
+          <svg viewBox="0 0 216 216" width="216" height="216"><defs><path id="sealp" d="M108,108 m -86,0 a 86,86 0 1,1 172,0 a 86,86 0 1,1 -172,0"/></defs><text><textPath href="#sealp" startOffset="0%">SEO · IA · WEB · GOOGLE · </textPath></text></svg>
+        </div>
+        <div class="seal-hub">IA</div>
+      </div>
+    </div>
+    <div class="piece hero-chip kin-draggable" data-cursor="drag" style="bottom:30%;left:6%" data-drag><div class="chip ink" style="animation:kin-wobble 2.9s ease-in-out infinite">SEO LOCAL</div></div>
+    <div class="piece hero-chip kin-draggable" data-cursor="drag" style="top:60%;right:40%" data-drag><div class="chip paper" style="animation:kin-bounce 2.4s ease-in-out infinite">◆ GOOGLE</div></div>
+    <div class="piece hero-chip kin-draggable" data-cursor="drag" style="bottom:22%;right:14%" data-drag><div class="chip gold" style="animation:kin-pulse 3.2s ease-in-out infinite">MURCIA</div></div>
+    <div class="piece hero-chip kin-draggable" data-cursor="drag" style="top:44%;right:8%" data-drag><div class="chip signal" style="animation:kin-tilt 2.6s ease-in-out infinite">✦ WEB</div></div>
+    <div class="piece hero-chip kin-draggable" data-cursor="drag" style="bottom:40%;left:24%" data-drag><div class="chip gold" style="animation:kin-bob 3.4s ease-in-out infinite;background:var(--gold-bright)">IA</div></div>
+    <div class="piece hero-chip kin-draggable" data-cursor="drag" style="top:62%;left:10%" data-drag><div class="chip paper" style="animation:kin-bounce 2.8s ease-in-out infinite">◆ ADS</div></div>
+  </div>
+  <div class="wrap" style="position:relative;z-index:3">
+    <div class="kicker"><span class="line"></span><span class="lbl">Agencia SEO en Murcia · Marketing digital con IA</span></div>
+    <h1 id="headline">Agencia SEO en Murcia: posicionamiento web, SEO local e IA</h1>
+    <div class="hero-sub">
+      <p class="kin-type-reveal" style="--d:1500">Somos una agencia SEO en Murcia especializada en posicionamiento web, SEO local, diseño web estratégico y automatización con IA. Ayudamos a empresas murcianas a aparecer en Google, atraer tráfico cualificado y convertir visitas en clientes.</p>
+      <div class="kin-type-reveal" style="--d:1650;display:flex;gap:14px;flex-wrap:wrap">
+        <a href="contacto.html#form" class="kin-neu-button ink magnetic" data-cursor="hablemos" aria-label="Solicita tu auditoría SEO">Solicita tu auditoría SEO →</a>
+        <a href="servicios.html" class="kin-neu-button" data-cursor="ver" aria-label="Ver casos reales">Ver casos reales</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SERVICE BAND ============ -->
+<section class="band">
+  <div class="kin-marquee"><div class="kin-marquee-track kin-marquee-left" style="--mq:22s" id="band1"></div></div>
+  <div style="height:clamp(.6rem,1.6vw,1.4rem)"></div>
+  <div class="kin-marquee"><div class="kin-marquee-track kin-marquee-right" style="--mq:30s" id="band2"></div></div>
+</section>
+
+<!-- ============ SERVICES ============ -->
+<section class="services" id="servicios">
+  <div class="wrap">
+    <div class="svc-head kin-section-reveal">
+      <h2><span class="sup">(qué hacemos)</span><br>Servicios SEO y marketing digital en Murcia</h2>
+      <div class="svc-stats">
+        <div><div class="num" style="color:var(--gold-deep)" data-count="12" data-suffix="+">0</div><div class="cap">Marcas</div></div>
+        <div><div class="num" style="color:var(--ink-900)" data-count="180" data-prefix="+" data-suffix="%">0</div><div class="cap">Tráfico</div></div>
+      </div>
+    </div>
+    <div class="svc-list" id="svc-list"></div>
+  </div>
+</section>
+
+<!-- ============ SEO + IA ============ -->
+<section class="seo" id="seo-ia">
+  <div class="wrap-n split">
+    <div class="kin-section-reveal from-right">
+      <div class="k"><span class="line"></span><span class="lbl">SEO local + IA</span></div>
+      <h2>SEO local en Murcia<br><span class="it">con estrategia, contenido e IA</span></h2>
+      <p class="lead">Unimos SEO técnico, SEO local, contenidos estratégicos y automatización con IA para mejorar la visibilidad de tu negocio en Google. Analizamos cómo busca tu cliente, optimizamos tu web y creamos una estrategia pensada para atraer tráfico cualificado y oportunidades reales.</p>
+      <ul>
+        <li><b>▸</b> Auditoría SEO técnica y de contenidos</li>
+        <li><b>▸</b> Estudio de palabras clave locales en Murcia</li>
+        <li><b>▸</b> Optimización de páginas de servicio y landings SEO</li>
+        <li><b>▸</b> Velocidad, estructura, enlazado interno y Core Web Vitals</li>
+        <li><b>▸</b> Automatización de informes, contenidos y seguimiento SEO</li>
+        <li><b>▸</b> Google Business Profile y búsquedas locales</li>
+      </ul>
+      <div style="margin-top:32px"><a href="#contacto" class="kin-neu-button gold magnetic" data-cursor="ver" aria-label="Quiero mejorar mi SEO">Quiero mejorar mi SEO →</a></div>
+    </div>
+    <div class="kin-section-reveal from-left orbit-stage">
+      <div class="orbit"><div class="ring" id="orbit-ring"></div></div>
+      <div class="panel">
+        <div class="ph"><span>RANKINGS · inventivia.ai</span><span class="live"><span class="dot"></span>En directo</span></div>
+        <div class="kw" id="kw"></div>
+        <div class="note"><span style="color:var(--signal)">⚡</span> Agente IA: 18 mejoras aplicadas hoy.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PLAYGROUND ============ -->
+<section class="play" id="playground">
+  <div class="wrap">
+    <div class="play-head kin-section-reveal">
+      <div style="max-width:640px">
+        <span class="eyebrow">(zona interactiva)</span>
+        <h2>Cógelos. Lánzalos.<br>Juega.</h2>
+        <p>Arrastra los orbes con el dedo o el ratón — tienen peso, rebotan y se empujan. Como una buena estrategia: todo conectado, todo en movimiento.</p>
+      </div>
+      <span class="play-hint">arrastra las piezas <span class="star">✦</span></span>
+    </div>
+    <div class="field kin-section-reveal scale" id="field">
+      <div class="dots"></div>
+      <span class="tag">física en vivo · 7 objetos</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SEO LOCAL ============ -->
+<section class="seo-local" id="seo-local" style="background:var(--paper-200);padding:var(--section-y) 0;border-top:1px solid var(--ink-900)">
+  <div class="wrap-n">
+    <div class="kin-section-reveal" style="max-width:900px">
+      <span class="eyebrow">(seo local · murcia)</span>
+      <h2 style="font-size:clamp(2.2rem,5vw,4rem);letter-spacing:-.04em;color:var(--ink-900);margin-top:14px">Agencia SEO en Murcia para empresas que quieren crecer</h2>
+      <p style="color:#2b2b38;font-size:clamp(1.1rem,1.4vw,1.375rem);line-height:1.55;margin-top:22px;max-width:780px">Trabajamos con negocios locales, clínicas, ecommerce, despachos profesionales, restaurantes, empresas de servicios y marcas que necesitan aparecer cuando sus clientes buscan en Google. No hacemos SEO decorativo: diseñamos estrategias orientadas a visibilidad, tráfico, llamadas, formularios y ventas.</p>
+    </div>
+    <div class="kin-section-reveal" style="display:flex;flex-wrap:wrap;gap:13px;margin-top:38px">
+      <span class="sl-pill">SEO local en Murcia</span>
+      <span class="sl-pill">SEO para WordPress y Divi</span>
+      <span class="sl-pill">SEO para ecommerce</span>
+      <span class="sl-pill">SEO técnico</span>
+      <span class="sl-pill">Contenido SEO</span>
+      <span class="sl-pill">Google Business Profile</span>
+      <span class="sl-pill">Arquitectura web</span>
+      <span class="sl-pill">Analítica y conversiones</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PROJECTS ============ -->
+<section class="proj" id="proyectos">
+  <div class="wrap">
+    <div class="proj-head kin-section-reveal">
+      <h2><span class="sup" style="font-family:var(--font-mono);font-size:.2em;font-weight:700;letter-spacing:.2em;vertical-align:super;color:var(--gold-deep)">(trabajos)</span><br>Proyectos digitales que generan visibilidad</h2>
+      <span class="proj-hint"><span class="a1">←</span> arrastra <span class="a2">→</span></span>
+    </div>
+  </div>
+  <div class="track" id="track" data-cursor="drag"></div>
+</section>
+
+<!-- ============ PROCESS ============ -->
+<section class="process" id="proceso">
+  <div class="wrap-n">
+    <h2 class="kin-section-reveal"><span class="sup">(cómo trabajamos)</span><br>Un proceso claro</h2>
+    <div class="steps" id="steps">
+      <div class="rail"><i id="rail-fill"></i></div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ============ FAQ SEO LOCAL ============ -->
+<section class="faq-seo" id="faq-seo" style="background:var(--paper-200);padding:clamp(4rem,8vw,7rem) 0;border-top:1px solid var(--ink-900)">
+  <div class="wrap-n kin-section-reveal">
+    <span class="eyebrow">(preguntas frecuentes)</span>
+    <h2 style="font-size:clamp(2.2rem,5vw,4rem);letter-spacing:-.04em;color:var(--ink-900);margin-top:14px">Preguntas frecuentes sobre SEO en Murcia</h2>
+    <div style="display:grid;gap:14px;margin-top:30px">
+      <details class="kin-neu-card" style="padding:22px"><summary style="cursor:pointer;font-weight:900">¿Trabajáis SEO local para negocios de Murcia?</summary><p>Sí. Optimizamos web, contenidos, estructura local y señales para que tu negocio gane visibilidad en búsquedas de Murcia y alrededores.</p></details>
+      <details class="kin-neu-card" style="padding:22px"><summary style="cursor:pointer;font-weight:900">¿También mejoráis webs hechas en WordPress o Divi?</summary><p>Sí. Revisamos arquitectura, velocidad, metadatos, contenido, enlazado interno y páginas de servicio sin romper el diseño aprobado.</p></details>
+      <details class="kin-neu-card" style="padding:22px"><summary style="cursor:pointer;font-weight:900">¿El objetivo es tráfico o clientes?</summary><p>El objetivo es captar oportunidades reales: llamadas, formularios, visitas cualificadas y una web más clara para convertir.</p></details>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CTA ============ -->
+<section class="cta" id="contacto">
+  <div class="lines"><div class="v"></div></div>
+  <div class="cta-seal kin-draggable" data-cursor="drag" data-drag>
+    <div class="seal-wrap" style="width:138px;height:138px">
+      <div class="kin-seal-spin" style="animation-duration:13s">
+        <svg viewBox="0 0 138 138" width="138" height="138"><defs><path id="sealp2" d="M69,69 m -55,0 a 55,55 0 1,1 110,0 a 55,55 0 1,1 -110,0"/></defs><text style="fill:var(--ink-900)"><textPath href="#sealp2" startoffset="0%">DA EL SALTO · HABLEMOS · DA EL SALTO · HABLEMOS · </textPath></text></svg>
+      </div>
+      <div class="seal-hub" style="background:var(--ink-900);color:var(--gold)">→</div>
+    </div>
+  </div>
+  <div class="wrap-n split">
+    <div class="kin-section-reveal from-right">
+      <span class="eyebrow" style="color:var(--ink)">(contacto)</span>
+      <h2>¿Quieres crecer<br><span class="it">en Google?</span></h2>
+      <p>Cuéntanos tu negocio y revisamos cómo mejorar tu visibilidad, tu SEO local y la conversión de tu web en Murcia.</p>
+      <div style="display:flex;gap:14px;margin-top:30px;flex-wrap:wrap">
+        <a href="mailto:hola@inventiviamarketing.com?subject=Auditoría%20SEO%20Murcia" class="kin-neu-button ink magnetic" data-cursor="hablemos">Solicitar auditoría SEO</a>
+        <a href="servicios.html" class="kin-neu-button" data-cursor="ver">Ver servicios</a>
+      </div>
+      <p style="font-family:var(--font-mono);font-size:12px;color:var(--text-faint);margin-top:26px;letter-spacing:.06em">Murcia, España · hola@inventiviamarketing.com</p>
+    </div>
+    <div class="kin-section-reveal from-left">
+      <form class="form" onsubmit="return false">
+        <div class="frow">
+          <label><span>Nombre</span><input class="kin-neu-inset" placeholder="Tu nombre"></label>
+          <label><span>Email</span><input class="kin-neu-inset" type="email" placeholder="hola@empresa.com"></label>
+        </div>
+        <label><span>Mensaje</span><textarea class="kin-neu-inset" rows="4" placeholder="Cuéntanos qué necesitas…" style="resize:vertical"></textarea></label>
+        <button class="kin-neu-button ink magnetic" data-cursor="hablemos" style="margin-top:4px">Da el salto →</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer class="footer">
+    <div class="marq"><div class="kin-marquee"><div class="kin-marquee-track kin-marquee-left" style="--mq:18s" id="foot-marq"></div></div></div>
+  <div class="cols">
+    <div>
+      <a href="#top" class="brand" style="color:var(--paper-200);margin-bottom:18px"><svg class="seal-mini" viewBox="0 0 48 48" style="animation:none"><path d="M24 3 Q27.5 20.5 45 24 Q27.5 27.5 24 45 Q20.5 27.5 3 24 Q20.5 20.5 24 3 Z" fill="#c5a831"/></svg>Inventiv<span style="color:var(--gold)">IA</span></a>
+      <p style="color:var(--text-muted);font-size:15px;max-width:280px;margin:14px 0 0">Agencia SEO en Murcia: posicionamiento web, SEO local, diseño web estratégico y automatización con IA para empresas que quieren crecer.</p>
+    </div>
+    <div><h4>Servicios</h4><ul><li><a href="#servicios">Diseño web SEO</a></li><li><a href="#seo-ia">Posicionamiento SEO local</a></li><li><a href="#servicios">Automatización con IA</a></li><li><a href="#servicios">Branding</a></li><li><a href="#servicios">Social Media</a></li></ul></div>
+    <div><h4>Agencia</h4><ul><li><a href="#seo-local">SEO Local Murcia</a></li><li><a href="#proyectos">Proyectos</a></li><li><a href="#proceso">Proceso</a></li><li><a href="servicios.html">Servicios</a></li><li><a href="quienes-somos.html">Quiénes somos</a></li><li><a href="contacto.html">Contacto</a></li></ul></div>
+    <div><h4>Contacto</h4><ul><li><a href="mailto:hola@inventiviamarketing.com">Email</a></li><li><a href="https://www.google.com/maps/search/?api=1&query=Ctra.%20de%20Churra%2096%2030007%20Murcia">Google Maps</a></li><li><a href="servicios.html">Servicios</a></li><li><a href="contacto.html">Formulario</a></li></ul></div>
+  </div>
+  <div class="legal">
+    <span class="l">Agencia SEO en Murcia · Posicionamiento web, SEO local, diseño web e IA aplicada a captación.</span>
+    <span class="r">© 2026 INVENTIVIA MARKETING</span>
+  </div>
+</footer>
+
+<script>
+(function(){
+"use strict";
+document.documentElement.classList.remove("no-js");
+/* Brand motion is always on by design — see CSS note. Honour reduced-motion
+   only for the heavy physics/parallax loops, never for the core identity. */
+var REDUCED = false;
+var SOFT = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+var TOUCH = window.matchMedia && window.matchMedia("(pointer: coarse)").matches;
+var $ = function(s,r){return (r||document).querySelector(s)};
+var $$ = function(s,r){return Array.prototype.slice.call((r||document).querySelectorAll(s))};
+
+/* ---------- MARQUEE content (duplicated for seamless loop) ---------- */
+function fillMarquee(el, items, cls, sep, sepColor){
+  if(!el) return;
+  var html = "";
+  var twice = items.concat(items);
+  twice.forEach(function(t){
+    html += '<span class="'+(cls||'it')+'">'+t+'<span class="sep" style="'+(sepColor?'color:'+sepColor:'')+'">'+(sep||'✦')+'</span></span>';
+  });
+  el.innerHTML = html;
+}
+fillMarquee($("#ticker1"), ["Agencia SEO Murcia","SEO local","Diseño web SEO","Google Ads","Inteligencia artificial","Captación de leads","WordPress","Divi","Automatización"], "it", "✦");
+// big bands
+function bigBand(el, items, alt, sep){
+  if(!el) return; var html="";
+  items.concat(items).forEach(function(t,i){
+    var out = (alt && (i%2)) ? " out" : "";
+    html += '<span class="big'+out+'">'+t+'</span><span class="sep">'+sep+'</span>';
+  });
+  el.innerHTML = html;
+}
+bigBand($("#band1"), ["Diseño Web SEO","SEO Local","Posicionamiento Web","Branding"], true, "✦");
+bigBand($("#band2"), ["Social Media","Automatización IA","Captación de Leads","Google Ads"], true, "◆");
+bigBand($("#foot-marq"), ["Agencia SEO Murcia","SEO Local","Más visibilidad","Más clientes","Posicionamiento Web"], false, "✦");
+
+/* ---------- HEADLINE readable animated block ---------- */
+(function(){
+  var h = $("#headline"); if(!h) return;
+  h.innerHTML = '<span class="headline-line">AGENCIA SEO</span><span class="headline-line">EN <em>MURCIA</em></span><span class="headline-small">más visibilidad · más ventas</span>';
+})();
+
+/* ---------- SERVICES list ---------- */
+var SVC = [
+  {n:"01",t:"Diseño web SEO",d:"Creamos webs rápidas, claras y preparadas para posicionar en Google desde el primer día.",tags:"UX · Velocidad · SEO",c:"var(--gold)"},
+  {n:"02",t:"Posicionamiento SEO local",d:"Trabajamos SEO técnico, contenidos, arquitectura web y búsquedas locales para que tu empresa gane visibilidad en Murcia.",tags:"Técnico · Local · Contenido",c:"var(--signal)"},
+  {n:"03",t:"Automatización con IA",d:"Integramos IA en procesos de captación, atención y seguimiento para ahorrar tiempo y mejorar conversiones.",tags:"Agentes · Flujos · Datos",c:"var(--gold-bright)"},
+  {n:"04",t:"Branding estratégico",d:"Construimos marcas con identidad, mensaje y posicionamiento para destacar frente a la competencia.",tags:"Identidad · Voz · Sistema",c:"var(--paper-300)"},
+  {n:"05",t:"Social Media y contenido",d:"Diseñamos contenido útil y campañas que conectan con tu audiencia y refuerzan tu presencia digital.",tags:"Estrategia · Contenido · Ads",c:"var(--signal)"}
+];
+(function(){
+  var L = $("#svc-list"); if(!L) return; var html="";
+  SVC.forEach(function(s,idx){
+    html += '<div class="svc-row kin-section-reveal '+(idx%2?'from-right':'from-left')+'">'+
+      '<div class="fill" style="background:'+s.c+'"></div>'+
+      '<div class="inner"><span class="n">'+s.n+'</span>'+
+      '<div><h3>'+s.t+'</h3><div class="desc"><p>'+s.d+'</p></div></div>'+
+      '<div style="display:flex;align-items:center;gap:22px"><span class="tags desktop">'+s.tags+'</span><span class="arr">→</span></div></div></div>';
+  });
+  L.innerHTML = html;
+})();
+
+/* ---------- ORBIT chips + KW bars ---------- */
+(function(){
+  var ring = $("#orbit-ring"); if(ring){
+    var labels=["AUDIT","KEYWORDS","SCHEMA","CONTENT","SPEED","RANK"], R=210, html="";
+    labels.forEach(function(l,i){
+      var a=(i/labels.length)*Math.PI*2, x=Math.cos(a)*R, y=Math.sin(a)*R;
+      html += '<div class="oc" style="transform:translate(-50%,-50%) translate('+x+'px,'+y+'px)"><span class="lbl">'+l+'</span></div>';
+    });
+    ring.innerHTML = html;
+  }
+  var kw=$("#kw");
+  if(kw){
+    var rows=[["agencia seo murcia",1,"96%"],["seo local murcia",1,"92%"],["diseño web seo murcia",2,"84%"],["posicionamiento web murcia",2,"79%"]],h="";
+    rows.forEach(function(r){
+      h+='<div class="kwr"><div class="top"><span style="color:var(--gray-100)">'+r[0]+'</span><span style="color:var(--signal)">#'+r[1]+' ↑</span></div><div class="bar"><i style="width:'+r[2]+'"></i></div></div>';
+    });
+    kw.innerHTML=h;
+  }
+})();
+
+/* ---------- PROJECTS ---------- */
+var PROJ=[
+  {name:"Laura Valle",cat:"Branding + Diseño Web SEO",yr:"'25",tint:"linear-gradient(135deg,#2a2438,#c5a831)"},
+  {name:"World Adventure",cat:"Diseño Web SEO + SEO Local",yr:"'25",tint:"linear-gradient(135deg,#14202a,#6fe3c2)"},
+  {name:"Multiculatas",cat:"Ecommerce + SEO",yr:"'24",tint:"linear-gradient(135deg,#2a1c14,#e4c552)"},
+  {name:"Bahía Norte",cat:"Web + Automatización IA",yr:"'24",tint:"linear-gradient(135deg,#101c2a,#7db9ff)"},
+  {name:"Estudio Ámbar",cat:"Branding + SEO Local",yr:"'24",tint:"linear-gradient(135deg,#2a2018,#d8c168)"}
+];
+(function(){
+  var T=$("#track"); if(!T) return; var html="";
+  PROJ.forEach(function(p,i){
+    html+='<a href="#contacto" class="card kin-section-reveal scale" data-cursor="ver" style="transition-delay:'+(i*90)+'ms"><div class="inner"><div class="img" style="background:'+p.tint+'"></div><div class="shade"></div><span class="idx">'+("0"+(i+1)).slice(-2)+' / '+p.yr+'</span><div class="meta"><div class="cat">'+p.cat+'</div><h3>'+p.name+'</h3><div class="more"><span>Ver proyecto →</span></div></div></div></a>';
+  });
+  T.innerHTML=html;
+})();
+
+/* ---------- PROCESS steps ---------- */
+var STEPS=[
+  {n:"01",t:"Analizamos",d:"Auditamos tu web, competencia, búsquedas locales y oportunidades reales en Google."},
+  {n:"02",t:"Estrategia",d:"Definimos arquitectura SEO, keywords, contenidos, landings y prioridades técnicas."},
+  {n:"03",t:"Optimizamos",d:"Mejoramos textos, velocidad, estructura, enlazado interno, metadatos y conversión."},
+  {n:"04",t:"Medimos",d:"Seguimos posiciones, tráfico, leads y rendimiento para mejorar cada mes."}
+];
+(function(){
+  var S=$("#steps"); if(!S) return; var html="";
+  STEPS.forEach(function(s,i){
+    html+='<div class="step kin-section-reveal from-left" style="transition-delay:'+(i*70)+'ms"><div class="pin" style="animation-delay:'+(i*300)+'ms"></div><div class="body"><span class="num" style="animation-delay:'+(i*200)+'ms">'+s.n+'</span><div class="txt"><h3>'+s.t+'</h3><p>'+s.d+'</p></div></div></div>';
+  });
+  S.insertAdjacentHTML("beforeend", html);
+})();
+
+/* ---------- SPLIT HEADINGS into animated letters ---------- */
+(function(){
+  var sels=[".svc-head h2",".play-head h2",".proj-head h2",".process h2",".seo h2",".cta h2"];
+  sels.forEach(function(sel){
+    $$(sel).forEach(function(h){
+      var i=0;
+      var walker=document.createTreeWalker(h, NodeFilter.SHOW_TEXT, null);
+      var texts=[], n;
+      while(n=walker.nextNode()){
+        if(n.parentElement.closest(".sup,.eyebrow")) continue;
+        if(!n.nodeValue.replace(/\s/g,"")) continue;
+        texts.push(n);
+      }
+      texts.forEach(function(tn){
+        var frag=document.createDocumentFragment(), t=tn.nodeValue;
+        for(var c=0;c<t.length;c++){
+          var ch=t[c];
+          if(ch===" "){ frag.appendChild(document.createTextNode("\u00a0")); continue; }
+          var s=document.createElement("span"); s.className="kin-split"; s.style.setProperty("--i", i++); s.textContent=ch; frag.appendChild(s);
+        }
+        tn.parentNode.replaceChild(frag, tn);
+      });
+    });
+  });
+})();
+
+/* ---------- SECTION REVEAL (scroll-driven + IO + safety net) ---------- */
+(function(){
+  var els = $$(".kin-section-reveal");
+  function show(e){ e.classList.add("is-in"); }
+  function check(){
+    var vh = window.innerHeight || document.documentElement.clientHeight;
+    for(var k=0;k<els.length;k++){
+      var e=els[k]; if(e.classList.contains("is-in")) continue;
+      var r=e.getBoundingClientRect();
+      if(r.top < vh*0.9 && r.bottom > -40) show(e);
+    }
+  }
+  // Primary: IntersectionObserver when available
+  if("IntersectionObserver" in window){
+    var io=new IntersectionObserver(function(en){
+      en.forEach(function(e){ if(e.isIntersecting){ show(e.target); io.unobserve(e.target);} });
+    },{threshold:.1, rootMargin:"0px 0px -6% 0px"});
+    els.forEach(function(e){io.observe(e)});
+  }
+  // Backup that works everywhere: scroll/resize + initial check
+  window.addEventListener("scroll", check, {passive:true});
+  window.addEventListener("resize", check, {passive:true});
+  check();
+  // Safety net: never leave content stuck hidden
+  setTimeout(check, 350);
+  setTimeout(function(){ els.forEach(show); }, 4500);
+})();
+
+/* ---------- COUNT UP ---------- */
+/* ---------- COUNT UP (IO + scroll fallback) ---------- */
+(function(){
+  var nums=$$("[data-count]");
+  function run(el){
+    if(el.dataset.done) return; el.dataset.done="1";
+    var to=+el.getAttribute("data-count"), pre=el.getAttribute("data-prefix")||"", suf=el.getAttribute("data-suffix")||"", t0=null;
+    function step(t){ if(!t0)t0=t; var p=Math.min((t-t0)/1400,1); el.textContent=pre+Math.round((1-Math.pow(1-p,3))*to)+suf; if(p<1)requestAnimationFrame(step); }
+    requestAnimationFrame(step);
+  }
+  function check(){
+    var vh=window.innerHeight||document.documentElement.clientHeight;
+    nums.forEach(function(el){ var r=el.getBoundingClientRect(); if(r.top<vh*0.85 && r.bottom>0) run(el); });
+  }
+  if("IntersectionObserver" in window){
+    var io=new IntersectionObserver(function(en){en.forEach(function(e){if(e.isIntersecting){run(e.target);io.unobserve(e.target);}});},{threshold:.5});
+    nums.forEach(function(n){io.observe(n)});
+  }
+  window.addEventListener("scroll",check,{passive:true});
+  check();
+})();
+
+/* ---------- SITE NAV: mobile open/close + hide on scroll ---------- */
+(function(){
+  var nav=$("#sitenav"), btn=$(".sn-burger", nav), last=0;
+  if(btn && nav){
+    btn.addEventListener("click",function(){var open=nav.classList.toggle("sn-open");btn.setAttribute("aria-expanded",open?"true":"false");});
+    $$(".sn-panel a", nav).forEach(function(a){a.addEventListener("click",function(){nav.classList.remove("sn-open");btn.setAttribute("aria-expanded","false");});});
+  }
+  window.addEventListener("scroll",function(){
+    var y=window.scrollY||window.pageYOffset;
+    if(nav){nav.classList.toggle("sn-scrolled",y>12);nav.classList.toggle("sn-hidden",y>220&&y>last&&!nav.classList.contains("sn-open"));}
+    last=y;
+    var bar=$("#progress"), h=document.documentElement.scrollHeight-window.innerHeight;
+    if(bar) bar.style.transform="scaleX("+(h>0?y/h:0)+")";
+  },{passive:true});
+})();
+
+/* ---------- PROCESS rail draws on scroll ---------- */
+(function(){
+  var sec=$("#proceso"), fill=$("#rail-fill"); if(!sec||!fill) return;
+  if(REDUCED){ fill.style.transform="scaleY(1)"; return; }
+  function on(){
+    var r=sec.getBoundingClientRect();
+    var p=Math.max(0,Math.min(1,(window.innerHeight*.75 - r.top)/(r.height*.7)));
+    fill.style.transform="scaleY("+p+")";
+  }
+  window.addEventListener("scroll",on,{passive:true}); on();
+})();
+
+/* ---------- HERO parallax ---------- */
+(function(){
+  if(REDUCED) return;
+  var grid=$(".hero .grid"), bg=$(".hero .bgword");
+  window.addEventListener("scroll",function(){
+    var y=window.scrollY||window.pageYOffset;
+    if(grid) grid.style.transform="translateY("+(y*.18)+"px)";
+    if(bg) bg.style.transform="translateY("+(y*.34)+"px)";
+  },{passive:true});
+})();
+
+/* ---------- DRAGGABLE pieces (seal + chips) with inertia ---------- */
+function makeDraggable(el){
+  var x=0,y=0,vx=0,vy=0,dragging=false,raf=0,last=0,px=0,py=0, B=Math.max(window.innerWidth,window.innerHeight,900);
+  function apply(){ el.style.transform="translate3d("+x+"px,"+y+"px,0)"; }
+  function tick(){
+    if(dragging){ raf=requestAnimationFrame(tick); return; }
+    vx*=.93; vy*=.93; x+=vx; y+=vy;
+    if(x>B){x=B;vx*=-.5} if(x<-B){x=-B;vx*=-.5} if(y>B){y=B;vy*=-.5} if(y<-B){y=-B;vy*=-.5}
+    apply();
+    if(Math.abs(vx)>.05||Math.abs(vy)>.05) raf=requestAnimationFrame(tick); else { cancelAnimationFrame(raf); raf=0; }
+  }
+  el.addEventListener("pointerdown",function(e){
+    dragging=true; last=performance.now(); px=e.clientX; py=e.clientY; cancelAnimationFrame(raf);
+    el.style.zIndex=60; el.style.cursor="grabbing";
+    var seal=el.querySelector(".seal-wrap")||el.firstElementChild;
+    if(seal){ seal.style.transform="scale(1.08) rotate(-4deg)"; seal.style.filter="drop-shadow(8px 12px 14px rgba(13,13,24,.35))"; }
+    el.setPointerCapture && el.setPointerCapture(e.pointerId);
+    function move(ev){
+      var now=performance.now(), dt=Math.max(now-last,1);
+      var dx=ev.clientX-px, dy=ev.clientY-py; x+=dx; y+=dy;
+      vx=dx/dt*16; vy=dy/dt*16; px=ev.clientX; py=ev.clientY; last=now; apply();
+    }
+    function up(){
+      dragging=false; el.style.cursor="grab";
+      var seal=el.querySelector(".seal-wrap")||el.firstElementChild;
+      if(seal){ seal.style.transform=""; seal.style.filter=""; }
+      setTimeout(function(){ el.style.zIndex=""; },300);
+      window.removeEventListener("pointermove",move); window.removeEventListener("pointerup",up);
+      if(!REDUCED) raf=requestAnimationFrame(tick);
+    }
+    window.addEventListener("pointermove",move); window.addEventListener("pointerup",up);
+  });
+}
+$$("[data-drag]").forEach(makeDraggable);
+
+/* ---------- PLAYGROUND physics ---------- */
+(function(){
+  var field=$("#field"); if(!field) return;
+  var ORBS=[
+    {label:"SEO",r:56,bg:"var(--gold)",fg:"var(--ink-900)"},
+    {label:"WEB",r:64,bg:"var(--ink-900)",fg:"var(--paper-200)"},
+    {label:"IA",r:74,bg:"var(--signal)",fg:"var(--ink-900)"},
+    {label:"SOCIAL",r:50,bg:"var(--paper-100)",fg:"var(--ink-900)"},
+    {label:"BRANDING",r:60,bg:"var(--gold-bright)",fg:"var(--ink-900)"},
+    {label:"LEADS",r:48,bg:"var(--ink-800)",fg:"var(--gold)"},
+    {label:"ADS",r:46,bg:"var(--signal-deep)",fg:"var(--paper-200)"}
+  ];
+  var bodies=[], dragI=-1, dpx=0,dpy=0,dlast=0;
+  ORBS.forEach(function(o,i){
+    var el=document.createElement("div");
+    el.className="orb"; el.setAttribute("data-cursor","drag");
+    el.style.width=el.style.height=(o.r*2)+"px";
+    el.style.background=o.bg.indexOf("ink")>-1||o.bg.indexOf("signal-deep")>-1?o.bg:"radial-gradient(circle at 32% 30%,"+o.bg+", "+o.bg+")";
+    el.style.background=o.bg;
+    el.style.color=o.fg; el.style.fontSize=(o.r<52?11:13)+"px";
+    el.style.border="2px solid var(--ink-900)"; el.style.boxShadow="4px 4px 0 var(--ink-900)";
+    el.style.opacity="0"; el.textContent=o.label;
+    field.appendChild(el);
+    bodies.push({o:o,r:o.r,x:0,y:0,vx:0,vy:0,el:el,i:i});
+  });
+  function init(){
+    var W=field.clientWidth,H=field.clientHeight,n=bodies.length;
+    bodies.forEach(function(b,i){
+      var col=(i+.5)/n;
+      b.x=Math.max(16,Math.min(W-b.r*2-16,col*(W-b.r*2)));
+      b.y=(H*.5)-b.r+Math.sin(i*1.3)*(H*.26);
+      b.vx=REDUCED?0:(Math.random()-.5)*1.4; b.vy=REDUCED?0:(Math.random()-.5)*1.4;
+      b.el.style.transform="translate3d("+b.x+"px,"+b.y+"px,0)";
+      b.el.style.opacity="1";
+    });
+  }
+  function step(){
+    var W=field.clientWidth,H=field.clientHeight;
+    for(var a=0;a<bodies.length;a++){ var b=bodies[a]; if(dragI===a) continue;
+      b.x+=b.vx; b.y+=b.vy; b.vx*=.992; b.vy*=.992;
+      if(b.x<0){b.x=0;b.vx=Math.abs(b.vx)*.7} if(b.x>W-b.r*2){b.x=W-b.r*2;b.vx=-Math.abs(b.vx)*.7}
+      if(b.y<0){b.y=0;b.vy=Math.abs(b.vy)*.7} if(b.y>H-b.r*2){b.y=H-b.r*2;b.vy=-Math.abs(b.vy)*.7}
+    }
+    for(var i=0;i<bodies.length;i++) for(var j=i+1;j<bodies.length;j++){
+      var A=bodies[i],C=bodies[j]; var dx=(C.x+C.r)-(A.x+A.r), dy=(C.y+C.r)-(A.y+A.r), d=Math.hypot(dx,dy)||1, min=A.r+C.r;
+      if(d<min){ var push=(min-d)/2, nx=dx/d, ny=dy/d;
+        if(dragI!==i){A.x-=nx*push;A.y-=ny*push;A.vx-=nx*.3;A.vy-=ny*.3}
+        if(dragI!==j){C.x+=nx*push;C.y+=ny*push;C.vx+=nx*.3;C.vy+=ny*.3}
+      }
+    }
+    for(var k=0;k<bodies.length;k++){ var bd=bodies[k]; if(bd.el) bd.el.style.transform="translate3d("+bd.x+"px,"+bd.y+"px,0)"; }
+    raf=requestAnimationFrame(step);
+  }
+  var raf=0;
+  bodies.forEach(function(b,i){
+    b.el.addEventListener("pointerdown",function(e){
+      e.preventDefault(); dragI=i; dpx=e.clientX; dpy=e.clientY; dlast=performance.now(); b.vx=0; b.vy=0;
+      b.el.style.scale="1.14"; b.el.style.rotate="-6deg"; b.el.style.zIndex="40"; b.el.style.boxShadow="10px 14px 0 var(--ink-900)";
+      b.el.setPointerCapture && b.el.setPointerCapture(e.pointerId);
+      function move(ev){ var now=performance.now(),dt=Math.max(now-dlast,1); var dx=ev.clientX-dpx,dy=ev.clientY-dpy; b.x+=dx; b.y+=dy; b.vx=dx/dt*16; b.vy=dy/dt*16; dpx=ev.clientX; dpy=ev.clientY; dlast=now; b.el.style.transform="translate3d("+b.x+"px,"+b.y+"px,0)"; }
+      function up(){ dragI=-1; b.el.style.scale="1"; b.el.style.rotate="0deg"; b.el.style.boxShadow="4px 4px 0 var(--ink-900)"; setTimeout(function(){b.el.style.zIndex=""},300); window.removeEventListener("pointermove",move); window.removeEventListener("pointerup",up); }
+      window.addEventListener("pointermove",move); window.addEventListener("pointerup",up);
+    });
+  });
+  requestAnimationFrame(function(){ init(); if(!REDUCED) raf=requestAnimationFrame(step); });
+  window.addEventListener("resize",function(){ /* keep within bounds next frames */ });
+})();
+
+/* ---------- PROJECTS drag-to-scroll ---------- */
+(function(){
+  var T=$("#track"); if(!T) return;
+  var down=false,sx=0,sl=0,moved=false;
+  T.addEventListener("pointerdown",function(e){ down=true; sx=e.clientX; sl=T.scrollLeft; moved=false; T.style.scrollBehavior="auto"; });
+  T.addEventListener("pointermove",function(e){ if(!down)return; var dx=e.clientX-sx; if(Math.abs(dx)>4)moved=true; T.scrollLeft=sl-dx; });
+  function up(){ down=false; }
+  T.addEventListener("pointerup",up); T.addEventListener("pointerleave",up);
+  T.addEventListener("click",function(e){ if(moved){ e.preventDefault(); } },true);
+})();
+
+/* ---------- MAGNETIC buttons ---------- */
+(function(){
+  if(REDUCED||TOUCH) return;
+  $$(".magnetic").forEach(function(el){
+    el.style.transition="transform .4s cubic-bezier(.34,1.56,.64,1)";
+    window.addEventListener("pointermove",function(e){
+      var r=el.getBoundingClientRect(), cx=r.left+r.width/2, cy=r.top+r.height/2;
+      var dx=e.clientX-cx, dy=e.clientY-cy, dist=Math.hypot(dx,dy);
+      el.style.transform = dist<140 ? "translate("+dx*.3+"px,"+dy*.3+"px)" : "translate(0,0)";
+    });
+  });
+})();
+
+/* ---------- CUSTOM CURSOR ---------- */
+(function(){
+  if(REDUCED||TOUCH) return;
+  var dot=document.createElement("div"); dot.className="cur-dot"; document.body.appendChild(dot);
+  var ring=document.createElement("div"); ring.className="cur-ring"; var lab=document.createElement("span"); ring.appendChild(lab); document.body.appendChild(ring);
+  document.body.style.cursor="none";
+  var tx=innerWidth/2,ty=innerHeight/2,x=tx,y=ty;
+  document.addEventListener("pointermove",function(e){
+    tx=e.clientX; ty=e.clientY; dot.style.transform="translate("+tx+"px,"+ty+"px)";
+    var t=e.target.closest&&e.target.closest("[data-cursor]");
+    if(t){ var k=t.getAttribute("data-cursor"); ring.style.width=ring.style.height="64px"; ring.style.borderColor="var(--gold-deep)";
+      lab.textContent = k==="drag"?"ARRASTRA":k==="hablemos"?"HABLEMOS":k==="ver"?"VER":""; lab.style.opacity=lab.textContent?"1":"0";
+    } else { ring.style.width=ring.style.height="30px"; ring.style.borderColor="var(--ink-700)"; lab.style.opacity="0"; }
+  });
+  (function loop(){ x+=(tx-x)*.2; y+=(ty-y)*.2; ring.style.transform="translate("+x+"px,"+y+"px)"; requestAnimationFrame(loop); })();
+})();
+
+})();
+</script>
+</body>
+</html>

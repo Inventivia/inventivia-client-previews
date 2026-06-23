@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="es"><head>
+<meta name="robots" content="noindex,nofollow,noarchive,nosnippet,noimageindex">
+<meta name="googlebot" content="noindex,nofollow,noarchive,nosnippet,noimageindex">
+<meta name="referrer" content="no-referrer">
+<title>Decyde360 — Versión 4</title>
+<style id="dc-static-render-fix">
+  [data-hint-placeholder-val="false"] { display: none; }
+  [data-hint-placeholder-val="true"] { display: contents; }
+  .static-mobile-toggle { display: none !important; }
+  .static-desktop-nav { display: contents !important; }
+  .static-mobile-panel { display: none !important; }
+  .static-mobile-panel.is-open { display: block !important; }
+  .static-mobile-toggle button { color: #fff !important; }
+  .static-mobile-toggle button span { background: currentColor !important; }
+  @media (max-width: 880px) {
+    .static-desktop-nav { display: none !important; }
+    .static-mobile-toggle { display: block !important; }
+  }
+</style>
+<script id="static-mobile-menu-fix-js">
+(function(){function ready(fn){if(document.readyState!=='loading')fn();else document.addEventListener('DOMContentLoaded',fn)}ready(function(){var panel=document.querySelector('.static-mobile-panel');var toggle=document.querySelector('.static-mobile-toggle button');if(!panel||!toggle)return;var overlay=panel.firstElementChild;function closeMenu(){panel.classList.remove('is-open');panel.style.display='none';toggle.setAttribute('aria-expanded','false');document.body.style.overflow=''}function openMenu(){panel.style.display='block';panel.classList.add('is-open');toggle.setAttribute('aria-expanded','true');document.body.style.overflow='hidden'}closeMenu();toggle.setAttribute('aria-expanded','false');toggle.setAttribute('aria-controls','mobile-menu-panel-v4');panel.setAttribute('id','mobile-menu-panel-v4');toggle.addEventListener('click',function(e){e.preventDefault();panel.classList.contains('is-open')?closeMenu():openMenu()});panel.querySelectorAll('button,a[href^="#"]').forEach(function(el){el.addEventListener('click',function(){closeMenu()})});if(overlay)overlay.addEventListener('click',function(e){if(e.target===overlay)closeMenu()});window.addEventListener('keydown',function(e){if(e.key==='Escape')closeMenu()});window.addEventListener('resize',function(){if(window.innerWidth>880)closeMenu()})})})();
+</script>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<style id="dcy-motion-restore-css">
+  #dcy-typewriter .accent { color:#E8254A; }
+  #dcy-typewriter .dcy-caret {
+    display:inline-block;width:3px;height:.95em;background:#E8254A;margin-left:4px;transform:translateY(3px);
+    animation:dcyBlink 1s steps(1) infinite;
+  }
+  @keyframes dcyBlink { 50% { opacity:0; } }
+  .dcy-wave-char { display:inline-block; white-space:pre; animation:dcyLetterFloat 1.1s ease both; animation-delay:calc(var(--i) * 35ms); }
+  @keyframes dcyLetterFloat { from{opacity:0; transform:translateY(18px) rotateX(35deg);} to{opacity:1; transform:translateY(0) rotateX(0);} }
+  @media (prefers-reduced-motion: reduce) {
+    #dcy-typewriter .dcy-caret { animation:none; }
+    .dcy-wave-char { animation:none; }
+  }
+</style>
+<script id="dcy-motion-restore-js">
+(function(){
+  function ready(fn){ if(document.readyState !== 'loading') fn(); else document.addEventListener('DOMContentLoaded', fn); }
+  ready(function(){
+    var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var h = document.getElementById('dcy-typewriter');
+    if(h){
+      var target = h.querySelector('.dcy-typewriter-text');
+      var parts = [
+        {t:'El ecosistema que conecta '},
+        {t:'lo que mueves', accent:true},
+        {t:' con lo que necesitas'}
+      ];
+      function render(n){
+        var left=n, html='';
+        parts.forEach(function(seg){
+          var take=Math.max(0, Math.min(seg.t.length, left)); left -= take;
+          if(take>0){ var txt=seg.t.slice(0,take).replace(/&/g,'&amp;').replace(/</g,'&lt;'); html += seg.accent ? '<span class="accent">'+txt+'</span>' : txt; }
+        });
+        target.innerHTML=html;
+      }
+      var total=parts.reduce(function(a,b){return a+b.t.length;},0);
+      if(reduce){ render(total); } else {
+        var i=0; render(0);
+        var timer=setInterval(function(){ i++; render(i); if(i>=total) clearInterval(timer); }, 38);
+      }
+    }
+    var counts = document.querySelectorAll('.dcy-count');
+    counts.forEach(function(el){
+      var end=parseInt(el.getAttribute('data-target')||'0',10), prefix=el.getAttribute('data-prefix')||'', suffix=el.getAttribute('data-suffix')||'';
+      function set(v){ el.textContent = prefix + Math.round(v) + suffix; }
+      if(reduce){ set(end); return; }
+      var start=null, dur=1500;
+      function step(ts){ if(start===null) start=ts; var p=Math.min(1,(ts-start)/dur); var eased=1-Math.pow(1-p,3); set(end*eased); if(p<1) requestAnimationFrame(step); }
+      requestAnimationFrame(step);
+    });
+    var h2 = Array.from(document.querySelectorAll('h2')).find(function(x){return x.textContent.trim()==='6 áreas, un solo propósito';});
+    if(h2 && !h2.dataset.waveReady){
+      h2.dataset.waveReady='1';
+      var text=h2.textContent; h2.textContent='';
+      text.split('').forEach(function(ch,i){ var span=document.createElement('span'); span.className='dcy-wave-char'; span.style.setProperty('--i',i); span.textContent=ch===' ' ? '\u00a0' : ch; h2.appendChild(span); });
+    }
+  });
+})();
+</script>
+
+</head>
+<body>
+
+
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  *,*::before,*::after { margin:0; padding:0; box-sizing:border-box; }
+  html { scroll-behavior:smooth; scroll-padding-top:76px; }
+  body { font-family:'Source Sans 3',sans-serif; font-size:17px; line-height:1.65; color:#1C1C1C; background:#0E0E0E; -webkit-font-smoothing:antialiased; overflow-x:hidden; }
+  a { color:inherit; text-decoration:none; }
+  ::selection { background:#C41230; color:#fff; }
+
+  @keyframes dcyUp { from { opacity:0; transform:translateY(54px); } to { opacity:1; transform:translateY(0); } }
+  @keyframes dcyLeft { from { opacity:0; transform:translateX(-80px); } to { opacity:1; transform:translateX(0); } }
+  @keyframes dcyRight { from { opacity:0; transform:translateX(80px); } to { opacity:1; transform:translateX(0); } }
+  @keyframes dcyScale { from { opacity:0; transform:scale(.9); } to { opacity:1; transform:scale(1); } }
+  @keyframes dcyClip { from { opacity:0; clip-path:inset(0 100% 0 0); transform:translateY(8px); } to { opacity:1; clip-path:inset(0 0 0 0); transform:translateY(0); } }
+  @keyframes dcyLetter { from { opacity:0; transform:translateY(0.7em) rotate(6deg); } to { opacity:1; transform:translateY(0) rotate(0); } }
+
+  @keyframes dcyLoadUp { from { opacity:0; transform:translateY(30px); } to { opacity:1; transform:translateY(0); } }
+  @keyframes dcyBlink { 0%,100% { opacity:1; } 50% { opacity:0; } }
+  @keyframes dcySpin { to { transform:rotate(360deg); } }
+  @keyframes dcyFloat { 0%,100% { transform:translateY(0); } 50% { transform:translateY(-12px); } }
+  @keyframes dcyPulse { 0%,100% { box-shadow:0 8px 26px rgba(37,211,102,.45), 0 0 0 0 rgba(37,211,102,.5);} 50% { box-shadow:0 8px 26px rgba(37,211,102,.45), 0 0 0 14px rgba(37,211,102,0);} }
+  @keyframes dcyMesh { 0%,100% { transform:translate(0,0) scale(1);} 33% { transform:translate(4%,-3%) scale(1.08);} 66% { transform:translate(-3%,4%) scale(.96);} }
+
+  @supports not (animation-timeline: view()) {
+    [data-reveal] { opacity:1 !important; clip-path:none !important; transform:none !important; animation:none !important; }
+    [data-reveal] * { opacity:1 !important; transform:none !important; animation:none !important; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    *[style*="animation"] { animation:none !important; }
+    [data-reveal] { opacity:1 !important; clip-path:none !important; transform:none !important; }
+  }
+</style>
+
+
+<div style="background:#FFFFFF;">
+
+  <!-- ===================== NAV ===================== -->
+  <header data-screen-label="Nav" style="position:fixed;top:0;left:0;right:0;z-index:1000;height:76px;display:flex;align-items:center;background:rgba(14,14,14,0.92);-webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px);transition:box-shadow .3s ease;">
+    <div style="max-width:1220px;margin:0 auto;padding:0 24px;height:76px;display:flex;align-items:center;justify-content:space-between;gap:20px;">
+      <a href="#top" style="display:flex;align-items:center;gap:11px;flex:none;">
+        <svg width="32" height="32" viewBox="0 0 100 100" aria-hidden="true"><circle cx="50" cy="50" r="42" fill="#C41230"></circle><g stroke="#fff" stroke-width="4.4"><line x1="50" y1="50" x2="50" y2="8"></line><line x1="50" y1="50" x2="75.9" y2="16.9"></line><line x1="50" y1="50" x2="90.2" y2="37.7"></line><line x1="50" y1="50" x2="92" y2="50"></line><line x1="50" y1="50" x2="75.9" y2="83.1"></line><line x1="50" y1="50" x2="50" y2="92"></line><line x1="50" y1="50" x2="24.1" y2="83.1"></line><line x1="50" y1="50" x2="8" y2="50"></line><line x1="50" y1="50" x2="24.1" y2="16.9"></line></g></svg>
+        <span style="font-family:'Sora',sans-serif;font-weight:800;font-size:1.32rem;letter-spacing:-.5px;color:#fff;">Decyde<span style="color:#E8254A;">360</span></span>
+      </a>
+      <div class="static-desktop-nav" data-static-if="true" data-hint-placeholder-val="true">
+        <nav style="display:flex;align-items:center;gap:30px;">
+          <a href="#about" style="font-family:'Sora',sans-serif;font-size:.84rem;font-weight:600;letter-spacing:.5px;color:rgba(255,255,255,.72);" style-hover="font-family:'Sora',sans-serif;font-size:.84rem;font-weight:600;letter-spacing:.5px;color:#fff;">Propósito</a>
+          <a href="#bloques" style="font-family:'Sora',sans-serif;font-size:.84rem;font-weight:600;letter-spacing:.5px;color:rgba(255,255,255,.72);" style-hover="font-family:'Sora',sans-serif;font-size:.84rem;font-weight:600;letter-spacing:.5px;color:#fff;">Ecosistema</a>
+          <a href="#proyectos" style="font-family:'Sora',sans-serif;font-size:.84rem;font-weight:600;letter-spacing:.5px;color:rgba(255,255,255,.72);" style-hover="font-family:'Sora',sans-serif;font-size:.84rem;font-weight:600;letter-spacing:.5px;color:#fff;">Proyectos</a>
+          <a href="#youtube" style="font-family:'Sora',sans-serif;font-size:.84rem;font-weight:600;letter-spacing:.5px;color:rgba(255,255,255,.72);" style-hover="font-family:'Sora',sans-serif;font-size:.84rem;font-weight:600;letter-spacing:.5px;color:#fff;">Canal</a>
+          <a href="#blog" style="font-family:'Sora',sans-serif;font-size:.84rem;font-weight:600;letter-spacing:.5px;color:rgba(255,255,255,.72);" style-hover="font-family:'Sora',sans-serif;font-size:.84rem;font-weight:600;letter-spacing:.5px;color:#fff;">Contenidos</a>
+          <a href="#formularios" style="font-family:'Sora',sans-serif;font-size:.84rem;font-weight:700;background:#C41230;color:#fff;padding:10px 22px;border-radius:6px;" style-hover="font-family:'Sora',sans-serif;font-size:.84rem;font-weight:700;background:#9E0E27;color:#fff;padding:10px 22px;border-radius:6px;">Contactar</a>
+        </nav>
+      </div>
+      <div class="static-mobile-toggle" data-static-if="false" data-hint-placeholder-val="false">
+        <button aria-label="Menú" style="background:none;border:none;cursor:pointer;padding:8px;display:flex;flex-direction:column;gap:5px;color:#fff;">
+          <span style="display:block;width:24px;height:2px;background:currentColor;border-radius:1px;"></span>
+          <span style="display:block;width:24px;height:2px;background:currentColor;border-radius:1px;"></span>
+          <span style="display:block;width:24px;height:2px;background:currentColor;border-radius:1px;"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <div class="static-mobile-panel" data-static-if="false" data-hint-placeholder-val="false">
+    <div style="position:fixed;inset:0;z-index:1100;background:rgba(0,0,0,.55);">
+      <div style="position:absolute;top:0;right:0;height:100%;width:min(86%,360px);background:#161616;color:#fff;padding:26px 24px;display:flex;flex-direction:column;gap:4px;">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:20px;">
+          <span style="font-family:'Sora',sans-serif;font-weight:800;font-size:1.2rem;">Decyde<span style="color:#E8254A;">360</span></span>
+          <button aria-label="Cerrar" style="background:none;border:none;color:#fff;font-size:28px;cursor:pointer;line-height:1;">×</button>
+        </div>
+        <a href="#about" style="padding:15px 4px;font-family:'Sora',sans-serif;font-weight:600;font-size:1.05rem;border-bottom:1px solid rgba(255,255,255,.1);">Propósito</a>
+        <a href="#bloques" style="padding:15px 4px;font-family:'Sora',sans-serif;font-weight:600;font-size:1.05rem;border-bottom:1px solid rgba(255,255,255,.1);">Ecosistema</a>
+        <a href="#proyectos" style="padding:15px 4px;font-family:'Sora',sans-serif;font-weight:600;font-size:1.05rem;border-bottom:1px solid rgba(255,255,255,.1);">Proyectos</a>
+        <a href="#youtube" style="padding:15px 4px;font-family:'Sora',sans-serif;font-weight:600;font-size:1.05rem;border-bottom:1px solid rgba(255,255,255,.1);">Canal</a>
+        <a href="#blog" style="padding:15px 4px;font-family:'Sora',sans-serif;font-weight:600;font-size:1.05rem;border-bottom:1px solid rgba(255,255,255,.1);">Contenidos</a>
+        <a href="#formularios" style="margin-top:18px;text-align:center;font-family:'Sora',sans-serif;font-weight:700;background:#C41230;color:#fff;padding:14px;border-radius:6px;">Contactar</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===================== HERO ===================== -->
+  <section id="top" data-screen-label="Hero" style="position:relative;background:#0E0E0E;color:#fff;overflow:hidden;min-height:100vh;display:flex;align-items:center;">
+    <div style="position:absolute;inset:0;background:radial-gradient(ellipse 70% 60% at 75% 35%, rgba(232,37,74,.22), transparent 60%), radial-gradient(ellipse 60% 80% at 12% 85%, rgba(196,18,48,.16), transparent 60%), #0E0E0E;"></div>
+    <div style="position:absolute;top:-160px;right:-120px;width:620px;height:620px;border-radius:50%;background:radial-gradient(circle, rgba(196,18,48,.18), transparent 68%);animation:dcyMesh 14s ease-in-out infinite;"></div>
+    <svg width="540" height="540" viewBox="0 0 100 100" style="position:absolute;right:-90px;top:50%;transform:translateY(-50%);opacity:.06;animation:dcySpin 60s linear infinite;" aria-hidden="true"><circle cx="50" cy="50" r="46" fill="none" stroke="#fff" stroke-width="0.6"></circle><g stroke="#fff" stroke-width="0.6"><line x1="50" y1="50" x2="50" y2="4"></line><line x1="50" y1="50" x2="82" y2="18"></line><line x1="50" y1="50" x2="96" y2="50"></line><line x1="50" y1="50" x2="82" y2="82"></line><line x1="50" y1="50" x2="50" y2="96"></line><line x1="50" y1="50" x2="18" y2="82"></line><line x1="50" y1="50" x2="4" y2="50"></line><line x1="50" y1="50" x2="18" y2="18"></line></g></svg>
+
+    <div style="position:relative;z-index:2;max-width:1220px;margin:0 auto;padding:120px 24px 80px;width:100%;display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:56px;align-items:center;">
+      <div>
+        <span style="display:inline-block;font-family:'Sora',sans-serif;font-size:.72rem;font-weight:700;letter-spacing:4px;text-transform:uppercase;color:#E8254A;padding:7px 16px;border:1px solid rgba(232,37,74,.45);border-radius:30px;margin-bottom:28px;opacity:0;animation:dcyLoadUp .7s ease .1s both;">Cultura · Deporte · Comunidad</span>
+        <h1 id="dcy-typewriter" aria-label="El ecosistema que conecta lo que mueves con lo que necesitas" style="font-family:'Sora',sans-serif;font-weight:800;font-size:clamp(2.3rem,5.6vw,4rem);line-height:1.08;letter-spacing:-1px;color:#fff;min-height:2.2em;margin:0;"><span class="dcy-typewriter-text"></span><span class="dcy-caret" aria-hidden="true"></span></h1>
+        <p style="font-size:1.2rem;color:rgba(255,255,255,.66);margin:24px 0 38px;max-width:540px;line-height:1.7;opacity:0;animation:dcyLoadUp .7s ease 1.1s both;">Asesoría, eventos, torneos, mecenazgo y red de contactos. Todo lo que un club, asociación, fundación o autónomo del sector cultural y deportivo necesita para crecer — en un solo lugar.</p>
+        <div style="display:flex;gap:14px;flex-wrap:wrap;opacity:0;animation:dcyLoadUp .7s ease 1.25s both;">
+          <a href="#bloques" style="font-family:'Sora',sans-serif;font-weight:700;font-size:.92rem;background:#C41230;color:#fff;padding:15px 30px;border-radius:6px;transition:transform .25s ease,box-shadow .25s ease;" style-hover="font-family:'Sora',sans-serif;font-weight:700;font-size:.92rem;background:#9E0E27;color:#fff;padding:15px 30px;border-radius:6px;transform:translateY(-2px);box-shadow:0 10px 28px rgba(196,18,48,.4);">Conoce el ecosistema</a>
+          <a href="#formularios" style="font-family:'Sora',sans-serif;font-weight:700;font-size:.92rem;color:#fff;padding:15px 30px;border-radius:6px;border:2px solid rgba(255,255,255,.45);" style-hover="font-family:'Sora',sans-serif;font-weight:700;font-size:.92rem;color:#fff;padding:15px 30px;border-radius:6px;border:2px solid #fff;background:rgba(255,255,255,.08);">Contactar</a>
+        </div>
+        <div style="display:flex;gap:44px;flex-wrap:wrap;margin-top:54px;padding-top:26px;border-top:1px solid rgba(255,255,255,.12);opacity:0;animation:dcyLoadUp .7s ease 1.4s both;">
+          <div><div style="font-family:'Sora',sans-serif;font-size:2rem;font-weight:800;"><span class="dcy-count" data-prefix="+" data-target="15">0</span></div><div style="font-size:.85rem;color:rgba(255,255,255,.5);margin-top:2px;">Años en cultura y deporte</div></div>
+          <div><div style="font-family:'Sora',sans-serif;font-size:2rem;font-weight:800;"><span class="dcy-count" data-target="6">0</span></div><div style="font-size:.85rem;color:rgba(255,255,255,.5);margin-top:2px;">Áreas integradas</div></div>
+          <div><div style="font-family:'Sora',sans-serif;font-size:2rem;font-weight:800;"><span class="dcy-count" data-target="360" data-suffix="°">0</span></div><div style="font-size:.85rem;color:rgba(255,255,255,.5);margin-top:2px;">Visión del ecosistema</div></div>
+        </div>
+      </div>
+      <div style="position:relative;opacity:0;animation:dcyLoadUp .9s ease .5s both;">
+        <div style="position:absolute;inset:-18px;border-radius:24px;background:linear-gradient(135deg, rgba(232,37,74,.5), rgba(196,18,48,.15), transparent);filter:blur(8px);"></div>
+        <div style="position:relative;border-radius:20px;overflow:hidden;aspect-ratio:4/5;box-shadow:0 30px 80px rgba(0,0,0,.5);border:1px solid rgba(255,255,255,.1);">
+          <image-slot id="d360-hero" src="" placeholder="Sube tu foto de portada (evento / equipo)" shape="rect" fit="cover" style="position:absolute;inset:0;width:100%;height:100%;"></image-slot>
+        </div>
+        <div style="position:absolute;bottom:-22px;left:-22px;background:#C41230;color:#fff;padding:18px 22px;border-radius:14px;box-shadow:0 16px 40px rgba(196,18,48,.45);animation:dcyFloat 5s ease-in-out infinite;">
+          <div style="font-family:'Sora',sans-serif;font-weight:800;font-size:1.4rem;line-height:1;">360°</div>
+          <div style="font-size:.78rem;opacity:.9;margin-top:4px;">un solo ecosistema</div>
+        </div>
+      </div>
+    </div>
+    <a href="#about" style="position:absolute;bottom:26px;left:50%;transform:translateX(-50%);color:rgba(255,255,255,.5);font-size:1.4rem;animation:dcyFloat 2.4s ease-in-out infinite;" aria-label="Bajar">↓</a>
+  </section>
+
+  <!-- ===================== ABOUT / PROPÓSITO ===================== -->
+  <section id="about" data-screen-label="Propósito" style="background:#FFFFFF;padding:clamp(64px,10vw,128px) 0;">
+    <div style="max-width:1220px;margin:0 auto;padding:0 24px;display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:clamp(40px,6vw,80px);align-items:center;">
+      <div data-reveal="" style="position:relative;animation:dcyLeft .9s cubic-bezier(.2,.7,.2,1) both;animation-timeline:view();animation-range:entry 4% cover 30%;">
+        <div style="aspect-ratio:4/3;border-radius:20px;overflow:hidden;position:relative;box-shadow:0 24px 60px rgba(0,0,0,.14);">
+          <image-slot id="d360-about" src="" placeholder="Foto del propósito (comunidad, equipo)" shape="rect" fit="cover" style="position:absolute;inset:0;width:100%;height:100%;"></image-slot>
+        </div>
+        <div style="position:absolute;-bottom:0;bottom:-20px;right:-16px;width:96px;height:96px;border-radius:16px;background:linear-gradient(135deg,#C41230,#E8254A);display:flex;align-items:center;justify-content:center;box-shadow:0 16px 36px rgba(196,18,48,.4);">
+          <svg width="46" height="46" viewBox="0 0 100 100"><circle cx="50" cy="50" r="42" fill="none" stroke="#fff" stroke-width="4"></circle><g stroke="#fff" stroke-width="4"><line x1="50" y1="50" x2="50" y2="8"></line><line x1="50" y1="50" x2="82" y2="22"></line><line x1="50" y1="50" x2="92" y2="50"></line><line x1="50" y1="50" x2="50" y2="92"></line><line x1="50" y1="50" x2="18" y2="82"></line><line x1="50" y1="50" x2="8" y2="50"></line></g></svg>
+        </div>
+      </div>
+      <div data-reveal="" style="animation:dcyRight .9s cubic-bezier(.2,.7,.2,1) both;animation-timeline:view();animation-range:entry 4% cover 30%;">
+        <div style="width:48px;height:4px;background:#C41230;border-radius:2px;margin-bottom:18px;"></div>
+        <p style="font-family:'Sora',sans-serif;font-size:.75rem;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:#C41230;margin-bottom:14px;">Nuestro propósito</p>
+        <h2 style="font-family:'Sora',sans-serif;font-weight:700;font-size:clamp(1.6rem,3.5vw,2.5rem);line-height:1.15;margin-bottom:22px;letter-spacing:-.5px;text-wrap:balance;">No somos una asesoría al uso. Somos la infraestructura que el deporte y la cultura amateur necesitan.</h2>
+        <p style="color:#6B6B6B;margin-bottom:14px;">Decyde360 nace de una idea simple: los clubes deportivos, las asociaciones culturales y los autónomos del sector no juegan con las mismas reglas que las grandes empresas. Merecen un ecosistema diseñado para ellos.</p>
+        <p style="color:#6B6B6B;margin-bottom:26px;">Aquí convergen asesoría fiscal especializada, torneos con valores, eventos que conectan, mecenazgo que transforma y una comunidad que respalda. Todo gira en 360 grados alrededor de tu proyecto.</p>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:20px;">
+          <div style="border-left:3px solid #C41230;padding-left:14px;"><strong style="font-family:'Sora',sans-serif;font-size:.9rem;display:block;margin-bottom:4px;">Especialización</strong><span style="font-size:.88rem;color:#6B6B6B;">Cultura, deporte y tercer sector — no generalidades.</span></div>
+          <div style="border-left:3px solid #C41230;padding-left:14px;"><strong style="font-family:'Sora',sans-serif;font-size:.9rem;display:block;margin-bottom:4px;">Comunidad</strong><span style="font-size:.88rem;color:#6B6B6B;">Red real de gestores, clubes y emprendedores.</span></div>
+          <div style="border-left:3px solid #C41230;padding-left:14px;"><strong style="font-family:'Sora',sans-serif;font-size:.9rem;display:block;margin-bottom:4px;">Impacto</strong><span style="font-size:.88rem;color:#6B6B6B;">Cada acción genera valor social medible.</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== 6 BLOQUES ===================== -->
+  <section id="bloques" data-screen-label="Ecosistema" style="background:#F5F3F0;padding:clamp(64px,10vw,128px) 0;">
+    <div style="max-width:1220px;margin:0 auto;padding:0 24px;">
+      <div style="text-align:center;margin-bottom:clamp(44px,6vw,72px);">
+        <p data-reveal="" style="font-family:'Sora',sans-serif;font-size:.75rem;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:#C41230;margin-bottom:10px;animation:dcyUp .7s ease both;animation-timeline:view();animation-range:entry 2% cover 22%;">Ecosistema integrado</p>
+        <h2 style="font-family:'Sora',sans-serif;font-weight:700;font-size:clamp(1.8rem,4vw,2.8rem);line-height:1.12;letter-spacing:-.5px;margin:0;">6 áreas, un solo propósito</h2>
+        <p data-reveal="" style="font-size:1.1rem;color:#6B6B6B;max-width:600px;margin:14px auto 0;animation:dcyUp .7s ease both;animation-timeline:view();animation-range:entry 6% cover 28%;">Cada pieza del ecosistema Decyde360 está diseñada para resolver problemas reales del tejido asociativo, deportivo y cultural.</p>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:24px;">
+        <div data-reveal="" style="background:#fff;border-radius:14px;padding:32px 28px;border:1px solid #ECE9E4;transition:transform .35s ease,box-shadow .35s ease;animation:dcyLeft .8s cubic-bezier(.2,.7,.2,1) both;animation-timeline:view();animation-range:entry 2% cover 26%;" style-hover="background:#fff;border-radius:14px;padding:32px 28px;border:1px solid rgba(196,18,48,.25);transform:translateY(-8px);box-shadow:0 22px 50px rgba(0,0,0,.12);">
+          <div style="width:54px;height:54px;border-radius:12px;background:linear-gradient(135deg,#C41230,#E8254A);display:flex;align-items:center;justify-content:center;color:#fff;margin-bottom:20px;"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18M7 7l-4 7a4 4 0 0 0 8 0zM17 7l-4 7a4 4 0 0 0 8 0z"></path><path d="M5 7h14"></path></svg></div>
+          <h3 style="font-family:'Sora',sans-serif;font-weight:700;font-size:1.18rem;margin-bottom:10px;">Asesoría especializada</h3>
+          <p style="font-size:.94rem;color:#6B6B6B;margin-bottom:18px;">Fiscal, contable y laboral para entidades del deporte, la cultura, el mecenazgo y las asociaciones sin ánimo de lucro. Nada de asesoría genérica.</p>
+          <a href="#formularios" style="font-family:'Sora',sans-serif;font-size:.84rem;font-weight:700;color:#C41230;display:inline-flex;align-items:center;gap:7px;">Solicitar consulta →</a>
+        </div>
+        <div data-reveal="" style="background:#fff;border-radius:14px;padding:32px 28px;border:1px solid #ECE9E4;transition:transform .35s ease,box-shadow .35s ease;animation:dcyUp .8s cubic-bezier(.2,.7,.2,1) both;animation-timeline:view();animation-range:entry 2% cover 26%;" style-hover="background:#fff;border-radius:14px;padding:32px 28px;border:1px solid rgba(196,18,48,.25);transform:translateY(-8px);box-shadow:0 22px 50px rgba(0,0,0,.12);">
+          <div style="width:54px;height:54px;border-radius:12px;background:linear-gradient(135deg,#C41230,#E8254A);display:flex;align-items:center;justify-content:center;color:#fff;margin-bottom:20px;"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="2" width="6" height="12" rx="3"></rect><path d="M5 10a7 7 0 0 0 14 0M12 17v4M8 21h8"></path></svg></div>
+          <h3 style="font-family:'Sora',sans-serif;font-weight:700;font-size:1.18rem;margin-bottom:10px;">Eventos y conferencias</h3>
+          <p style="font-size:.94rem;color:#6B6B6B;margin-bottom:18px;">DecydeTalks, Gala GAMED, InveSporT — espacios donde la gestión deportiva y cultural se profesionaliza y se comparte.</p>
+          <a href="#formularios" style="font-family:'Sora',sans-serif;font-size:.84rem;font-weight:700;color:#C41230;display:inline-flex;align-items:center;gap:7px;">Próximos eventos →</a>
+        </div>
+        <div data-reveal="" style="background:#fff;border-radius:14px;padding:32px 28px;border:1px solid #ECE9E4;transition:transform .35s ease,box-shadow .35s ease;animation:dcyRight .8s cubic-bezier(.2,.7,.2,1) both;animation-timeline:view();animation-range:entry 2% cover 26%;" style-hover="background:#fff;border-radius:14px;padding:32px 28px;border:1px solid rgba(196,18,48,.25);transform:translateY(-8px);box-shadow:0 22px 50px rgba(0,0,0,.12);">
+          <div style="width:54px;height:54px;border-radius:12px;background:linear-gradient(135deg,#C41230,#E8254A);display:flex;align-items:center;justify-content:center;color:#fff;margin-bottom:20px;"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="M3 12h18M12 3c3 3 3 15 0 18M12 3c-3 3-3 15 0 18"></path></svg></div>
+          <h3 style="font-family:'Sora',sans-serif;font-weight:700;font-size:1.18rem;margin-bottom:10px;">Torneos y deporte</h3>
+          <p style="font-size:.94rem;color:#6B6B6B;margin-bottom:18px;">MAMBAbasket, Triple Doble Team y Grad4 Triple Doble. Competiciones que forman en valores, no solo en técnica.</p>
+          <a href="#formularios" style="font-family:'Sora',sans-serif;font-size:.84rem;font-weight:700;color:#C41230;display:inline-flex;align-items:center;gap:7px;">Inscribir equipo →</a>
+        </div>
+        <div data-reveal="" style="background:#fff;border-radius:14px;padding:32px 28px;border:1px solid #ECE9E4;transition:transform .35s ease,box-shadow .35s ease;animation:dcyLeft .8s cubic-bezier(.2,.7,.2,1) both;animation-timeline:view();animation-range:entry 2% cover 26%;" style-hover="background:#fff;border-radius:14px;padding:32px 28px;border:1px solid rgba(196,18,48,.25);transform:translateY(-8px);box-shadow:0 22px 50px rgba(0,0,0,.12);">
+          <div style="width:54px;height:54px;border-radius:12px;background:linear-gradient(135deg,#C41230,#E8254A);display:flex;align-items:center;justify-content:center;color:#fff;margin-bottom:20px;"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h11a3 3 0 0 1 3 3v13a2 2 0 0 0-2-2H4z"></path><path d="M20 7v13a2 2 0 0 0-2-2h-1"></path></svg></div>
+          <h3 style="font-family:'Sora',sans-serif;font-weight:700;font-size:1.18rem;margin-bottom:10px;">Contenidos y publicaciones</h3>
+          <p style="font-size:.94rem;color:#6B6B6B;margin-bottom:18px;">Libros, artículos, YouTube (@Decyde360) y newsletter en LinkedIn. Conocimiento útil para gestores y directivos del sector.</p>
+          <a href="#youtube" style="font-family:'Sora',sans-serif;font-size:.84rem;font-weight:700;color:#C41230;display:inline-flex;align-items:center;gap:7px;">Ver canal →</a>
+        </div>
+        <div data-reveal="" style="background:#fff;border-radius:14px;padding:32px 28px;border:1px solid #ECE9E4;transition:transform .35s ease,box-shadow .35s ease;animation:dcyUp .8s cubic-bezier(.2,.7,.2,1) both;animation-timeline:view();animation-range:entry 2% cover 26%;" style-hover="background:#fff;border-radius:14px;padding:32px 28px;border:1px solid rgba(196,18,48,.25);transform:translateY(-8px);box-shadow:0 22px 50px rgba(0,0,0,.12);">
+          <div style="width:54px;height:54px;border-radius:12px;background:linear-gradient(135deg,#C41230,#E8254A);display:flex;align-items:center;justify-content:center;color:#fff;margin-bottom:20px;"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M14 11a4 4 0 1 0-4-4M2 21a6 6 0 0 1 12 0M16 14a6 6 0 0 1 6 6"></path></svg></div>
+          <h3 style="font-family:'Sora',sans-serif;font-weight:700;font-size:1.18rem;margin-bottom:10px;">Mecenazgo y proyectos</h3>
+          <p style="font-size:.94rem;color:#6B6B6B;margin-bottom:18px;">Mecenazgo Dual ON y Alianzas +ALCANCE. Conectamos empresas con entidades sociales para generar impacto real y ventajas fiscales.</p>
+          <a href="#formularios" style="font-family:'Sora',sans-serif;font-size:.84rem;font-weight:700;color:#C41230;display:inline-flex;align-items:center;gap:7px;">Ser mecenas →</a>
+        </div>
+        <div data-reveal="" style="background:#fff;border-radius:14px;padding:32px 28px;border:1px solid #ECE9E4;transition:transform .35s ease,box-shadow .35s ease;animation:dcyRight .8s cubic-bezier(.2,.7,.2,1) both;animation-timeline:view();animation-range:entry 2% cover 26%;" style-hover="background:#fff;border-radius:14px;padding:32px 28px;border:1px solid rgba(196,18,48,.25);transform:translateY(-8px);box-shadow:0 22px 50px rgba(0,0,0,.12);">
+          <div style="width:54px;height:54px;border-radius:12px;background:linear-gradient(135deg,#C41230,#E8254A);display:flex;align-items:center;justify-content:center;color:#fff;margin-bottom:20px;"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"></path></svg></div>
+          <h3 style="font-family:'Sora',sans-serif;font-weight:700;font-size:1.18rem;margin-bottom:10px;">Comunidad y networking</h3>
+          <p style="font-size:.94rem;color:#6B6B6B;margin-bottom:18px;">aMicro: la asociación gratuita para autónomos y microempresas. Mentoría, formación y una red que crece contigo.</p>
+          <a href="#formularios" style="font-family:'Sora',sans-serif;font-size:.84rem;font-weight:700;color:#C41230;display:inline-flex;align-items:center;gap:7px;">Unirme a aMicro →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== PROYECTOS ===================== -->
+  <section id="proyectos" data-screen-label="Proyectos" style="background:#0E0E0E;color:#fff;padding:clamp(64px,10vw,128px) 0;overflow:hidden;">
+    <div style="max-width:1220px;margin:0 auto;padding:0 24px;">
+      <div data-reveal="" style="margin-bottom:clamp(40px,6vw,64px);animation:dcyUp .7s ease both;animation-timeline:view();animation-range:entry 2% cover 24%;">
+        <div style="width:48px;height:4px;background:#E8254A;border-radius:2px;margin-bottom:18px;"></div>
+        <p style="font-family:'Sora',sans-serif;font-size:.75rem;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:#E8254A;margin-bottom:10px;">Proyectos del ecosistema</p>
+        <h2 style="font-family:'Sora',sans-serif;font-weight:700;font-size:clamp(1.8rem,4vw,2.8rem);line-height:1.12;letter-spacing:-.5px;max-width:760px;">Las piezas que completan el 360°</h2>
+        <p style="color:#A0A0A0;max-width:600px;margin-top:14px;">Cada proyecto tiene su identidad propia, pero comparte un ADN común: especialización real en cultura, deporte y comunidad.</p>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:22px;">
+        <a href="#" data-reveal="" style="border-radius:16px;overflow:hidden;background:#1A1A1A;border:1px solid rgba(255,255,255,.08);transition:transform .4s ease;animation:dcyLeft .8s cubic-bezier(.2,.7,.2,1) both;animation-timeline:view();animation-range:entry 2% cover 26%;" style-hover="border-radius:16px;overflow:hidden;background:#1A1A1A;border:1px solid rgba(232,37,74,.4);transform:translateY(-6px);">
+          <div style="position:relative;aspect-ratio:16/10;"><div style="position:absolute;inset:0;background:linear-gradient(135deg,#C41230,#8B0D22);"></div><image-slot id="d360-p1" src="" placeholder="Decyde Asesores" shape="rect" fit="cover" style="position:absolute;inset:0;width:100%;height:100%;mix-blend-mode:luminosity;opacity:.9;"></image-slot></div>
+          <div style="padding:20px 22px 26px;"><h3 style="font-family:'Sora',sans-serif;font-weight:700;font-size:1.1rem;margin-bottom:6px;">Decyde Asesores</h3><p style="font-size:.86rem;color:#A0A0A0;">Asesoría fiscal, contable y laboral especializada en deporte, cultura y tercer sector.</p></div>
+        </a>
+        <a href="#" data-reveal="" style="border-radius:16px;overflow:hidden;background:#1A1A1A;border:1px solid rgba(255,255,255,.08);transition:transform .4s ease;animation:dcyUp .8s cubic-bezier(.2,.7,.2,1) both;animation-timeline:view();animation-range:entry 2% cover 26%;" style-hover="border-radius:16px;overflow:hidden;background:#1A1A1A;border:1px solid rgba(232,37,74,.4);transform:translateY(-6px);">
+          <div style="position:relative;aspect-ratio:16/10;"><div style="position:absolute;inset:0;background:linear-gradient(135deg,#1a3a5c,#0d1f33);"></div><image-slot id="d360-p2" src="" placeholder="Fundación Decyde" shape="rect" fit="cover" style="position:absolute;inset:0;width:100%;height:100%;mix-blend-mode:luminosity;opacity:.9;"></image-slot></div>
+          <div style="padding:20px 22px 26px;"><h3 style="font-family:'Sora',sans-serif;font-weight:700;font-size:1.1rem;margin-bottom:6px;">Fundación Decyde</h3><p style="font-size:.86rem;color:#A0A0A0;">Impacto social a través de cultura, deporte y comunidad. Programas que transforman.</p></div>
+        </a>
+        <a href="#" data-reveal="" style="border-radius:16px;overflow:hidden;background:#1A1A1A;border:1px solid rgba(255,255,255,.08);transition:transform .4s ease;animation:dcyRight .8s cubic-bezier(.2,.7,.2,1) both;animation-timeline:view();animation-range:entry 2% cover 26%;" style-hover="border-radius:16px;overflow:hidden;background:#1A1A1A;border:1px solid rgba(232,37,74,.4);transform:translateY(-6px);">
+          <div style="position:relative;aspect-ratio:16/10;"><div style="position:absolute;inset:0;background:linear-gradient(135deg,#E8254A,#C41230);"></div><image-slot id="d360-p3" src="" placeholder="MAMBAbasket" shape="rect" fit="cover" style="position:absolute;inset:0;width:100%;height:100%;mix-blend-mode:luminosity;opacity:.9;"></image-slot></div>
+          <div style="padding:20px 22px 26px;"><h3 style="font-family:'Sora',sans-serif;font-weight:700;font-size:1.1rem;margin-bottom:6px;">MAMBAbasket</h3><p style="font-size:.86rem;color:#A0A0A0;">Torneos de baloncesto donde los valores son parte del juego, no un extra.</p></div>
+        </a>
+        <a href="#" data-reveal="" style="border-radius:16px;overflow:hidden;background:#1A1A1A;border:1px solid rgba(255,255,255,.08);transition:transform .4s ease;animation:dcyLeft .8s cubic-bezier(.2,.7,.2,1) both;animation-timeline:view();animation-range:entry 2% cover 26%;" style-hover="border-radius:16px;overflow:hidden;background:#1A1A1A;border:1px solid rgba(232,37,74,.4);transform:translateY(-6px);">
+          <div style="position:relative;aspect-ratio:16/10;"><div style="position:absolute;inset:0;background:linear-gradient(135deg,#2c2c2c,#1a1a1a);"></div><image-slot id="d360-p4" src="" placeholder="DecydeTalks" shape="rect" fit="cover" style="position:absolute;inset:0;width:100%;height:100%;mix-blend-mode:luminosity;opacity:.9;"></image-slot></div>
+          <div style="padding:20px 22px 26px;"><h3 style="font-family:'Sora',sans-serif;font-weight:700;font-size:1.1rem;margin-bottom:6px;">DecydeTalks</h3><p style="font-size:.86rem;color:#A0A0A0;">Conferencias y charlas sobre gestión deportiva, cultural y asociativa.</p></div>
+        </a>
+        <a href="#" data-reveal="" style="border-radius:16px;overflow:hidden;background:#1A1A1A;border:1px solid rgba(255,255,255,.08);transition:transform .4s ease;animation:dcyUp .8s cubic-bezier(.2,.7,.2,1) both;animation-timeline:view();animation-range:entry 2% cover 26%;" style-hover="border-radius:16px;overflow:hidden;background:#1A1A1A;border:1px solid rgba(232,37,74,.4);transform:translateY(-6px);">
+          <div style="position:relative;aspect-ratio:16/10;"><div style="position:absolute;inset:0;background:linear-gradient(135deg,#4a1a2a,#2a0d18);"></div><image-slot id="d360-p5" src="" placeholder="aMicro" shape="rect" fit="cover" style="position:absolute;inset:0;width:100%;height:100%;mix-blend-mode:luminosity;opacity:.9;"></image-slot></div>
+          <div style="padding:20px 22px 26px;"><h3 style="font-family:'Sora',sans-serif;font-weight:700;font-size:1.1rem;margin-bottom:6px;">aMicro</h3><p style="font-size:.86rem;color:#A0A0A0;">La comunidad gratuita de autónomos y microempresas. Formación, mentoría y red.</p></div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== YOUTUBE ===================== -->
+  <section id="youtube" data-screen-label="Canal" style="background:#FFFFFF;padding:clamp(64px,10vw,128px) 0;overflow:hidden;">
+    <div style="max-width:1220px;margin:0 auto;padding:0 24px;display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:clamp(40px,6vw,80px);align-items:center;">
+      <a href="https://www.youtube.com/@Decyde360" target="_blank" rel="noopener" data-reveal="" style="position:relative;display:block;aspect-ratio:16/9;border-radius:20px;overflow:hidden;box-shadow:0 24px 60px rgba(0,0,0,.18);animation:dcyLeft .9s cubic-bezier(.2,.7,.2,1) both;animation-timeline:view();animation-range:entry 4% cover 30%;">
+        <div style="position:absolute;inset:0;background:linear-gradient(135deg,#1C1C1C,#C41230 55%,#1C1C1C);"></div>
+        <image-slot id="d360-yt" src="" placeholder="Miniatura del canal (16:9)" shape="rect" fit="cover" style="position:absolute;inset:0;width:100%;height:100%;opacity:.85;"></image-slot>
+        <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:74px;height:74px;background:#C41230;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 10px 32px rgba(196,18,48,.5);"><svg width="26" height="26" viewBox="0 0 24 24" fill="#fff" style="margin-left:4px;"><polygon points="8,5 20,12 8,19"></polygon></svg></div>
+        <span style="position:absolute;bottom:16px;left:16px;background:rgba(0,0,0,.7);color:#fff;padding:6px 14px;border-radius:20px;font-family:'Sora',sans-serif;font-size:.78rem;font-weight:600;">@Decyde360</span>
+      </a>
+      <div data-reveal="" style="animation:dcyRight .9s cubic-bezier(.2,.7,.2,1) both;animation-timeline:view();animation-range:entry 4% cover 30%;">
+        <div style="width:48px;height:4px;background:#C41230;border-radius:2px;margin-bottom:18px;"></div>
+        <p style="font-family:'Sora',sans-serif;font-size:.75rem;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:#C41230;margin-bottom:12px;">Hub audiovisual</p>
+        <h2 style="font-family:'Sora',sans-serif;font-weight:700;font-size:clamp(1.6rem,3vw,2.3rem);line-height:1.15;margin-bottom:16px;letter-spacing:-.5px;">Gestión deportiva y cultural, sin filtros</h2>
+        <p style="color:#6B6B6B;margin-bottom:28px;">En el canal Decyde360 hablamos de lo que realmente importa: cómo montar un club y no morir en el intento, fiscalidad para asociaciones, subvenciones reales y mecenazgo que funciona. Sin jerga, sin rodeos.</p>
+        <a href="https://www.youtube.com/@Decyde360" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:8px;font-family:'Sora',sans-serif;font-weight:700;font-size:.92rem;background:#C41230;color:#fff;padding:15px 30px;border-radius:6px;transition:transform .25s ease,box-shadow .25s ease;" style-hover="display:inline-flex;align-items:center;gap:8px;font-family:'Sora',sans-serif;font-weight:700;font-size:.92rem;background:#9E0E27;color:#fff;padding:15px 30px;border-radius:6px;transform:translateY(-2px);box-shadow:0 10px 28px rgba(196,18,48,.4);">Visitar canal en YouTube</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== BLOG ===================== -->
+  <section id="blog" data-screen-label="Contenidos" style="background:#F5F3F0;padding:clamp(64px,10vw,128px) 0;">
+    <div style="max-width:1220px;margin:0 auto;padding:0 24px;">
+      <div data-reveal="" style="display:flex;justify-content:space-between;align-items:flex-end;gap:20px;flex-wrap:wrap;margin-bottom:clamp(40px,6vw,64px);animation:dcyUp .7s ease both;animation-timeline:view();animation-range:entry 2% cover 24%;">
+        <div>
+          <p style="font-family:'Sora',sans-serif;font-size:.75rem;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:#C41230;margin-bottom:10px;">Últimos contenidos</p>
+          <h2 style="font-family:'Sora',sans-serif;font-weight:700;font-size:clamp(1.7rem,3.6vw,2.5rem);line-height:1.12;letter-spacing:-.5px;max-width:620px;">Lo que necesitas saber (y nadie te cuenta)</h2>
+        </div>
+        <a href="#" style="font-family:'Sora',sans-serif;font-weight:700;font-size:.9rem;color:#1C1C1C;border:2px solid #1C1C1C;padding:13px 26px;border-radius:6px;white-space:nowrap;" style-hover="font-family:'Sora',sans-serif;font-weight:700;font-size:.9rem;color:#fff;background:#1C1C1C;border:2px solid #1C1C1C;padding:13px 26px;border-radius:6px;white-space:nowrap;">Ver todos los artículos</a>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px;">
+        <article data-reveal="" style="background:#fff;border-radius:14px;overflow:hidden;transition:transform .35s ease,box-shadow .35s ease;animation:dcyLeft .8s cubic-bezier(.2,.7,.2,1) both;animation-timeline:view();animation-range:entry 2% cover 26%;" style-hover="background:#fff;border-radius:14px;overflow:hidden;transform:translateY(-6px);box-shadow:0 22px 50px rgba(0,0,0,.12);">
+          <div style="position:relative;aspect-ratio:16/9;"><div style="position:absolute;inset:0;background:linear-gradient(135deg,#C41230,#E8254A);"></div><image-slot id="d360-b1" src="" placeholder="Imagen artículo" shape="rect" fit="cover" style="position:absolute;inset:0;width:100%;height:100%;"></image-slot></div>
+          <div style="padding:26px 24px;"><span style="font-family:'Sora',sans-serif;font-size:.7rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#C41230;display:block;margin-bottom:10px;">Fiscalidad</span><h3 style="font-family:'Sora',sans-serif;font-weight:700;font-size:1.08rem;line-height:1.3;margin-bottom:10px;">Tu club deportivo puede deducir más de lo que crees — y estos son los 5 gastos que te estás dejando</h3><p style="font-size:.9rem;color:#6B6B6B;margin-bottom:14px;">Las entidades sin ánimo de lucro tienen ventajas fiscales reales, pero el 80% no las aprovecha. Aquí van las claves.</p><span style="font-size:.8rem;color:#A0A0A0;">12 min lectura · Marzo 2026</span></div>
+        </article>
+        <article data-reveal="" style="background:#fff;border-radius:14px;overflow:hidden;transition:transform .35s ease,box-shadow .35s ease;animation:dcyUp .8s cubic-bezier(.2,.7,.2,1) both;animation-timeline:view();animation-range:entry 2% cover 26%;" style-hover="background:#fff;border-radius:14px;overflow:hidden;transform:translateY(-6px);box-shadow:0 22px 50px rgba(0,0,0,.12);">
+          <div style="position:relative;aspect-ratio:16/9;"><div style="position:absolute;inset:0;background:linear-gradient(135deg,#1C1C1C,#444);"></div><image-slot id="d360-b2" src="" placeholder="Imagen artículo" shape="rect" fit="cover" style="position:absolute;inset:0;width:100%;height:100%;"></image-slot></div>
+          <div style="padding:26px 24px;"><span style="font-family:'Sora',sans-serif;font-size:.7rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#C41230;display:block;margin-bottom:10px;">Mecenazgo</span><h3 style="font-family:'Sora',sans-serif;font-weight:700;font-size:1.08rem;line-height:1.3;margin-bottom:10px;">Mecenazgo Dual: cómo una empresa puede apoyar cultura y deporte y beneficiarse fiscalmente</h3><p style="font-size:.9rem;color:#6B6B6B;margin-bottom:14px;">El mecenazgo no es filantropía sin retorno. El modelo Dual ON de Decyde lo demuestra con números reales.</p><span style="font-size:.8rem;color:#A0A0A0;">8 min lectura · Febrero 2026</span></div>
+        </article>
+        <article data-reveal="" style="background:#fff;border-radius:14px;overflow:hidden;transition:transform .35s ease,box-shadow .35s ease;animation:dcyRight .8s cubic-bezier(.2,.7,.2,1) both;animation-timeline:view();animation-range:entry 2% cover 26%;" style-hover="background:#fff;border-radius:14px;overflow:hidden;transform:translateY(-6px);box-shadow:0 22px 50px rgba(0,0,0,.12);">
+          <div style="position:relative;aspect-ratio:16/9;"><div style="position:absolute;inset:0;background:linear-gradient(135deg,#9E0E27,#C41230);"></div><image-slot id="d360-b3" src="" placeholder="Imagen artículo" shape="rect" fit="cover" style="position:absolute;inset:0;width:100%;height:100%;"></image-slot></div>
+          <div style="padding:26px 24px;"><span style="font-family:'Sora',sans-serif;font-size:.7rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#C41230;display:block;margin-bottom:10px;">Gestión</span><h3 style="font-family:'Sora',sans-serif;font-weight:700;font-size:1.08rem;line-height:1.3;margin-bottom:10px;">Guía rápida: cómo constituir una asociación cultural en Murcia paso a paso</h3><p style="font-size:.9rem;color:#6B6B6B;margin-bottom:14px;">Registro, estatutos, NIF, alta censal... Todo lo que necesitas en un solo artículo práctico.</p><span style="font-size:.8rem;color:#A0A0A0;">15 min lectura · Enero 2026</span></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== REDES ===================== -->
+  <section id="redes" data-screen-label="Redes" style="background:#0E0E0E;color:#fff;padding:clamp(64px,10vw,128px) 0;">
+    <div style="max-width:1220px;margin:0 auto;padding:0 24px;">
+      <div data-reveal="" style="text-align:center;margin-bottom:clamp(40px,6vw,64px);animation:dcyUp .7s ease both;animation-timeline:view();animation-range:entry 2% cover 24%;">
+        <p style="font-family:'Sora',sans-serif;font-size:.75rem;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:#E8254A;margin-bottom:10px;">Ecosistema en redes</p>
+        <h2 style="font-family:'Sora',sans-serif;font-weight:700;font-size:clamp(1.7rem,3.6vw,2.5rem);line-height:1.12;letter-spacing:-.5px;">Síguenos en todas las plataformas</h2>
+        <p style="color:#A0A0A0;max-width:560px;margin:14px auto 0;">Cada proyecto tiene voz propia. Encuentra el canal que más te interese y únete a la conversación.</p>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:22px;">
+        <div data-reveal="" style="background:#1A1A1A;border:1px solid rgba(255,255,255,.07);border-radius:14px;padding:28px 26px;animation:dcyUp .8s ease both;animation-timeline:view();animation-range:entry 2% cover 26%;">
+          <h3 style="font-family:'Sora',sans-serif;font-size:1rem;margin-bottom:16px;display:flex;align-items:center;gap:10px;"><svg width="20" height="20" viewBox="0 0 24 24" fill="#E8254A"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"></path></svg>Instagram</h3>
+          <div style="display:flex;flex-direction:column;gap:9px;">
+            <a href="https://www.instagram.com/decydeasesores/" target="_blank" rel="noopener" style="font-size:.88rem;color:#A0A0A0;" style-hover="font-size:.88rem;color:#E8254A;">→ @decydeasesores</a>
+            <a href="https://www.instagram.com/fundaciondecyde/" target="_blank" rel="noopener" style="font-size:.88rem;color:#A0A0A0;" style-hover="font-size:.88rem;color:#E8254A;">→ @fundaciondecyde</a>
+            <a href="https://www.instagram.com/decydetalks/" target="_blank" rel="noopener" style="font-size:.88rem;color:#A0A0A0;" style-hover="font-size:.88rem;color:#E8254A;">→ @decydetalks</a>
+            <a href="https://www.instagram.com/torneomambabasket/" target="_blank" rel="noopener" style="font-size:.88rem;color:#A0A0A0;" style-hover="font-size:.88rem;color:#E8254A;">→ @torneomambabasket</a>
+            <a href="https://www.instagram.com/amicroempresa/" target="_blank" rel="noopener" style="font-size:.88rem;color:#A0A0A0;" style-hover="font-size:.88rem;color:#E8254A;">→ @amicroempresa</a>
+          </div>
+        </div>
+        <div data-reveal="" style="background:#1A1A1A;border:1px solid rgba(255,255,255,.07);border-radius:14px;padding:28px 26px;animation:dcyUp .8s ease both;animation-timeline:view();animation-range:entry 2% cover 26%;">
+          <h3 style="font-family:'Sora',sans-serif;font-size:1rem;margin-bottom:16px;display:flex;align-items:center;gap:10px;"><svg width="20" height="20" viewBox="0 0 24 24" fill="#E8254A"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"></path></svg>LinkedIn</h3>
+          <div style="display:flex;flex-direction:column;gap:9px;">
+            <a href="https://www.linkedin.com/in/fernandozaplana/" target="_blank" rel="noopener" style="font-size:.88rem;color:#A0A0A0;" style-hover="font-size:.88rem;color:#E8254A;">→ Fernando Zaplana</a>
+            <a href="https://www.linkedin.com/company/decydeasesores/" target="_blank" rel="noopener" style="font-size:.88rem;color:#A0A0A0;" style-hover="font-size:.88rem;color:#E8254A;">→ Decyde Asesores</a>
+            <a href="https://www.linkedin.com/company/fundaciondecyde/" target="_blank" rel="noopener" style="font-size:.88rem;color:#A0A0A0;" style-hover="font-size:.88rem;color:#E8254A;">→ Fundación Decyde</a>
+            <a href="https://www.linkedin.com/company/decydetalks/" target="_blank" rel="noopener" style="font-size:.88rem;color:#A0A0A0;" style-hover="font-size:.88rem;color:#E8254A;">→ DecydeTalks</a>
+            <a href="https://www.linkedin.com/company/amicro-asociacion/" target="_blank" rel="noopener" style="font-size:.88rem;color:#A0A0A0;" style-hover="font-size:.88rem;color:#E8254A;">→ aMicro</a>
+          </div>
+        </div>
+        <div data-reveal="" style="background:#1A1A1A;border:1px solid rgba(255,255,255,.07);border-radius:14px;padding:28px 26px;animation:dcyUp .8s ease both;animation-timeline:view();animation-range:entry 2% cover 26%;">
+          <h3 style="font-family:'Sora',sans-serif;font-size:1rem;margin-bottom:16px;display:flex;align-items:center;gap:10px;"><svg width="20" height="20" viewBox="0 0 24 24" fill="#E8254A"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"></path></svg>YouTube</h3>
+          <div style="display:flex;flex-direction:column;gap:9px;">
+            <a href="https://www.youtube.com/@Decyde360" target="_blank" rel="noopener" style="font-size:.88rem;color:#A0A0A0;" style-hover="font-size:.88rem;color:#E8254A;">→ @Decyde360</a>
+          </div>
+        </div>
+        <div data-reveal="" style="background:#1A1A1A;border:1px solid rgba(255,255,255,.07);border-radius:14px;padding:28px 26px;animation:dcyUp .8s ease both;animation-timeline:view();animation-range:entry 2% cover 26%;">
+          <h3 style="font-family:'Sora',sans-serif;font-size:1rem;margin-bottom:16px;display:flex;align-items:center;gap:10px;"><svg width="18" height="18" viewBox="0 0 24 24" fill="#E8254A"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path></svg>X (Twitter)</h3>
+          <div style="display:flex;flex-direction:column;gap:9px;">
+            <a href="https://twitter.com/DecydeAsesores" target="_blank" rel="noopener" style="font-size:.88rem;color:#A0A0A0;" style-hover="font-size:.88rem;color:#E8254A;">→ @DecydeAsesores</a>
+            <a href="https://twitter.com/FundacionDecyde" target="_blank" rel="noopener" style="font-size:.88rem;color:#A0A0A0;" style-hover="font-size:.88rem;color:#E8254A;">→ @FundacionDecyde</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== FORMULARIOS ===================== -->
+  <section id="formularios" data-screen-label="Contacto" style="background:#FFFFFF;padding:clamp(64px,10vw,128px) 0;">
+    <div style="max-width:1220px;margin:0 auto;padding:0 24px;">
+      <div data-reveal="" style="text-align:center;margin-bottom:clamp(36px,5vw,56px);animation:dcyUp .7s ease both;animation-timeline:view();animation-range:entry 2% cover 24%;">
+        <p style="font-family:'Sora',sans-serif;font-size:.75rem;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:#C41230;margin-bottom:10px;">Conecta con nosotros</p>
+        <h2 style="font-family:'Sora',sans-serif;font-weight:700;font-size:clamp(1.7rem,3.6vw,2.5rem);line-height:1.12;letter-spacing:-.5px;">¿En qué podemos ayudarte?</h2>
+        <p style="color:#6B6B6B;max-width:560px;margin:14px auto 0;">Elige la opción que mejor encaje con lo que necesitas. Te responderemos en menos de 48 horas.</p>
+      </div>
+
+      <div style="display:flex;justify-content:center;gap:6px;flex-wrap:wrap;margin-bottom:40px;">
+        <button style="font-family:'Sora',sans-serif;font-size:.85rem;font-weight:600;padding:12px 22px;border:none;border-radius:6px;cursor:pointer;transition:all .25s ease;background:#C41230;color:#fff;">Contacto general</button>
+        <button style="font-family:'Sora',sans-serif;font-size:.85rem;font-weight:600;padding:12px 22px;border:none;border-radius:6px;cursor:pointer;transition:all .25s ease;background:#F5F3F0;color:#6B6B6B;">Alta como asociado</button>
+        <button style="font-family:'Sora',sans-serif;font-size:.85rem;font-weight:600;padding:12px 22px;border:none;border-radius:6px;cursor:pointer;transition:all .25s ease;background:#F5F3F0;color:#6B6B6B;">Inscripción eventos</button>
+        <button style="font-family:'Sora',sans-serif;font-size:.85rem;font-weight:600;padding:12px 22px;border:none;border-radius:6px;cursor:pointer;transition:all .25s ease;background:#F5F3F0;color:#6B6B6B;">Quiero ser mentor</button>
+      </div>
+
+      <div style="max-width:660px;margin:0 auto;background:#F5F3F0;border-radius:18px;padding:clamp(24px,4vw,40px);">
+        <div data-static-if="true" data-hint-placeholder-val="true">
+          <div data-static-if="false" data-hint-placeholder-val="false">
+            <div style="text-align:center;padding:30px 10px;"><div style="width:64px;height:64px;border-radius:50%;background:rgba(196,18,48,.1);display:flex;align-items:center;justify-content:center;margin:0 auto 16px;color:#C41230;font-size:1.8rem;">✓</div><h3 style="font-family:'Sora',sans-serif;font-weight:700;font-size:1.3rem;margin-bottom:8px;">¡Mensaje enviado!</h3><p style="color:#6B6B6B;">Hemos recibido tu consulta. Te responderemos en las próximas 48 horas.</p></div>
+          </div>
+          <div data-static-if="true" data-hint-placeholder-val="true">
+            <form>
+              <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;margin-bottom:16px;">
+                <div><label style="display:block;font-family:'Sora',sans-serif;font-size:.84rem;font-weight:600;margin-bottom:6px;">Nombre completo *</label><input type="text" required="" placeholder="Tu nombre" style="width:100%;padding:13px 15px;border:2px solid #E0DDD8;border-radius:6px;font-family:'Source Sans 3',sans-serif;font-size:.95rem;background:#fff;outline:none;" style-focus="width:100%;padding:13px 15px;border:2px solid #C41230;border-radius:6px;font-family:'Source Sans 3',sans-serif;font-size:.95rem;background:#fff;outline:none;"></div>
+                <div><label style="display:block;font-family:'Sora',sans-serif;font-size:.84rem;font-weight:600;margin-bottom:6px;">Email *</label><input type="email" required="" placeholder="tu@email.com" style="width:100%;padding:13px 15px;border:2px solid #E0DDD8;border-radius:6px;font-family:'Source Sans 3',sans-serif;font-size:.95rem;background:#fff;outline:none;" style-focus="width:100%;padding:13px 15px;border:2px solid #C41230;border-radius:6px;font-family:'Source Sans 3',sans-serif;font-size:.95rem;background:#fff;outline:none;"></div>
+              </div>
+              <div style="margin-bottom:16px;"><label style="display:block;font-family:'Sora',sans-serif;font-size:.84rem;font-weight:600;margin-bottom:6px;">Asunto</label><select style="width:100%;padding:13px 15px;border:2px solid #E0DDD8;border-radius:6px;font-family:'Source Sans 3',sans-serif;font-size:.95rem;background:#fff;outline:none;"><option>Asesoría fiscal/contable/laboral</option><option>Mecenazgo y patrocinio</option><option>Eventos y conferencias</option><option>Torneos deportivos</option><option>aMicro — comunidad de autónomos</option><option>Otro</option></select></div>
+              <div style="margin-bottom:20px;"><label style="display:block;font-family:'Sora',sans-serif;font-size:.84rem;font-weight:600;margin-bottom:6px;">Mensaje *</label><textarea required="" placeholder="Cuéntanos cómo podemos ayudarte..." style="width:100%;padding:13px 15px;border:2px solid #E0DDD8;border-radius:6px;font-family:'Source Sans 3',sans-serif;font-size:.95rem;background:#fff;outline:none;resize:vertical;min-height:120px;"></textarea></div>
+              <button type="submit" style="width:100%;font-family:'Sora',sans-serif;font-weight:700;font-size:.95rem;background:#C41230;color:#fff;padding:15px;border:none;border-radius:6px;cursor:pointer;transition:background .25s ease;" style-hover="width:100%;font-family:'Sora',sans-serif;font-weight:700;font-size:.95rem;background:#9E0E27;color:#fff;padding:15px;border:none;border-radius:6px;cursor:pointer;">Enviar mensaje</button>
+            </form>
+          </div>
+        </div>
+
+        <div data-static-if="false" data-hint-placeholder-val="false">
+          <div data-static-if="false" data-hint-placeholder-val="false">
+            <div style="text-align:center;padding:30px 10px;"><div style="width:64px;height:64px;border-radius:50%;background:rgba(196,18,48,.1);display:flex;align-items:center;justify-content:center;margin:0 auto 16px;color:#C41230;font-size:1.8rem;">✓</div><h3 style="font-family:'Sora',sans-serif;font-weight:700;font-size:1.3rem;margin-bottom:8px;">¡Solicitud recibida!</h3><p style="color:#6B6B6B;">Revisaremos tu perfil y te daremos de alta en la comunidad aMicro. Pronto recibirás un email de bienvenida.</p></div>
+          </div>
+          <div data-static-if="false" data-hint-placeholder-val="false">
+            <form>
+              <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;margin-bottom:16px;">
+                <div><label style="display:block;font-family:'Sora',sans-serif;font-size:.84rem;font-weight:600;margin-bottom:6px;">Nombre completo *</label><input type="text" required="" placeholder="Tu nombre" style="width:100%;padding:13px 15px;border:2px solid #E0DDD8;border-radius:6px;font-family:'Source Sans 3',sans-serif;font-size:.95rem;background:#fff;outline:none;" style-focus="width:100%;padding:13px 15px;border:2px solid #C41230;border-radius:6px;font-family:'Source Sans 3',sans-serif;font-size:.95rem;background:#fff;outline:none;"></div>
+                <div><label style="display:block;font-family:'Sora',sans-serif;font-size:.84rem;font-weight:600;margin-bottom:6px;">Email *</label><input type="email" required="" placeholder="tu@email.com" style="width:100%;padding:13px 15px;border:2px solid #E0DDD8;border-radius:6px;font-family:'Source Sans 3',sans-serif;font-size:.95rem;background:#fff;outline:none;" style-focus="width:100%;padding:13px 15px;border:2px solid #C41230;border-radius:6px;font-family:'Source Sans 3',sans-serif;font-size:.95rem;background:#fff;outline:none;"></div>
+              </div>
+              <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;margin-bottom:16px;">
+                <div><label style="display:block;font-family:'Sora',sans-serif;font-size:.84rem;font-weight:600;margin-bottom:6px;">Teléfono</label><input type="tel" placeholder="+34 600 000 000" style="width:100%;padding:13px 15px;border:2px solid #E0DDD8;border-radius:6px;font-family:'Source Sans 3',sans-serif;font-size:.95rem;background:#fff;outline:none;" style-focus="width:100%;padding:13px 15px;border:2px solid #C41230;border-radius:6px;font-family:'Source Sans 3',sans-serif;font-size:.95rem;background:#fff;outline:none;"></div>
+                <div><label style="display:block;font-family:'Sora',sans-serif;font-size:.84rem;font-weight:600;margin-bottom:6px;">Tipo de actividad *</label><select required="" style="width:100%;padding:13px 15px;border:2px solid #E0DDD8;border-radius:6px;font-family:'Source Sans 3',sans-serif;font-size:.95rem;background:#fff;outline:none;"><option value="">Selecciona</option><option>Autónomo/a</option><option>Microempresa</option><option>Asociación</option><option>Club deportivo</option><option>Fundación</option><option>Otro</option></select></div>
+              </div>
+              <div style="margin-bottom:20px;"><label style="display:block;font-family:'Sora',sans-serif;font-size:.84rem;font-weight:600;margin-bottom:6px;">¿Qué esperas de aMicro?</label><textarea placeholder="Formación, networking, mentoría..." style="width:100%;padding:13px 15px;border:2px solid #E0DDD8;border-radius:6px;font-family:'Source Sans 3',sans-serif;font-size:.95rem;background:#fff;outline:none;resize:vertical;min-height:110px;"></textarea></div>
+              <button type="submit" style="width:100%;font-family:'Sora',sans-serif;font-weight:700;font-size:.95rem;background:#C41230;color:#fff;padding:15px;border:none;border-radius:6px;cursor:pointer;" style-hover="width:100%;font-family:'Sora',sans-serif;font-weight:700;font-size:.95rem;background:#9E0E27;color:#fff;padding:15px;border:none;border-radius:6px;cursor:pointer;">Solicitar alta como asociado</button>
+            </form>
+          </div>
+        </div>
+
+        <div data-static-if="false" data-hint-placeholder-val="false">
+          <div data-static-if="false" data-hint-placeholder-val="false">
+            <div style="text-align:center;padding:30px 10px;"><div style="width:64px;height:64px;border-radius:50%;background:rgba(196,18,48,.1);display:flex;align-items:center;justify-content:center;margin:0 auto 16px;color:#C41230;font-size:1.8rem;">✓</div><h3 style="font-family:'Sora',sans-serif;font-weight:700;font-size:1.3rem;margin-bottom:8px;">¡Inscripción recibida!</h3><p style="color:#6B6B6B;">Te enviaremos toda la información del evento a tu email. ¡Nos vemos allí!</p></div>
+          </div>
+          <div data-static-if="false" data-hint-placeholder-val="false">
+            <form>
+              <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;margin-bottom:16px;">
+                <div><label style="display:block;font-family:'Sora',sans-serif;font-size:.84rem;font-weight:600;margin-bottom:6px;">Nombre completo *</label><input type="text" required="" placeholder="Tu nombre" style="width:100%;padding:13px 15px;border:2px solid #E0DDD8;border-radius:6px;font-family:'Source Sans 3',sans-serif;font-size:.95rem;background:#fff;outline:none;" style-focus="width:100%;padding:13px 15px;border:2px solid #C41230;border-radius:6px;font-family:'Source Sans 3',sans-serif;font-size:.95rem;background:#fff;outline:none;"></div>
+                <div><label style="display:block;font-family:'Sora',sans-serif;font-size:.84rem;font-weight:600;margin-bottom:6px;">Email *</label><input type="email" required="" placeholder="tu@email.com" style="width:100%;padding:13px 15px;border:2px solid #E0DDD8;border-radius:6px;font-family:'Source Sans 3',sans-serif;font-size:.95rem;background:#fff;outline:none;" style-focus="width:100%;padding:13px 15px;border:2px solid #C41230;border-radius:6px;font-family:'Source Sans 3',sans-serif;font-size:.95rem;background:#fff;outline:none;"></div>
+              </div>
+              <div style="margin-bottom:16px;"><label style="display:block;font-family:'Sora',sans-serif;font-size:.84rem;font-weight:600;margin-bottom:6px;">Evento de interés *</label><select required="" style="width:100%;padding:13px 15px;border:2px solid #E0DDD8;border-radius:6px;font-family:'Source Sans 3',sans-serif;font-size:.95rem;background:#fff;outline:none;"><option value="">Selecciona evento</option><option>DecydeTalks</option><option>Gala GAMED</option><option>InveSporT</option><option>Torneo MAMBAbasket</option><option>Otro evento</option></select></div>
+              <div style="margin-bottom:20px;"><label style="display:block;font-family:'Sora',sans-serif;font-size:.84rem;font-weight:600;margin-bottom:6px;">Comentarios</label><textarea placeholder="¿Vienes en grupo? ¿Necesitas algo especial?" style="width:100%;padding:13px 15px;border:2px solid #E0DDD8;border-radius:6px;font-family:'Source Sans 3',sans-serif;font-size:.95rem;background:#fff;outline:none;resize:vertical;min-height:110px;"></textarea></div>
+              <button type="submit" style="width:100%;font-family:'Sora',sans-serif;font-weight:700;font-size:.95rem;background:#C41230;color:#fff;padding:15px;border:none;border-radius:6px;cursor:pointer;" style-hover="width:100%;font-family:'Sora',sans-serif;font-weight:700;font-size:.95rem;background:#9E0E27;color:#fff;padding:15px;border:none;border-radius:6px;cursor:pointer;">Inscribirme al evento</button>
+            </form>
+          </div>
+        </div>
+
+        <div data-static-if="false" data-hint-placeholder-val="false">
+          <div data-static-if="false" data-hint-placeholder-val="false">
+            <div style="text-align:center;padding:30px 10px;"><div style="width:64px;height:64px;border-radius:50%;background:rgba(196,18,48,.1);display:flex;align-items:center;justify-content:center;margin:0 auto 16px;color:#C41230;font-size:1.8rem;">✓</div><h3 style="font-family:'Sora',sans-serif;font-weight:700;font-size:1.3rem;margin-bottom:8px;">¡Candidatura recibida!</h3><p style="color:#6B6B6B;">Valoraremos tu perfil y nos pondremos en contacto contigo para los próximos pasos.</p></div>
+          </div>
+          <div data-static-if="false" data-hint-placeholder-val="false">
+            <form>
+              <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;margin-bottom:16px;">
+                <div><label style="display:block;font-family:'Sora',sans-serif;font-size:.84rem;font-weight:600;margin-bottom:6px;">Nombre completo *</label><input type="text" required="" placeholder="Tu nombre" style="width:100%;padding:13px 15px;border:2px solid #E0DDD8;border-radius:6px;font-family:'Source Sans 3',sans-serif;font-size:.95rem;background:#fff;outline:none;" style-focus="width:100%;padding:13px 15px;border:2px solid #C41230;border-radius:6px;font-family:'Source Sans 3',sans-serif;font-size:.95rem;background:#fff;outline:none;"></div>
+                <div><label style="display:block;font-family:'Sora',sans-serif;font-size:.84rem;font-weight:600;margin-bottom:6px;">Email *</label><input type="email" required="" placeholder="tu@email.com" style="width:100%;padding:13px 15px;border:2px solid #E0DDD8;border-radius:6px;font-family:'Source Sans 3',sans-serif;font-size:.95rem;background:#fff;outline:none;" style-focus="width:100%;padding:13px 15px;border:2px solid #C41230;border-radius:6px;font-family:'Source Sans 3',sans-serif;font-size:.95rem;background:#fff;outline:none;"></div>
+              </div>
+              <div style="margin-bottom:16px;"><label style="display:block;font-family:'Sora',sans-serif;font-size:.84rem;font-weight:600;margin-bottom:6px;">Tu perfil profesional *</label><input type="text" required="" placeholder="Ej: Gestor cultural con 10 años de experiencia" style="width:100%;padding:13px 15px;border:2px solid #E0DDD8;border-radius:6px;font-family:'Source Sans 3',sans-serif;font-size:.95rem;background:#fff;outline:none;" style-focus="width:100%;padding:13px 15px;border:2px solid #C41230;border-radius:6px;font-family:'Source Sans 3',sans-serif;font-size:.95rem;background:#fff;outline:none;"></div>
+              <div style="margin-bottom:16px;"><label style="display:block;font-family:'Sora',sans-serif;font-size:.84rem;font-weight:600;margin-bottom:6px;">Área de mentoría</label><select style="width:100%;padding:13px 15px;border:2px solid #E0DDD8;border-radius:6px;font-family:'Source Sans 3',sans-serif;font-size:.95rem;background:#fff;outline:none;"><option value="">Selecciona</option><option>Gestión deportiva</option><option>Gestión cultural</option><option>Fiscalidad y subvenciones</option><option>Marketing y comunicación</option><option>Emprendimiento</option><option>Otro</option></select></div>
+              <div style="margin-bottom:20px;"><label style="display:block;font-family:'Sora',sans-serif;font-size:.84rem;font-weight:600;margin-bottom:6px;">¿Por qué quieres ser mentor?</label><textarea placeholder="Cuéntanos tu motivación..." style="width:100%;padding:13px 15px;border:2px solid #E0DDD8;border-radius:6px;font-family:'Source Sans 3',sans-serif;font-size:.95rem;background:#fff;outline:none;resize:vertical;min-height:110px;"></textarea></div>
+              <button type="submit" style="width:100%;font-family:'Sora',sans-serif;font-weight:700;font-size:.95rem;background:#C41230;color:#fff;padding:15px;border:none;border-radius:6px;cursor:pointer;" style-hover="width:100%;font-family:'Sora',sans-serif;font-weight:700;font-size:.95rem;background:#9E0E27;color:#fff;padding:15px;border:none;border-radius:6px;cursor:pointer;">Enviar candidatura</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer data-screen-label="Footer" style="background:#0E0E0E;color:rgba(255,255,255,.6);padding:clamp(56px,8vw,88px) 0 36px;">
+    <div style="max-width:1220px;margin:0 auto;padding:0 24px;">
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:44px 32px;margin-bottom:56px;">
+        <div style="min-width:240px;">
+          <div style="display:flex;align-items:center;gap:11px;margin-bottom:16px;"><svg width="30" height="30" viewBox="0 0 100 100"><circle cx="50" cy="50" r="42" fill="#C41230"></circle><g stroke="#fff" stroke-width="4.4"><line x1="50" y1="50" x2="50" y2="8"></line><line x1="50" y1="50" x2="75.9" y2="16.9"></line><line x1="50" y1="50" x2="90.2" y2="37.7"></line><line x1="50" y1="50" x2="92" y2="50"></line><line x1="50" y1="50" x2="75.9" y2="83.1"></line><line x1="50" y1="50" x2="50" y2="92"></line><line x1="50" y1="50" x2="24.1" y2="83.1"></line><line x1="50" y1="50" x2="8" y2="50"></line><line x1="50" y1="50" x2="24.1" y2="16.9"></line></g></svg><span style="font-family:'Sora',sans-serif;font-weight:800;font-size:1.5rem;color:#fff;">Decyde<span style="color:#E8254A;">360</span></span></div>
+          <p style="font-size:.92rem;line-height:1.6;max-width:300px;">Donde cultura, deporte y comunidad convergen para crear un ecosistema más fuerte, más justo y más profesional.</p>
+          <div style="display:flex;gap:12px;margin-top:18px;">
+            <a href="https://www.instagram.com/decydeasesores/" target="_blank" rel="noopener" aria-label="Instagram" style="width:40px;height:40px;border-radius:50%;background:#1A1A1A;display:flex;align-items:center;justify-content:center;transition:background .25s ease;" style-hover="width:40px;height:40px;border-radius:50%;background:#C41230;display:flex;align-items:center;justify-content:center;"><svg width="17" height="17" viewBox="0 0 24 24" fill="#fff"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zm0 10.162a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"></path></svg></a>
+            <a href="https://www.linkedin.com/company/decydeasesores/" target="_blank" rel="noopener" aria-label="LinkedIn" style="width:40px;height:40px;border-radius:50%;background:#1A1A1A;display:flex;align-items:center;justify-content:center;transition:background .25s ease;" style-hover="width:40px;height:40px;border-radius:50%;background:#C41230;display:flex;align-items:center;justify-content:center;"><svg width="17" height="17" viewBox="0 0 24 24" fill="#fff"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 1 1 0-4.124 2.062 2.062 0 0 1 0 4.124zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0z"></path></svg></a>
+            <a href="https://www.youtube.com/@Decyde360" target="_blank" rel="noopener" aria-label="YouTube" style="width:40px;height:40px;border-radius:50%;background:#1A1A1A;display:flex;align-items:center;justify-content:center;transition:background .25s ease;" style-hover="width:40px;height:40px;border-radius:50%;background:#C41230;display:flex;align-items:center;justify-content:center;"><svg width="17" height="17" viewBox="0 0 24 24" fill="#fff"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"></path></svg></a>
+          </div>
+        </div>
+        <div>
+          <h4 style="font-family:'Sora',sans-serif;font-size:.85rem;font-weight:700;color:#fff;margin-bottom:16px;letter-spacing:1px;text-transform:uppercase;">Ecosistema</h4>
+          <a href="#bloques" style="display:block;font-size:.88rem;margin-bottom:9px;" style-hover="display:block;font-size:.88rem;margin-bottom:9px;color:#E8254A;">Asesoría especializada</a>
+          <a href="#bloques" style="display:block;font-size:.88rem;margin-bottom:9px;" style-hover="display:block;font-size:.88rem;margin-bottom:9px;color:#E8254A;">Eventos y conferencias</a>
+          <a href="#bloques" style="display:block;font-size:.88rem;margin-bottom:9px;" style-hover="display:block;font-size:.88rem;margin-bottom:9px;color:#E8254A;">Torneos y deporte</a>
+          <a href="#bloques" style="display:block;font-size:.88rem;margin-bottom:9px;" style-hover="display:block;font-size:.88rem;margin-bottom:9px;color:#E8254A;">Mecenazgo</a>
+          <a href="#bloques" style="display:block;font-size:.88rem;margin-bottom:9px;" style-hover="display:block;font-size:.88rem;margin-bottom:9px;color:#E8254A;">Comunidad aMicro</a>
+        </div>
+        <div>
+          <h4 style="font-family:'Sora',sans-serif;font-size:.85rem;font-weight:700;color:#fff;margin-bottom:16px;letter-spacing:1px;text-transform:uppercase;">Proyectos</h4>
+          <a href="#" style="display:block;font-size:.88rem;margin-bottom:9px;" style-hover="display:block;font-size:.88rem;margin-bottom:9px;color:#E8254A;">Decyde Asesores</a>
+          <a href="#" style="display:block;font-size:.88rem;margin-bottom:9px;" style-hover="display:block;font-size:.88rem;margin-bottom:9px;color:#E8254A;">Fundación Decyde</a>
+          <a href="#" style="display:block;font-size:.88rem;margin-bottom:9px;" style-hover="display:block;font-size:.88rem;margin-bottom:9px;color:#E8254A;">MAMBAbasket</a>
+          <a href="#" style="display:block;font-size:.88rem;margin-bottom:9px;" style-hover="display:block;font-size:.88rem;margin-bottom:9px;color:#E8254A;">DecydeTalks</a>
+          <a href="https://www.youtube.com/@Decyde360" target="_blank" rel="noopener" style="display:block;font-size:.88rem;margin-bottom:9px;" style-hover="display:block;font-size:.88rem;margin-bottom:9px;color:#E8254A;">Canal YouTube</a>
+        </div>
+        <div>
+          <h4 style="font-family:'Sora',sans-serif;font-size:.85rem;font-weight:700;color:#fff;margin-bottom:16px;letter-spacing:1px;text-transform:uppercase;">Contacto</h4>
+          <a href="https://wa.me/34607244443" style="display:block;font-size:.88rem;margin-bottom:9px;" style-hover="display:block;font-size:.88rem;margin-bottom:9px;color:#E8254A;">+34 607 244 443</a>
+          <a href="mailto:info@decyde360.es" style="display:block;font-size:.88rem;margin-bottom:9px;" style-hover="display:block;font-size:.88rem;margin-bottom:9px;color:#E8254A;">info@decyde360.es</a>
+          <a href="#" style="display:block;font-size:.88rem;margin-bottom:9px;" style-hover="display:block;font-size:.88rem;margin-bottom:9px;color:#E8254A;">Murcia, España</a>
+        </div>
+      </div>
+      <div style="border-top:1px solid rgba(255,255,255,.08);padding-top:26px;display:flex;justify-content:space-between;align-items:center;gap:12px 24px;flex-wrap:wrap;font-size:.82rem;">
+        <span>© 2026 Decyde360. Todos los derechos reservados.</span>
+        <span style="display:flex;gap:24px;flex-wrap:wrap;"><a href="#" style-hover="color:#E8254A;">Aviso legal</a><a href="#" style-hover="color:#E8254A;">Política de privacidad</a><a href="#" style-hover="color:#E8254A;">Cookies</a></span>
+      </div>
+    </div>
+  </footer>
+
+  <a href="https://wa.me/34607244443" target="_blank" rel="noopener" title="Escríbenos por WhatsApp" style="position:fixed;bottom:26px;right:26px;z-index:1000;width:60px;height:60px;border-radius:50%;background:#25D366;color:#fff;display:flex;align-items:center;justify-content:center;animation:dcyPulse 2.6s ease-in-out infinite;">
+    <svg width="32" height="32" viewBox="0 0 24 24" fill="#fff"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"></path></svg>
+  </a>
+
+</div>
+
+
+
+
+</body></html>

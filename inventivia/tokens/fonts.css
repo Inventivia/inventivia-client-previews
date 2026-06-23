@@ -1,0 +1,9 @@
+/* ============================================================
+   INVENTIVIA — WEBFONTS
+   Loaded from Google Fonts. Consumers who link styles.css get
+   these automatically. (Self-hosting recommended for production —
+   drop .woff2 files in assets/fonts and replace the @import with
+   local @font-face rules.)
+   ============================================================ */
+
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap");

@@ -1,0 +1,1912 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta name="robots" content="noindex,nofollow,noarchive,nosnippet,noimageindex">
+<meta name="googlebot" content="noindex,nofollow,noarchive,nosnippet,noimageindex">
+<meta name="referrer" content="no-referrer">
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Decyde360 — Donde cultura, deporte y comunidad convergen. Asesoría especializada, eventos, torneos, mecenazgo y networking para quienes mueven el mundo asociativo.">
+  <title>Decyde360 — Cultura · Deporte · Comunidad</title>
+
+  <!-- Google Fonts: Sora (display) + Source Sans 3 (body) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+
+  <style>
+    /* === ROOT VARIABLES === */
+    :root {
+      --color-red: #C41230;
+      --color-red-dark: #9E0E27;
+      --color-red-light: #E8254A;
+      --color-dark: #1C1C1C;
+      --color-dark-soft: #2A2A2A;
+      --color-gray: #6B6B6B;
+      --color-gray-light: #A0A0A0;
+      --color-off-white: #F5F3F0;
+      --color-white: #FFFFFF;
+      --color-whatsapp: #25D366;
+
+      --font-display: 'Sora', sans-serif;
+      --font-body: 'Source Sans 3', sans-serif;
+
+      --space-xs: 0.5rem;
+      --space-sm: 1rem;
+      --space-md: 2rem;
+      --space-lg: 4rem;
+      --space-xl: 6rem;
+      --space-2xl: 8rem;
+
+      --radius-sm: 6px;
+      --radius-md: 12px;
+      --radius-lg: 20px;
+
+      --shadow-soft: 0 4px 24px rgba(0,0,0,0.08);
+      --shadow-medium: 0 8px 40px rgba(0,0,0,0.12);
+      --shadow-heavy: 0 16px 60px rgba(0,0,0,0.18);
+
+      --nav-height: 72px;
+      --max-width: 1200px;
+    }
+
+    /* === RESET & BASE === */
+    *, *::before, *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: var(--nav-height);
+    }
+
+    body {
+      font-family: var(--font-body);
+      font-size: 17px;
+      line-height: 1.65;
+      color: var(--color-dark);
+      background: var(--color-white);
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    h1, h2, h3, h4, h5 {
+      font-family: var(--font-display);
+      line-height: 1.15;
+      font-weight: 700;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img { max-width: 100%; display: block; }
+
+    .container {
+      width: 100%;
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 var(--space-md);
+    }
+
+    /* === UTILITIES === */
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+      clip: rect(0,0,0,0);
+      border: 0;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(32px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .accent-line {
+      width: 48px;
+      height: 4px;
+      background: var(--color-red);
+      border-radius: 2px;
+      margin-bottom: var(--space-sm);
+    }
+
+    .section-label {
+      font-family: var(--font-display);
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--color-red);
+      margin-bottom: var(--space-xs);
+    }
+
+    .section-title {
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      margin-bottom: var(--space-sm);
+    }
+
+    .section-subtitle {
+      font-size: 1.1rem;
+      color: var(--color-gray);
+      max-width: 640px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-family: var(--font-display);
+      font-size: 0.9rem;
+      font-weight: 700;
+      padding: 14px 32px;
+      border-radius: var(--radius-sm);
+      border: none;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      text-decoration: none;
+    }
+
+    .btn-primary {
+      background: var(--color-red);
+      color: var(--color-white);
+    }
+
+    .btn-primary:hover {
+      background: var(--color-red-dark);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(196,18,48,0.3);
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--color-white);
+      border: 2px solid rgba(255,255,255,0.5);
+    }
+
+    .btn-outline:hover {
+      border-color: var(--color-white);
+      background: rgba(255,255,255,0.1);
+    }
+
+    .btn-dark-outline {
+      background: transparent;
+      color: var(--color-dark);
+      border: 2px solid var(--color-dark);
+    }
+
+    .btn-dark-outline:hover {
+      background: var(--color-dark);
+      color: var(--color-white);
+    }
+
+    /* === SECCIÓN: NAVEGACIÓN === */
+    .nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      background: rgba(28,28,28,0.92);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      height: var(--nav-height);
+      display: flex;
+      align-items: center;
+      transition: box-shadow 0.3s ease;
+    }
+
+    .nav.scrolled {
+      box-shadow: 0 2px 24px rgba(0,0,0,0.3);
+    }
+
+    .nav .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .nav-logo {
+      font-family: var(--font-display);
+      font-size: 1.4rem;
+      font-weight: 800;
+      color: var(--color-white);
+      letter-spacing: -0.5px;
+    }
+
+    .nav-logo span {
+      color: var(--color-red);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: var(--space-md);
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-family: var(--font-display);
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: rgba(255,255,255,0.7);
+      letter-spacing: 0.5px;
+      transition: color 0.3s ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--color-white);
+    }
+
+    .nav-cta {
+      background: var(--color-red);
+      color: var(--color-white) !important;
+      padding: 10px 22px;
+      border-radius: var(--radius-sm);
+      transition: background 0.3s ease !important;
+    }
+
+    .nav-cta:hover {
+      background: var(--color-red-dark);
+    }
+
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 4px;
+    }
+
+    .hamburger span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: var(--color-white);
+      transition: all 0.3s ease;
+      border-radius: 1px;
+    }
+
+    .hamburger.active span:nth-child(1) {
+      transform: rotate(45deg) translate(5px, 5px);
+    }
+
+    .hamburger.active span:nth-child(2) {
+      opacity: 0;
+    }
+
+    .hamburger.active span:nth-child(3) {
+      transform: rotate(-45deg) translate(5px, -5px);
+    }
+
+    /* === SECCIÓN: HERO === */
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      background: var(--color-dark);
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 80% 60% at 70% 40%, rgba(196,18,48,0.15) 0%, transparent 70%),
+        radial-gradient(ellipse 50% 80% at 20% 80%, rgba(196,18,48,0.08) 0%, transparent 60%);
+    }
+
+    .hero::after {
+      content: '';
+      position: absolute;
+      top: -200px;
+      right: -200px;
+      width: 600px;
+      height: 600px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(196,18,48,0.12) 0%, transparent 70%);
+      animation: heroPulse 8s ease-in-out infinite;
+    }
+
+    @keyframes heroPulse {
+      0%, 100% { transform: scale(1); opacity: 0.6; }
+      50% { transform: scale(1.15); opacity: 1; }
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 720px;
+      padding: calc(var(--nav-height) + var(--space-xl)) 0 var(--space-xl);
+    }
+
+    .hero-tag {
+      display: inline-block;
+      font-family: var(--font-display);
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: var(--color-red-light);
+      margin-bottom: var(--space-md);
+      padding: 6px 16px;
+      border: 1px solid rgba(196,18,48,0.4);
+      border-radius: 30px;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.4rem, 6vw, 4rem);
+      color: var(--color-white);
+      margin-bottom: var(--space-md);
+      letter-spacing: -1px;
+    }
+
+    .hero h1 em {
+      font-style: normal;
+      color: var(--color-red-light);
+    }
+
+    .hero-sub {
+      font-size: 1.2rem;
+      color: rgba(255,255,255,0.65);
+      margin-bottom: var(--space-lg);
+      max-width: 560px;
+      line-height: 1.7;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: var(--space-sm);
+      flex-wrap: wrap;
+    }
+
+    .hero-stats {
+      display: flex;
+      gap: var(--space-lg);
+      margin-top: var(--space-xl);
+      padding-top: var(--space-md);
+      border-top: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .hero-stat-number {
+      font-family: var(--font-display);
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--color-white);
+    }
+
+    .hero-stat-label {
+      font-size: 0.85rem;
+      color: rgba(255,255,255,0.5);
+      margin-top: 4px;
+    }
+
+    /* === SECCIÓN: PROPÓSITO / ABOUT === */
+    .about {
+      padding: var(--space-2xl) 0;
+      background: var(--color-white);
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--space-xl);
+      align-items: center;
+    }
+
+    .about-visual {
+      aspect-ratio: 4/3;
+      border-radius: var(--radius-lg);
+      background: linear-gradient(135deg, var(--color-dark) 0%, var(--color-dark-soft) 40%, var(--color-red-dark) 100%);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .about-visual::after {
+      content: '360°';
+      position: absolute;
+      bottom: 24px;
+      right: 28px;
+      font-family: var(--font-display);
+      font-size: 5rem;
+      font-weight: 800;
+      color: rgba(255,255,255,0.06);
+      line-height: 1;
+    }
+
+    .about-text h2 {
+      font-size: clamp(1.6rem, 3.5vw, 2.4rem);
+      margin-bottom: var(--space-md);
+    }
+
+    .about-text p {
+      color: var(--color-gray);
+      margin-bottom: var(--space-sm);
+    }
+
+    .about-pillars {
+      display: flex;
+      gap: var(--space-md);
+      margin-top: var(--space-md);
+    }
+
+    .pillar {
+      flex: 1;
+      padding: var(--space-sm);
+      border-left: 3px solid var(--color-red);
+    }
+
+    .pillar strong {
+      font-family: var(--font-display);
+      font-size: 0.85rem;
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    .pillar span {
+      font-size: 0.85rem;
+      color: var(--color-gray);
+    }
+
+    /* === SECCIÓN: 6 BLOQUES DE ACTIVIDAD === */
+    .bloques {
+      padding: var(--space-2xl) 0;
+      background: var(--color-off-white);
+    }
+
+    .bloques-header {
+      text-align: center;
+      margin-bottom: var(--space-xl);
+    }
+
+    .bloques-header .section-subtitle {
+      margin: 0 auto;
+    }
+
+    .bloques-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--space-md);
+    }
+
+    .bloque-card {
+      background: var(--color-white);
+      border-radius: var(--radius-md);
+      padding: var(--space-md);
+      transition: all 0.4s ease;
+      position: relative;
+      overflow: hidden;
+      border: 1px solid transparent;
+    }
+
+    .bloque-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: var(--color-red);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.4s ease;
+    }
+
+    .bloque-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-medium);
+      border-color: rgba(196,18,48,0.15);
+    }
+
+    .bloque-card:hover::before {
+      transform: scaleX(1);
+    }
+
+    .bloque-icon {
+      width: 52px;
+      height: 52px;
+      border-radius: var(--radius-sm);
+      background: rgba(196,18,48,0.08);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: var(--space-sm);
+      font-size: 1.5rem;
+    }
+
+    .bloque-card h3 {
+      font-size: 1.1rem;
+      margin-bottom: 8px;
+    }
+
+    .bloque-card p {
+      font-size: 0.92rem;
+      color: var(--color-gray);
+      margin-bottom: var(--space-sm);
+    }
+
+    .bloque-link {
+      font-family: var(--font-display);
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: var(--color-red);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: gap 0.3s ease;
+    }
+
+    .bloque-link:hover {
+      gap: 12px;
+    }
+
+    /* === SECCIÓN: PROYECTOS VINCULADOS === */
+    .proyectos {
+      padding: var(--space-2xl) 0;
+      background: var(--color-dark);
+      color: var(--color-white);
+    }
+
+    .proyectos-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--space-md);
+      margin-top: var(--space-xl);
+    }
+
+    .proyecto-card {
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      position: relative;
+      transition: transform 0.4s ease;
+    }
+
+    .proyecto-card:hover {
+      transform: scale(1.03);
+    }
+
+    .proyecto-img {
+      aspect-ratio: 16/10;
+      background: linear-gradient(135deg, var(--color-dark-soft) 0%, #333 100%);
+      position: relative;
+    }
+
+    .proyecto-card:nth-child(1) .proyecto-img { background: linear-gradient(135deg, #C41230 0%, #8B0D22 100%); }
+    .proyecto-card:nth-child(2) .proyecto-img { background: linear-gradient(135deg, #1a3a5c 0%, #0d1f33 100%); }
+    .proyecto-card:nth-child(3) .proyecto-img { background: linear-gradient(135deg, #E8254A 0%, #C41230 100%); }
+    .proyecto-card:nth-child(4) .proyecto-img { background: linear-gradient(135deg, #2c2c2c 0%, #1a1a1a 100%); }
+    .proyecto-card:nth-child(5) .proyecto-img { background: linear-gradient(135deg, #4a1a2a 0%, #2a0d18 100%); }
+
+    .proyecto-body {
+      padding: var(--space-sm) var(--space-sm) var(--space-md);
+      background: var(--color-dark-soft);
+    }
+
+    .proyecto-body h3 {
+      font-size: 1.05rem;
+      margin-bottom: 6px;
+    }
+
+    .proyecto-body p {
+      font-size: 0.85rem;
+      color: var(--color-gray-light);
+    }
+
+    /* === SECCIÓN: YOUTUBE === */
+    .youtube {
+      padding: var(--space-2xl) 0;
+      background: var(--color-white);
+    }
+
+    .youtube-wrapper {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--space-xl);
+      align-items: center;
+    }
+
+    .youtube-visual {
+      aspect-ratio: 16/9;
+      border-radius: var(--radius-lg);
+      background: linear-gradient(135deg, #1C1C1C 0%, #C41230 50%, #1C1C1C 100%);
+      position: relative;
+      overflow: hidden;
+      cursor: pointer;
+      transition: transform 0.4s ease;
+    }
+
+    .youtube-visual:hover {
+      transform: scale(1.02);
+    }
+
+    .youtube-play {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 72px;
+      height: 72px;
+      background: var(--color-red);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 8px 32px rgba(196,18,48,0.4);
+      transition: transform 0.3s ease;
+    }
+
+    .youtube-visual:hover .youtube-play {
+      transform: translate(-50%, -50%) scale(1.1);
+    }
+
+    .youtube-play svg {
+      width: 28px;
+      height: 28px;
+      fill: white;
+      margin-left: 4px;
+    }
+
+    .youtube-channel-tag {
+      position: absolute;
+      bottom: 16px;
+      left: 16px;
+      background: rgba(0,0,0,0.7);
+      color: white;
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-family: var(--font-display);
+      font-size: 0.78rem;
+      font-weight: 600;
+    }
+
+    .youtube-text h2 {
+      font-size: clamp(1.6rem, 3vw, 2.2rem);
+      margin-bottom: var(--space-sm);
+    }
+
+    .youtube-text p {
+      color: var(--color-gray);
+      margin-bottom: var(--space-md);
+    }
+
+    /* === SECCIÓN: BLOG === */
+    .blog {
+      padding: var(--space-2xl) 0;
+      background: var(--color-off-white);
+    }
+
+    .blog-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-bottom: var(--space-xl);
+    }
+
+    .blog-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--space-md);
+    }
+
+    .blog-card {
+      background: var(--color-white);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      transition: all 0.4s ease;
+    }
+
+    .blog-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-medium);
+    }
+
+    .blog-card-img {
+      aspect-ratio: 16/9;
+    }
+
+    .blog-card:nth-child(1) .blog-card-img { background: linear-gradient(135deg, #C41230 0%, #E8254A 100%); }
+    .blog-card:nth-child(2) .blog-card-img { background: linear-gradient(135deg, #1C1C1C 0%, #444 100%); }
+    .blog-card:nth-child(3) .blog-card-img { background: linear-gradient(135deg, #9E0E27 0%, #C41230 100%); }
+
+    .blog-card-body {
+      padding: var(--space-md);
+    }
+
+    .blog-card-tag {
+      font-family: var(--font-display);
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--color-red);
+      margin-bottom: 8px;
+      display: block;
+    }
+
+    .blog-card-body h3 {
+      font-size: 1.05rem;
+      margin-bottom: 8px;
+    }
+
+    .blog-card-body p {
+      font-size: 0.88rem;
+      color: var(--color-gray);
+      margin-bottom: var(--space-sm);
+    }
+
+    .blog-card-meta {
+      font-size: 0.8rem;
+      color: var(--color-gray-light);
+    }
+
+    /* === SECCIÓN: REDES SOCIALES === */
+    .redes {
+      padding: var(--space-2xl) 0;
+      background: var(--color-dark);
+      color: var(--color-white);
+    }
+
+    .redes-header {
+      text-align: center;
+      margin-bottom: var(--space-xl);
+    }
+
+    .redes-header .section-subtitle {
+      margin: 0 auto;
+      color: var(--color-gray-light);
+    }
+
+    .redes-platforms {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: var(--space-md);
+    }
+
+    .red-platform {
+      background: var(--color-dark-soft);
+      border-radius: var(--radius-md);
+      padding: var(--space-md);
+    }
+
+    .red-platform h3 {
+      font-size: 1rem;
+      margin-bottom: var(--space-sm);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .red-platform h3 svg {
+      width: 20px;
+      height: 20px;
+      fill: var(--color-gray-light);
+    }
+
+    .red-links {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .red-link {
+      font-size: 0.88rem;
+      color: var(--color-gray-light);
+      transition: color 0.3s ease;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .red-link:hover {
+      color: var(--color-red-light);
+    }
+
+    .red-link::before {
+      content: '→';
+      font-size: 0.75rem;
+      color: var(--color-red);
+    }
+
+    /* === SECCIÓN: FORMULARIOS === */
+    .formularios {
+      padding: var(--space-2xl) 0;
+      background: var(--color-white);
+    }
+
+    .form-header {
+      text-align: center;
+      margin-bottom: var(--space-xl);
+    }
+
+    .form-header .section-subtitle {
+      margin: 0 auto;
+    }
+
+    .form-tabs {
+      display: flex;
+      justify-content: center;
+      gap: 4px;
+      margin-bottom: var(--space-lg);
+      flex-wrap: wrap;
+    }
+
+    .form-tab {
+      font-family: var(--font-display);
+      font-size: 0.85rem;
+      font-weight: 600;
+      padding: 12px 24px;
+      border: none;
+      background: var(--color-off-white);
+      cursor: pointer;
+      transition: all 0.3s ease;
+      border-radius: var(--radius-sm);
+      color: var(--color-gray);
+    }
+
+    .form-tab.active {
+      background: var(--color-red);
+      color: var(--color-white);
+    }
+
+    .form-tab:hover:not(.active) {
+      background: #e8e5e0;
+    }
+
+    .form-panel {
+      display: none;
+      max-width: 640px;
+      margin: 0 auto;
+    }
+
+    .form-panel.active {
+      display: block;
+      animation: fadeUp 0.4s ease;
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(16px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .form-group {
+      margin-bottom: var(--space-sm);
+    }
+
+    .form-group label {
+      display: block;
+      font-family: var(--font-display);
+      font-size: 0.85rem;
+      font-weight: 600;
+      margin-bottom: 6px;
+      color: var(--color-dark);
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      padding: 14px 16px;
+      border: 2px solid #e0ddd8;
+      border-radius: var(--radius-sm);
+      font-family: var(--font-body);
+      font-size: 0.95rem;
+      background: var(--color-off-white);
+      transition: border-color 0.3s ease;
+      outline: none;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      border-color: var(--color-red);
+    }
+
+    .form-group textarea {
+      resize: vertical;
+      min-height: 120px;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--space-sm);
+    }
+
+    .form-submit {
+      margin-top: var(--space-md);
+    }
+
+    .form-success {
+      display: none;
+      text-align: center;
+      padding: var(--space-lg);
+    }
+
+    .form-success.show {
+      display: block;
+    }
+
+    .form-success-icon {
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      background: rgba(196,18,48,0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto var(--space-sm);
+      font-size: 1.8rem;
+    }
+
+    .form-success h3 {
+      font-size: 1.3rem;
+      margin-bottom: 8px;
+    }
+
+    .form-success p {
+      color: var(--color-gray);
+    }
+
+    /* === SECCIÓN: FOOTER === */
+    .footer {
+      padding: var(--space-xl) 0 var(--space-md);
+      background: var(--color-dark);
+      color: rgba(255,255,255,0.6);
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: var(--space-lg);
+      margin-bottom: var(--space-xl);
+    }
+
+    .footer-brand .nav-logo {
+      font-size: 1.6rem;
+      margin-bottom: var(--space-sm);
+    }
+
+    .footer-brand p {
+      font-size: 0.92rem;
+      line-height: 1.6;
+      max-width: 320px;
+    }
+
+    .footer-col h4 {
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--color-white);
+      margin-bottom: var(--space-sm);
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    .footer-col a {
+      display: block;
+      font-size: 0.88rem;
+      margin-bottom: 8px;
+      transition: color 0.3s ease;
+    }
+
+    .footer-col a:hover {
+      color: var(--color-red-light);
+    }
+
+    .footer-social {
+      display: flex;
+      gap: 12px;
+      margin-top: var(--space-sm);
+    }
+
+    .footer-social a {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: var(--color-dark-soft);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.3s ease;
+    }
+
+    .footer-social a:hover {
+      background: var(--color-red);
+    }
+
+    .footer-social a svg {
+      width: 18px;
+      height: 18px;
+      fill: var(--color-white);
+    }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,0.08);
+      padding-top: var(--space-md);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.82rem;
+    }
+
+    .footer-bottom-links {
+      display: flex;
+      gap: var(--space-md);
+    }
+
+    /* === WHATSAPP FLOTANTE === */
+    .whatsapp-float {
+      position: fixed;
+      bottom: 28px;
+      right: 28px;
+      z-index: 999;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      background: var(--color-whatsapp);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 20px rgba(37,211,102,0.4);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer;
+    }
+
+    .whatsapp-float:hover {
+      transform: scale(1.1);
+      box-shadow: 0 6px 28px rgba(37,211,102,0.5);
+    }
+
+    .whatsapp-float svg {
+      width: 30px;
+      height: 30px;
+      fill: white;
+    }
+
+    .whatsapp-tooltip {
+      position: absolute;
+      right: 72px;
+      top: 50%;
+      transform: translateY(-50%);
+      background: var(--color-dark);
+      color: var(--color-white);
+      font-family: var(--font-display);
+      font-size: 0.8rem;
+      font-weight: 600;
+      padding: 8px 16px;
+      border-radius: var(--radius-sm);
+      white-space: nowrap;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+    }
+
+    .whatsapp-float:hover .whatsapp-tooltip {
+      opacity: 1;
+    }
+
+    /* === RESPONSIVE === */
+    @media (max-width: 1024px) {
+      .bloques-grid { grid-template-columns: repeat(2, 1fr); }
+      .proyectos-grid { grid-template-columns: repeat(2, 1fr); }
+      .footer-grid { grid-template-columns: 1fr 1fr; gap: var(--space-md); }
+    }
+
+    @media (max-width: 768px) {
+      .nav-links { 
+        display: none;
+        position: fixed;
+        top: var(--nav-height);
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(28,28,28,0.98);
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: var(--space-md);
+      }
+
+      .nav-links.open { display: flex; }
+      .hamburger { display: flex; }
+
+      .hero-content { padding: calc(var(--nav-height) + var(--space-lg)) 0 var(--space-lg); }
+      .hero-stats { flex-direction: column; gap: var(--space-sm); }
+
+      .about-grid { grid-template-columns: 1fr; gap: var(--space-md); }
+      .about-pillars { flex-direction: column; }
+
+      .bloques-grid { grid-template-columns: 1fr; }
+      .proyectos-grid { grid-template-columns: 1fr; }
+      .blog-grid { grid-template-columns: 1fr; }
+
+      .youtube-wrapper { grid-template-columns: 1fr; }
+
+      .blog-header { flex-direction: column; align-items: flex-start; gap: var(--space-sm); }
+
+      .form-tabs { gap: 6px; }
+      .form-tab { padding: 10px 16px; font-size: 0.78rem; }
+      .form-row { grid-template-columns: 1fr; }
+
+      .footer-grid { grid-template-columns: 1fr; }
+      .footer-bottom { flex-direction: column; gap: var(--space-sm); text-align: center; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- === NAVEGACIÓN === -->
+  <nav class="nav" id="navbar">
+    <div class="container">
+      <!-- [i18n] -->
+      <a href="#hero" class="nav-logo">Decyde<span>360</span></a>
+      <ul class="nav-links" id="navLinks">
+        <!-- [i18n] -->
+        <li><a href="#about">Propósito</a></li>
+        <li><a href="#bloques">Ecosistema</a></li>
+        <li><a href="#proyectos">Proyectos</a></li>
+        <li><a href="#youtube">Canal</a></li>
+        <li><a href="#blog">Contenidos</a></li>
+        <li><a href="#formularios" class="nav-cta">Contactar</a></li>
+      </ul>
+      <button class="hamburger" id="hamburger" aria-label="Menú" aria-expanded="false" aria-controls="navLinks">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- === HERO === -->
+  <section class="hero" id="hero">
+    <div class="container">
+      <div class="hero-content">
+        <!-- [i18n] -->
+        <span class="hero-tag">Cultura · Deporte · Comunidad</span>
+        <!-- [i18n] -->
+        <h1>El ecosistema que conecta <em>lo que mueves</em> con lo que necesitas</h1>
+        <!-- [i18n] -->
+        <p class="hero-sub">Asesoría, eventos, torneos, mecenazgo y red de contactos. Todo lo que un club, asociación, fundación o autónomo del sector cultural y deportivo necesita para crecer — en un solo lugar.</p>
+        <div class="hero-buttons">
+          <!-- [i18n] -->
+          <a href="#bloques" class="btn btn-primary">Conoce el ecosistema</a>
+          <!-- [i18n] -->
+          <a href="#formularios" class="btn btn-outline">Contactar</a>
+        </div>
+        <div class="hero-stats">
+          <div>
+            <!-- [i18n] -->
+            <div class="hero-stat-number">+15</div>
+            <div class="hero-stat-label">Años en cultura y deporte</div>
+          </div>
+          <div>
+            <!-- [i18n] -->
+            <div class="hero-stat-number">6</div>
+            <div class="hero-stat-label">Áreas de actividad integradas</div>
+          </div>
+          <div>
+            <!-- [i18n] -->
+            <div class="hero-stat-number">360°</div>
+            <div class="hero-stat-label">Visión completa del ecosistema</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- === PROPÓSITO / ABOUT === -->
+  <section class="about" id="about">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-visual reveal"></div>
+        <div class="about-text reveal">
+          <div class="accent-line"></div>
+          <!-- [i18n] -->
+          <p class="section-label">Nuestro propósito</p>
+          <!-- [i18n] -->
+          <h2>No somos una asesoría al uso. Somos la infraestructura que el deporte y la cultura amateur necesitan.</h2>
+          <!-- [i18n] -->
+          <p>Decyde360 nace de una idea simple: los clubes deportivos, las asociaciones culturales y los autónomos del sector no juegan con las mismas reglas que las grandes empresas. Merecen un ecosistema diseñado para ellos.</p>
+          <!-- [i18n] -->
+          <p>Aquí convergen asesoría fiscal especializada, torneos con valores, eventos que conectan, mecenazgo que transforma y una comunidad que respalda. Todo gira en 360 grados alrededor de tu proyecto.</p>
+          <div class="about-pillars">
+            <div class="pillar">
+              <!-- [i18n] -->
+              <strong>Especialización</strong>
+              <span>Cultura, deporte y tercer sector — no generalidades.</span>
+            </div>
+            <div class="pillar">
+              <!-- [i18n] -->
+              <strong>Comunidad</strong>
+              <span>Red real de gestores, clubes y emprendedores.</span>
+            </div>
+            <div class="pillar">
+              <!-- [i18n] -->
+              <strong>Impacto</strong>
+              <span>Cada acción genera valor social medible.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- === 6 BLOQUES DE ACTIVIDAD === -->
+  <section class="bloques" id="bloques">
+    <div class="container">
+      <div class="bloques-header reveal">
+        <!-- [i18n] -->
+        <p class="section-label">Ecosistema integrado</p>
+        <!-- [i18n] -->
+        <h2 class="section-title">6 áreas, un solo propósito</h2>
+        <!-- [i18n] -->
+        <p class="section-subtitle">Cada pieza del ecosistema Decyde360 está diseñada para resolver problemas reales del tejido asociativo, deportivo y cultural.</p>
+      </div>
+      <div class="bloques-grid">
+        <!-- Bloque 1: Asesoría -->
+        <div class="bloque-card reveal">
+          <div class="bloque-icon">⚖️</div>
+          <!-- [i18n] -->
+          <h3>Asesoría especializada</h3>
+          <!-- [i18n] -->
+          <p>Fiscal, contable y laboral para entidades del deporte, la cultura, el mecenazgo y las asociaciones sin ánimo de lucro. Nada de asesoría genérica.</p>
+          <!-- [i18n] -->
+          <a href="#formularios" class="bloque-link">Solicitar consulta →</a>
+        </div>
+        <!-- Bloque 2: Eventos -->
+        <div class="bloque-card reveal">
+          <div class="bloque-icon">🎤</div>
+          <!-- [i18n] -->
+          <h3>Eventos y conferencias</h3>
+          <!-- [i18n] -->
+          <p>DecydeTalks, Gala GAMED, InveSporT — espacios donde la gestión deportiva y cultural se profesionaliza y se comparte.</p>
+          <!-- [i18n] -->
+          <a href="#formularios" class="bloque-link">Próximos eventos →</a>
+        </div>
+        <!-- Bloque 3: Torneos -->
+        <div class="bloque-card reveal">
+          <div class="bloque-icon">🏀</div>
+          <!-- [i18n] -->
+          <h3>Torneos y deporte</h3>
+          <!-- [i18n] -->
+          <p>MAMBAbasket, Triple Doble Team y Grad4 Triple Doble. Competiciones que forman en valores, no solo en técnica.</p>
+          <!-- [i18n] -->
+          <a href="#formularios" class="bloque-link">Inscribir equipo →</a>
+        </div>
+        <!-- Bloque 4: Contenidos -->
+        <div class="bloque-card reveal">
+          <div class="bloque-icon">📚</div>
+          <!-- [i18n] -->
+          <h3>Contenidos y publicaciones</h3>
+          <!-- [i18n] -->
+          <p>Libros, artículos, YouTube (@Decyde360) y newsletter en LinkedIn. Conocimiento útil para gestores y directivos del sector.</p>
+          <!-- [i18n] -->
+          <a href="#youtube" class="bloque-link">Ver canal →</a>
+        </div>
+        <!-- Bloque 5: Mecenazgo -->
+        <div class="bloque-card reveal">
+          <div class="bloque-icon">🤝</div>
+          <!-- [i18n] -->
+          <h3>Mecenazgo y proyectos</h3>
+          <!-- [i18n] -->
+          <p>Mecenazgo Dual ON y Alianzas +ALCANCE. Conectamos empresas con entidades sociales para generar impacto real y ventajas fiscales.</p>
+          <!-- [i18n] -->
+          <a href="#formularios" class="bloque-link">Ser mecenas →</a>
+        </div>
+        <!-- Bloque 6: Comunidad -->
+        <div class="bloque-card reveal">
+          <div class="bloque-icon">🌐</div>
+          <!-- [i18n] -->
+          <h3>Comunidad y networking</h3>
+          <!-- [i18n] -->
+          <p>aMicro: la asociación gratuita para autónomos y microempresas. Mentoría, formación y una red que crece contigo.</p>
+          <!-- [i18n] -->
+          <a href="#formularios" class="bloque-link">Unirme a aMicro →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- === PROYECTOS VINCULADOS === -->
+  <section class="proyectos" id="proyectos">
+    <div class="container">
+      <div class="reveal">
+        <div class="accent-line"></div>
+        <!-- [i18n] -->
+        <p class="section-label" style="color: var(--color-red-light);">Proyectos del ecosistema</p>
+        <!-- [i18n] -->
+        <h2 class="section-title">Las piezas que completan el 360°</h2>
+        <!-- [i18n] -->
+        <p class="section-subtitle" style="color: var(--color-gray-light);">Cada proyecto tiene su identidad propia, pero comparte un ADN común: especialización real en cultura, deporte y comunidad.</p>
+      </div>
+      <div class="proyectos-grid">
+        <div class="proyecto-card reveal">
+          <div class="proyecto-img"></div>
+          <div class="proyecto-body">
+            <!-- [i18n] -->
+            <h3>Decyde Asesores</h3>
+            <p>Asesoría fiscal, contable y laboral especializada en deporte, cultura y tercer sector.</p>
+          </div>
+        </div>
+        <div class="proyecto-card reveal">
+          <div class="proyecto-img"></div>
+          <div class="proyecto-body">
+            <!-- [i18n] -->
+            <h3>Fundación Decyde</h3>
+            <p>Impacto social a través de cultura, deporte y comunidad. Programas que transforman.</p>
+          </div>
+        </div>
+        <div class="proyecto-card reveal">
+          <div class="proyecto-img"></div>
+          <div class="proyecto-body">
+            <!-- [i18n] -->
+            <h3>MAMBAbasket</h3>
+            <p>Torneos de baloncesto donde los valores son parte del juego, no un extra.</p>
+          </div>
+        </div>
+        <div class="proyecto-card reveal">
+          <div class="proyecto-img"></div>
+          <div class="proyecto-body">
+            <!-- [i18n] -->
+            <h3>DecydeTalks</h3>
+            <p>Conferencias y charlas sobre gestión deportiva, cultural y asociativa.</p>
+          </div>
+        </div>
+        <div class="proyecto-card reveal">
+          <div class="proyecto-img"></div>
+          <div class="proyecto-body">
+            <!-- [i18n] -->
+            <h3>aMicro</h3>
+            <p>La comunidad gratuita de autónomos y microempresas. Formación, mentoría y red.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- === YOUTUBE === -->
+  <section class="youtube" id="youtube">
+    <div class="container">
+      <div class="youtube-wrapper">
+        <a href="https://www.youtube.com/@Decyde360" target="_blank" rel="noopener" class="youtube-visual reveal">
+          <div class="youtube-play">
+            <svg viewBox="0 0 24 24"><polygon points="8,5 20,12 8,19"/></svg>
+          </div>
+          <!-- [i18n] -->
+          <span class="youtube-channel-tag">@Decyde360</span>
+        </a>
+        <div class="youtube-text reveal">
+          <div class="accent-line"></div>
+          <!-- [i18n] -->
+          <p class="section-label">Hub audiovisual</p>
+          <!-- [i18n] -->
+          <h2>Gestión deportiva y cultural, sin filtros</h2>
+          <!-- [i18n] -->
+          <p>En el canal Decyde360 hablamos de lo que realmente importa: cómo montar un club y no morir en el intento, fiscalidad para asociaciones, subvenciones reales y mecenazgo que funciona. Sin jerga, sin rodeos.</p>
+          <!-- [i18n] -->
+          <a href="https://www.youtube.com/@Decyde360" target="_blank" rel="noopener" class="btn btn-primary">Visitar canal en YouTube</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- === BLOG / CONTENIDOS === -->
+  <section class="blog" id="blog">
+    <div class="container">
+      <div class="blog-header reveal">
+        <div>
+          <!-- [i18n] -->
+          <p class="section-label">Últimos contenidos</p>
+          <!-- [i18n] -->
+          <h2 class="section-title">Lo que necesitas saber (y nadie te cuenta)</h2>
+        </div>
+        <!-- [i18n] -->
+        <a href="#" class="btn btn-dark-outline">Ver todos los artículos</a>
+      </div>
+      <div class="blog-grid">
+        <article class="blog-card reveal">
+          <div class="blog-card-img"></div>
+          <div class="blog-card-body">
+            <!-- [i18n] -->
+            <span class="blog-card-tag">Fiscalidad</span>
+            <!-- [i18n] -->
+            <h3>Tu club deportivo puede deducir más de lo que crees — y estos son los 5 gastos que probablemente te estás dejando</h3>
+            <!-- [i18n] -->
+            <p>Las entidades sin ánimo de lucro tienen ventajas fiscales reales, pero el 80% no las aprovecha. Aquí van las claves.</p>
+            <!-- [i18n] -->
+            <span class="blog-card-meta">12 min lectura · Marzo 2026</span>
+          </div>
+        </article>
+        <article class="blog-card reveal">
+          <div class="blog-card-img"></div>
+          <div class="blog-card-body">
+            <!-- [i18n] -->
+            <span class="blog-card-tag">Mecenazgo</span>
+            <!-- [i18n] -->
+            <h3>Mecenazgo Dual: cómo una empresa puede apoyar cultura y deporte y beneficiarse fiscalmente al mismo tiempo</h3>
+            <!-- [i18n] -->
+            <p>El mecenazgo no es filantropía sin retorno. El modelo Dual ON de Decyde lo demuestra con números reales.</p>
+            <!-- [i18n] -->
+            <span class="blog-card-meta">8 min lectura · Febrero 2026</span>
+          </div>
+        </article>
+        <article class="blog-card reveal">
+          <div class="blog-card-img"></div>
+          <div class="blog-card-body">
+            <!-- [i18n] -->
+            <span class="blog-card-tag">Gestión</span>
+            <!-- [i18n] -->
+            <h3>Guía rápida: cómo constituir una asociación cultural en Murcia paso a paso (y no morir en el papeleo)</h3>
+            <!-- [i18n] -->
+            <p>Registro, estatutos, NIF, alta censal... Todo lo que necesitas en un solo artículo práctico.</p>
+            <!-- [i18n] -->
+            <span class="blog-card-meta">15 min lectura · Enero 2026</span>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- === REDES SOCIALES === -->
+  <section class="redes" id="redes">
+    <div class="container">
+      <div class="redes-header reveal">
+        <!-- [i18n] -->
+        <p class="section-label" style="color: var(--color-red-light);">Ecosistema en redes</p>
+        <!-- [i18n] -->
+        <h2 class="section-title">Síguenos en todas las plataformas</h2>
+        <!-- [i18n] -->
+        <p class="section-subtitle">Cada proyecto tiene voz propia. Encuentra el canal que más te interese y únete a la conversación.</p>
+      </div>
+      <div class="redes-platforms">
+        <!-- Instagram -->
+        <div class="red-platform reveal">
+          <h3>
+            <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+            Instagram
+          </h3>
+          <div class="red-links">
+            <a href="https://www.instagram.com/decydeasesores/" target="_blank" rel="noopener" class="red-link">@decydeasesores</a>
+            <a href="https://www.instagram.com/fundaciondecyde/" target="_blank" rel="noopener" class="red-link">@fundaciondecyde</a>
+            <a href="https://www.instagram.com/decydetalks/" target="_blank" rel="noopener" class="red-link">@decydetalks</a>
+            <a href="https://www.instagram.com/torneomambabasket/" target="_blank" rel="noopener" class="red-link">@torneomambabasket</a>
+            <a href="https://www.instagram.com/amicroempresa/" target="_blank" rel="noopener" class="red-link">@amicroempresa</a>
+          </div>
+        </div>
+        <!-- LinkedIn -->
+        <div class="red-platform reveal">
+          <h3>
+            <svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            LinkedIn
+          </h3>
+          <div class="red-links">
+            <a href="https://www.linkedin.com/in/fernandozaplana/" target="_blank" rel="noopener" class="red-link">Fernando Zaplana</a>
+            <a href="https://www.linkedin.com/company/decydeasesores/" target="_blank" rel="noopener" class="red-link">Decyde Asesores</a>
+            <a href="https://www.linkedin.com/company/fundaciondecyde/" target="_blank" rel="noopener" class="red-link">Fundación Decyde</a>
+            <a href="https://www.linkedin.com/company/decydetalks/" target="_blank" rel="noopener" class="red-link">DecydeTalks</a>
+            <a href="https://www.linkedin.com/company/mambabasket/" target="_blank" rel="noopener" class="red-link">MAMBA España Basket</a>
+            <a href="https://www.linkedin.com/company/amicro-asociacion/" target="_blank" rel="noopener" class="red-link">aMicro</a>
+          </div>
+        </div>
+        <!-- YouTube -->
+        <div class="red-platform reveal">
+          <h3>
+            <svg viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+            YouTube
+          </h3>
+          <div class="red-links">
+            <a href="https://www.youtube.com/@Decyde360" target="_blank" rel="noopener" class="red-link">@Decyde360</a>
+          </div>
+        </div>
+        <!-- X / Twitter -->
+        <div class="red-platform reveal">
+          <h3>
+            <svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+            X (Twitter)
+          </h3>
+          <div class="red-links">
+            <a href="https://twitter.com/DecydeAsesores" target="_blank" rel="noopener" class="red-link">@DecydeAsesores</a>
+            <a href="https://twitter.com/FundacionDecyde" target="_blank" rel="noopener" class="red-link">@FundacionDecyde</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- === FORMULARIOS === -->
+  <section class="formularios" id="formularios">
+    <div class="container">
+      <div class="form-header reveal">
+        <!-- [i18n] -->
+        <p class="section-label">Conecta con nosotros</p>
+        <!-- [i18n] -->
+        <h2 class="section-title">¿En qué podemos ayudarte?</h2>
+        <!-- [i18n] -->
+        <p class="section-subtitle">Elige la opción que mejor encaje con lo que necesitas. Te responderemos en menos de 48 horas.</p>
+      </div>
+
+      <div class="form-tabs" role="tablist">
+        <!-- [i18n] -->
+        <button class="form-tab active" data-tab="contacto" role="tab">Contacto general</button>
+        <button class="form-tab" data-tab="asociado" role="tab">Alta como asociado</button>
+        <button class="form-tab" data-tab="evento" role="tab">Inscripción eventos</button>
+        <button class="form-tab" data-tab="mentor" role="tab">Quiero ser mentor</button>
+      </div>
+
+      <!-- Form 1: Contacto general -->
+      <div class="form-panel active" id="form-contacto">
+        <form action="#" id="formContacto" novalidate>
+          <div class="form-row">
+            <div class="form-group">
+              <!-- [i18n] -->
+              <label for="c-nombre">Nombre completo *</label>
+              <input type="text" id="c-nombre" required placeholder="Tu nombre">
+            </div>
+            <div class="form-group">
+              <!-- [i18n] -->
+              <label for="c-email">Email *</label>
+              <input type="email" id="c-email" required placeholder="tu@email.com">
+            </div>
+          </div>
+          <div class="form-group">
+            <!-- [i18n] -->
+            <label for="c-asunto">Asunto</label>
+            <select id="c-asunto">
+              <option value="">Selecciona un tema</option>
+              <!-- [i18n] -->
+              <option value="asesoria">Asesoría fiscal/contable/laboral</option>
+              <option value="mecenazgo">Mecenazgo y patrocinio</option>
+              <option value="eventos">Eventos y conferencias</option>
+              <option value="torneos">Torneos deportivos</option>
+              <option value="amicro">aMicro — comunidad de autónomos</option>
+              <option value="otro">Otro</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <!-- [i18n] -->
+            <label for="c-mensaje">Mensaje *</label>
+            <textarea id="c-mensaje" required placeholder="Cuéntanos cómo podemos ayudarte..."></textarea>
+          </div>
+          <!-- [i18n] -->
+          <div class="form-submit"><button type="submit" class="btn btn-primary" style="width:100%">Enviar mensaje</button></div>
+        </form>
+        <div class="form-success" id="success-contacto">
+          <div class="form-success-icon">✓</div>
+          <!-- [i18n] -->
+          <h3>¡Mensaje enviado!</h3>
+          <p>Hemos recibido tu consulta. Te responderemos en las próximas 48 horas.</p>
+        </div>
+      </div>
+
+      <!-- Form 2: Alta como asociado -->
+      <div class="form-panel" id="form-asociado">
+        <form action="#" id="formAsociado" novalidate>
+          <div class="form-row">
+            <div class="form-group">
+              <!-- [i18n] -->
+              <label for="a-nombre">Nombre completo *</label>
+              <input type="text" id="a-nombre" required placeholder="Tu nombre">
+            </div>
+            <div class="form-group">
+              <!-- [i18n] -->
+              <label for="a-email">Email *</label>
+              <input type="email" id="a-email" required placeholder="tu@email.com">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <!-- [i18n] -->
+              <label for="a-tel">Teléfono</label>
+              <input type="tel" id="a-tel" placeholder="+34 600 000 000">
+            </div>
+            <div class="form-group">
+              <!-- [i18n] -->
+              <label for="a-tipo">Tipo de actividad *</label>
+              <select id="a-tipo" required>
+                <option value="">Selecciona</option>
+                <!-- [i18n] -->
+                <option value="autonomo">Autónomo/a</option>
+                <option value="microempresa">Microempresa</option>
+                <option value="asociacion">Asociación</option>
+                <option value="club">Club deportivo</option>
+                <option value="fundacion">Fundación</option>
+                <option value="otro">Otro</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <!-- [i18n] -->
+            <label for="a-mensaje">¿Qué esperas de aMicro?</label>
+            <textarea id="a-mensaje" placeholder="Formación, networking, mentoría..."></textarea>
+          </div>
+          <!-- [i18n] -->
+          <div class="form-submit"><button type="submit" class="btn btn-primary" style="width:100%">Solicitar alta como asociado</button></div>
+        </form>
+        <div class="form-success" id="success-asociado">
+          <div class="form-success-icon">✓</div>
+          <!-- [i18n] -->
+          <h3>¡Solicitud recibida!</h3>
+          <p>Revisaremos tu perfil y te daremos de alta en la comunidad aMicro. Pronto recibirás un email de bienvenida.</p>
+        </div>
+      </div>
+
+      <!-- Form 3: Inscripción eventos -->
+      <div class="form-panel" id="form-evento">
+        <form action="#" id="formEvento" novalidate>
+          <div class="form-row">
+            <div class="form-group">
+              <!-- [i18n] -->
+              <label for="e-nombre">Nombre completo *</label>
+              <input type="text" id="e-nombre" required placeholder="Tu nombre">
+            </div>
+            <div class="form-group">
+              <!-- [i18n] -->
+              <label for="e-email">Email *</label>
+              <input type="email" id="e-email" required placeholder="tu@email.com">
+            </div>
+          </div>
+          <div class="form-group">
+            <!-- [i18n] -->
+            <label for="e-evento">Evento de interés *</label>
+            <select id="e-evento" required>
+              <option value="">Selecciona evento</option>
+              <!-- [i18n] -->
+              <option value="decydetalks">DecydeTalks</option>
+              <option value="galagamed">Gala GAMED</option>
+              <option value="invesport">InveSporT</option>
+              <option value="mambabasket">Torneo MAMBAbasket</option>
+              <option value="otro">Otro evento</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <!-- [i18n] -->
+            <label for="e-mensaje">Comentarios</label>
+            <textarea id="e-mensaje" placeholder="¿Vienes en grupo? ¿Necesitas algo especial?"></textarea>
+          </div>
+          <!-- [i18n] -->
+          <div class="form-submit"><button type="submit" class="btn btn-primary" style="width:100%">Inscribirme al evento</button></div>
+        </form>
+        <div class="form-success" id="success-evento">
+          <div class="form-success-icon">✓</div>
+          <!-- [i18n] -->
+          <h3>¡Inscripción recibida!</h3>
+          <p>Te enviaremos toda la información del evento a tu email. ¡Nos vemos allí!</p>
+        </div>
+      </div>
+
+      <!-- Form 4: Quiero ser mentor -->
+      <div class="form-panel" id="form-mentor">
+        <form action="#" id="formMentor" novalidate>
+          <div class="form-row">
+            <div class="form-group">
+              <!-- [i18n] -->
+              <label for="m-nombre">Nombre completo *</label>
+              <input type="text" id="m-nombre" required placeholder="Tu nombre">
+            </div>
+            <div class="form-group">
+              <!-- [i18n] -->
+              <label for="m-email">Email *</label>
+              <input type="email" id="m-email" required placeholder="tu@email.com">
+            </div>
+          </div>
+          <div class="form-group">
+            <!-- [i18n] -->
+            <label for="m-perfil">Tu perfil profesional *</label>
+            <input type="text" id="m-perfil" required placeholder="Ej: Gestor cultural con 10 años de experiencia">
+          </div>
+          <div class="form-group">
+            <!-- [i18n] -->
+            <label for="m-area">Área de mentoría</label>
+            <select id="m-area">
+              <option value="">Selecciona</option>
+              <!-- [i18n] -->
+              <option value="gestion">Gestión deportiva</option>
+              <option value="cultura">Gestión cultural</option>
+              <option value="fiscal">Fiscalidad y subvenciones</option>
+              <option value="marketing">Marketing y comunicación</option>
+              <option value="emprendimiento">Emprendimiento</option>
+              <option value="otro">Otro</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <!-- [i18n] -->
+            <label for="m-motivacion">¿Por qué quieres ser mentor?</label>
+            <textarea id="m-motivacion" placeholder="Cuéntanos tu motivación..."></textarea>
+          </div>
+          <!-- [i18n] -->
+          <div class="form-submit"><button type="submit" class="btn btn-primary" style="width:100%">Enviar candidatura</button></div>
+        </form>
+        <div class="form-success" id="success-mentor">
+          <div class="form-success-icon">✓</div>
+          <!-- [i18n] -->
+          <h3>¡Candidatura recibida!</h3>
+          <p>Valoraremos tu perfil y nos pondremos en contacto contigo para los próximos pasos.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- === FOOTER === -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <!-- [i18n] -->
+          <div class="nav-logo">Decyde<span>360</span></div>
+          <!-- [i18n] -->
+          <p>Donde cultura, deporte y comunidad convergen para crear un ecosistema más fuerte, más justo y más profesional.</p>
+          <div class="footer-social">
+            <a href="https://www.instagram.com/decydeasesores/" target="_blank" rel="noopener" aria-label="Instagram">
+              <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+            </a>
+            <a href="https://www.linkedin.com/company/decydeasesores/" target="_blank" rel="noopener" aria-label="LinkedIn">
+              <svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            </a>
+            <a href="https://www.youtube.com/@Decyde360" target="_blank" rel="noopener" aria-label="YouTube">
+              <svg viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+            </a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <!-- [i18n] -->
+          <h4>Ecosistema</h4>
+          <a href="#bloques">Asesoría especializada</a>
+          <a href="#bloques">Eventos y conferencias</a>
+          <a href="#bloques">Torneos y deporte</a>
+          <a href="#bloques">Mecenazgo</a>
+          <a href="#bloques">Comunidad aMicro</a>
+        </div>
+        <div class="footer-col">
+          <!-- [i18n] -->
+          <h4>Proyectos</h4>
+          <a href="#">Decyde Asesores</a>
+          <a href="#">Fundación Decyde</a>
+          <a href="#">MAMBAbasket</a>
+          <a href="#">DecydeTalks</a>
+          <a href="https://www.youtube.com/@Decyde360" target="_blank" rel="noopener">Canal YouTube</a>
+        </div>
+        <div class="footer-col">
+          <!-- [i18n] -->
+          <h4>Contacto</h4>
+          <a href="https://wa.me/34607244443">+34 607 244 443</a>
+          <a href="mailto:info@decyde360.es">info@decyde360.es</a>
+          <a href="#">Murcia, España</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <!-- [i18n] -->
+        <span>© 2026 Decyde360. Todos los derechos reservados.</span>
+        <div class="footer-bottom-links">
+          <!-- [i18n] -->
+          <a href="#">Aviso legal</a>
+          <a href="#">Política de privacidad</a>
+          <a href="#">Cookies</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- === WHATSAPP FLOTANTE === -->
+  <a href="https://wa.me/34607244443" target="_blank" rel="noopener" class="whatsapp-float" aria-label="WhatsApp">
+    <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    <!-- [i18n] -->
+    <span class="whatsapp-tooltip">Escríbenos</span>
+  </a>
+
+  <script>
+    /* === JS: Navegación === */
+    const navbar = document.getElementById('navbar');
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('navLinks');
+
+    // Scroll effect
+    window.addEventListener('scroll', () => {
+      navbar.classList.toggle('scrolled', window.scrollY > 40);
+    });
+
+    // Mobile menu: always start closed, then open/close only on user action
+    const closeNav = () => {
+      hamburger.classList.remove('active');
+      navLinks.classList.remove('open');
+      hamburger.setAttribute('aria-expanded', 'false');
+      document.body.style.overflow = '';
+    };
+    const openNav = () => {
+      hamburger.classList.add('active');
+      navLinks.classList.add('open');
+      hamburger.setAttribute('aria-expanded', 'true');
+      document.body.style.overflow = 'hidden';
+    };
+    closeNav();
+    hamburger.addEventListener('click', () => {
+      navLinks.classList.contains('open') ? closeNav() : openNav();
+    });
+    navLinks.addEventListener('click', (event) => {
+      if (event.target.closest('a')) closeNav();
+    });
+    window.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape') closeNav();
+    });
+
+    /* === JS: Scroll Reveal (Intersection Observer) === */
+    const revealElements = document.querySelectorAll('.reveal');
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry, i) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => {
+            entry.target.classList.add('visible');
+          }, i * 80);
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+
+    revealElements.forEach(el => revealObserver.observe(el));
+
+    /* === JS: Form Tabs === */
+    const tabs = document.querySelectorAll('.form-tab');
+    const panels = document.querySelectorAll('.form-panel');
+
+    tabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        const target = tab.dataset.tab;
+        tabs.forEach(t => t.classList.remove('active'));
+        panels.forEach(p => p.classList.remove('active'));
+        tab.classList.add('active');
+        document.getElementById('form-' + target).classList.add('active');
+      });
+    });
+
+    /* === JS: Form Submissions === */
+    const forms = [
+      { id: 'formContacto', success: 'success-contacto' },
+      { id: 'formAsociado', success: 'success-asociado' },
+      { id: 'formEvento', success: 'success-evento' },
+      { id: 'formMentor', success: 'success-mentor' }
+    ];
+
+    forms.forEach(({ id, success }) => {
+      const form = document.getElementById(id);
+      if (!form) return;
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        // Basic validation
+        const required = form.querySelectorAll('[required]');
+        let valid = true;
+        required.forEach(field => {
+          if (!field.value.trim()) {
+            field.style.borderColor = 'var(--color-red)';
+            valid = false;
+          } else {
+            field.style.borderColor = '#e0ddd8';
+          }
+        });
+        // Email validation
+        const emailField = form.querySelector('input[type="email"]');
+        if (emailField && emailField.value && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailField.value)) {
+          emailField.style.borderColor = 'var(--color-red)';
+          valid = false;
+        }
+        if (valid) {
+          form.style.display = 'none';
+          document.getElementById(success).classList.add('show');
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>
