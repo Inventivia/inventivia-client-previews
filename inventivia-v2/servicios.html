@@ -439,7 +439,7 @@ img{max-width:100%}
       <img class="sn-mark" src="assets/mark-inventivia.svg" alt="InventivIA">
       <span class="sn-word">Inventiv<b>IA</b></span>
     </a>
-    <nav class="sn-links">
+    <nav class="sn-links" aria-label="Menú principal">
       <a href="index.html" class="sn-link" data-cursor="ver">Inicio</a>
       <a href="servicios.html" class="sn-link sn-active" data-cursor="ver" aria-current="page">Servicios</a>
       <a href="quienes-somos.html" class="sn-link" data-cursor="ver">Quiénes somos</a>
@@ -447,7 +447,7 @@ img{max-width:100%}
     </nav>
     <div class="sn-right">
       <a href="contacto.html#form" class="sn-cta sn-cta-desktop" data-cursor="hablemos">Hablemos</a>
-      <button type="button" class="sn-burger" aria-label="Menú" onclick="document.getElementById('sitenav').classList.toggle('sn-open')"><span></span><span></span><span></span></button>
+      <button type="button" class="sn-burger" aria-label="Menú" aria-expanded="false" onclick="const nav=document.getElementById('sitenav');const open=nav.classList.toggle('sn-open');this.setAttribute('aria-expanded', open ? 'true' : 'false')"><span></span><span></span><span></span></button>
     </div>
   </div>
   <div class="sn-panel" onclick="document.getElementById('sitenav').classList.remove('sn-open')">
@@ -733,7 +733,7 @@ img{max-width:100%}
       <p style="font-family:var(--font-mono);font-size:12px;color:var(--text-faint);margin-top:26px;letter-spacing:.06em">Murcia, España · hola@inventiviamarketing.com</p>
     </div>
     <div class="kin-section-reveal from-left">
-      <form class="form" onsubmit="return false">
+      <form class="form" action="mailto:hola@inventiviamarketing.com" method="post" enctype="text/plain">
         <div class="frow">
           <label><span>Nombre</span><input class="kin-neu-inset" type="text" placeholder="Tu nombre"></label>
           <label><span>Email</span><input class="kin-neu-inset" type="email" placeholder="hola@empresa.com"></label>
