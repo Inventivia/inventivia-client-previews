@@ -4,7 +4,7 @@
 <meta name="googlebot" content="noindex,nofollow,noarchive,nosnippet,noimageindex">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>InventivIA — Agencia SEO en Murcia | Posicionamiento Web + IA</title>
+<title>Agencia SEO en Murcia — InventivIA | Posicionamiento Web, SEO Local e IA</title>
 <meta name="description" content="Agencia SEO en Murcia especializada en posicionamiento web, SEO local, diseño web estratégico y automatización con IA. Más visibilidad, más tráfico y más clientes.">
 <meta name="keywords" content="agencia SEO Murcia, SEO local Murcia, posicionamiento web Murcia, diseño web SEO Murcia, marketing digital Murcia, automatización con IA">
 <link rel="canonical" href="https://inventivia.github.io/inventivia-client-previews/inventivia-v2/">
@@ -20,6 +20,7 @@
 <meta name="twitter:title" content="Agencia SEO en Murcia | InventivIA Marketing">
 <meta name="twitter:description" content="Agencia SEO en Murcia para empresas que quieren más visibilidad, tráfico y clientes.">
 <meta name="twitter:image" content="https://inventiviamarketing.com/assets/logo-inventivia.png">
+<link rel="icon" href="assets/mark-inventivia.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <style>
@@ -374,6 +375,56 @@ img{max-width:100%}
 
 /* mobile guard for readable decorative seal home-seal-piece */
 @media(max-width:760px){.home-seal-piece{display:none!important}}
+
+/* ============================ MODERN MOTION PASS ============================ */
+/* Cross-document view transitions: soft fade+rise when navigating between pages */
+@view-transition{navigation:auto}
+@keyframes vt-out{to{opacity:0;transform:translateY(-16px)}}
+@keyframes vt-in{from{opacity:0;transform:translateY(20px)}}
+::view-transition-old(root){animation:vt-out .26s var(--ease-out) both}
+::view-transition-new(root){animation:vt-in .44s var(--ease-out) both}
+
+/* reveals now de-blur while they rise (skipped pre-JS via .no-js) */
+.kin-section-reveal{filter:blur(9px);transition:opacity 1s var(--ease-out),transform 1s var(--ease-out),filter .9s var(--ease-out)}
+.kin-section-reveal.is-in{filter:blur(0)}
+.no-js .kin-section-reveal{filter:none!important}
+
+/* gold shine sweep on neumorphic buttons */
+@keyframes btn-shine{from{transform:translateX(-160%) skewX(-18deg)}to{transform:translateX(340%) skewX(-18deg)}}
+.kin-neu-button{position:relative;overflow:hidden}
+.kin-neu-button::after{content:"";position:absolute;top:-4px;bottom:-4px;left:0;width:38%;background:linear-gradient(105deg,transparent,rgba(255,255,255,.5),transparent);transform:translateX(-160%) skewX(-18deg);pointer-events:none}
+.kin-neu-button:hover::after{animation:btn-shine .75s var(--ease-out)}
+.kin-neu-button.ink::after{background:linear-gradient(105deg,transparent,rgba(228,197,82,.45),transparent)}
+
+/* 3D tilt + glare for project cards (pointer-driven, desktop) */
+.card .inner{transform-style:preserve-3d}
+.card.is-tilting .inner{transform:perspective(950px) rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg)) translateY(-8px);transition:box-shadow .4s;box-shadow:14px 16px 30px rgba(13,13,24,.22), -10px -10px 22px rgba(255,255,255,.9)}
+.card .glare{position:absolute;inset:0;pointer-events:none;opacity:0;background:radial-gradient(420px circle at var(--gx,50%) var(--gy,50%),rgba(251,250,242,.28),transparent 62%);transition:opacity .35s;z-index:2}
+.card.is-tilting .glare{opacity:1}
+
+/* hero pieces drift in depth with the pointer (uses `translate`, composes with drag/anims) */
+.hero-pieces .piece{transition:translate .9s var(--ease-out)}
+
+/* FAQ: animated open/close + rotating marker (progressive, Chromium 129+) */
+.faq-seo details summary{list-style:none;display:flex;justify-content:space-between;align-items:center;gap:16px}
+.faq-seo details summary::-webkit-details-marker{display:none}
+.faq-seo details summary::after{content:"+";font-family:var(--font-display);font-size:26px;line-height:1;color:var(--gold-deep);transition:transform .45s var(--ease-spring);flex:none}
+.faq-seo details[open] summary::after{transform:rotate(135deg)}
+.faq-seo details p{color:#2b2b38;line-height:1.6;margin:12px 0 0;max-width:760px}
+@supports (interpolate-size: allow-keywords){
+  .faq-seo{interpolate-size:allow-keywords}
+  .faq-seo details::details-content{opacity:0;block-size:0;overflow:hidden;transition:content-visibility .45s allow-discrete,opacity .45s var(--ease-out),block-size .45s var(--ease-out)}
+  .faq-seo details[open]::details-content{opacity:1;block-size:auto}
+}
+
+/* kinetic bands lean with scroll velocity (JS sets --lean) */
+.band .kin-marquee{transform:skewX(var(--lean,0deg));will-change:transform}
+
+@media(prefers-reduced-motion:reduce){
+  ::view-transition-old(root),::view-transition-new(root){animation:none}
+  .kin-section-reveal{filter:none}
+  .kin-neu-button:hover::after{animation:none}
+}
 </style>
 <script type="application/ld+json">
 {
@@ -397,8 +448,13 @@ img{max-width:100%}
   },
   "areaServed": [
     { "@type": "City", "name": "Murcia" },
-    { "@type": "AdministrativeArea", "name": "Región de Murcia" }
+    { "@type": "City", "name": "Molina de Segura" },
+    { "@type": "City", "name": "Alcantarilla" },
+    { "@type": "City", "name": "Cartagena" },
+    { "@type": "AdministrativeArea", "name": "Región de Murcia" },
+    { "@type": "Country", "name": "España" }
   ],
+  "slogan": "Agencia SEO en Murcia: más visibilidad, más clientes",
   "knowsAbout": ["SEO local", "posicionamiento web", "agencia SEO", "diseño web SEO", "Google Business Profile", "automatización con IA"],
   "hasMap": "https://www.google.com/maps/search/?api=1&query=Ctra.%20de%20Churra%2096%2030007%20Murcia",
   "hasOfferCatalog": {
@@ -411,6 +467,66 @@ img{max-width:100%}
       { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Automatización con IA para captación", "areaServed": "Murcia" } }
     ]
   }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://inventiviamarketing.com/#website",
+      "url": "https://inventiviamarketing.com/",
+      "name": "InventivIA Marketing — Agencia SEO en Murcia",
+      "inLanguage": "es-ES",
+      "publisher": { "@id": "https://inventiviamarketing.com/#localbusiness" }
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://inventiviamarketing.com/#webpage",
+      "url": "https://inventiviamarketing.com/",
+      "name": "Agencia SEO en Murcia — InventivIA | Posicionamiento Web, SEO Local e IA",
+      "isPartOf": { "@id": "https://inventiviamarketing.com/#website" },
+      "about": { "@id": "https://inventiviamarketing.com/#localbusiness" },
+      "inLanguage": "es-ES"
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://inventiviamarketing.com/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "¿Trabajáis SEO local para negocios de Murcia?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Sí. Optimizamos web, contenidos, estructura local y señales para que tu negocio gane visibilidad en búsquedas de Murcia y alrededores." }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Cuánto tarda el SEO en dar resultados?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Depende del punto de partida, la competencia y el sector. En SEO local en Murcia los primeros avances suelen notarse entre el segundo y el cuarto mes, y los resultados se consolidan con trabajo continuo." }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Qué incluye la auditoría SEO?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Revisamos SEO técnico, contenidos, palabras clave, competencia local, enlazado interno, velocidad y Google Business Profile, y te entregamos un plan de acción priorizado." }
+        },
+        {
+          "@type": "Question",
+          "name": "¿También mejoráis webs hechas en WordPress o Divi?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Sí. Revisamos arquitectura, velocidad, metadatos, contenido, enlazado interno y páginas de servicio sin romper el diseño aprobado." }
+        },
+        {
+          "@type": "Question",
+          "name": "¿El objetivo es tráfico o clientes?",
+          "acceptedAnswer": { "@type": "Answer", "text": "El objetivo es captar oportunidades reales: llamadas, formularios, visitas cualificadas y una web más clara para convertir." }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Trabajáis solo con empresas de Murcia?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Somos una agencia SEO en Murcia y especialistas en SEO local, pero trabajamos con clientes de toda la Región de Murcia y del resto de España." }
+        }
+      ]
+    }
+  ]
 }
 </script>
 </head>
@@ -428,7 +544,7 @@ img{max-width:100%}
 <header class="sn-wrap" id="sitenav">
   <div class="sn-cap">
     <a href="index.html" class="sn-brand" data-cursor="ver" aria-label="InventivIA — inicio">
-      <img class="sn-mark" src="assets/mark-inventivia.svg" alt="InventivIA">
+      <img class="sn-mark" src="assets/mark-inventivia.svg" alt="InventivIA, agencia SEO en Murcia">
       <span class="sn-word">Inventiv<b>IA</b></span>
     </a>
     <nav class="sn-links" aria-label="Menú principal">
@@ -558,6 +674,7 @@ img{max-width:100%}
       <span class="eyebrow">(seo local · murcia)</span>
       <h2 style="font-size:clamp(2.2rem,5vw,4rem);letter-spacing:-.04em;color:var(--ink-900);margin-top:14px">Agencia SEO en Murcia para empresas que quieren crecer</h2>
       <p style="color:#2b2b38;font-size:clamp(1.1rem,1.4vw,1.375rem);line-height:1.55;margin-top:22px;max-width:780px">Trabajamos con negocios locales, clínicas, ecommerce, despachos profesionales, restaurantes, empresas de servicios y marcas que necesitan aparecer cuando sus clientes buscan en Google. No hacemos SEO decorativo: diseñamos estrategias orientadas a visibilidad, tráfico, llamadas, formularios y ventas.</p>
+      <p style="color:#2b2b38;font-size:clamp(1rem,1.2vw,1.15rem);line-height:1.6;margin-top:16px;max-width:780px">Acompañamos a empresas de Murcia capital, Molina de Segura, Alcantarilla, Espinardo, Churra y toda la Región de Murcia. Si buscas una <a href="servicios.html" style="color:var(--gold-deep);text-decoration:underline;text-underline-offset:3px">agencia de posicionamiento web en Murcia</a> que hable claro y mida resultados, hablemos.</p>
     </div>
     <div class="kin-section-reveal" style="display:flex;flex-wrap:wrap;gap:13px;margin-top:38px">
       <span class="sl-pill">SEO local en Murcia</span>
@@ -600,9 +717,12 @@ img{max-width:100%}
     <span class="eyebrow">(preguntas frecuentes)</span>
     <h2 style="font-size:clamp(2.2rem,5vw,4rem);letter-spacing:-.04em;color:var(--ink-900);margin-top:14px">Preguntas frecuentes sobre SEO en Murcia</h2>
     <div style="display:grid;gap:14px;margin-top:30px">
-      <details class="kin-neu-card" style="padding:22px"><summary style="cursor:pointer;font-weight:900">¿Trabajáis SEO local para negocios de Murcia?</summary><p>Sí. Optimizamos web, contenidos, estructura local y señales para que tu negocio gane visibilidad en búsquedas de Murcia y alrededores.</p></details>
+      <details class="kin-neu-card" style="padding:22px" open><summary style="cursor:pointer;font-weight:900">¿Trabajáis SEO local para negocios de Murcia?</summary><p>Sí. Optimizamos web, contenidos, estructura local y señales para que tu negocio gane visibilidad en búsquedas de Murcia y alrededores.</p></details>
+      <details class="kin-neu-card" style="padding:22px"><summary style="cursor:pointer;font-weight:900">¿Cuánto tarda el SEO en dar resultados?</summary><p>Depende del punto de partida, la competencia y el sector. En SEO local en Murcia los primeros avances suelen notarse entre el segundo y el cuarto mes, y los resultados se consolidan con trabajo continuo.</p></details>
+      <details class="kin-neu-card" style="padding:22px"><summary style="cursor:pointer;font-weight:900">¿Qué incluye la auditoría SEO?</summary><p>Revisamos SEO técnico, contenidos, palabras clave, competencia local, enlazado interno, velocidad y Google Business Profile, y te entregamos un plan de acción priorizado.</p></details>
       <details class="kin-neu-card" style="padding:22px"><summary style="cursor:pointer;font-weight:900">¿También mejoráis webs hechas en WordPress o Divi?</summary><p>Sí. Revisamos arquitectura, velocidad, metadatos, contenido, enlazado interno y páginas de servicio sin romper el diseño aprobado.</p></details>
       <details class="kin-neu-card" style="padding:22px"><summary style="cursor:pointer;font-weight:900">¿El objetivo es tráfico o clientes?</summary><p>El objetivo es captar oportunidades reales: llamadas, formularios, visitas cualificadas y una web más clara para convertir.</p></details>
+      <details class="kin-neu-card" style="padding:22px"><summary style="cursor:pointer;font-weight:900">¿Trabajáis solo con empresas de Murcia?</summary><p>Somos una agencia SEO en Murcia y especialistas en SEO local, pero trabajamos con clientes de toda la Región de Murcia y del resto de España.</p></details>
     </div>
   </div>
 </section>
@@ -753,7 +873,7 @@ var PROJ=[
 (function(){
   var T=$("#track"); if(!T) return; var html="";
   PROJ.forEach(function(p,i){
-    html+='<a href="#contacto" class="card kin-section-reveal scale" data-cursor="ver" style="transition-delay:'+(i*90)+'ms"><div class="inner"><div class="img" style="background:'+p.tint+'"></div><div class="shade"></div><span class="idx">'+("0"+(i+1)).slice(-2)+' / '+p.yr+'</span><div class="meta"><div class="cat">'+p.cat+'</div><h3>'+p.name+'</h3><div class="more"><span>Ver proyecto →</span></div></div></div></a>';
+    html+='<a href="#contacto" class="card kin-section-reveal scale" data-cursor="ver" style="transition-delay:'+(i*90)+'ms"><div class="inner"><div class="img" style="background:'+p.tint+'"></div><div class="shade"></div><div class="glare"></div><span class="idx">'+("0"+(i+1)).slice(-2)+' / '+p.yr+'</span><div class="meta"><div class="cat">'+p.cat+'</div><h3>'+p.name+'</h3><div class="more"><span>Ver proyecto →</span></div></div></div></a>';
   });
   T.innerHTML=html;
 })();
@@ -1013,6 +1133,65 @@ $$("[data-drag]").forEach(makeDraggable);
       el.style.transform = dist<140 ? "translate("+dx*.3+"px,"+dy*.3+"px)" : "translate(0,0)";
     });
   });
+})();
+
+/* ---------- 3D TILT + GLARE on project cards ---------- */
+(function(){
+  if(TOUCH) return;
+  $$("#track .card").forEach(function(card){
+    var inner=$(".inner",card); if(!inner) return;
+    card.addEventListener("pointermove",function(e){
+      var r=inner.getBoundingClientRect();
+      var px=(e.clientX-r.left)/r.width, py=(e.clientY-r.top)/r.height;
+      inner.style.setProperty("--ry",((px-.5)*10)+"deg");
+      inner.style.setProperty("--rx",((.5-py)*10)+"deg");
+      inner.style.setProperty("--gx",(px*100)+"%");
+      inner.style.setProperty("--gy",(py*100)+"%");
+      card.classList.add("is-tilting");
+    });
+    card.addEventListener("pointerleave",function(){
+      card.classList.remove("is-tilting");
+      inner.style.setProperty("--rx","0deg"); inner.style.setProperty("--ry","0deg");
+    });
+  });
+})();
+
+/* ---------- HERO pointer parallax (uses `translate`, composes with drag transforms) ---------- */
+(function(){
+  if(TOUCH||SOFT) return;
+  var hero=$(".hero"); if(!hero) return;
+  var pieces=$$(".hero-pieces .piece"), grid=$(".hero .grid");
+  var tx=0,ty=0,x=0,y=0,raf=0;
+  hero.addEventListener("pointermove",function(e){
+    tx=(e.clientX/window.innerWidth-.5); ty=(e.clientY/window.innerHeight-.5);
+    if(!raf) raf=requestAnimationFrame(loop);
+  });
+  function loop(){
+    x+=(tx-x)*.06; y+=(ty-y)*.06;
+    pieces.forEach(function(p,i){
+      var d=((i%3)+1)*14;
+      p.style.translate=(-x*d)+"px "+(-y*d)+"px";
+    });
+    if(grid) grid.style.translate=(x*10)+"px 0";
+    if(Math.abs(tx-x)>.001||Math.abs(ty-y)>.001) raf=requestAnimationFrame(loop); else raf=0;
+  }
+})();
+
+/* ---------- KINETIC BANDS lean with scroll velocity ---------- */
+(function(){
+  if(SOFT) return;
+  var mqs=$$(".band .kin-marquee"); if(!mqs.length) return;
+  var lastY=window.scrollY||0, lean=0, raf=0;
+  window.addEventListener("scroll",function(){
+    var yNow=window.scrollY||0;
+    lean=Math.max(-6,Math.min(6,(yNow-lastY)*.25)); lastY=yNow;
+    if(!raf) raf=requestAnimationFrame(settle);
+  },{passive:true});
+  function settle(){
+    lean*=.9;
+    mqs.forEach(function(m){ m.style.setProperty("--lean",lean.toFixed(2)+"deg"); });
+    if(Math.abs(lean)>.05) raf=requestAnimationFrame(settle); else { mqs.forEach(function(m){m.style.setProperty("--lean","0deg")}); raf=0; }
+  }
 })();
 
 /* ---------- CUSTOM CURSOR ---------- */

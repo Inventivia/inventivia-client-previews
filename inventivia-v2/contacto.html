@@ -23,6 +23,7 @@
 <link rel="stylesheet" href="styles.css">
 <script src="vendor/react.development.js"></script>
 <script src="vendor/react-dom.development.js"></script>
+<script>window.__resources = window.__resources || { mark: "assets/mark.svg" };</script>
 <script src="_ds_bundle.js"></script>
 <style>
   html { scroll-behavior: smooth; }
@@ -100,6 +101,25 @@
   "mainEntity": { "@id": "https://inventiviamarketing.com/#localbusiness" }
 }
 </script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Agencia SEO en Murcia", "item": "https://inventiviamarketing.com/" },
+    { "@type": "ListItem", "position": 2, "name": "Contacto", "item": "https://inventiviamarketing.com/contacto.html" }
+  ]
+}
+</script>
+<style>
+/* Cross-document view transitions */
+@view-transition{navigation:auto}
+@keyframes vt-out{to{opacity:0;transform:translateY(-16px)}}
+@keyframes vt-in{from{opacity:0;transform:translateY(20px)}}
+::view-transition-old(root){animation:vt-out .26s cubic-bezier(.16,1,.3,1) both}
+::view-transition-new(root){animation:vt-in .44s cubic-bezier(.16,1,.3,1) both}
+@media(prefers-reduced-motion:reduce){::view-transition-old(root),::view-transition-new(root){animation:none}}
+</style>
 </head>
 <body>
 <template id="bundler-thumbnail">
