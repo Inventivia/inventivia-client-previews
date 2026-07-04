@@ -494,6 +494,56 @@ img{max-width:100%}
 @keyframes sh-draw{0%{transform:scaleY(0);transform-origin:top}45%{transform:scaleY(1);transform-origin:top}55%{transform:scaleY(1);transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
 @media(max-width:760px){.scroll-hint{display:none}}
 
+/* ============================ SPIN & MIX PASS ============================ */
+/* draggable coins whose icons spin on themselves */
+.coin{width:92px;height:92px;border-radius:50%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;position:relative;box-shadow:var(--neu-raised-sm);cursor:grab;user-select:none}
+.coin svg{width:32px;height:32px;display:block;animation:kin-spin var(--spin,7s) linear infinite}
+.coin.rev svg{animation-direction:reverse}
+.coin:hover svg{animation-duration:1.4s}
+.coin .ring{position:absolute;inset:5px;border-radius:50%;border:1.5px dashed currentColor;opacity:.4;animation:kin-spin calc(var(--spin,7s)*2.4) linear infinite reverse;pointer-events:none}
+.coin .clbl{font-family:var(--font-mono);font-size:9px;font-weight:700;letter-spacing:.16em;text-transform:uppercase}
+.coin.gold{background:var(--gold);color:var(--ink-900)}
+.coin.ink{background:var(--ink-900);color:var(--gold);box-shadow:5px 5px 12px rgba(0,0,0,.4),-4px -4px 10px rgba(255,255,255,.06)}
+.coin.paper{background:var(--paper-100);color:var(--ink-900)}
+.coin.signal{background:var(--signal);color:var(--ink-900)}
+.coin.bright{background:var(--gold-bright);color:var(--ink-900)}
+
+/* playground orbs: spinning icon + label */
+.orb{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px}
+.orb .oi{line-height:0;pointer-events:none}
+.orb .oi svg{width:26px;height:26px;display:block;animation:kin-spin 6s linear infinite}
+.orb .oi.rev svg{animation-direction:reverse}
+.orb .olb{pointer-events:none}
+
+/* kinetic collage: layers blend into each other while scrolling */
+.mixer{background:var(--paper-200);padding:var(--section-y) 0;border-top:1px solid var(--ink-900)}
+.mix-stage{position:relative;height:clamp(420px,64vh,640px);border-radius:var(--radius-xl);overflow:hidden;background:var(--paper-100);box-shadow:var(--neu-inset)}
+.mix-stage .dots{position:absolute;inset:0;opacity:.5;background-image:radial-gradient(var(--paper-300) 1.5px,transparent 1.5px);background-size:26px 26px}
+.mix-layer{position:absolute;border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--neu-raised);will-change:translate;mix-blend-mode:multiply}
+.mix-layer img{width:100%;height:100%;object-fit:cover;display:block;mix-blend-mode:luminosity;opacity:.92}
+.mix-layer video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:none}
+.mix-layer.l1{width:44%;height:66%;left:6%;top:8%;background:linear-gradient(135deg,var(--gold),var(--gold-bright))}
+.mix-layer.l2{width:40%;height:58%;left:33%;top:26%;background:linear-gradient(135deg,var(--signal),#7db9ff);transform:rotate(-3deg)}
+.mix-layer.l3{width:36%;height:62%;right:5%;top:12%;background:linear-gradient(135deg,#b9a8e8,var(--gold-bright));transform:rotate(2deg)}
+.mix-word{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);font-family:var(--font-display);font-weight:700;font-size:clamp(4rem,12vw,11rem);letter-spacing:-.05em;color:transparent;-webkit-text-stroke:1.5px var(--ink-900);pointer-events:none;white-space:nowrap;will-change:translate;z-index:3}
+@media(max-width:680px){
+  .mix-stage{height:380px}
+  .mix-layer.l1{width:64%;left:3%;top:6%}
+  .mix-layer.l2{width:58%;left:24%;top:32%}
+  .mix-layer.l3{width:50%;right:3%;top:10%}
+}
+
+/* showreel video band (slot assets/video/reel.mp4 — self-hides until it exists) */
+.reel{position:relative;background:var(--ink-900);overflow:hidden;border-top:2px solid var(--gold);border-bottom:2px solid var(--gold)}
+.reel>video{display:block;width:100%;height:clamp(300px,58vh,560px);object-fit:cover}
+.reel .rov{position:absolute;inset:0;display:grid;place-items:center;background:linear-gradient(180deg,rgba(9,9,15,.35),rgba(9,9,15,.08) 45%,rgba(9,9,15,.5));pointer-events:none}
+.reel .big{font-family:var(--font-display);font-weight:700;font-size:clamp(2.2rem,6vw,5rem);letter-spacing:-.03em;line-height:1;color:var(--paper-200);text-transform:uppercase}
+.reel .big.out{color:transparent;-webkit-text-stroke:1.5px var(--paper-200)}
+.reel .sep{color:var(--gold);margin:0 .5em}
+
+/* project images drift on scroll (bleed for parallax room) */
+.card .img,.card .pimg{top:-34px;bottom:-34px;height:auto}
+
 /* --- back-to-top with progress ring --- */
 .totop{position:fixed;right:22px;bottom:22px;width:54px;height:54px;border-radius:50%;background:var(--ink-900);color:var(--gold);display:grid;place-items:center;z-index:400;cursor:pointer;border:0;box-shadow:0 12px 30px rgba(13,13,24,.35);opacity:0;transform:translateY(18px) scale(.8);transition:opacity .35s,transform .45s var(--ease-spring)}
 .totop.on{opacity:1;transform:none}
@@ -673,12 +723,37 @@ img{max-width:100%}
         <span class="tape"></span>
       </figure>
     </div>
-    <div class="piece hero-chip kin-draggable" data-cursor="drag" style="bottom:30%;left:6%" data-drag><div class="chip ink" style="animation:kin-wobble 2.9s ease-in-out infinite">SEO LOCAL</div></div>
-    <div class="piece hero-chip kin-draggable" data-cursor="drag" style="top:60%;right:40%" data-drag><div class="chip paper" style="animation:kin-bounce 2.4s ease-in-out infinite">◆ GOOGLE</div></div>
+    <div class="piece hero-chip kin-draggable" data-cursor="drag" style="top:14%;left:3%" data-drag>
+      <div class="coin ink" style="--spin:6s;animation:kin-bob 3.4s ease-in-out infinite">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5 21 21"/></svg>
+        <span class="clbl">SEO</span><i class="ring"></i>
+      </div>
+    </div>
+    <div class="piece hero-chip kin-draggable" data-cursor="drag" style="top:60%;right:40%" data-drag>
+      <div class="coin paper rev" style="--spin:9s;animation:kin-bounce 2.6s ease-in-out infinite">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 5h16v11H9l-5 4V5Z"/><circle cx="9" cy="10.5" r=".8" fill="currentColor" stroke="none"/><circle cx="12" cy="10.5" r=".8" fill="currentColor" stroke="none"/><circle cx="15" cy="10.5" r=".8" fill="currentColor" stroke="none"/></svg>
+        <span class="clbl">SOCIAL</span><i class="ring"></i>
+      </div>
+    </div>
     <div class="piece hero-chip kin-draggable" data-cursor="drag" style="bottom:22%;right:14%" data-drag><div class="chip gold" style="animation:kin-pulse 3.2s ease-in-out infinite">MURCIA</div></div>
-    <div class="piece hero-chip kin-draggable" data-cursor="drag" style="top:44%;right:8%" data-drag><div class="chip signal" style="animation:kin-tilt 2.6s ease-in-out infinite">✦ WEB</div></div>
-    <div class="piece hero-chip kin-draggable" data-cursor="drag" style="bottom:40%;left:24%" data-drag><div class="chip gold" style="animation:kin-bob 3.4s ease-in-out infinite;background:var(--gold-bright)">IA</div></div>
-    <div class="piece hero-chip kin-draggable" data-cursor="drag" style="top:62%;left:10%" data-drag><div class="chip paper" style="animation:kin-bounce 2.8s ease-in-out infinite">◆ ADS</div></div>
+    <div class="piece hero-chip kin-draggable" data-cursor="drag" style="top:44%;right:8%" data-drag>
+      <div class="coin signal" style="--spin:8s;animation:kin-float 4.2s ease-in-out infinite">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><ellipse cx="12" cy="12" rx="4" ry="9"/><path d="M3.6 9h16.8M3.6 15h16.8"/></svg>
+        <span class="clbl">WEB</span><i class="ring"></i>
+      </div>
+    </div>
+    <div class="piece hero-chip kin-draggable" data-cursor="drag" style="top:66%;right:5%" data-drag>
+      <div class="coin bright" style="--spin:5s;animation:kin-bob 3.8s ease-in-out infinite">
+        <svg viewBox="0 0 24 24"><path d="M12 2 Q13.5 9.5 22 12 Q13.5 14.5 12 22 Q10.5 14.5 2 12 Q10.5 9.5 12 2 Z" fill="currentColor"/></svg>
+        <span class="clbl">IA</span><i class="ring"></i>
+      </div>
+    </div>
+    <div class="piece hero-chip kin-draggable" data-cursor="drag" style="bottom:5%;left:6%" data-drag>
+      <div class="coin gold rev" style="--spin:7s;animation:kin-bounce 3s ease-in-out infinite">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10v4h3l10 6V4L7 10H4Z"/><path d="M19.5 9.5a5 5 0 0 1 0 5"/></svg>
+        <span class="clbl">ADS</span><i class="ring"></i>
+      </div>
+    </div>
   </div>
   <div class="wrap" style="position:relative;z-index:3">
     <div class="kicker"><span class="line"></span><span class="lbl">Agencia SEO en Murcia · Marketing digital con IA</span></div>
@@ -785,6 +860,28 @@ img{max-width:100%}
   </div>
 </section>
 
+<!-- ============ COLLAGE CINÉTICO ============ -->
+<section class="mixer" id="collage">
+  <div class="wrap">
+    <div class="mix-head kin-section-reveal" style="max-width:640px;margin-bottom:30px">
+      <span class="eyebrow">(collage cinético)</span>
+      <h2 style="font-size:clamp(2.2rem,5vw,4rem);letter-spacing:-.04em;color:var(--ink-900);margin-top:14px">Todo se mezcla al hacer scroll</h2>
+      <p style="color:#2b2b38;margin-top:16px">Estrategia, diseño, datos y Murcia: capas que se cruzan y se funden mientras te mueves. Así trabajamos — todo conectado.</p>
+    </div>
+    <div class="mix-stage kin-section-reveal scale">
+      <div class="dots"></div>
+      <div class="mix-layer l1" data-speed="-0.12"><img src="assets/img/mix-01.jpg" alt="" loading="lazy" onerror="this.remove()"></div>
+      <div class="mix-layer l2" data-speed="0.09">
+        <video muted loop autoplay playsinline preload="metadata" onloadeddata="this.style.display='block'"><source src="assets/video/mix-01.mp4" type="video/mp4" onerror="this.parentNode.style.display='none'"></video>
+        <img src="assets/img/mix-02.jpg" alt="" loading="lazy" onerror="this.remove()">
+      </div>
+      <div class="mix-layer l3" data-speed="-0.05"><img src="assets/img/mix-03.jpg" alt="" loading="lazy" onerror="this.remove()"></div>
+      <div class="mix-word" data-speed="0.16">murcia*</div>
+      <span style="position:absolute;top:16px;left:20px;font-family:var(--font-mono);font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--text-faint)">scroll · blend · capas</span>
+    </div>
+  </div>
+</section>
+
 <!-- ============ PROJECTS ============ -->
 <section class="proj" id="proyectos">
   <div class="wrap">
@@ -807,6 +904,16 @@ img{max-width:100%}
   </div>
 </section>
 
+
+<!-- ============ SHOWREEL (se activa al subir assets/video/reel.mp4) ============ -->
+<section class="reel" id="reel" hidden>
+  <video muted loop autoplay playsinline preload="metadata">
+    <source src="assets/video/reel.mp4" type="video/mp4">
+  </video>
+  <div class="rov">
+    <div class="kin-marquee" style="width:100%"><div class="kin-marquee-track kin-marquee-left" style="--mq:20s" id="reel-marq"></div></div>
+  </div>
+</section>
 
 <!-- ============ FAQ SEO LOCAL ============ -->
 <section class="faq-seo" id="faq-seo" style="background:var(--paper-200);padding:clamp(4rem,8vw,7rem) 0;border-top:1px solid var(--ink-900)">
@@ -1016,7 +1123,7 @@ var STEPS=[
 
 /* ---------- SPLIT HEADINGS into animated letters ---------- */
 (function(){
-  var sels=[".svc-head h2",".play-head h2",".proj-head h2",".process h2",".seo h2",".cta h2"];
+  var sels=[".svc-head h2",".play-head h2",".proj-head h2",".process h2",".seo h2",".cta h2",".mixer h2"];
   sels.forEach(function(sel){
     $$(sel).forEach(function(h){
       var i=0;
@@ -1165,6 +1272,64 @@ function makeDraggable(el){
 }
 $$("[data-drag]").forEach(makeDraggable);
 
+/* ---------- ICONOS (spinning, shared by playground orbs) ---------- */
+var SPIN_ICON={
+  "SEO":'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5 21 21"/></svg>',
+  "WEB":'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><ellipse cx="12" cy="12" rx="4" ry="9"/><path d="M3.6 9h16.8M3.6 15h16.8"/></svg>',
+  "IA":'<svg viewBox="0 0 24 24"><path d="M12 2 Q13.5 9.5 22 12 Q13.5 14.5 12 22 Q10.5 14.5 2 12 Q10.5 9.5 12 2 Z" fill="currentColor"/></svg>',
+  "SOCIAL":'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 5h16v11H9l-5 4V5Z"/><circle cx="9" cy="10.5" r=".8" fill="currentColor" stroke="none"/><circle cx="12" cy="10.5" r=".8" fill="currentColor" stroke="none"/><circle cx="15" cy="10.5" r=".8" fill="currentColor" stroke="none"/></svg>',
+  "BRANDING":'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 3l7 6-7 12L5 9l7-6Z"/><path d="M5 9h14"/></svg>',
+  "LEADS":'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M3 4h18l-7 8v7l-4-2v-5L3 4Z"/></svg>',
+  "ADS":'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10v4h3l10 6V4L7 10H4Z"/><path d="M19.5 9.5a5 5 0 0 1 0 5"/></svg>'
+};
+
+/* ---------- SCROLL MIX: collage layers + project images drift/blend ---------- */
+(function(){
+  if(SOFT) return;
+  var stage=$(".mix-stage");
+  var layers=stage?$$("[data-speed]",stage):[];
+  var cards=$$("#track .card .inner");
+  var ticking=false;
+  function apply(){
+    ticking=false;
+    var vh=window.innerHeight||document.documentElement.clientHeight;
+    if(stage&&layers.length){
+      var st=stage.getBoundingClientRect();
+      if(st.bottom>0&&st.top<vh){
+        var p=(st.top+st.height/2-vh/2)/vh;
+        layers.forEach(function(l){
+          l.style.translate="0 "+Math.round(p*parseFloat(l.getAttribute("data-speed"))*vh)+"px";
+        });
+      }
+    }
+    cards.forEach(function(c){
+      var r=c.getBoundingClientRect();
+      if(r.bottom<0||r.top>vh) return;
+      var pc=(r.top+r.height/2-vh/2)/vh;
+      var im=c.querySelector(".pimg")||c.querySelector(".img");
+      if(im) im.style.translate="0 "+Math.round(pc*26)+"px";
+    });
+  }
+  window.addEventListener("scroll",function(){ if(!ticking){ticking=true;requestAnimationFrame(apply);} },{passive:true});
+  window.addEventListener("resize",function(){ if(!ticking){ticking=true;requestAnimationFrame(apply);} },{passive:true});
+  apply();
+})();
+
+/* ---------- SHOWREEL: unhides itself when assets/video/reel.mp4 exists ---------- */
+(function(){
+  var sec=$("#reel"); if(!sec) return;
+  var v=$("video",sec);
+  bigBand($("#reel-marq"), ["Showreel","InventivIA","Diseño en movimiento","Murcia"], true, "✦");
+  v.addEventListener("loadeddata",function(){
+    sec.hidden=false;
+    if("IntersectionObserver" in window){
+      new IntersectionObserver(function(en){
+        en.forEach(function(e){ if(e.isIntersecting){ v.play().catch(function(){}); } else { v.pause(); } });
+      },{threshold:.15}).observe(sec);
+    }
+  });
+})();
+
 /* ---------- PLAYGROUND physics ---------- */
 (function(){
   var field=$("#field"); if(!field) return;
@@ -1186,7 +1351,8 @@ $$("[data-drag]").forEach(makeDraggable);
     el.style.background=o.bg;
     el.style.color=o.fg; el.style.fontSize=(o.r<52?11:13)+"px";
     el.style.border="2px solid var(--ink-900)"; el.style.boxShadow="4px 4px 0 var(--ink-900)";
-    el.style.opacity="0"; el.textContent=o.label;
+    el.style.opacity="0";
+    el.innerHTML='<span class="oi'+(i%2?' rev':'')+'">'+(SPIN_ICON[o.label]||'')+'</span><span class="olb">'+o.label+'</span>';
     field.appendChild(el);
     bodies.push({o:o,r:o.r,x:0,y:0,vx:0,vy:0,el:el,i:i});
   });

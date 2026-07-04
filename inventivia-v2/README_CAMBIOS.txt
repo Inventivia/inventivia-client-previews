@@ -56,3 +56,18 @@ Pase WOW julio 2026 — carga animada + slots de imágenes:
   (svc-01..05) y equipo de quienes-somos (team-01/02, ia-01..08).
   Ver assets/img/LEEME.txt: al subir las imágenes con esos nombres aparecen solas;
   mientras no existan la web usa sus gráficos actuales sin errores visibles.
+
+Pase SPIN & MIX julio 2026 — iconos giratorios, collage blend y vídeo:
+- Monedas-icono arrastrables en el hero que giran sobre sí mismas (SEO, WEB,
+  IA, SOCIAL, ADS) con anillo punteado contrarrotante e inercia al soltar.
+- Los orbes del playground ahora llevan icono giratorio + etiqueta.
+- Nueva sección "Collage cinético": 3 capas con mix-blend-mode que se
+  desplazan a velocidades distintas y se mezclan entre sí al hacer scroll,
+  con la palabra "murcia*" en outline moviéndose a contracorriente.
+  Slots: mix-01/02/03.jpg + vídeo mix-01.mp4 en la capa central.
+- Nueva sección Showreel: banda de vídeo a ancho completo con marquesina
+  superpuesta; permanece oculta hasta que exista assets/video/reel.mp4
+  (se pausa automáticamente fuera de pantalla).
+- Las imágenes de proyectos derivan verticalmente con el scroll (parallax).
+- assets/img/LEEME.txt ampliado con specs de collage y vídeos + ideas de
+  grabación.

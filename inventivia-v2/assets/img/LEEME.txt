@@ -31,3 +31,28 @@ QUIÉNES SOMOS
 Formato: JPG (o WebP renombrado a .jpg no vale — usa .jpg de verdad).
 Peso recomendado: < 250 KB por imagen.
 Paleta de la marca: crema #f3f2e5 · tinta #0d0d18 · dorado #c5a831 · menta #6fe3c2
+
+COLLAGE CINÉTICO (home — capas que se mezclan al hacer scroll)
+- mix-01.jpg ......... Capa izquierda (900×900) — ej: foto Murcia/catedral con tono dorado
+- mix-02.jpg ......... Capa central (800×760) — ej: equipo trabajando / pantalla con web
+- mix-03.jpg ......... Capa derecha (700×860) — ej: detalle abstracto/textura dorada
+  * Consejo: imágenes con contraste medio; el efecto blend las tiñe con los
+    colores de la marca al superponerse.
+
+VÍDEOS (súbelos a assets/video/ — las secciones se activan solas)
+- reel.mp4 ........... Showreel a ancho completo (16:9, 1920×1080), 10-30 s,
+                       en bucle, SIN sonido necesario (se reproduce muteado),
+                       peso ideal < 12 MB (exporta H.264, bitrate ~4-6 Mbps)
+- mix-01.mp4 ......... Clip corto para la capa central del collage (~800×760
+                       o cuadrado), 5-10 s en bucle, < 6 MB
+
+IDEAS PARA GRABAR LOS VÍDEOS (con el móvil o grabando pantalla):
+1. Screen-recording haciendo scroll por webs que habéis diseñado (el clásico
+   showreel de agencia). Graba en 60 fps si puedes.
+2. B-roll de oficina: manos tecleando, boceto en papel, pantalla con Analytics
+   o Search Console subiendo, post-its, café — clips de 2-3 s encadenados.
+3. Timelapse o clip estable de Murcia reconocible (Catedral, Puente de los
+   Peligros, Tráfico de la Gran Vía) — conecta con el SEO local.
+4. Pantalla del móvil buscando "agencia seo murcia" en Google y apareciendo
+   vuestro resultado (oro puro para el reel).
+5. Cursor moviéndose por un dashboard de rankings con las gráficas subiendo.
