@@ -84,6 +84,7 @@ img{max-width:100%}
 .kin-headline-char{display:inline-block;opacity:1;will-change:transform,opacity;animation:kin-char-in .7s var(--ease-out);animation-delay:calc(var(--i,0) * 40ms + 300ms)}
 .kin-headline-char.it{font-style:italic;padding-right:.04em}
 .kin-wave{display:inline-block;opacity:1;will-change:transform,opacity;animation:kin-char-in .7s var(--ease-out), kin-wave-bob 2.9s ease-in-out infinite;animation-delay:calc(var(--i,0) * 40ms + 700ms), calc(var(--i,0) * 85ms + 1700ms)}
+.kin-word{display:inline-block;white-space:nowrap}
 .kin-split{display:inline-block;opacity:0;transform:translateY(.5em) rotate(3deg);transition:opacity .55s var(--ease-out) calc(var(--i,0)*26ms), transform .55s var(--ease-out) calc(var(--i,0)*26ms);will-change:opacity,transform}
 .is-in .kin-split{opacity:1;transform:none}
 .kin-type-reveal{display:inline-block;opacity:1;animation:kin-rise .8s var(--ease-out);animation-delay:calc(var(--d,0) * 1ms)}
@@ -876,11 +877,12 @@ bigBand($("#foot-marq"), ["Más visibilidad","Más clientes","Más ventas","Mark
         texts.push(n);
       }
       texts.forEach(function(tn){
-        var frag=document.createDocumentFragment(), t=tn.nodeValue;
+        var frag=document.createDocumentFragment(), t=tn.nodeValue, word=null;
         for(var c=0;c<t.length;c++){
           var ch=t[c];
-          if(ch===" "){ frag.appendChild(document.createTextNode("\u00a0")); continue; }
-          var sp=document.createElement("span"); sp.className="kin-split"; sp.style.setProperty("--i", i++); sp.textContent=ch; frag.appendChild(sp);
+          if(ch===" "){ word=null; frag.appendChild(document.createTextNode(" ")); continue; }
+          if(!word){ word=document.createElement("span"); word.className="kin-word"; frag.appendChild(word); }
+          var sp=document.createElement("span"); sp.className="kin-split"; sp.style.setProperty("--i", i++); sp.textContent=ch; word.appendChild(sp);
         }
         tn.parentNode.replaceChild(frag, tn);
       });

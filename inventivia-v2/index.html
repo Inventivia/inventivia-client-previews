@@ -98,6 +98,7 @@ img{max-width:100%}
 .kin-headline-char{display:inline-block;opacity:0;will-change:transform,opacity;animation:kin-char-in .7s var(--ease-out) both;animation-delay:calc(var(--i,0) * 40ms + 300ms)}
 .kin-headline-char.it{font-style:italic;padding-right:.04em}
 .kin-wave{display:inline-block;opacity:0;will-change:transform,opacity;animation:kin-char-in .7s var(--ease-out) both, kin-wave-bob 2.9s ease-in-out infinite;animation-delay:calc(var(--i,0) * 40ms + 700ms), calc(var(--i,0) * 85ms + 1700ms)}
+.kin-word{display:inline-block;white-space:nowrap}
 .kin-split{display:inline-block;opacity:0;transform:translateY(.5em) rotate(3deg);transition:opacity .55s var(--ease-out) calc(var(--i,0)*26ms), transform .55s var(--ease-out) calc(var(--i,0)*26ms);will-change:opacity,transform}
 .is-in .kin-split{opacity:1;transform:none}
 .kin-type-reveal{display:inline-block;opacity:0;animation:kin-rise .8s var(--ease-out) both;animation-delay:calc(var(--d,0) * 1ms)}
@@ -425,6 +426,81 @@ img{max-width:100%}
   .kin-section-reveal{filter:none}
   .kin-neu-button:hover::after{animation:none}
 }
+
+/* ============================ WOW PASS ============================ */
+/* --- brand preloader: counter + curtain wipe --- */
+.loader{position:fixed;inset:0;z-index:9000;pointer-events:none}
+.loader .curt{position:absolute;left:0;right:0;height:50.5%;background:var(--ink-900);transition:transform .85s var(--ease-out) .12s}
+.loader .curt.t{top:0}.loader .curt.b{bottom:0}
+.loader .lc{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;color:var(--paper-200);transition:opacity .3s}
+.loader .lseal{width:70px;height:70px;border-radius:50%;border:2px solid var(--gold);display:grid;place-items:center;font-family:var(--font-display);font-weight:800;font-size:24px;color:var(--gold);animation:kin-pulse 1.1s ease-in-out infinite}
+.loader .lnum{font-family:var(--font-display);font-weight:700;font-size:clamp(3rem,9vw,5.6rem);line-height:1;letter-spacing:-.04em}
+.loader .lbar{width:min(300px,58vw);height:2px;background:var(--ink-600);overflow:hidden;border-radius:99px}
+.loader .lbar i{display:block;height:100%;width:100%;background:var(--gold);transform:scaleX(0);transform-origin:left}
+.loader .lword{font-family:var(--font-mono);font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:var(--gold)}
+.loader.done .lc{opacity:0}
+.loader.done .curt.t{transform:translateY(-101%)}
+.loader.done .curt.b{transform:translateY(101%)}
+.loader.gone,.no-js .loader{display:none}
+@media(prefers-reduced-motion:reduce){.loader{display:none}}
+/* hero entrance waits for the curtain */
+.with-loader #headline .headline-line{animation-delay:1.35s}
+.with-loader #headline .headline-line:nth-child(2){animation-delay:1.47s}
+.with-loader #headline .headline-small{animation-delay:1.62s}
+.with-loader .kicker{opacity:0;animation:kin-rise .6s var(--ease-out) 1.3s both}
+.with-loader .home-seal-piece{animation-delay:1.5s!important}
+
+/* --- film grain overlay --- */
+.grain{position:fixed;inset:-60%;z-index:2000;pointer-events:none;opacity:.05;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='240' height='240'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/></filter><rect width='240' height='240' filter='url(%23n)'/></svg>");animation:grain-jump 7s steps(8) infinite}
+@keyframes grain-jump{0%,100%{transform:translate(0,0)}12.5%{transform:translate(-3%,2%)}25%{transform:translate(2%,-4%)}37.5%{transform:translate(-4%,-1%)}50%{transform:translate(3%,3%)}62.5%{transform:translate(-2%,4%)}75%{transform:translate(4%,-2%)}87.5%{transform:translate(1%,1%)}}
+@media(prefers-reduced-motion:reduce){.grain{animation:none}}
+
+/* --- aurora glows on dark sections --- */
+.seo,.process{position:relative}
+.process{overflow:hidden}
+.seo>.wrap-n,.process>.wrap-n{position:relative;z-index:1}
+.aurora{position:absolute;width:56vw;height:56vw;max-width:880px;max-height:880px;border-radius:50%;filter:blur(90px);pointer-events:none;opacity:.14;animation:aur-drift 18s ease-in-out infinite alternate}
+.aurora.gold{background:radial-gradient(circle,var(--gold),transparent 62%);top:-18%;left:-14%}
+.aurora.signal{background:radial-gradient(circle,var(--signal),transparent 62%);bottom:-22%;right:-12%;animation-duration:23s;animation-delay:-8s}
+@keyframes aur-drift{from{transform:translate(-6%,-4%) scale(1)}to{transform:translate(10%,8%) scale(1.18)}}
+
+/* --- staggered children inside revealed sections --- */
+.kin-section-reveal .kin-stagger{opacity:0;transform:translateY(26px) scale(.97);transition:opacity .7s var(--ease-out),transform .7s var(--ease-out)}
+.kin-section-reveal.is-in .kin-stagger{opacity:1;transform:none;transition-delay:calc(var(--i,0)*90ms)}
+.no-js .kin-stagger{opacity:1!important;transform:none!important}
+
+/* --- service hover peek card (follows the cursor) --- */
+.svc-peek{position:fixed;top:0;left:0;width:225px;height:285px;border-radius:var(--radius-md);pointer-events:none;z-index:80;opacity:0;transform:scale(.55) rotate(5deg);transition:opacity .28s var(--ease-out),transform .45s var(--ease-spring);overflow:hidden;box-shadow:16px 20px 44px rgba(13,13,24,.32);will-change:translate,transform}
+.svc-peek.on{opacity:1;transform:scale(1) rotate(-3deg)}
+.svc-peek .bg{position:absolute;inset:0}
+.svc-peek .ico{position:absolute;inset:0;display:grid;place-items:center;font-size:56px;color:var(--paper-200);opacity:.9}
+.svc-peek img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.svc-peek .cap{position:absolute;left:14px;bottom:12px;font-family:var(--font-mono);font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--paper-200);text-shadow:0 1px 8px rgba(9,9,15,.6)}
+
+/* --- hero polaroid (image slot: assets/img/hero-1.jpg) --- */
+.polaroid{margin:0;background:var(--paper-100);padding:10px 10px 14px;border-radius:14px;box-shadow:12px 14px 30px rgba(13,13,24,.22);transform:rotate(var(--tilt,-5deg));animation:kin-float 6s ease-in-out infinite;position:relative;width:212px}
+.polaroid img{display:block;width:100%;height:232px;object-fit:cover;border-radius:8px}
+.polaroid figcaption{font-family:var(--font-mono);font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--text-faint);margin-top:9px;text-align:center}
+.polaroid .tape{position:absolute;top:-10px;left:50%;transform:translateX(-50%) rotate(-3deg);width:74px;height:22px;background:rgba(197,168,49,.55);border-radius:2px}
+
+/* --- project cards: real image slots with slow ken burns --- */
+@keyframes kenburns{0%,100%{transform:scale(1)}50%{transform:scale(1.12) translate(1.5%,-1.5%)}}
+.card .pimg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;animation:kenburns 16s ease-in-out infinite;animation-delay:calc(var(--i,0)*-2.4s)}
+@media(prefers-reduced-motion:reduce){.card .pimg{animation:none}}
+
+/* --- hero scroll hint --- */
+.scroll-hint{position:absolute;left:50%;bottom:24px;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:8px;z-index:4;font-family:var(--font-mono);font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:var(--text-faint)}
+.scroll-hint .sh-line{width:1.5px;height:44px;background:var(--ink-900);animation:sh-draw 1.9s var(--ease-out) infinite}
+@keyframes sh-draw{0%{transform:scaleY(0);transform-origin:top}45%{transform:scaleY(1);transform-origin:top}55%{transform:scaleY(1);transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
+@media(max-width:760px){.scroll-hint{display:none}}
+
+/* --- back-to-top with progress ring --- */
+.totop{position:fixed;right:22px;bottom:22px;width:54px;height:54px;border-radius:50%;background:var(--ink-900);color:var(--gold);display:grid;place-items:center;z-index:400;cursor:pointer;border:0;box-shadow:0 12px 30px rgba(13,13,24,.35);opacity:0;transform:translateY(18px) scale(.8);transition:opacity .35s,transform .45s var(--ease-spring)}
+.totop.on{opacity:1;transform:none}
+.totop svg{position:absolute;inset:4px;width:46px;height:46px;transform:rotate(-90deg)}
+.totop circle{fill:none;stroke:var(--gold);stroke-width:2.5;stroke-linecap:round;stroke-dasharray:132;stroke-dashoffset:calc(132 - 132*var(--p,0))}
+.totop .arr{font-size:18px;line-height:1;animation:kin-bounce 2.2s ease-in-out infinite}
+@media(max-width:760px){.totop{right:14px;bottom:14px;width:48px;height:48px}.totop svg{inset:3px;width:42px;height:42px}}
 </style>
 <script type="application/ld+json">
 {
@@ -531,6 +607,16 @@ img{max-width:100%}
 </script>
 </head>
 <body>
+<div class="loader" id="loader" aria-hidden="true">
+  <div class="curt t"></div><div class="curt b"></div>
+  <div class="lc">
+    <div class="lseal">IA</div>
+    <div class="lnum" id="lnum">0</div>
+    <div class="lbar"><i id="lbar"></i></div>
+    <div class="lword">Agencia SEO · Murcia</div>
+  </div>
+</div>
+<div class="grain" aria-hidden="true"></div>
 <template id="__bundler_thumbnail" data-bg-color="#0d0d18">
   <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
     <rect width="48" height="48" fill="#0d0d18"/>
@@ -580,6 +666,13 @@ img{max-width:100%}
         <div class="seal-hub">IA</div>
       </div>
     </div>
+    <div class="piece kin-draggable" data-cursor="drag" style="top:44%;left:2.5%" data-drag>
+      <figure class="polaroid" style="--tilt:-5deg">
+        <img src="assets/img/hero-1.jpg" alt="InventivIA, agencia SEO en Murcia" loading="lazy" onerror="this.closest('.piece').style.display='none'">
+        <figcaption>inventivia · murcia</figcaption>
+        <span class="tape"></span>
+      </figure>
+    </div>
     <div class="piece hero-chip kin-draggable" data-cursor="drag" style="bottom:30%;left:6%" data-drag><div class="chip ink" style="animation:kin-wobble 2.9s ease-in-out infinite">SEO LOCAL</div></div>
     <div class="piece hero-chip kin-draggable" data-cursor="drag" style="top:60%;right:40%" data-drag><div class="chip paper" style="animation:kin-bounce 2.4s ease-in-out infinite">◆ GOOGLE</div></div>
     <div class="piece hero-chip kin-draggable" data-cursor="drag" style="bottom:22%;right:14%" data-drag><div class="chip gold" style="animation:kin-pulse 3.2s ease-in-out infinite">MURCIA</div></div>
@@ -598,6 +691,7 @@ img{max-width:100%}
       </div>
     </div>
   </div>
+  <div class="scroll-hint" aria-hidden="true"><span class="sh-line"></span><span>scroll</span></div>
 </section>
 
 <!-- ============ SERVICE BAND ============ -->
@@ -623,18 +717,20 @@ img{max-width:100%}
 
 <!-- ============ SEO + IA ============ -->
 <section class="seo" id="seo-ia">
+  <div class="aurora gold" aria-hidden="true"></div>
+  <div class="aurora signal" aria-hidden="true"></div>
   <div class="wrap-n split">
     <div class="kin-section-reveal from-right">
       <div class="k"><span class="line"></span><span class="lbl">SEO local + IA</span></div>
       <h2>SEO local en Murcia<br><span class="it">con estrategia, contenido e IA</span></h2>
       <p class="lead">Unimos SEO técnico, SEO local, contenidos estratégicos y automatización con IA para mejorar la visibilidad de tu negocio en Google. Analizamos cómo busca tu cliente, optimizamos tu web y creamos una estrategia pensada para atraer tráfico cualificado y oportunidades reales.</p>
       <ul>
-        <li><b>▸</b> Auditoría SEO técnica y de contenidos</li>
-        <li><b>▸</b> Estudio de palabras clave locales en Murcia</li>
-        <li><b>▸</b> Optimización de páginas de servicio y landings SEO</li>
-        <li><b>▸</b> Velocidad, estructura, enlazado interno y Core Web Vitals</li>
-        <li><b>▸</b> Automatización de informes, contenidos y seguimiento SEO</li>
-        <li><b>▸</b> Google Business Profile y búsquedas locales</li>
+        <li class="kin-stagger" style="--i:0"><b>▸</b> Auditoría SEO técnica y de contenidos</li>
+        <li class="kin-stagger" style="--i:1"><b>▸</b> Estudio de palabras clave locales en Murcia</li>
+        <li class="kin-stagger" style="--i:2"><b>▸</b> Optimización de páginas de servicio y landings SEO</li>
+        <li class="kin-stagger" style="--i:3"><b>▸</b> Velocidad, estructura, enlazado interno y Core Web Vitals</li>
+        <li class="kin-stagger" style="--i:4"><b>▸</b> Automatización de informes, contenidos y seguimiento SEO</li>
+        <li class="kin-stagger" style="--i:5"><b>▸</b> Google Business Profile y búsquedas locales</li>
       </ul>
       <div style="margin-top:32px"><a href="#contacto" class="kin-neu-button gold magnetic" data-cursor="ver" aria-label="Quiero mejorar mi SEO">Quiero mejorar mi SEO →</a></div>
     </div>
@@ -677,14 +773,14 @@ img{max-width:100%}
       <p style="color:#2b2b38;font-size:clamp(1rem,1.2vw,1.15rem);line-height:1.6;margin-top:16px;max-width:780px">Acompañamos a empresas de Murcia capital, Molina de Segura, Alcantarilla, Espinardo, Churra y toda la Región de Murcia. Si buscas una <a href="servicios.html" style="color:var(--gold-deep);text-decoration:underline;text-underline-offset:3px">agencia de posicionamiento web en Murcia</a> que hable claro y mida resultados, hablemos.</p>
     </div>
     <div class="kin-section-reveal" style="display:flex;flex-wrap:wrap;gap:13px;margin-top:38px">
-      <span class="sl-pill">SEO local en Murcia</span>
-      <span class="sl-pill">SEO para WordPress y Divi</span>
-      <span class="sl-pill">SEO para ecommerce</span>
-      <span class="sl-pill">SEO técnico</span>
-      <span class="sl-pill">Contenido SEO</span>
-      <span class="sl-pill">Google Business Profile</span>
-      <span class="sl-pill">Arquitectura web</span>
-      <span class="sl-pill">Analítica y conversiones</span>
+      <span class="sl-pill kin-stagger" style="--i:0">SEO local en Murcia</span>
+      <span class="sl-pill kin-stagger" style="--i:1">SEO para WordPress y Divi</span>
+      <span class="sl-pill kin-stagger" style="--i:2">SEO para ecommerce</span>
+      <span class="sl-pill kin-stagger" style="--i:3">SEO técnico</span>
+      <span class="sl-pill kin-stagger" style="--i:4">Contenido SEO</span>
+      <span class="sl-pill kin-stagger" style="--i:5">Google Business Profile</span>
+      <span class="sl-pill kin-stagger" style="--i:6">Arquitectura web</span>
+      <span class="sl-pill kin-stagger" style="--i:7">Analítica y conversiones</span>
     </div>
   </div>
 </section>
@@ -702,6 +798,7 @@ img{max-width:100%}
 
 <!-- ============ PROCESS ============ -->
 <section class="process" id="proceso">
+  <div class="aurora gold" aria-hidden="true" style="top:auto;bottom:-24%;left:-16%"></div>
   <div class="wrap-n">
     <h2 class="kin-section-reveal"><span class="sup">(cómo trabajamos)</span><br>Un proceso claro</h2>
     <div class="steps" id="steps">
@@ -717,12 +814,12 @@ img{max-width:100%}
     <span class="eyebrow">(preguntas frecuentes)</span>
     <h2 style="font-size:clamp(2.2rem,5vw,4rem);letter-spacing:-.04em;color:var(--ink-900);margin-top:14px">Preguntas frecuentes sobre SEO en Murcia</h2>
     <div style="display:grid;gap:14px;margin-top:30px">
-      <details class="kin-neu-card" style="padding:22px" open><summary style="cursor:pointer;font-weight:900">¿Trabajáis SEO local para negocios de Murcia?</summary><p>Sí. Optimizamos web, contenidos, estructura local y señales para que tu negocio gane visibilidad en búsquedas de Murcia y alrededores.</p></details>
-      <details class="kin-neu-card" style="padding:22px"><summary style="cursor:pointer;font-weight:900">¿Cuánto tarda el SEO en dar resultados?</summary><p>Depende del punto de partida, la competencia y el sector. En SEO local en Murcia los primeros avances suelen notarse entre el segundo y el cuarto mes, y los resultados se consolidan con trabajo continuo.</p></details>
-      <details class="kin-neu-card" style="padding:22px"><summary style="cursor:pointer;font-weight:900">¿Qué incluye la auditoría SEO?</summary><p>Revisamos SEO técnico, contenidos, palabras clave, competencia local, enlazado interno, velocidad y Google Business Profile, y te entregamos un plan de acción priorizado.</p></details>
-      <details class="kin-neu-card" style="padding:22px"><summary style="cursor:pointer;font-weight:900">¿También mejoráis webs hechas en WordPress o Divi?</summary><p>Sí. Revisamos arquitectura, velocidad, metadatos, contenido, enlazado interno y páginas de servicio sin romper el diseño aprobado.</p></details>
-      <details class="kin-neu-card" style="padding:22px"><summary style="cursor:pointer;font-weight:900">¿El objetivo es tráfico o clientes?</summary><p>El objetivo es captar oportunidades reales: llamadas, formularios, visitas cualificadas y una web más clara para convertir.</p></details>
-      <details class="kin-neu-card" style="padding:22px"><summary style="cursor:pointer;font-weight:900">¿Trabajáis solo con empresas de Murcia?</summary><p>Somos una agencia SEO en Murcia y especialistas en SEO local, pero trabajamos con clientes de toda la Región de Murcia y del resto de España.</p></details>
+      <details class="kin-neu-card kin-stagger" style="padding:22px;--i:0" open><summary style="cursor:pointer;font-weight:900">¿Trabajáis SEO local para negocios de Murcia?</summary><p>Sí. Optimizamos web, contenidos, estructura local y señales para que tu negocio gane visibilidad en búsquedas de Murcia y alrededores.</p></details>
+      <details class="kin-neu-card kin-stagger" style="padding:22px;--i:1"><summary style="cursor:pointer;font-weight:900">¿Cuánto tarda el SEO en dar resultados?</summary><p>Depende del punto de partida, la competencia y el sector. En SEO local en Murcia los primeros avances suelen notarse entre el segundo y el cuarto mes, y los resultados se consolidan con trabajo continuo.</p></details>
+      <details class="kin-neu-card kin-stagger" style="padding:22px;--i:2"><summary style="cursor:pointer;font-weight:900">¿Qué incluye la auditoría SEO?</summary><p>Revisamos SEO técnico, contenidos, palabras clave, competencia local, enlazado interno, velocidad y Google Business Profile, y te entregamos un plan de acción priorizado.</p></details>
+      <details class="kin-neu-card kin-stagger" style="padding:22px;--i:3"><summary style="cursor:pointer;font-weight:900">¿También mejoráis webs hechas en WordPress o Divi?</summary><p>Sí. Revisamos arquitectura, velocidad, metadatos, contenido, enlazado interno y páginas de servicio sin romper el diseño aprobado.</p></details>
+      <details class="kin-neu-card kin-stagger" style="padding:22px;--i:4"><summary style="cursor:pointer;font-weight:900">¿El objetivo es tráfico o clientes?</summary><p>El objetivo es captar oportunidades reales: llamadas, formularios, visitas cualificadas y una web más clara para convertir.</p></details>
+      <details class="kin-neu-card kin-stagger" style="padding:22px;--i:5"><summary style="cursor:pointer;font-weight:900">¿Trabajáis solo con empresas de Murcia?</summary><p>Somos una agencia SEO en Murcia y especialistas en SEO local, pero trabajamos con clientes de toda la Región de Murcia y del resto de España.</p></details>
     </div>
   </div>
 </section>
@@ -791,6 +888,30 @@ var SOFT = window.matchMedia && window.matchMedia("(prefers-reduced-motion: redu
 var TOUCH = window.matchMedia && window.matchMedia("(pointer: coarse)").matches;
 var $ = function(s,r){return (r||document).querySelector(s)};
 var $$ = function(s,r){return Array.prototype.slice.call((r||document).querySelectorAll(s))};
+
+/* ---------- PRELOADER: counter + curtain wipe ---------- */
+(function(){
+  var L=$("#loader"); if(!L) return;
+  if(SOFT){ L.classList.add("gone"); return; }
+  document.documentElement.classList.add("with-loader");
+  var num=$("#lnum"), bar=$("#lbar"), t0=null, D=950;
+  document.documentElement.style.overflow="hidden";
+  function tick(t){
+    if(!t0) t0=t;
+    var p=Math.min((t-t0)/D,1), e=1-Math.pow(1-p,3);
+    if(num) num.textContent=Math.round(e*100);
+    if(bar) bar.style.transform="scaleX("+e+")";
+    if(p<1) requestAnimationFrame(tick);
+    else{
+      L.classList.add("done");
+      document.documentElement.style.overflow="";
+      setTimeout(function(){ L.classList.add("gone"); },1100);
+    }
+  }
+  requestAnimationFrame(tick);
+  /* safety net: never trap the page behind the loader */
+  setTimeout(function(){ L.classList.add("done"); L.classList.add("gone"); document.documentElement.style.overflow=""; },4000);
+})();
 
 /* ---------- MARQUEE content (duplicated for seamless loop) ---------- */
 function fillMarquee(el, items, cls, sep, sepColor){
@@ -873,7 +994,7 @@ var PROJ=[
 (function(){
   var T=$("#track"); if(!T) return; var html="";
   PROJ.forEach(function(p,i){
-    html+='<a href="#contacto" class="card kin-section-reveal scale" data-cursor="ver" style="transition-delay:'+(i*90)+'ms"><div class="inner"><div class="img" style="background:'+p.tint+'"></div><div class="shade"></div><div class="glare"></div><span class="idx">'+("0"+(i+1)).slice(-2)+' / '+p.yr+'</span><div class="meta"><div class="cat">'+p.cat+'</div><h3>'+p.name+'</h3><div class="more"><span>Ver proyecto →</span></div></div></div></a>';
+    html+='<a href="#contacto" class="card kin-section-reveal scale" data-cursor="ver" style="transition-delay:'+(i*90)+'ms"><div class="inner"><div class="img" style="background:'+p.tint+'"></div><img class="pimg" src="assets/img/proj-0'+(i+1)+'.jpg" alt="'+p.name+' — '+p.cat+'" loading="lazy" style="--i:'+i+'" onerror="this.remove()"><div class="shade"></div><div class="glare"></div><span class="idx">'+("0"+(i+1)).slice(-2)+' / '+p.yr+'</span><div class="meta"><div class="cat">'+p.cat+'</div><h3>'+p.name+'</h3><div class="more"><span>Ver proyecto →</span></div></div></div></a>';
   });
   T.innerHTML=html;
 })();
@@ -907,11 +1028,12 @@ var STEPS=[
         texts.push(n);
       }
       texts.forEach(function(tn){
-        var frag=document.createDocumentFragment(), t=tn.nodeValue;
+        var frag=document.createDocumentFragment(), t=tn.nodeValue, word=null;
         for(var c=0;c<t.length;c++){
           var ch=t[c];
-          if(ch===" "){ frag.appendChild(document.createTextNode("\u00a0")); continue; }
-          var s=document.createElement("span"); s.className="kin-split"; s.style.setProperty("--i", i++); s.textContent=ch; frag.appendChild(s);
+          if(ch===" "){ word=null; frag.appendChild(document.createTextNode(" ")); continue; }
+          if(!word){ word=document.createElement("span"); word.className="kin-word"; frag.appendChild(word); }
+          var s=document.createElement("span"); s.className="kin-split"; s.style.setProperty("--i", i++); s.textContent=ch; word.appendChild(s);
         }
         tn.parentNode.replaceChild(frag, tn);
       });
@@ -1133,6 +1255,55 @@ $$("[data-drag]").forEach(makeDraggable);
       el.style.transform = dist<140 ? "translate("+dx*.3+"px,"+dy*.3+"px)" : "translate(0,0)";
     });
   });
+})();
+
+/* ---------- SERVICE hover PEEK (follows the cursor; image slots assets/img/svc-0N.jpg) ---------- */
+(function(){
+  if(TOUCH) return;
+  var rows=$$("#svc-list .svc-row"); if(!rows.length) return;
+  var peek=document.createElement("div"); peek.className="svc-peek"; peek.setAttribute("aria-hidden","true");
+  peek.innerHTML='<div class="bg"></div><div class="ico"></div><img alt="" style="display:none"><span class="cap"></span>';
+  document.body.appendChild(peek);
+  var bgEl=$(".bg",peek), ico=$(".ico",peek), img=$("img",peek), cap=$(".cap",peek);
+  var GLYPH=["⌘","▲","✦","◍","✺"];
+  var tx=0,ty=0,x=0,y=0,raf=0,on=false;
+  img.onload=function(){ img.style.display="block"; };
+  img.onerror=function(){ img.style.display="none"; };
+  rows.forEach(function(row,i){
+    row.addEventListener("pointerenter",function(){
+      var s=SVC[i]||{};
+      bgEl.style.background="linear-gradient(135deg,var(--ink-900) 10%,"+(s.c||"var(--gold)")+" 160%)";
+      ico.textContent=GLYPH[i%GLYPH.length];
+      cap.textContent=(s.t||"").toLowerCase();
+      img.style.display="none";
+      img.src="assets/img/svc-0"+(i+1)+".jpg";
+      on=true; peek.classList.add("on");
+      if(!raf) raf=requestAnimationFrame(loop);
+    });
+    row.addEventListener("pointerleave",function(){ on=false; peek.classList.remove("on"); });
+  });
+  window.addEventListener("pointermove",function(e){
+    tx=e.clientX+30; ty=e.clientY-150;
+    if(on&&!raf) raf=requestAnimationFrame(loop);
+  },{passive:true});
+  function loop(){
+    x+=(tx-x)*.16; y+=(ty-y)*.16;
+    peek.style.translate=Math.round(x)+"px "+Math.round(y)+"px";
+    if(on||Math.abs(tx-x)>.5||Math.abs(ty-y)>.5) raf=requestAnimationFrame(loop); else raf=0;
+  }
+})();
+
+/* ---------- BACK TO TOP with progress ring ---------- */
+(function(){
+  var b=document.createElement("button"); b.className="totop"; b.setAttribute("aria-label","Volver arriba");
+  b.innerHTML='<svg viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="21"/></svg><span class="arr">↑</span>';
+  document.body.appendChild(b);
+  b.addEventListener("click",function(){ window.scrollTo({top:0,behavior:SOFT?"auto":"smooth"}); });
+  window.addEventListener("scroll",function(){
+    var y=window.scrollY||0, h=document.documentElement.scrollHeight-window.innerHeight;
+    b.style.setProperty("--p",h>0?(y/h).toFixed(4):0);
+    b.classList.toggle("on",y>600);
+  },{passive:true});
 })();
 
 /* ---------- 3D TILT + GLARE on project cards ---------- */
