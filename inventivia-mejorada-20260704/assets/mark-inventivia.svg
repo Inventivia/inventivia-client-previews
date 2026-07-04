@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-label="InventivIA">
+  <rect width="128" height="128" rx="64" fill="#f3f2e5"/>
+  <path d="M64 12 C68 38 90 60 116 64 C90 68 68 90 64 116 C60 90 38 68 12 64 C38 60 60 38 64 12Z" fill="#c5a831"/>
+  <circle cx="64" cy="64" r="24" fill="#0d0d18"/>
+  <text x="64" y="74" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="31" font-weight="900" fill="#f3f2e5">IA</text>
+</svg>
