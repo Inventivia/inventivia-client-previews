@@ -1,0 +1,33 @@
+CARPETA DE IMÁGENES — InventivIA
+================================
+Sube aquí las imágenes con ESTOS NOMBRES EXACTOS y aparecerán solas en la web
+(mientras no existan, la web muestra sus gráficos actuales sin romperse):
+
+HOME
+- hero-1.jpg ......... Polaroid del hero (600×660 px aprox, se recorta a 4:4.4)
+- svc-01.jpg ......... Preview hover "Diseño web SEO" (450×570, 4:5)
+- svc-02.jpg ......... Preview hover "Posicionamiento SEO local" (450×570)
+- svc-03.jpg ......... Preview hover "Automatización con IA" (450×570)
+- svc-04.jpg ......... Preview hover "Branding estratégico" (450×570)
+- svc-05.jpg ......... Preview hover "Social Media y contenido" (450×570)
+- proj-01.jpg ........ Tarjeta proyecto "Laura Valle" (800×1000, 4:5)
+- proj-02.jpg ........ Tarjeta proyecto "World Adventure" (800×1000)
+- proj-03.jpg ........ Tarjeta proyecto "Multiculatas" (800×1000)
+- proj-04.jpg ........ Tarjeta proyecto "Bahía Norte" (800×1000)
+- proj-05.jpg ........ Tarjeta proyecto "Estudio Ámbar" (800×1000)
+
+QUIÉNES SOMOS
+- team-01.jpg ........ Francisco Richarte (900×620 aprox, horizontal)
+- team-02.jpg ........ Ángel Richarte (900×620)
+- ia-01.jpg .......... Avatar HermentivIO (800×560)
+- ia-02.jpg .......... Avatar InventivIO (800×560)
+- ia-03.jpg .......... Avatar Clara Montes (800×560)
+- ia-04.jpg .......... Avatar Noa Valdés (800×560)
+- ia-05.jpg .......... Avatar Vega Salvatierra (800×560)
+- ia-06.jpg .......... Avatar Bruno Lafuente (800×560)
+- ia-07.jpg .......... Avatar Alma Ortega (800×560)
+- ia-08.jpg .......... Avatar Leo Navarro (800×560)
+
+Formato: JPG (o WebP renombrado a .jpg no vale — usa .jpg de verdad).
+Peso recomendado: < 250 KB por imagen.
+Paleta de la marca: crema #f3f2e5 · tinta #0d0d18 · dorado #c5a831 · menta #6fe3c2
