@@ -1,0 +1,1373 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta name="robots" content="noindex,nofollow,noarchive,nosnippet,noimageindex">
+  <meta name="googlebot" content="noindex,nofollow,noarchive,nosnippet,noimageindex">
+  <meta name="referrer" content="no-referrer">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Conoce Decyde360: un ecosistema de asesoría, cultura, deporte y comunidad que lleva décadas acompañando a personas y entidades.">
+  <title>Quiénes somos | Decyde360</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --red: #C41230;
+      --red-dark: #9E0E27;
+      --ink: #1C1C1C;
+      --ink-soft: #292929;
+      --gray: #666666;
+      --gray-light: #A6A6A6;
+      --paper: #F5F3F0;
+      --white: #FFFFFF;
+      --line: #E4E0DC;
+      --whatsapp: #25D366;
+      --display: 'Sora', sans-serif;
+      --body: 'Source Sans 3', sans-serif;
+      --max: 1200px;
+      --nav: 76px;
+      --radius-sm: 8px;
+      --radius-md: 16px;
+      --radius-lg: 28px;
+      --shadow: 0 18px 55px rgba(20, 20, 20, 0.12);
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: calc(var(--nav) + 20px);
+    }
+
+    body {
+      color: var(--ink);
+      background: var(--white);
+      font-family: var(--body);
+      font-size: 17px;
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    body.menu-open { overflow: hidden; }
+
+    h1, h2, h3 {
+      font-family: var(--display);
+      line-height: 1.12;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    button { font: inherit; }
+
+    :focus-visible {
+      outline: 3px solid rgba(196, 18, 48, 0.42);
+      outline-offset: 4px;
+    }
+
+    .container {
+      width: min(100% - 40px, var(--max));
+      margin-inline: auto;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--red);
+      font-family: var(--display);
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+    }
+
+    .eyebrow::before {
+      width: 28px;
+      height: 3px;
+      background: currentColor;
+      content: "";
+    }
+
+    .section-heading {
+      max-width: 760px;
+      margin-bottom: 48px;
+    }
+
+    .section-heading h2 {
+      margin-top: 14px;
+      font-size: clamp(2rem, 4.2vw, 3.4rem);
+      letter-spacing: -0.045em;
+    }
+
+    .section-heading p {
+      max-width: 660px;
+      margin-top: 18px;
+      color: var(--gray);
+      font-size: 1.15rem;
+    }
+
+    .btn {
+      display: inline-flex;
+      min-height: 50px;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 13px 26px;
+      border: 2px solid transparent;
+      border-radius: var(--radius-sm);
+      font-family: var(--display);
+      font-size: 0.88rem;
+      font-weight: 700;
+      transition: transform 180ms ease, background 180ms ease, border-color 180ms ease;
+    }
+
+    .btn:hover { transform: translateY(-2px); }
+
+    .btn-primary {
+      color: var(--white);
+      background: var(--red);
+    }
+
+    .btn-primary:hover { background: var(--red-dark); }
+
+    .btn-light {
+      color: var(--ink);
+      background: var(--white);
+    }
+
+    .btn-outline {
+      color: var(--white);
+      border-color: rgba(255, 255, 255, 0.55);
+    }
+
+    .btn-outline:hover { border-color: var(--white); }
+
+    /* Navegación */
+    .nav {
+      position: fixed;
+      z-index: 50;
+      inset: 0 0 auto;
+      height: var(--nav);
+      color: var(--ink);
+      background: rgba(255, 255, 255, 0.96);
+      border-bottom: 1px solid rgba(28, 28, 28, 0.08);
+      backdrop-filter: blur(14px);
+    }
+
+    .nav-inner {
+      display: flex;
+      height: 100%;
+      align-items: center;
+      justify-content: space-between;
+      gap: 32px;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-family: var(--display);
+      font-size: 1.22rem;
+      font-weight: 800;
+      letter-spacing: -0.04em;
+      white-space: nowrap;
+    }
+
+    .brand-mark {
+      position: relative;
+      display: grid;
+      width: 34px;
+      height: 34px;
+      place-items: center;
+      overflow: hidden;
+      border-radius: 50%;
+      background: var(--red);
+      color: var(--white);
+      font-size: 0.72rem;
+      letter-spacing: -0.05em;
+    }
+
+    .brand span:last-child { color: var(--red); }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+      list-style: none;
+    }
+
+    .nav-links > li > a {
+      position: relative;
+      font-family: var(--display);
+      font-size: 0.82rem;
+      font-weight: 600;
+    }
+
+    .nav-links > li > a:not(.nav-cta)::after {
+      position: absolute;
+      right: 0;
+      bottom: -8px;
+      left: 0;
+      height: 2px;
+      background: var(--red);
+      content: "";
+      transform: scaleX(0);
+      transform-origin: right;
+      transition: transform 180ms ease;
+    }
+
+    .nav-links > li > a:hover::after,
+    .nav-links > li > a[aria-current="page"]::after {
+      transform: scaleX(1);
+      transform-origin: left;
+    }
+
+    .nav-cta {
+      padding: 10px 18px;
+      border-radius: 6px;
+      color: var(--white);
+      background: var(--red);
+    }
+
+    .menu-toggle {
+      display: none;
+      width: 44px;
+      height: 44px;
+      border: 0;
+      background: transparent;
+      cursor: pointer;
+    }
+
+    .menu-toggle span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      margin: 5px auto;
+      background: var(--ink);
+      transition: transform 180ms ease, opacity 180ms ease;
+    }
+
+    .menu-toggle.active span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .menu-toggle.active span:nth-child(2) { opacity: 0; }
+    .menu-toggle.active span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+    /* Hero */
+    .hero {
+      position: relative;
+      min-height: 720px;
+      padding: calc(var(--nav) + 96px) 0 96px;
+      overflow: hidden;
+      color: var(--white);
+      background:
+        radial-gradient(circle at 82% 24%, rgba(196, 18, 48, 0.29), transparent 28%),
+        linear-gradient(135deg, #161616 0%, #252525 100%);
+    }
+
+    .hero::before {
+      position: absolute;
+      width: 580px;
+      height: 580px;
+      right: -230px;
+      bottom: -300px;
+      border: 1px solid rgba(255, 255, 255, 0.13);
+      border-radius: 50%;
+      content: "";
+      box-shadow:
+        0 0 0 80px rgba(255, 255, 255, 0.025),
+        0 0 0 160px rgba(255, 255, 255, 0.018);
+    }
+
+    .hero-grid {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      min-height: 530px;
+      grid-template-columns: minmax(0, 1.15fr) minmax(320px, 0.85fr);
+      align-items: center;
+      gap: 80px;
+    }
+
+    .hero .eyebrow { color: #FF6E86; }
+
+    .hero h1 {
+      max-width: 790px;
+      margin-top: 20px;
+      font-size: clamp(3rem, 6.6vw, 5.7rem);
+      letter-spacing: -0.06em;
+    }
+
+    .hero h1 em {
+      color: #FF607A;
+      font-style: normal;
+    }
+
+    .hero-copy > p {
+      max-width: 680px;
+      margin-top: 24px;
+      color: rgba(255, 255, 255, 0.76);
+      font-size: clamp(1.12rem, 2vw, 1.35rem);
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 36px;
+    }
+
+    .identity-card {
+      position: relative;
+      min-height: 410px;
+      padding: 34px;
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, 0.13);
+      border-radius: var(--radius-lg);
+      background: rgba(255, 255, 255, 0.06);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(8px);
+    }
+
+    .identity-mark {
+      position: absolute;
+      top: 38px;
+      right: 38px;
+      display: grid;
+      width: 152px;
+      height: 152px;
+      place-items: center;
+      overflow: hidden;
+      border-radius: 50%;
+      background: var(--white);
+      box-shadow: 0 22px 55px rgba(0, 0, 0, 0.26);
+    }
+
+    .identity-mark img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .identity-number {
+      position: absolute;
+      bottom: 26px;
+      left: 30px;
+      color: rgba(255, 255, 255, 0.07);
+      font-family: var(--display);
+      font-size: 11rem;
+      font-weight: 800;
+      line-height: 0.8;
+      letter-spacing: -0.1em;
+    }
+
+    .identity-list {
+      position: absolute;
+      right: 30px;
+      bottom: 32px;
+      left: 30px;
+      display: grid;
+      gap: 8px;
+      list-style: none;
+    }
+
+    .identity-list li {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-family: var(--display);
+      font-size: 0.9rem;
+      font-weight: 600;
+    }
+
+    .identity-list li::before {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--red);
+      content: "";
+    }
+
+    /* Manifiesto */
+    .manifesto {
+      padding: 120px 0;
+      background: var(--white);
+    }
+
+    .manifesto-grid {
+      display: grid;
+      grid-template-columns: 0.75fr 1.25fr;
+      gap: 110px;
+    }
+
+    .manifesto-sticky {
+      position: sticky;
+      top: calc(var(--nav) + 50px);
+      align-self: start;
+    }
+
+    .manifesto-sticky h2 {
+      margin-top: 15px;
+      font-size: clamp(2.2rem, 4vw, 3.65rem);
+      letter-spacing: -0.05em;
+    }
+
+    .manifesto-copy {
+      display: grid;
+      gap: 32px;
+    }
+
+    .manifesto-copy .lead {
+      color: var(--ink);
+      font-family: var(--display);
+      font-size: clamp(1.45rem, 2.8vw, 2.15rem);
+      font-weight: 600;
+      line-height: 1.35;
+      letter-spacing: -0.03em;
+    }
+
+    .manifesto-copy p:not(.lead) {
+      max-width: 680px;
+      color: var(--gray);
+      font-size: 1.08rem;
+    }
+
+    .quote {
+      padding: 30px 32px;
+      border-left: 4px solid var(--red);
+      background: var(--paper);
+      font-family: var(--display);
+      font-size: 1.15rem;
+      font-weight: 600;
+    }
+
+    /* Trayectoria */
+    .trajectory {
+      padding: 110px 0;
+      color: var(--white);
+      background: var(--ink);
+    }
+
+    .trajectory .section-heading p { color: rgba(255, 255, 255, 0.66); }
+
+    .timeline {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2px;
+      border-radius: var(--radius-md);
+      overflow: hidden;
+    }
+
+    .timeline-item {
+      min-height: 285px;
+      padding: 34px;
+      background: var(--ink-soft);
+      transition: background 180ms ease, transform 180ms ease;
+    }
+
+    .timeline-item:hover {
+      position: relative;
+      z-index: 1;
+      background: #333333;
+      transform: translateY(-5px);
+    }
+
+    .timeline-index {
+      display: grid;
+      width: 44px;
+      height: 44px;
+      place-items: center;
+      margin-bottom: 42px;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 50%;
+      color: #FF6E86;
+      font-family: var(--display);
+      font-size: 0.78rem;
+      font-weight: 700;
+    }
+
+    .timeline h3 {
+      margin-bottom: 13px;
+      font-size: 1.15rem;
+    }
+
+    .timeline p {
+      color: rgba(255, 255, 255, 0.62);
+      font-size: 0.97rem;
+    }
+
+    /* Valores */
+    .values {
+      padding: 120px 0;
+      background: var(--paper);
+    }
+
+    .values-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+
+    .value-card {
+      position: relative;
+      min-height: 260px;
+      padding: 38px;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-md);
+      background: var(--white);
+      transition: transform 180ms ease, box-shadow 180ms ease;
+    }
+
+    .value-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow);
+    }
+
+    .value-card::after {
+      position: absolute;
+      right: -20px;
+      bottom: -52px;
+      color: rgba(196, 18, 48, 0.055);
+      font-family: var(--display);
+      font-size: 9rem;
+      font-weight: 800;
+      content: attr(data-number);
+    }
+
+    .value-card h3 {
+      position: relative;
+      z-index: 1;
+      margin: 26px 0 12px;
+      font-size: 1.35rem;
+    }
+
+    .value-card p {
+      position: relative;
+      z-index: 1;
+      max-width: 470px;
+      color: var(--gray);
+    }
+
+    .value-line {
+      display: block;
+      width: 42px;
+      height: 4px;
+      border-radius: 3px;
+      background: var(--red);
+    }
+
+    /* Especialización */
+    .specialization {
+      padding: 120px 0;
+      background: var(--white);
+    }
+
+    .specialization-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .specialty {
+      display: flex;
+      min-height: 380px;
+      flex-direction: column;
+      padding: 34px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-md);
+      background: var(--white);
+      transition: border-color 180ms ease, transform 180ms ease;
+    }
+
+    .specialty:hover {
+      border-color: var(--red);
+      transform: translateY(-5px);
+    }
+
+    .specialty-tag {
+      color: var(--red);
+      font-family: var(--display);
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    .specialty h3 {
+      margin: 30px 0 16px;
+      font-size: 1.55rem;
+    }
+
+    .specialty p { color: var(--gray); }
+
+    .specialty ul {
+      display: grid;
+      gap: 8px;
+      margin-top: 24px;
+      list-style: none;
+    }
+
+    .specialty li {
+      display: flex;
+      gap: 9px;
+      font-size: 0.95rem;
+    }
+
+    .specialty li::before {
+      color: var(--red);
+      content: "—";
+    }
+
+    .specialty a {
+      margin-top: auto;
+      padding-top: 28px;
+      color: var(--red);
+      font-family: var(--display);
+      font-size: 0.85rem;
+      font-weight: 700;
+    }
+
+    /* Equipo */
+    .team {
+      padding: 120px 0;
+      background: var(--paper);
+    }
+
+    .team-panel {
+      display: grid;
+      grid-template-columns: 0.92fr 1.08fr;
+      overflow: hidden;
+      border-radius: var(--radius-lg);
+      background: var(--white);
+      box-shadow: var(--shadow);
+    }
+
+    .team-visual {
+      position: relative;
+      display: grid;
+      min-height: 520px;
+      place-items: center;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at center, rgba(196, 18, 48, 0.12), transparent 48%),
+        var(--ink);
+    }
+
+    .team-visual::before,
+    .team-visual::after {
+      position: absolute;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 50%;
+      content: "";
+    }
+
+    .team-visual::before {
+      width: 370px;
+      height: 370px;
+    }
+
+    .team-visual::after {
+      width: 245px;
+      height: 245px;
+    }
+
+    .team-count {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+    }
+
+    .team-count strong {
+      display: block;
+      color: var(--white);
+      font-family: var(--display);
+      font-size: clamp(5rem, 10vw, 8rem);
+      line-height: 1;
+    }
+
+    .team-count span {
+      color: rgba(255, 255, 255, 0.64);
+      font-family: var(--display);
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+
+    .team-copy {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: clamp(44px, 7vw, 82px);
+    }
+
+    .team-copy h2 {
+      margin: 16px 0 22px;
+      font-size: clamp(2.1rem, 4vw, 3.4rem);
+      letter-spacing: -0.05em;
+    }
+
+    .team-copy p {
+      margin-bottom: 18px;
+      color: var(--gray);
+    }
+
+    .team-note {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      margin-top: 18px;
+      padding-top: 24px;
+      border-top: 1px solid var(--line);
+      font-family: var(--display);
+      font-size: 0.9rem;
+      font-weight: 600;
+    }
+
+    .team-note::before {
+      width: 10px;
+      height: 10px;
+      flex: 0 0 auto;
+      margin-top: 5px;
+      border-radius: 50%;
+      background: var(--red);
+      content: "";
+    }
+
+    /* Ecosistema */
+    .ecosystem {
+      padding: 120px 0;
+      color: var(--white);
+      background: var(--ink);
+    }
+
+    .ecosystem-intro {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 90px;
+      align-items: end;
+      margin-bottom: 58px;
+    }
+
+    .ecosystem-intro h2 {
+      margin-top: 14px;
+      font-size: clamp(2.2rem, 4.5vw, 3.8rem);
+      letter-spacing: -0.05em;
+    }
+
+    .ecosystem-intro > p {
+      color: rgba(255, 255, 255, 0.65);
+      font-size: 1.12rem;
+    }
+
+    .ecosystem-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1px;
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, 0.11);
+      border-radius: var(--radius-md);
+      background: rgba(255, 255, 255, 0.11);
+    }
+
+    .ecosystem-card {
+      min-height: 290px;
+      padding: 30px;
+      background: var(--ink);
+      transition: background 180ms ease;
+    }
+
+    .ecosystem-card:hover { background: var(--ink-soft); }
+
+    .ecosystem-card .initials {
+      display: grid;
+      width: 52px;
+      height: 52px;
+      place-items: center;
+      margin-bottom: 48px;
+      border-radius: 50%;
+      color: var(--white);
+      background: var(--red);
+      font-family: var(--display);
+      font-size: 0.75rem;
+      font-weight: 800;
+    }
+
+    .ecosystem-card h3 {
+      margin-bottom: 12px;
+      font-size: 1.12rem;
+    }
+
+    .ecosystem-card p {
+      color: rgba(255, 255, 255, 0.58);
+      font-size: 0.94rem;
+    }
+
+    /* CTA y footer */
+    .cta {
+      padding: 92px 0;
+      color: var(--white);
+      background: var(--red);
+    }
+
+    .cta-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 50px;
+    }
+
+    .cta h2 {
+      max-width: 700px;
+      font-size: clamp(2rem, 4vw, 3.35rem);
+      letter-spacing: -0.045em;
+    }
+
+    .cta p {
+      margin-top: 14px;
+      color: rgba(255, 255, 255, 0.82);
+      font-size: 1.1rem;
+    }
+
+    .cta-actions {
+      display: flex;
+      flex: 0 0 auto;
+      gap: 12px;
+    }
+
+    .footer {
+      padding: 72px 0 28px;
+      color: rgba(255, 255, 255, 0.64);
+      background: #111111;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr 1fr 1fr;
+      gap: 54px;
+      padding-bottom: 54px;
+    }
+
+    .footer-brand {
+      margin-bottom: 17px;
+      color: var(--white);
+    }
+
+    .footer h3 {
+      margin-bottom: 18px;
+      color: var(--white);
+      font-size: 0.82rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .footer ul {
+      display: grid;
+      gap: 10px;
+      list-style: none;
+    }
+
+    .footer a:hover { color: var(--white); }
+
+    .footer-bottom {
+      display: flex;
+      justify-content: space-between;
+      gap: 24px;
+      padding-top: 24px;
+      border-top: 1px solid rgba(255, 255, 255, 0.12);
+      font-size: 0.88rem;
+    }
+
+    .footer-legal {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .whatsapp {
+      position: fixed;
+      z-index: 40;
+      right: 22px;
+      bottom: 22px;
+      display: grid;
+      width: 58px;
+      height: 58px;
+      place-items: center;
+      border-radius: 50%;
+      color: var(--white);
+      background: var(--whatsapp);
+      box-shadow: 0 10px 30px rgba(37, 211, 102, 0.34);
+      font-family: var(--display);
+      font-size: 0.75rem;
+      font-weight: 800;
+      transition: transform 180ms ease;
+    }
+
+    .whatsapp:hover { transform: translateY(-3px) scale(1.03); }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 600ms ease, transform 600ms ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: none;
+    }
+
+    @media (max-width: 1024px) {
+      .nav-links { gap: 18px; }
+      .hero-grid { gap: 40px; }
+      .timeline { grid-template-columns: repeat(2, 1fr); }
+      .ecosystem-grid { grid-template-columns: repeat(2, 1fr); }
+      .footer-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    @media (max-width: 820px) {
+      .menu-toggle { display: block; }
+
+      .nav-links {
+        position: fixed;
+        inset: var(--nav) 0 auto;
+        display: flex;
+        max-height: calc(100vh - var(--nav));
+        padding: 28px 20px 34px;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 4px;
+        overflow-y: auto;
+        background: var(--white);
+        border-top: 1px solid var(--line);
+        box-shadow: 0 18px 40px rgba(0, 0, 0, 0.12);
+        opacity: 0;
+        pointer-events: none;
+        transform: translateY(-16px);
+        transition: opacity 180ms ease, transform 180ms ease;
+      }
+
+      .nav-links.open {
+        opacity: 1;
+        pointer-events: auto;
+        transform: none;
+      }
+
+      .nav-links > li > a {
+        display: block;
+        padding: 13px 14px;
+        font-size: 1rem;
+      }
+
+      .nav-links > li > a::after { display: none; }
+      .nav-cta { text-align: center; }
+
+      .hero { min-height: auto; }
+
+      .hero-grid,
+      .manifesto-grid,
+      .team-panel,
+      .ecosystem-intro {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-grid { gap: 56px; }
+      .hero h1 { max-width: 640px; }
+      .identity-card { min-height: 330px; }
+      .manifesto-grid { gap: 42px; }
+      .manifesto-sticky { position: static; }
+      .values-grid { grid-template-columns: 1fr; }
+      .specialization-grid { grid-template-columns: 1fr; }
+      .specialty { min-height: 330px; }
+      .team-visual { min-height: 390px; }
+      .ecosystem-intro { gap: 20px; }
+
+      .cta-inner {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .container { width: min(100% - 32px, var(--max)); }
+      .hero { padding-top: calc(var(--nav) + 62px); }
+      .hero h1 { font-size: clamp(2.65rem, 13vw, 4.2rem); }
+      .hero-actions, .cta-actions { width: 100%; }
+      .hero-actions .btn, .cta-actions .btn { flex: 1 1 100%; }
+      .identity-card { padding: 24px; }
+      .identity-mark { top: 26px; right: 26px; width: 116px; height: 116px; }
+      .identity-number { font-size: 8rem; }
+      .manifesto, .values, .specialization, .team, .ecosystem { padding: 82px 0; }
+      .trajectory { padding: 82px 0; }
+      .section-heading { margin-bottom: 34px; }
+      .timeline { grid-template-columns: 1fr; }
+      .timeline-item { min-height: auto; }
+      .timeline-index { margin-bottom: 28px; }
+      .value-card { min-height: 240px; padding: 30px; }
+      .team-copy { padding: 38px 26px; }
+      .ecosystem-grid { grid-template-columns: 1fr; }
+      .ecosystem-card { min-height: 240px; }
+      .footer-grid { grid-template-columns: 1fr; gap: 34px; }
+      .footer-bottom { flex-direction: column; }
+      .whatsapp { right: 16px; bottom: 16px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after {
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+      }
+      .reveal { opacity: 1; transform: none; }
+    }
+  </style>
+</head>
+<body>
+  <nav class="nav" aria-label="Navegación principal">
+    <div class="container nav-inner">
+      <a class="brand" href="index.html" aria-label="Decyde360, inicio">
+        <span class="brand-mark">D</span>
+        <span>Decyde<span>360</span></span>
+      </a>
+      <button class="menu-toggle" id="menuToggle" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="navLinks">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="quienes-somos.html" aria-current="page">Quiénes somos</a></li>
+        <li><a href="index.html#bloques">Ecosistema</a></li>
+        <li><a href="proyectos.html">Proyectos</a></li>
+        <li><a href="canal.html">Canal</a></li>
+        <li><a class="nav-cta" href="contacto.html">Contactar</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-copy reveal">
+          <span class="eyebrow">Quiénes somos</span>
+          <h1>Personas que ayudan a otras personas a <em>decidir mejor.</em></h1>
+          <p>Somos un ecosistema nacido en Murcia que conecta asesoría, cultura, deporte y comunidad. Trabajamos cerca de quienes emprenden, gestionan entidades y crean impacto.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#nuestra-historia">Conoce nuestra historia</a>
+            <a class="btn btn-outline" href="contacto.html">Hablemos</a>
+          </div>
+        </div>
+        <div class="identity-card reveal" aria-label="Los cuatro ámbitos de Decyde360">
+          <div class="identity-mark">
+            <img src="Claude%20Desing/DECYDE_Design_Pack/decyde_design_pack/assets/avatar-color.jpg" alt="Símbolo de Decyde">
+          </div>
+          <span class="identity-number" aria-hidden="true">360</span>
+          <ul class="identity-list">
+            <li>Asesoría especializada</li>
+            <li>Cultura con propósito</li>
+            <li>Deporte y comunidad</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="manifesto" id="nuestra-historia">
+      <div class="container manifesto-grid">
+        <div class="manifesto-sticky reveal">
+          <span class="eyebrow">Nuestra historia</span>
+          <h2>Más de tres décadas construyendo confianza.</h2>
+        </div>
+        <div class="manifesto-copy reveal">
+          <p class="lead">Decyde empezó desde la asesoría y creció escuchando las necesidades reales de autónomos, empresas, clubes, asociaciones y fundaciones.</p>
+          <p>Con el tiempo entendimos que acompañar bien significaba ir más allá de los impuestos, las nóminas y la contabilidad. Había que conocer el contexto de cada persona, comprender su sector y estar presentes antes de que aparecieran los problemas.</p>
+          <p>De esa forma de trabajar nace un ecosistema en el que conviven servicios profesionales, proyectos sociales, encuentros, deporte y contenidos. Distintas iniciativas con una misma idea: compartir conocimiento, generar conexiones útiles y ayudar a que las buenas decisiones se conviertan en proyectos sólidos.</p>
+          <blockquote class="quote">“No asesoramos a estos sectores desde fuera. Formamos parte de ellos.”</blockquote>
+        </div>
+      </div>
+    </section>
+
+    <section class="trajectory">
+      <div class="container">
+        <div class="section-heading reveal">
+          <span class="eyebrow">Cómo hemos evolucionado</span>
+          <h2>Una mirada de 360 grados.</h2>
+          <p>La experiencia profesional es nuestro punto de partida. La capacidad de conectar personas, sectores e ideas es lo que nos permite llegar más lejos.</p>
+        </div>
+        <div class="timeline">
+          <article class="timeline-item reveal">
+            <span class="timeline-index">01</span>
+            <h3>Experiencia</h3>
+            <p>Décadas acompañando la gestión fiscal, laboral y contable de personas y organizaciones.</p>
+          </article>
+          <article class="timeline-item reveal">
+            <span class="timeline-index">02</span>
+            <h3>Especialización</h3>
+            <p>Conocimiento profundo de la realidad del deporte amateur, la cultura y el tercer sector.</p>
+          </article>
+          <article class="timeline-item reveal">
+            <span class="timeline-index">03</span>
+            <h3>Comunidad</h3>
+            <p>Proyectos, eventos y espacios de encuentro que convierten el conocimiento en relaciones.</p>
+          </article>
+          <article class="timeline-item reveal">
+            <span class="timeline-index">04</span>
+            <h3>Impacto</h3>
+            <p>Una red que impulsa iniciativas con valor económico, deportivo, cultural y social.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="values">
+      <div class="container">
+        <div class="section-heading reveal">
+          <span class="eyebrow">Lo que nos guía</span>
+          <h2>Nuestros valores se notan en cómo trabajamos.</h2>
+          <p>Sin discursos grandilocuentes. Preferimos que la confianza se construya en cada conversación, cada respuesta y cada trabajo bien hecho.</p>
+        </div>
+        <div class="values-grid">
+          <article class="value-card reveal" data-number="01">
+            <span class="value-line"></span>
+            <h3>Trabajo bien hecho</h3>
+            <p>El rigor no es negociable. Revisamos, anticipamos y cuidamos los detalles que dan tranquilidad a quienes confían en nosotros.</p>
+          </article>
+          <article class="value-card reveal" data-number="02">
+            <span class="value-line"></span>
+            <h3>Cercanía real</h3>
+            <p>Conocemos a las personas detrás de cada negocio y entidad. Aquí no eres un expediente ni una referencia en una pantalla.</p>
+          </article>
+          <article class="value-card reveal" data-number="03">
+            <span class="value-line"></span>
+            <h3>Honestidad</h3>
+            <p>Decimos la verdad con claridad, incluso cuando no es la respuesta más cómoda. La confianza empieza por hablar sin rodeos.</p>
+          </article>
+          <article class="value-card reveal" data-number="04">
+            <span class="value-line"></span>
+            <h3>Compromiso</h3>
+            <p>No esperamos a que surja el problema. Acompañamos, avisamos y buscamos soluciones antes de que sean urgentes.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="specialization" id="especializacion">
+      <div class="container">
+        <div class="section-heading reveal">
+          <span class="eyebrow">Nuestra especialización</span>
+          <h2>Conocemos tu sector porque estamos dentro de él.</h2>
+          <p>La especialización no es una etiqueta comercial. Es experiencia práctica, lenguaje compartido y conocimiento de problemas que una asesoría generalista no siempre ve.</p>
+        </div>
+        <div class="specialization-grid">
+          <article class="specialty reveal">
+            <span class="specialty-tag">Sector 01</span>
+            <h3>Deporte amateur</h3>
+            <p>Acompañamos la realidad diaria de quienes gestionan proyectos deportivos.</p>
+            <ul>
+              <li>Clubes y entidades deportivas</li>
+              <li>Organización y gestión</li>
+              <li>Torneos y comunidad</li>
+            </ul>
+            <a href="index.html#bloques">Descubrir este ámbito →</a>
+          </article>
+          <article class="specialty reveal">
+            <span class="specialty-tag">Sector 02</span>
+            <h3>Cultura y tercer sector</h3>
+            <p>Entendemos las obligaciones y oportunidades de asociaciones, fundaciones y proyectos culturales.</p>
+            <ul>
+              <li>Entidades sin ánimo de lucro</li>
+              <li>Fundaciones y asociaciones</li>
+              <li>Mecenazgo e impacto social</li>
+            </ul>
+            <a href="index.html#bloques">Descubrir este ámbito →</a>
+          </article>
+          <article class="specialty reveal">
+            <span class="specialty-tag">Sector 03</span>
+            <h3>Autónomos y microempresa</h3>
+            <p>Hacemos más sencilla la gestión para quienes dedican su energía a empezar, consolidar y crecer.</p>
+            <ul>
+              <li>Gestión fiscal y contable</li>
+              <li>Formación práctica</li>
+              <li>Conexiones profesionales</li>
+            </ul>
+            <a href="index.html#bloques">Descubrir este ámbito →</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="team">
+      <div class="container">
+        <div class="team-panel reveal">
+          <div class="team-visual" aria-label="Equipo multidisciplinar de seis especialistas">
+            <div class="team-count">
+              <strong>6</strong>
+              <span>especialistas</span>
+            </div>
+          </div>
+          <div class="team-copy">
+            <span class="eyebrow">El equipo</span>
+            <h2>Un equipo accesible, con criterio propio.</h2>
+            <p>Somos un equipo técnico multidisciplinar apoyado por una red de colaboradores. Combinamos experiencia, actualización constante y conocimiento sectorial para dar respuestas claras.</p>
+            <p>Cuando contactas con Decyde, hablas con personas. Personas que conocen tu caso, entienden lo que está en juego y se responsabilizan de acompañarte.</p>
+            <div class="team-note">Los perfiles individuales se incorporarán cuando el cliente confirme nombres, cargos y fotografías.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="ecosystem" id="ecosistema">
+      <div class="container">
+        <div class="ecosystem-intro reveal">
+          <div>
+            <span class="eyebrow">Grupo Decyde</span>
+            <h2>Un ecosistema que convierte experiencia en acción.</h2>
+          </div>
+          <p>Cada iniciativa aporta una mirada distinta. Juntas demuestran que nuestro conocimiento del sector nace de participar, organizar, escuchar y construir comunidad.</p>
+        </div>
+        <div class="ecosystem-grid">
+          <article class="ecosystem-card reveal">
+            <span class="initials">DA</span>
+            <h3>Decyde Asesores</h3>
+            <p>Asesoría fiscal, laboral y contable con especialización sectorial.</p>
+          </article>
+          <article class="ecosystem-card reveal">
+            <span class="initials">FD</span>
+            <h3>Fundación Decyde</h3>
+            <p>Cultura, deporte, formación e iniciativas con impacto social.</p>
+          </article>
+          <article class="ecosystem-card reveal">
+            <span class="initials">MB</span>
+            <h3>MAMBA basket</h3>
+            <p>Deporte, convivencia y comunidad alrededor del maxibasket.</p>
+          </article>
+          <article class="ecosystem-card reveal">
+            <span class="initials">aM</span>
+            <h3>aMicro</h3>
+            <p>Formación y conexiones para autónomos y microempresas.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta">
+      <div class="container cta-inner">
+        <div>
+          <h2>¿Quieres conocernos mejor?</h2>
+          <p>Cuéntanos qué estás construyendo y veremos cómo podemos ayudarte.</p>
+        </div>
+        <div class="cta-actions">
+          <a class="btn btn-light" href="contacto.html">Contactar ahora</a>
+          <a class="btn btn-outline" href="https://wa.me/34607244443" target="_blank" rel="noopener">WhatsApp</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <a class="brand footer-brand" href="index.html">
+            <span class="brand-mark">D</span>
+            <span>Decyde<span>360</span></span>
+          </a>
+          <p>Cultura, deporte y comunidad conectados por una misma forma de hacer las cosas.</p>
+        </div>
+        <div>
+          <h3>Explora</h3>
+          <ul>
+            <li><a href="quienes-somos.html">Quiénes somos</a></li>
+            <li><a href="index.html#bloques">Ecosistema</a></li>
+            <li><a href="proyectos.html">Proyectos</a></li>
+            <li><a href="index.html#youtube">Canal</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3>Comunidad</h3>
+          <ul>
+            <li><a href="https://www.instagram.com/decydeasesores/" target="_blank" rel="noopener">Instagram</a></li>
+            <li><a href="https://www.linkedin.com/company/decydeasesores/" target="_blank" rel="noopener">LinkedIn</a></li>
+            <li><a href="https://www.youtube.com/@Decyde360" target="_blank" rel="noopener">YouTube</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3>Contacto</h3>
+          <ul>
+            <li><a href="tel:+34607244443">+34 607 244 443</a></li>
+            <li><a href="mailto:info@decyde360.es">info@decyde360.es</a></li>
+            <li>Murcia, España</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 Decyde360. Todos los derechos reservados.</span>
+        <div class="footer-legal">
+          <a href="#">Aviso legal</a>
+          <a href="#">Privacidad</a>
+          <a href="#">Cookies</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <a class="whatsapp" href="https://wa.me/34607244443" target="_blank" rel="noopener" aria-label="Escribir a Decyde por WhatsApp">WA</a>
+
+  <script>
+    const menuToggle = document.getElementById('menuToggle');
+    const navLinks = document.getElementById('navLinks');
+
+    const closeMenu = () => {
+      menuToggle.classList.remove('active');
+      navLinks.classList.remove('open');
+      menuToggle.setAttribute('aria-expanded', 'false');
+      menuToggle.setAttribute('aria-label', 'Abrir menú');
+      document.body.classList.remove('menu-open');
+    };
+
+    menuToggle.addEventListener('click', () => {
+      const isOpen = navLinks.classList.toggle('open');
+      menuToggle.classList.toggle('active', isOpen);
+      menuToggle.setAttribute('aria-expanded', String(isOpen));
+      menuToggle.setAttribute('aria-label', isOpen ? 'Cerrar menú' : 'Abrir menú');
+      document.body.classList.toggle('menu-open', isOpen);
+    });
+
+    navLinks.addEventListener('click', event => {
+      if (event.target.closest('a')) closeMenu();
+    });
+
+    window.addEventListener('keydown', event => {
+      if (event.key === 'Escape') closeMenu();
+    });
+
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const revealElements = document.querySelectorAll('.reveal');
+
+    if (reducedMotion || !('IntersectionObserver' in window)) {
+      revealElements.forEach(element => element.classList.add('visible'));
+    } else {
+      const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.12, rootMargin: '0px 0px -40px' });
+
+      revealElements.forEach(element => observer.observe(element));
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,1110 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta name="robots" content="noindex,nofollow,noarchive,nosnippet,noimageindex">
+  <meta name="googlebot" content="noindex,nofollow,noarchive,nosnippet,noimageindex">
+  <meta name="referrer" content="no-referrer">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Contacta directamente con Decyde360 por WhatsApp, teléfono, email o visítanos en Murcia. Sin formularios ni intermediarios.">
+  <title>Contacto | Decyde360</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --red: #C41230;
+      --red-dark: #9E0E27;
+      --ink: #1C1C1C;
+      --ink-soft: #292929;
+      --gray: #666666;
+      --paper: #F5F3F0;
+      --white: #FFFFFF;
+      --line: #E4E0DC;
+      --whatsapp: #25D366;
+      --display: 'Sora', sans-serif;
+      --body: 'Source Sans 3', sans-serif;
+      --max: 1200px;
+      --nav: 76px;
+      --radius-sm: 8px;
+      --radius-md: 16px;
+      --radius-lg: 28px;
+      --shadow: 0 18px 55px rgba(20, 20, 20, 0.12);
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: calc(var(--nav) + 20px);
+    }
+
+    body {
+      color: var(--ink);
+      background: var(--white);
+      font-family: var(--body);
+      font-size: 17px;
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    body.menu-open { overflow: hidden; }
+
+    h1, h2, h3 {
+      font-family: var(--display);
+      line-height: 1.12;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button { font: inherit; }
+
+    :focus-visible {
+      outline: 3px solid rgba(196, 18, 48, 0.42);
+      outline-offset: 4px;
+    }
+
+    .container {
+      width: min(100% - 40px, var(--max));
+      margin-inline: auto;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--red);
+      font-family: var(--display);
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+    }
+
+    .eyebrow::before {
+      width: 28px;
+      height: 3px;
+      background: currentColor;
+      content: "";
+    }
+
+    .section-heading {
+      max-width: 760px;
+      margin-bottom: 46px;
+    }
+
+    .section-heading h2 {
+      margin-top: 14px;
+      font-size: clamp(2rem, 4.2vw, 3.4rem);
+      letter-spacing: -0.045em;
+    }
+
+    .section-heading p {
+      max-width: 660px;
+      margin-top: 18px;
+      color: var(--gray);
+      font-size: 1.15rem;
+    }
+
+    .btn {
+      display: inline-flex;
+      min-height: 50px;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 13px 26px;
+      border: 2px solid transparent;
+      border-radius: var(--radius-sm);
+      font-family: var(--display);
+      font-size: 0.88rem;
+      font-weight: 700;
+      transition: transform 180ms ease, background 180ms ease, border-color 180ms ease;
+    }
+
+    .btn:hover { transform: translateY(-2px); }
+
+    .btn-primary {
+      color: var(--white);
+      background: var(--red);
+    }
+
+    .btn-primary:hover { background: var(--red-dark); }
+
+    .btn-whatsapp {
+      color: var(--white);
+      background: var(--whatsapp);
+    }
+
+    .btn-whatsapp:hover { background: #1EBB58; }
+
+    .btn-outline {
+      color: var(--ink);
+      border-color: var(--line);
+      background: transparent;
+    }
+
+    .btn-outline:hover { border-color: var(--ink); }
+
+    /* Navegación */
+    .nav {
+      position: fixed;
+      z-index: 50;
+      inset: 0 0 auto;
+      height: var(--nav);
+      color: var(--ink);
+      background: rgba(255, 255, 255, 0.96);
+      border-bottom: 1px solid rgba(28, 28, 28, 0.08);
+      backdrop-filter: blur(14px);
+    }
+
+    .nav-inner {
+      display: flex;
+      height: 100%;
+      align-items: center;
+      justify-content: space-between;
+      gap: 32px;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-family: var(--display);
+      font-size: 1.22rem;
+      font-weight: 800;
+      letter-spacing: -0.04em;
+      white-space: nowrap;
+    }
+
+    .brand-mark {
+      display: grid;
+      width: 34px;
+      height: 34px;
+      place-items: center;
+      border-radius: 50%;
+      color: var(--white);
+      background: var(--red);
+      font-size: 0.72rem;
+    }
+
+    .brand span:last-child { color: var(--red); }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+      list-style: none;
+    }
+
+    .nav-links > li > a {
+      position: relative;
+      font-family: var(--display);
+      font-size: 0.82rem;
+      font-weight: 600;
+    }
+
+    .nav-links > li > a:not(.nav-cta)::after {
+      position: absolute;
+      right: 0;
+      bottom: -8px;
+      left: 0;
+      height: 2px;
+      background: var(--red);
+      content: "";
+      transform: scaleX(0);
+      transform-origin: right;
+      transition: transform 180ms ease;
+    }
+
+    .nav-links > li > a:hover::after,
+    .nav-links > li > a[aria-current="page"]::after {
+      transform: scaleX(1);
+      transform-origin: left;
+    }
+
+    .nav-cta {
+      padding: 10px 18px;
+      border-radius: 6px;
+      color: var(--white);
+      background: var(--red);
+    }
+
+    .menu-toggle {
+      display: none;
+      width: 44px;
+      height: 44px;
+      border: 0;
+      background: transparent;
+      cursor: pointer;
+    }
+
+    .menu-toggle span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      margin: 5px auto;
+      background: var(--ink);
+      transition: transform 180ms ease, opacity 180ms ease;
+    }
+
+    .menu-toggle.active span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .menu-toggle.active span:nth-child(2) { opacity: 0; }
+    .menu-toggle.active span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+    /* Hero */
+    .hero {
+      position: relative;
+      min-height: 680px;
+      padding: calc(var(--nav) + 96px) 0 96px;
+      overflow: hidden;
+      color: var(--white);
+      background:
+        radial-gradient(circle at 78% 35%, rgba(196, 18, 48, 0.34), transparent 28%),
+        linear-gradient(135deg, #151515 0%, #272727 100%);
+    }
+
+    .hero::after {
+      position: absolute;
+      width: 540px;
+      height: 540px;
+      right: -190px;
+      bottom: -330px;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 50%;
+      content: "";
+      box-shadow:
+        0 0 0 75px rgba(255, 255, 255, 0.025),
+        0 0 0 150px rgba(255, 255, 255, 0.016);
+    }
+
+    .hero-grid {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      min-height: 490px;
+      grid-template-columns: minmax(0, 1.15fr) minmax(320px, 0.85fr);
+      align-items: center;
+      gap: 80px;
+    }
+
+    .hero .eyebrow { color: #FF6E86; }
+
+    .hero h1 {
+      max-width: 760px;
+      margin-top: 20px;
+      font-size: clamp(3.2rem, 7vw, 6.1rem);
+      letter-spacing: -0.065em;
+    }
+
+    .hero h1 em {
+      color: #FF607A;
+      font-style: normal;
+    }
+
+    .hero-copy > p {
+      max-width: 650px;
+      margin-top: 24px;
+      color: rgba(255, 255, 255, 0.74);
+      font-size: clamp(1.12rem, 2vw, 1.35rem);
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 36px;
+    }
+
+    .hero-note {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      margin-top: 25px;
+      color: rgba(255, 255, 255, 0.6);
+      font-size: 0.95rem;
+    }
+
+    .hero-note::before {
+      width: 8px;
+      height: 8px;
+      flex: 0 0 auto;
+      margin-top: 8px;
+      border-radius: 50%;
+      background: var(--whatsapp);
+      content: "";
+    }
+
+    .direct-card {
+      position: relative;
+      min-height: 400px;
+      padding: 38px;
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, 0.13);
+      border-radius: var(--radius-lg);
+      background: rgba(255, 255, 255, 0.07);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(8px);
+    }
+
+    .direct-card::before {
+      position: absolute;
+      width: 230px;
+      height: 230px;
+      top: -96px;
+      right: -68px;
+      border-radius: 50%;
+      background: rgba(196, 18, 48, 0.36);
+      content: "";
+    }
+
+    .direct-label {
+      color: #FF8A9D;
+      font-family: var(--display);
+      font-size: 0.74rem;
+      font-weight: 700;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+    }
+
+    .direct-card h2 {
+      max-width: 310px;
+      margin: 24px 0 14px;
+      font-size: clamp(1.8rem, 3vw, 2.45rem);
+      letter-spacing: -0.04em;
+    }
+
+    .direct-card p {
+      max-width: 310px;
+      color: rgba(255, 255, 255, 0.65);
+    }
+
+    .direct-link {
+      position: absolute;
+      right: 38px;
+      bottom: 36px;
+      left: 38px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-top: 22px;
+      border-top: 1px solid rgba(255, 255, 255, 0.16);
+      font-family: var(--display);
+      font-weight: 700;
+    }
+
+    .direct-link span:last-child {
+      display: grid;
+      width: 38px;
+      height: 38px;
+      place-items: center;
+      border-radius: 50%;
+      background: var(--whatsapp);
+    }
+
+    /* Canales */
+    .channels {
+      padding: 118px 0;
+      background: var(--paper);
+    }
+
+    .channel-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+
+    .channel-card {
+      position: relative;
+      display: flex;
+      min-height: 285px;
+      flex-direction: column;
+      padding: 36px;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-md);
+      background: var(--white);
+      transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease;
+    }
+
+    .channel-card:hover {
+      border-color: rgba(196, 18, 48, 0.45);
+      box-shadow: var(--shadow);
+      transform: translateY(-5px);
+    }
+
+    .channel-top {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .channel-icon {
+      display: grid;
+      width: 52px;
+      height: 52px;
+      place-items: center;
+      border-radius: 50%;
+      color: var(--red);
+      background: rgba(196, 18, 48, 0.08);
+      font-family: var(--display);
+      font-size: 0.78rem;
+      font-weight: 800;
+    }
+
+    .channel-card.featured .channel-icon {
+      color: var(--white);
+      background: var(--whatsapp);
+    }
+
+    .channel-number {
+      color: rgba(196, 18, 48, 0.08);
+      font-family: var(--display);
+      font-size: 4.2rem;
+      font-weight: 800;
+      line-height: 0.8;
+    }
+
+    .channel-card h3 {
+      margin: 28px 0 9px;
+      font-size: 1.35rem;
+    }
+
+    .channel-card p {
+      color: var(--gray);
+    }
+
+    .channel-card > a {
+      margin-top: auto;
+      padding-top: 26px;
+      color: var(--red);
+      font-family: var(--display);
+      font-size: 0.9rem;
+      font-weight: 700;
+    }
+
+    .channel-card.featured > a { color: #128C4A; }
+
+    /* Orientación */
+    .orientation {
+      padding: 118px 0;
+      background: var(--white);
+    }
+
+    .orientation-grid {
+      display: grid;
+      grid-template-columns: 0.85fr 1.15fr;
+      gap: 100px;
+      align-items: start;
+    }
+
+    .orientation-copy h2 {
+      margin: 15px 0 20px;
+      font-size: clamp(2.1rem, 4vw, 3.4rem);
+      letter-spacing: -0.05em;
+    }
+
+    .orientation-copy p {
+      max-width: 520px;
+      color: var(--gray);
+      font-size: 1.08rem;
+    }
+
+    .topic-list {
+      display: grid;
+      border-top: 1px solid var(--line);
+    }
+
+    .topic {
+      display: grid;
+      grid-template-columns: 48px 1fr;
+      gap: 18px;
+      padding: 25px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .topic span {
+      color: var(--red);
+      font-family: var(--display);
+      font-size: 0.78rem;
+      font-weight: 700;
+    }
+
+    .topic h3 {
+      margin-bottom: 7px;
+      font-size: 1.07rem;
+    }
+
+    .topic p {
+      color: var(--gray);
+      font-size: 0.97rem;
+    }
+
+    /* Ubicación */
+    .location {
+      padding: 118px 0;
+      color: var(--white);
+      background: var(--ink);
+    }
+
+    .location-panel {
+      display: grid;
+      grid-template-columns: 0.88fr 1.12fr;
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: var(--radius-lg);
+      background: var(--ink-soft);
+    }
+
+    .location-copy {
+      display: flex;
+      min-height: 470px;
+      flex-direction: column;
+      justify-content: center;
+      padding: clamp(42px, 7vw, 76px);
+    }
+
+    .location .eyebrow { color: #FF6E86; }
+
+    .location h2 {
+      margin: 16px 0 20px;
+      font-size: clamp(2rem, 4vw, 3.25rem);
+      letter-spacing: -0.05em;
+    }
+
+    .address {
+      margin-bottom: 28px;
+      color: rgba(255, 255, 255, 0.7);
+      font-size: 1.12rem;
+    }
+
+    .location-copy .btn {
+      align-self: flex-start;
+      color: var(--white);
+      border-color: rgba(255, 255, 255, 0.3);
+    }
+
+    .location-copy .btn:hover { border-color: var(--white); }
+
+    .map-visual {
+      position: relative;
+      display: grid;
+      min-height: 470px;
+      place-items: center;
+      overflow: hidden;
+      background:
+        linear-gradient(32deg, transparent 47%, rgba(255, 255, 255, 0.08) 48%, rgba(255, 255, 255, 0.08) 52%, transparent 53%),
+        linear-gradient(142deg, transparent 47%, rgba(255, 255, 255, 0.05) 48%, rgba(255, 255, 255, 0.05) 52%, transparent 53%),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.025) 1px, transparent 1px),
+        linear-gradient(rgba(255, 255, 255, 0.025) 1px, transparent 1px),
+        #222222;
+      background-size: 170px 170px, 210px 210px, 42px 42px, 42px 42px, auto;
+    }
+
+    .map-pin {
+      position: relative;
+      display: grid;
+      width: 116px;
+      height: 116px;
+      place-items: center;
+      border-radius: 50% 50% 50% 12%;
+      color: var(--white);
+      background: var(--red);
+      box-shadow: 0 22px 55px rgba(196, 18, 48, 0.34);
+      font-family: var(--display);
+      font-size: 0.86rem;
+      font-weight: 800;
+      transform: rotate(-45deg);
+    }
+
+    .map-pin span { transform: rotate(45deg); }
+
+    /* Redes y footer */
+    .social {
+      padding: 100px 0;
+      background: var(--paper);
+    }
+
+    .social-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 50px;
+    }
+
+    .social h2 {
+      max-width: 610px;
+      margin-top: 14px;
+      font-size: clamp(1.9rem, 3.5vw, 2.8rem);
+      letter-spacing: -0.04em;
+    }
+
+    .social-links {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      gap: 10px;
+    }
+
+    .social-links a {
+      padding: 12px 17px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: var(--white);
+      font-family: var(--display);
+      font-size: 0.8rem;
+      font-weight: 700;
+      transition: color 180ms ease, border-color 180ms ease, transform 180ms ease;
+    }
+
+    .social-links a:hover {
+      color: var(--red);
+      border-color: var(--red);
+      transform: translateY(-2px);
+    }
+
+    .footer {
+      padding: 72px 0 28px;
+      color: rgba(255, 255, 255, 0.64);
+      background: #111111;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr 1fr 1fr;
+      gap: 54px;
+      padding-bottom: 54px;
+    }
+
+    .footer-brand {
+      margin-bottom: 17px;
+      color: var(--white);
+    }
+
+    .footer h3 {
+      margin-bottom: 18px;
+      color: var(--white);
+      font-size: 0.82rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .footer ul {
+      display: grid;
+      gap: 10px;
+      list-style: none;
+    }
+
+    .footer a:hover { color: var(--white); }
+
+    .footer-bottom {
+      display: flex;
+      justify-content: space-between;
+      gap: 24px;
+      padding-top: 24px;
+      border-top: 1px solid rgba(255, 255, 255, 0.12);
+      font-size: 0.88rem;
+    }
+
+    .footer-legal {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .whatsapp {
+      position: fixed;
+      z-index: 40;
+      right: 22px;
+      bottom: 22px;
+      display: grid;
+      width: 58px;
+      height: 58px;
+      place-items: center;
+      border-radius: 50%;
+      color: var(--white);
+      background: var(--whatsapp);
+      box-shadow: 0 10px 30px rgba(37, 211, 102, 0.34);
+      font-family: var(--display);
+      font-size: 0.75rem;
+      font-weight: 800;
+      transition: transform 180ms ease;
+    }
+
+    .whatsapp:hover { transform: translateY(-3px) scale(1.03); }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 600ms ease, transform 600ms ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: none;
+    }
+
+    @media (max-width: 1024px) {
+      .nav-links { gap: 18px; }
+      .hero-grid { gap: 40px; }
+      .footer-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    @media (max-width: 820px) {
+      .menu-toggle { display: block; }
+
+      .nav-links {
+        position: fixed;
+        inset: var(--nav) 0 auto;
+        display: flex;
+        max-height: calc(100vh - var(--nav));
+        padding: 28px 20px 34px;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 4px;
+        overflow-y: auto;
+        background: var(--white);
+        border-top: 1px solid var(--line);
+        box-shadow: 0 18px 40px rgba(0, 0, 0, 0.12);
+        opacity: 0;
+        pointer-events: none;
+        transform: translateY(-16px);
+        transition: opacity 180ms ease, transform 180ms ease;
+      }
+
+      .nav-links.open {
+        opacity: 1;
+        pointer-events: auto;
+        transform: none;
+      }
+
+      .nav-links > li > a {
+        display: block;
+        padding: 13px 14px;
+        font-size: 1rem;
+      }
+
+      .nav-links > li > a::after { display: none; }
+      .nav-cta { text-align: center; }
+
+      .hero { min-height: auto; }
+
+      .hero-grid,
+      .orientation-grid,
+      .location-panel {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-grid { gap: 54px; }
+      .direct-card { min-height: 340px; }
+      .orientation-grid { gap: 48px; }
+      .location-copy { min-height: auto; }
+      .map-visual { min-height: 360px; }
+      .social-inner {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .social-links { justify-content: flex-start; }
+    }
+
+    @media (max-width: 600px) {
+      .container { width: min(100% - 32px, var(--max)); }
+      .hero { padding-top: calc(var(--nav) + 62px); }
+      .hero h1 { font-size: clamp(2.75rem, 14vw, 4.4rem); }
+      .hero-actions { width: 100%; }
+      .hero-actions .btn { flex: 1 1 100%; }
+      .direct-card { padding: 28px; }
+      .direct-link { right: 28px; bottom: 28px; left: 28px; }
+      .channels, .orientation, .location { padding: 82px 0; }
+      .channel-grid { grid-template-columns: 1fr; }
+      .channel-card { min-height: 260px; padding: 30px; }
+      .location-copy { padding: 40px 28px; }
+      .map-visual { min-height: 300px; }
+      .social { padding: 76px 0; }
+      .footer-grid { grid-template-columns: 1fr; gap: 34px; }
+      .footer-bottom { flex-direction: column; }
+      .whatsapp { right: 16px; bottom: 16px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after {
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+      }
+      .reveal { opacity: 1; transform: none; }
+    }
+  </style>
+</head>
+<body>
+  <nav class="nav" aria-label="Navegación principal">
+    <div class="container nav-inner">
+      <a class="brand" href="index.html" aria-label="Decyde360, inicio">
+        <span class="brand-mark">D</span>
+        <span>Decyde<span>360</span></span>
+      </a>
+      <button class="menu-toggle" id="menuToggle" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="navLinks">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="quienes-somos.html">Quiénes somos</a></li>
+        <li><a href="index.html#bloques">Ecosistema</a></li>
+        <li><a href="proyectos.html">Proyectos</a></li>
+        <li><a href="canal.html">Canal</a></li>
+        <li><a class="nav-cta" href="contacto.html" aria-current="page">Contactar</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-copy reveal">
+          <span class="eyebrow">Contacto directo</span>
+          <h1>Hablemos. <em>Sin formularios</em> de por medio.</h1>
+          <p>Elige el canal que te resulte más cómodo. Detrás encontrarás a una persona preparada para escuchar tu caso y orientarte.</p>
+          <div class="hero-actions">
+            <a class="btn btn-whatsapp" href="https://wa.me/34607244443" target="_blank" rel="noopener">Abrir WhatsApp</a>
+            <a class="btn btn-primary" href="tel:+34607244443">Llamar ahora</a>
+          </div>
+          <p class="hero-note">Sin registros, sin cuentas y sin mensajes automáticos.</p>
+        </div>
+        <article class="direct-card reveal">
+          <span class="direct-label">Canal recomendado</span>
+          <h2>Escríbenos directamente por WhatsApp.</h2>
+          <p>Una forma sencilla de explicarnos qué necesitas y empezar la conversación.</p>
+          <a class="direct-link" href="https://wa.me/34607244443" target="_blank" rel="noopener">
+            <span>+34 607 244 443</span>
+            <span aria-hidden="true">→</span>
+          </a>
+        </article>
+      </div>
+    </section>
+
+    <section class="channels" id="canales">
+      <div class="container">
+        <div class="section-heading reveal">
+          <span class="eyebrow">Elige cómo contactar</span>
+          <h2>Cuatro caminos. El mismo equipo al otro lado.</h2>
+          <p>Contacta directamente, sin completar campos ni esperar una respuesta automática.</p>
+        </div>
+        <div class="channel-grid">
+          <article class="channel-card featured reveal">
+            <div class="channel-top">
+              <span class="channel-icon">WA</span>
+              <span class="channel-number" aria-hidden="true">01</span>
+            </div>
+            <h3>WhatsApp</h3>
+            <p>Ideal para una consulta rápida o para contarnos brevemente tu situación.</p>
+            <a href="https://wa.me/34607244443" target="_blank" rel="noopener">Escribir al +34 607 244 443 →</a>
+          </article>
+          <article class="channel-card reveal">
+            <div class="channel-top">
+              <span class="channel-icon">TEL</span>
+              <span class="channel-number" aria-hidden="true">02</span>
+            </div>
+            <h3>Teléfono</h3>
+            <p>Si prefieres hablar, llámanos y cuéntanos directamente qué necesitas.</p>
+            <a href="tel:+34607244443">Llamar al +34 607 244 443 →</a>
+          </article>
+          <article class="channel-card reveal">
+            <div class="channel-top">
+              <span class="channel-icon">@</span>
+              <span class="channel-number" aria-hidden="true">03</span>
+            </div>
+            <h3>Email</h3>
+            <p>La mejor opción si necesitas explicar tu caso con más detalle o adjuntar documentación.</p>
+            <a href="mailto:info@decyde360.es">Escribir a info@decyde360.es →</a>
+          </article>
+          <article class="channel-card reveal">
+            <div class="channel-top">
+              <span class="channel-icon">MUR</span>
+              <span class="channel-number" aria-hidden="true">04</span>
+            </div>
+            <h3>Visítanos en Murcia</h3>
+            <p>Encuéntranos en Carril Ruipérez 33, bajo, 30007 Murcia.</p>
+            <a href="https://www.google.com/maps/search/?api=1&query=Carril+Ruiperez+33+30007+Murcia" target="_blank" rel="noopener">Cómo llegar →</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="orientation">
+      <div class="container orientation-grid">
+        <div class="orientation-copy reveal">
+          <span class="eyebrow">Podemos orientarte</span>
+          <h2>Cuéntanos en qué punto estás.</h2>
+          <p>No necesitas preparar un discurso ni saber exactamente qué servicio buscas. Explícanos el contexto y te ayudaremos a encontrar el camino adecuado.</p>
+        </div>
+        <div class="topic-list reveal">
+          <article class="topic">
+            <span>01</span>
+            <div>
+              <h3>Asesoría y gestión</h3>
+              <p>Consultas fiscales, laborales o contables para autónomos, empresas y entidades.</p>
+            </div>
+          </article>
+          <article class="topic">
+            <span>02</span>
+            <div>
+              <h3>Deporte y cultura</h3>
+              <p>Clubes, asociaciones, fundaciones, mecenazgo y proyectos con necesidades específicas.</p>
+            </div>
+          </article>
+          <article class="topic">
+            <span>03</span>
+            <div>
+              <h3>Eventos y proyectos</h3>
+              <p>Participación, colaboración o información sobre las iniciativas del ecosistema Decyde.</p>
+            </div>
+          </article>
+          <article class="topic">
+            <span>04</span>
+            <div>
+              <h3>Comunidad y contenidos</h3>
+              <p>aMicro, Decyde360 y propuestas para compartir conocimiento o crear conexiones.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="location">
+      <div class="container">
+        <div class="location-panel reveal">
+          <div class="location-copy">
+            <span class="eyebrow">Estamos en Murcia</span>
+            <h2>Ven a conocernos.</h2>
+            <p class="address">Carril Ruipérez 33, bajo<br>30007 Murcia, España</p>
+            <a class="btn btn-outline" href="https://www.google.com/maps/search/?api=1&query=Carril+Ruiperez+33+30007+Murcia" target="_blank" rel="noopener">Abrir en Google Maps</a>
+          </div>
+          <div class="map-visual" aria-label="Ubicación de Decyde en Murcia">
+            <div class="map-pin"><span>Decyde</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="social">
+      <div class="container social-inner">
+        <div class="reveal">
+          <span class="eyebrow">También en redes</span>
+          <h2>Sigue los proyectos y conversaciones del ecosistema.</h2>
+        </div>
+        <div class="social-links reveal">
+          <a href="https://www.instagram.com/decydeasesores/" target="_blank" rel="noopener">Instagram</a>
+          <a href="https://www.linkedin.com/company/decydeasesores/" target="_blank" rel="noopener">LinkedIn</a>
+          <a href="https://www.youtube.com/@Decyde360" target="_blank" rel="noopener">YouTube</a>
+          <a href="https://twitter.com/DecydeAsesores" target="_blank" rel="noopener">X / Twitter</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <a class="brand footer-brand" href="index.html">
+            <span class="brand-mark">D</span>
+            <span>Decyde<span>360</span></span>
+          </a>
+          <p>Cultura, deporte y comunidad conectados por una misma forma de hacer las cosas.</p>
+        </div>
+        <div>
+          <h3>Explora</h3>
+          <ul>
+            <li><a href="quienes-somos.html">Quiénes somos</a></li>
+            <li><a href="index.html#bloques">Ecosistema</a></li>
+            <li><a href="proyectos.html">Proyectos</a></li>
+            <li><a href="index.html#youtube">Canal</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3>Comunidad</h3>
+          <ul>
+            <li><a href="https://www.instagram.com/decydeasesores/" target="_blank" rel="noopener">Instagram</a></li>
+            <li><a href="https://www.linkedin.com/company/decydeasesores/" target="_blank" rel="noopener">LinkedIn</a></li>
+            <li><a href="https://www.youtube.com/@Decyde360" target="_blank" rel="noopener">YouTube</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3>Contacto</h3>
+          <ul>
+            <li><a href="tel:+34607244443">+34 607 244 443</a></li>
+            <li><a href="mailto:info@decyde360.es">info@decyde360.es</a></li>
+            <li><a href="https://www.google.com/maps/search/?api=1&query=Carril+Ruiperez+33+30007+Murcia" target="_blank" rel="noopener">Murcia, España</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 Decyde360. Todos los derechos reservados.</span>
+        <div class="footer-legal">
+          <a href="#">Aviso legal</a>
+          <a href="#">Privacidad</a>
+          <a href="#">Cookies</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <a class="whatsapp" href="https://wa.me/34607244443" target="_blank" rel="noopener" aria-label="Escribir a Decyde por WhatsApp">WA</a>
+
+  <script>
+    const menuToggle = document.getElementById('menuToggle');
+    const navLinks = document.getElementById('navLinks');
+
+    const closeMenu = () => {
+      menuToggle.classList.remove('active');
+      navLinks.classList.remove('open');
+      menuToggle.setAttribute('aria-expanded', 'false');
+      menuToggle.setAttribute('aria-label', 'Abrir menú');
+      document.body.classList.remove('menu-open');
+    };
+
+    menuToggle.addEventListener('click', () => {
+      const isOpen = navLinks.classList.toggle('open');
+      menuToggle.classList.toggle('active', isOpen);
+      menuToggle.setAttribute('aria-expanded', String(isOpen));
+      menuToggle.setAttribute('aria-label', isOpen ? 'Cerrar menú' : 'Abrir menú');
+      document.body.classList.toggle('menu-open', isOpen);
+    });
+
+    navLinks.addEventListener('click', event => {
+      if (event.target.closest('a')) closeMenu();
+    });
+
+    window.addEventListener('keydown', event => {
+      if (event.key === 'Escape') closeMenu();
+    });
+
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const revealElements = document.querySelectorAll('.reveal');
+
+    if (reducedMotion || !('IntersectionObserver' in window)) {
+      revealElements.forEach(element => element.classList.add('visible'));
+    } else {
+      const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.12, rootMargin: '0px 0px -40px' });
+
+      revealElements.forEach(element => observer.observe(element));
+    }
+  </script>
+</body>
+</html>
