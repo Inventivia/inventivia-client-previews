@@ -1516,3 +1516,22 @@
 
 
 })(jQuery);
+
+(function () {
+  var whatsappUrl = 'https://wa.me/34648672359?text=' + encodeURIComponent('Hola Lowe Limpiezas, quiero solicitar presupuesto');
+
+  document.querySelectorAll('.main-menu__btn-box').forEach(function (box) {
+    if (box.querySelector('.lowe-whatsapp-btn')) {
+      return;
+    }
+
+    var link = document.createElement('a');
+    link.className = 'lowe-whatsapp-btn';
+    link.href = whatsappUrl;
+    link.target = '_blank';
+    link.rel = 'noopener noreferrer';
+    link.setAttribute('aria-label', 'Contactar por WhatsApp');
+    link.innerHTML = '<i class="fab fa-whatsapp lowe-whatsapp-btn__icon" aria-hidden="true"></i><span>WhatsApp</span>';
+    box.appendChild(link);
+  });
+})();
