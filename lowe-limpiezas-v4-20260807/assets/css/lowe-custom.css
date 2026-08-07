@@ -39,6 +39,27 @@
     height: 100px;
 }
 
+/* El menu principal existe por duplicado: el original (dentro de .main-header,
+   transparente sobre la foto de cabecera) y una copia que el script clona en
+   la barra fija blanca (.stricky-header) al hacer scroll. Cada logo lleva dos
+   versiones (color y blanca); por defecto se muestra la de color, pensada
+   para fondos claros como la barra fija blanca y la home. */
+.lowe-logo-image__white {
+    display: none;
+}
+
+/* En paginas interiores, el header original es transparente sobre una foto
+   oscura: ahi se necesita el logo blanco. La barra fija (.stricky-header) no
+   esta dentro de .main-header, asi que esta regla no le afecta y sigue
+   mostrando el logo de color sobre su fondo blanco. */
+body:has(.lowe-page-header) .main-header .lowe-logo-image__color {
+    display: none;
+}
+
+body:has(.lowe-page-header) .main-header .lowe-logo-image__white {
+    display: inline-block;
+}
+
 @media (max-width: 767px) {
     .lowe-logo-image img {
         height: 48px;
