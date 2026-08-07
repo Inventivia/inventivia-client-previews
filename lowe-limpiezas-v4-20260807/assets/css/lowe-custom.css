@@ -28,9 +28,28 @@
     height: 44px;
 }
 
+/* Logo del menu principal: mas grande para que se lea bien el eslogan
+   "Espacios que inspiran" bajo el nombre. Se reduce el padding vertical
+   del contenedor para que el logo mas grande quepa sin desbordar el menu. */
+.main-menu__logo {
+    padding: 10px 0;
+}
+
+.main-menu__logo .lowe-logo-image img {
+    height: 100px;
+}
+
 @media (max-width: 767px) {
     .lowe-logo-image img {
         height: 48px;
+    }
+
+    .main-menu__logo {
+        padding: 10px 0;
+    }
+
+    .main-menu__logo .lowe-logo-image img {
+        height: 52px;
     }
 }
 
