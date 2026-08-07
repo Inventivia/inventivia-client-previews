@@ -15,13 +15,19 @@
 }
 
 .lowe-logo-image img {
-    height: 46px;
+    height: 68px;
     width: auto;
     max-width: none;
 }
 
 .site-footer__logo .lowe-logo-image img {
-    height: 40px;
+    height: 56px;
+}
+
+@media (max-width: 767px) {
+    .lowe-logo-image img {
+        height: 48px;
+    }
 }
 
 .lowe-logo-text span {
@@ -125,6 +131,41 @@
     line-height: 1.5;
     opacity: 0.72;
     margin-top: 10px;
+}
+
+/* Contraste: dentro del bloque azul de contacto (contact-one), este texto
+   heredaba el color oscuro por defecto y se volvia invisible. */
+.contact-one__right .lowe-placeholder-note {
+    color: var(--Freshflow-white);
+}
+
+/* Contraste: el telefono y el email bajo el formulario de contacto son <a>
+   sueltos (sin el h4 que espera el CSS original), asi que heredaban el
+   color de enlace oscuro por defecto y no se veian sobre el fondo azul. */
+.contact-one__call-contact a {
+    color: var(--Freshflow-white);
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 22px;
+}
+
+.contact-one__call-contact a:hover {
+    color: var(--Freshflow-extra);
+}
+
+/* Las fotos circulares del bloque de contacto usaban imagenes muy pequenas
+   y sin recorte controlado, por lo que se veian pixeladas y mal encuadradas.
+   Se fuerza un recorte centrado consistente con imagenes de mayor resolucion. */
+.contact-one__img-main img,
+.contact-one__small-img-1 img,
+.contact-one__small-img-2 img {
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.contact-one__img-main {
+    aspect-ratio: 1 / 1;
 }
 
 .lowe-service-tag {
