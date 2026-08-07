@@ -188,6 +188,27 @@
     color: var(--Freshflow-white);
 }
 
+/* CTA simplificada de contacto (ej. Promos): usa el fondo azul degradado de
+   .contact-one pero no la clase contact-one__right, asi que el titulo salia
+   en negro y la etiqueta/span en azul, ilegibles sobre el fondo azul. */
+.lowe-contact-cta .section-title__tagline {
+    color: var(--Freshflow-white);
+}
+
+.lowe-contact-cta .section-title__tagline-shape {
+    border-color: var(--Freshflow-white);
+}
+
+.lowe-contact-cta .section-title__tagline-shape-2 {
+    background-color: var(--Freshflow-white);
+    border-color: var(--Freshflow-base);
+}
+
+.lowe-contact-cta .section-title__title,
+.lowe-contact-cta .section-title__title span {
+    color: var(--Freshflow-white);
+}
+
 /* Modulo de resenas: resumen de valoracion de Google Business Profile */
 .lowe-reviews-summary {
     display: flex;
