@@ -1,8 +1,8 @@
 .lowe-logo-text {
     display: inline-flex;
     flex-direction: column;
-    color: var(--thm-black);
-    font-family: var(--thm-font-two);
+    color: var(--Freshflow-black);
+    font-family: var(--Freshflow-font-two);
     font-weight: 800;
     line-height: 0.9;
     letter-spacing: 0;
@@ -24,6 +24,10 @@
     height: 56px;
 }
 
+.logo-box .lowe-logo-image img {
+    height: 44px;
+}
+
 @media (max-width: 767px) {
     .lowe-logo-image img {
         height: 48px;
@@ -31,9 +35,9 @@
 }
 
 .lowe-logo-text span {
-    color: var(--thm-base);
+    color: var(--Freshflow-base);
     font-size: 13px;
-    font-family: var(--thm-font);
+    font-family: var(--Freshflow-font);
     font-weight: 700;
     letter-spacing: 1.4px;
     margin-top: 6px;
@@ -76,7 +80,7 @@
     border-radius: 24px;
     background: #25d366;
     color: #fff;
-    font-family: var(--thm-font-two);
+    font-family: var(--Freshflow-font-two);
     font-size: 15px;
     font-weight: 700;
     line-height: 18px;
@@ -170,7 +174,7 @@
 
 .lowe-service-tag {
     display: inline-block;
-    color: var(--thm-base);
+    color: var(--Freshflow-base);
     font-size: 13px;
     font-weight: 700;
     text-transform: uppercase;
@@ -198,8 +202,8 @@
 .lowe-reviews-summary__score {
     font-size: 26px;
     font-weight: 800;
-    color: var(--thm-black);
-    font-family: var(--thm-font-two);
+    color: var(--Freshflow-black);
+    font-family: var(--Freshflow-font-two);
 }
 
 .lowe-reviews-summary__stars {
@@ -210,7 +214,7 @@
 
 .lowe-reviews-summary__text {
     margin: 0;
-    color: var(--thm-black);
+    color: var(--Freshflow-black);
     opacity: 0.75;
     font-size: 15px;
 }
@@ -219,7 +223,7 @@
     display: inline-flex;
     align-items: center;
     gap: 6px;
-    color: var(--thm-base);
+    color: var(--Freshflow-base);
     font-weight: 700;
     font-size: 14px;
     text-decoration: underline;
@@ -236,7 +240,7 @@
 
 .lowe-client-strip {
     padding: 90px 0 70px;
-    background: var(--thm-extra);
+    background: var(--Freshflow-extra);
 }
 
 .lowe-client-strip__list {
@@ -251,7 +255,7 @@
     padding: 13px 20px;
     border-radius: 8px;
     background: #fff;
-    color: var(--thm-black);
+    color: var(--Freshflow-black);
     font-weight: 700;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
 }
@@ -296,7 +300,48 @@
     content: "";
     position: absolute;
     inset: 0;
-    background: rgba(7, 59, 116, 0.12);
+    /* Las fotos de cabecera tienen fondo casi blanco: sin un velo oscuro
+       fuerte, el menu transparente y el titulo en blanco no se leen. */
+    background: linear-gradient(180deg, rgba(5, 23, 61, 0.88) 0%, rgba(5, 23, 61, 0.72) 55%, rgba(5, 23, 61, 0.82) 100%);
+}
+
+/* Sobre la cabecera de paginas interiores el menu es transparente: se
+   fuerzan los enlaces del menu a blanco para que se lean sobre el velo
+   oscuro de .lowe-page-header (en la home el menu ya se apoya sobre un
+   fondo claro y no necesita este cambio). */
+body:has(.lowe-page-header) .main-header .main-menu .main-menu__list > li > a {
+    color: rgba(255, 255, 255, 0.92);
+}
+
+body:has(.lowe-page-header) .main-header .main-menu .main-menu__list > li:hover > a,
+body:has(.lowe-page-header) .main-header .main-menu .main-menu__list > li.current > a {
+    color: var(--Freshflow-extra);
+}
+
+/* La miniatura de cada fila de servicios (services-two__hover-img) no tenia
+   ningun tamano definido en el CSS original: cada imagen se mostraba a su
+   tamano nativo, por eso una se veia mucho mas grande que las demas. */
+.services-two__hover-img {
+    flex-shrink: 0;
+    width: 140px;
+    height: 100px;
+    margin-left: 24px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.services-two__hover-img img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+@media (max-width: 767px) {
+    .services-two__hover-img {
+        display: none;
+    }
 }
 
 .lowe-page-header .container {
@@ -306,7 +351,7 @@
 }
 
 .lowe-page-header__tag {
-    color: var(--thm-base);
+    color: var(--Freshflow-base);
     font-weight: 800;
     letter-spacing: 1.5px;
     text-transform: uppercase;
@@ -315,7 +360,7 @@
 
 .lowe-page-header__title {
     color: #fff;
-    font-family: var(--thm-font-two);
+    font-family: var(--Freshflow-font-two);
     font-size: 74px;
     font-weight: 800;
     line-height: 0.95;
@@ -363,7 +408,7 @@
     margin: 0;
     border: 0;
     border-radius: 50%;
-    background-color: var(--thm-base);
+    background-color: var(--Freshflow-base);
     opacity: 0.35;
 }
 
@@ -440,7 +485,7 @@
     align-items: center;
     justify-content: center;
     border-radius: 50%;
-    background: var(--thm-base);
+    background: var(--Freshflow-base);
     color: #fff;
     font-size: 30px;
     margin-bottom: 22px;
@@ -457,22 +502,22 @@
 }
 
 .lowe-promo-card {
-    background: var(--thm-extra);
+    background: var(--Freshflow-extra);
     border-radius: 8px;
     padding: 40px;
     height: 100%;
-    border-left: 5px solid var(--thm-base);
+    border-left: 5px solid var(--Freshflow-base);
 }
 
 .lowe-promo-card__date {
     display: inline-block;
     margin-top: 22px;
-    color: var(--thm-base);
+    color: var(--Freshflow-base);
     font-weight: 800;
 }
 
 .lowe-contact-panel {
-    background: var(--thm-black);
+    background: var(--Freshflow-black);
     border-radius: 8px;
     padding: 42px;
     height: 100%;
@@ -490,7 +535,7 @@
 
 .lowe-work-label {
     display: block;
-    color: var(--thm-base);
+    color: var(--Freshflow-base);
     font-weight: 800;
     margin-bottom: 6px;
 }
@@ -500,9 +545,9 @@
     height: 60px;
     border: 0;
     outline: none;
-    background-color: var(--thm-extra);
+    background-color: var(--Freshflow-extra);
     font-size: 16px;
-    color: var(--thm-gray);
+    color: var(--Freshflow-gray);
     font-weight: 500;
     padding: 0 30px;
 }
