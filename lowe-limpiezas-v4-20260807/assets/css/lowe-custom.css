@@ -9,6 +9,21 @@
     text-transform: uppercase;
 }
 
+.lowe-logo-image {
+    display: inline-flex;
+    align-items: center;
+}
+
+.lowe-logo-image img {
+    height: 46px;
+    width: auto;
+    max-width: none;
+}
+
+.site-footer__logo .lowe-logo-image img {
+    height: 40px;
+}
+
 .lowe-logo-text span {
     color: var(--thm-base);
     font-size: 13px;
@@ -126,6 +141,51 @@
    no se distingue. Se pasa a blanco para que sea legible. */
 .contact-one__right .section-title__title span {
     color: var(--Freshflow-white);
+}
+
+/* Modulo de resenas: resumen de valoracion de Google Business Profile */
+.lowe-reviews-summary {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px 14px;
+    margin: -10px 0 40px;
+    text-align: center;
+}
+
+.lowe-reviews-summary__score {
+    font-size: 26px;
+    font-weight: 800;
+    color: var(--thm-black);
+    font-family: var(--thm-font-two);
+}
+
+.lowe-reviews-summary__stars {
+    color: #FFB800;
+    font-size: 16px;
+    letter-spacing: 2px;
+}
+
+.lowe-reviews-summary__text {
+    margin: 0;
+    color: var(--thm-black);
+    opacity: 0.75;
+    font-size: 15px;
+}
+
+.lowe-reviews-summary__link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: var(--thm-base);
+    font-weight: 700;
+    font-size: 14px;
+    text-decoration: underline;
+}
+
+.lowe-reviews-summary__link:hover {
+    opacity: 0.8;
 }
 
 .contact-one__text {
