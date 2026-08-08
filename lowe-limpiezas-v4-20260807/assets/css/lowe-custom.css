@@ -717,3 +717,13 @@ body:has(.lowe-page-header) .main-header .main-menu .main-menu__list > li.curren
         overflow-wrap: anywhere;
     }
 }
+
+/* Enlaces largos del footer (ej. "Calidad y medio ambiente") rompian linea
+   dejando el icono solo arriba y el texto suelto debajo. Alineamos icono +
+   texto con flexbox para que el texto haga wrap ordenado junto al icono. */
+.footer-widget__quick-links .list-unstyled li a,
+.footer-widget__services .list-unstyled li a {
+    display: inline-flex;
+    align-items: flex-start;
+    gap: 6px;
+}
