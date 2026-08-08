@@ -718,12 +718,20 @@ body:has(.lowe-page-header) .main-header .main-menu .main-menu__list > li.curren
     }
 }
 
-/* Enlaces largos del footer (ej. "Calidad y medio ambiente") rompian linea
-   dejando el icono solo arriba y el texto suelto debajo. Alineamos icono +
-   texto con flexbox para que el texto haga wrap ordenado junto al icono. */
+/* Enlaces largos del footer (ej. "Calidad y medio ambiente") rompian linea:
+   el bloque original tiene flex-wrap:wrap, asi que el texto entero saltaba
+   como item completo a la siguiente fila dejando el icono solo arriba.
+   Forzamos flex-wrap:nowrap para que icono+texto queden en la misma fila y
+   sea el TEXTO el que haga salto de linea interno si no cabe. */
 .footer-widget__quick-links .list-unstyled li a,
 .footer-widget__services .list-unstyled li a {
-    display: inline-flex;
+    display: flex;
+    flex-wrap: nowrap;
     align-items: flex-start;
     gap: 6px;
+}
+.footer-widget__quick-links .list-unstyled li a span.icon-next,
+.footer-widget__services .list-unstyled li a span.icon-next {
+    flex: 0 0 auto;
+    margin-top: 3px;
 }
