@@ -294,6 +294,38 @@ body:has(.lowe-page-header) .main-header .lowe-logo-image__white {
     opacity: 0.8;
 }
 
+/* Tarjetas de resenas individuales (Inicio y Opiniones): las estrellas no
+   tenian color propio y heredaban el negro del texto. Se ponen en dorado,
+   igual que en el resumen de valoracion, y se ajusta el espaciado para que
+   el texto, el nombre y la etiqueta de la resena queden bien separados. */
+.testimonial-one__ratting {
+    margin-bottom: 14px;
+}
+
+.testimonial-one__ratting .icon-star {
+    color: #FFB800;
+    font-size: 15px;
+    letter-spacing: 2px;
+}
+
+.testimonial-one__ratting + p {
+    color: var(--Freshflow-black);
+    opacity: 0.82;
+    line-height: 1.65;
+    margin-bottom: 20px;
+}
+
+.testimonial-one__ratting ~ h3 {
+    font-size: 19px;
+    margin-bottom: 2px;
+}
+
+.testimonial-one__ratting ~ .lowe-service-tag {
+    margin-bottom: 0;
+    color: var(--Freshflow-gray);
+    font-weight: 600;
+}
+
 .contact-one__text {
     color: var(--Freshflow-white);
     opacity: 0.92;
