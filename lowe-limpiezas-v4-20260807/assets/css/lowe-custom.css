@@ -331,9 +331,12 @@ body:has(.lowe-page-header) .main-header .lowe-logo-image__white {
     opacity: 0.92;
 }
 
+/* El bloque de clientes usaba el amarillo de acento (--Freshflow-extra) a
+   pantalla completa: quedaba muy llamativo y no encajaba con el resto del
+   sitio. Se pasa a un tono claro azulado, coherente con el resto de la web. */
 .lowe-client-strip {
     padding: 90px 0 70px;
-    background: var(--Freshflow-extra);
+    background: var(--Freshflow-secondary);
 }
 
 .lowe-client-strip__list {
