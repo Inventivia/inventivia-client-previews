@@ -781,3 +781,28 @@ body:has(.lowe-page-header) .main-header .main-menu .main-menu__list > li.curren
     object-fit: cover;
     border-radius: 12px;
 }
+
+/* Seccion "Nuestra filosofia" (Nosotros): el primo aporto 2 fotos reales
+   para este bloque. Se anaden entre el titulo y las 3 tarjetas, sin
+   rediseno ni cifras/badges inventados, tal y como se pidio. */
+.lowe-philosophy-photos {
+    display: flex;
+    gap: 16px;
+    margin: 0 0 50px;
+}
+.lowe-philosophy-photos img {
+    width: 50%;
+    height: 260px;
+    object-fit: cover;
+    border-radius: 12px;
+}
+@media (max-width: 767px) {
+    .lowe-philosophy-photos {
+        flex-direction: column;
+        margin-bottom: 40px;
+    }
+    .lowe-philosophy-photos img {
+        width: 100%;
+        height: 220px;
+    }
+}
