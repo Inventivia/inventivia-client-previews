@@ -735,3 +735,49 @@ body:has(.lowe-page-header) .main-header .main-menu .main-menu__list > li.curren
     flex: 0 0 auto;
     margin-top: 3px;
 }
+
+/* Seccion "Sobre nosotros" (Home y Nosotros): el diseno original del primo
+   es una cuadricula limpia de 4 fotos con esquinas redondeadas, sin la
+   mascara organica que trae la plantilla de serie en la 3a imagen y sin
+   dejar la 4a foto (nosotros_04.jpg) sin usar. */
+.lowe-about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin: 0;
+}
+.lowe-about-grid > div {
+    position: relative;
+    margin: 0 !important;
+    border-radius: 12px;
+    overflow: hidden;
+    aspect-ratio: 3 / 4;
+    -webkit-mask: none !important;
+    mask: none !important;
+}
+.lowe-about-grid > div img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 12px;
+    margin: 0;
+}
+.lowe-about-grid .about-one__video-link { display: none; }
+@media (max-width: 575px) {
+    .lowe-about-grid { grid-template-columns: 1fr 1fr; gap: 10px; }
+}
+
+/* Seccion "Por que Lowe" (Home): el primo aporto 2 fotos reales para esta
+   seccion que no se estaban usando (solo habia iconos). Se anaden debajo
+   del texto existente, sin tocar el texto ni inventar cifras/badges. */
+.lowe-why-choose-photos {
+    display: flex;
+    gap: 14px;
+    margin-top: 28px;
+}
+.lowe-why-choose-photos img {
+    width: 50%;
+    height: 170px;
+    object-fit: cover;
+    border-radius: 12px;
+}
