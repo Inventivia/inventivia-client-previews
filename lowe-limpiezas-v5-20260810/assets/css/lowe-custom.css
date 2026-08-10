@@ -786,14 +786,18 @@ body:has(.lowe-page-header) .main-header .main-menu .main-menu__list > li.curren
    para este bloque. Se anaden entre el titulo y las 3 tarjetas, sin
    rediseno ni cifras/badges inventados, tal y como se pidio. */
 .lowe-philosophy-photos {
-    display: flex;
-    gap: 16px;
-    margin: 0 0 50px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin: 0 auto 50px;
+    max-width: 760px;
 }
 .lowe-philosophy-photos img {
-    width: 50%;
-    height: 260px;
+    width: 100%;
+    aspect-ratio: 475 / 600;
+    height: auto;
     object-fit: cover;
+    object-position: center top;
     border-radius: 12px;
 }
 @media (max-width: 767px) {
@@ -895,10 +899,63 @@ body:has(.lowe-page-header) .main-header .main-menu .main-menu__list > li.curren
 .project-one__title-2 {
     text-transform: none;
 }
+
+/* La plantilla capitaliza cada palabra en botones y titulares (funciona en
+   ingles, no en castellano: "Resolver Mi Duda", "Empresas Y Locales"). */
+.thm-btn,
+.services-two__title,
+.services-details__title-1,
+.faq-one .accrodion-title h4 {
+    text-transform: none;
+}
 .project-one__filter li p span {
     margin-right: 9px;
     font-size: 17px;
     line-height: 1;
+}
+
+/* Formularios: la plantilla solo da estilo a input[type=text] y [type=email],
+   asi que el campo de telefono se quedaba sin formato y rompia la rejilla
+   (Home y Contacto). */
+.contact-one__input-box input[type="tel"] {
+    height: 60px;
+    width: 100%;
+    background-color: #F1F1F2;
+    border: none;
+    padding-left: 25px;
+    padding-right: 25px;
+    outline: none;
+    font-size: 16px;
+    font-weight: 400;
+    color: var(--Freshflow-black);
+    font-family: var(--Freshflow-font-two);
+    display: block;
+    border-radius: 12px;
+}
+.contact-one__input-box select {
+    border-radius: 12px;
+}
+
+/* Servicios: la tarjeta azul "Pide un estudio" lleva la foto en absoluto a la
+   derecha; hay que limitarla o tapa el titulo y el boton. */
+.project-details__get-touch {
+    padding-right: 150px;
+}
+.project-details__get-touch-img-1 {
+    top: auto;
+    bottom: 0;
+    transform: none;
+    width: 135px;
+    line-height: 0;
+    pointer-events: none;
+}
+.project-details__get-touch-img-1 img {
+    width: 100%;
+    height: auto;
+}
+@media (max-width: 991px) {
+    .project-details__get-touch { padding-right: 120px; }
+    .project-details__get-touch-img-1 { width: 110px; }
 }
 @media (max-width: 575px) {
     .project-one__filter li p {
