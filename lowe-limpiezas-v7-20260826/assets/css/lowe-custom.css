@@ -1,0 +1,1222 @@
+.lowe-logo-text {
+    display: inline-flex;
+    flex-direction: column;
+    color: var(--Freshflow-black);
+    font-family: var(--Freshflow-font-two);
+    font-weight: 800;
+    line-height: 0.9;
+    letter-spacing: 0;
+    text-transform: uppercase;
+}
+
+.lowe-logo-image {
+    display: inline-flex;
+    align-items: center;
+}
+
+.lowe-logo-image img {
+    height: 68px;
+    width: auto;
+    max-width: none;
+}
+
+.site-footer__logo .lowe-logo-image img {
+    height: 56px;
+}
+
+.logo-box .lowe-logo-image img {
+    height: 44px;
+}
+
+/* Logo del menu principal: mas grande para que se lea bien el eslogan
+   "Espacios que inspiran" bajo el nombre. Se reduce el padding vertical
+   del contenedor para que el logo mas grande quepa sin desbordar el menu. */
+.main-menu__logo {
+    padding: 10px 0;
+}
+
+.main-menu__logo .lowe-logo-image img {
+    height: 100px;
+}
+
+/* El menu principal existe por duplicado: el original (dentro de .main-header,
+   transparente sobre la foto de cabecera) y una copia que el script clona en
+   la barra fija blanca (.stricky-header) al hacer scroll. Cada logo lleva dos
+   versiones (color y blanca); por defecto se muestra la de color, pensada
+   para fondos claros como la barra fija blanca y la home. */
+.lowe-logo-image__white {
+    display: none;
+}
+
+/* En paginas interiores, el header original es transparente sobre una foto
+   oscura: ahi se necesita el logo blanco. La barra fija (.stricky-header) no
+   esta dentro de .main-header, asi que esta regla no le afecta y sigue
+   mostrando el logo de color sobre su fondo blanco. */
+body:has(.lowe-page-header) .main-header .lowe-logo-image__color {
+    display: none;
+}
+
+body:has(.lowe-page-header) .main-header .lowe-logo-image__white {
+    display: inline-block;
+}
+
+@media (max-width: 767px) {
+    .lowe-logo-image img {
+        height: 48px;
+    }
+
+    .main-menu__logo {
+        padding: 10px 0;
+    }
+
+    .main-menu__logo .lowe-logo-image img {
+        height: 52px;
+    }
+}
+
+.lowe-logo-text span {
+    color: var(--Freshflow-base);
+    font-size: 13px;
+    font-family: var(--Freshflow-font);
+    font-weight: 700;
+    letter-spacing: 1.4px;
+    margin-top: 6px;
+}
+
+.lowe-logo-text--light {
+  color: #fff;
+}
+
+.main-menu__right {
+    align-items: center;
+    min-width: 0;
+}
+
+.main-menu__btn-box {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 12px;
+}
+
+.lowe-whatsapp-header {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 52px;
+    width: 52px;
+    height: 52px;
+    border: 1px solid rgba(6, 30, 79, .13);
+    border-radius: 50%;
+    background: #fff;
+    color: #25d366;
+    font-size: 25px;
+    text-decoration: none;
+    box-shadow: 0 8px 24px rgba(8, 30, 72, .08);
+    transition: color 200ms ease, border-color 200ms ease, transform 200ms ease;
+}
+
+.lowe-whatsapp-header:hover,
+.lowe-whatsapp-header:focus-visible {
+    border-color: #25d366;
+    color: #128c7e;
+    transform: translateY(-1px);
+}
+
+.site-footer__top-right-heading-img {
+    display: block;
+    flex: 0 0 170px;
+    width: 170px;
+    height: 96px;
+    margin-left: 20px;
+    overflow: hidden;
+    border-radius: 12px;
+}
+
+.site-footer__top-right-heading-img img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Prevent the template preloader from blocking pages if a plugin fails. */
+.js-preloader {
+  animation: lowe-preloader-fallback 0s linear 4s forwards;
+}
+
+@keyframes lowe-preloader-fallback {
+  to {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+  }
+}
+
+.lowe-placeholder-note {
+    font-size: 13px;
+    line-height: 1.5;
+    opacity: 0.72;
+    margin-top: 10px;
+}
+
+/* Contraste: dentro del bloque azul de contacto (contact-one), este texto
+   heredaba el color oscuro por defecto y se volvia invisible. */
+.contact-one__right .lowe-placeholder-note {
+    color: var(--Freshflow-white);
+}
+
+/* Contraste: el telefono y el email bajo el formulario de contacto son <a>
+   sueltos (sin el h4 que espera el CSS original), asi que heredaban el
+   color de enlace oscuro por defecto y no se veian sobre el fondo azul. */
+.contact-one__call-contact a {
+    color: var(--Freshflow-white);
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 22px;
+}
+
+.contact-one__call-contact a:hover {
+    color: var(--Freshflow-extra);
+}
+
+/* Las fotos circulares del bloque de contacto usaban imagenes muy pequenas
+   y sin recorte controlado, por lo que se veian pixeladas y mal encuadradas.
+   Se fuerza un recorte centrado consistente con imagenes de mayor resolucion. */
+.contact-one__img-main img,
+.contact-one__small-img-1 img,
+.contact-one__small-img-2 img {
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.contact-one__img-main {
+    aspect-ratio: 1 / 1;
+}
+
+.lowe-service-tag {
+    display: inline-block;
+    color: var(--Freshflow-base);
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+}
+
+/* Contraste: sobre fondo azul del bloque de contacto, el texto en azul base
+   no se distingue. Se pasa a blanco para que sea legible. */
+.contact-one__right .section-title__title span {
+    color: var(--Freshflow-white);
+}
+
+/* CTA simplificada de contacto (ej. Promos): usa el fondo azul degradado de
+   .contact-one pero no la clase contact-one__right, asi que el titulo salia
+   en negro y la etiqueta/span en azul, ilegibles sobre el fondo azul. */
+.lowe-contact-cta .section-title__tagline {
+    color: var(--Freshflow-white);
+}
+
+.lowe-contact-cta .section-title__tagline-shape {
+    border-color: var(--Freshflow-white);
+}
+
+.lowe-contact-cta .section-title__tagline-shape-2 {
+    background-color: var(--Freshflow-white);
+    border-color: var(--Freshflow-base);
+}
+
+.lowe-contact-cta .section-title__title,
+.lowe-contact-cta .section-title__title span {
+    color: var(--Freshflow-white);
+}
+
+/* Modulo de resenas: resumen de valoracion de Google Business Profile */
+.lowe-reviews-summary {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px 14px;
+    margin: -10px 0 40px;
+    text-align: center;
+}
+
+.lowe-reviews-summary__score {
+    font-size: 26px;
+    font-weight: 800;
+    color: var(--Freshflow-black);
+    font-family: var(--Freshflow-font-two);
+}
+
+.lowe-reviews-summary__stars {
+    color: #FFB800;
+    font-size: 16px;
+    letter-spacing: 2px;
+}
+
+.lowe-reviews-summary__text {
+    margin: 0;
+    color: var(--Freshflow-black);
+    opacity: 0.75;
+    font-size: 15px;
+}
+
+.lowe-reviews-summary__link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: var(--Freshflow-base);
+    font-weight: 700;
+    font-size: 14px;
+    text-decoration: underline;
+}
+
+.lowe-reviews-summary__link:hover {
+    opacity: 0.8;
+}
+
+/* Tarjetas de resenas individuales (Inicio y Opiniones): las estrellas no
+   tenian color propio y heredaban el negro del texto. Se ponen en dorado,
+   igual que en el resumen de valoracion, y se ajusta el espaciado para que
+   el texto, el nombre y la etiqueta de la resena queden bien separados. */
+.testimonial-one__ratting {
+    margin-bottom: 14px;
+}
+
+.testimonial-one__ratting .icon-star {
+    color: #FFB800;
+    font-size: 15px;
+    letter-spacing: 2px;
+}
+
+.testimonial-one__ratting + p {
+    color: var(--Freshflow-black);
+    opacity: 0.82;
+    line-height: 1.65;
+    margin-bottom: 20px;
+}
+
+.testimonial-one__ratting ~ h3 {
+    font-size: 19px;
+    margin-bottom: 2px;
+}
+
+.testimonial-one__ratting ~ .lowe-service-tag {
+    margin-bottom: 0;
+    color: var(--Freshflow-gray);
+    font-weight: 600;
+}
+
+.contact-one__text {
+    color: var(--Freshflow-white);
+    opacity: 0.92;
+}
+
+/* El bloque de clientes usaba el amarillo de acento (--Freshflow-extra) a
+   pantalla completa: quedaba muy llamativo y no encajaba con el resto del
+   sitio. Se pasa a un tono claro azulado, coherente con el resto de la web. */
+.lowe-client-strip {
+    padding: 90px 0 70px;
+    background: var(--Freshflow-secondary);
+    overflow: hidden;
+}
+
+.lowe-client-strip__list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.lowe-client-strip__item {
+    padding: 13px 20px;
+    border-radius: 8px;
+    background: #fff;
+    color: var(--Freshflow-black);
+    font-weight: 700;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+}
+
+.lowe-client-strip__list--logos {
+    display: flex;
+    flex-wrap: nowrap;
+    width: max-content;
+    gap: 20px;
+}
+
+.lowe-client-strip__viewport {
+    width: 100vw;
+    margin-left: calc(50% - 50vw);
+    overflow: hidden;
+}
+
+.lowe-client-strip__list--logos.is-animated {
+    animation: loweClientMarquee 72s linear infinite;
+    will-change: transform;
+}
+
+.lowe-client-strip__viewport:hover .lowe-client-strip__list--logos.is-animated {
+    animation-play-state: paused;
+}
+
+@keyframes loweClientMarquee {
+    to { transform: translateX(calc(-50% - 10px)); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .lowe-client-strip__list--logos.is-animated {
+        animation-play-state: paused;
+    }
+}
+
+.lowe-client-strip__item--logo {
+    flex: 0 0 230px;
+    width: 230px;
+    min-height: 118px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.lowe-client-strip__item--logo img {
+    display: block;
+    width: 100%;
+    max-width: 198px;
+    max-height: 80px;
+    object-fit: contain;
+}
+
+.lowe-anchor-offset {
+    scroll-margin-top: 120px;
+}
+
+.lowe-page-header {
+    position: relative;
+    min-height: 500px;
+    display: flex;
+    align-items: center;
+    background-position: center;
+    background-size: cover;
+    overflow: hidden;
+}
+
+.lowe-page-header::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    /* Las fotos de cabecera tienen fondo casi blanco: sin un velo oscuro
+       fuerte, el menu transparente y el titulo en blanco no se leen. */
+    background: linear-gradient(180deg, rgba(5, 23, 61, 0.88) 0%, rgba(5, 23, 61, 0.72) 55%, rgba(5, 23, 61, 0.82) 100%);
+}
+
+/* Sobre la cabecera de paginas interiores el menu es transparente: se
+   fuerzan los enlaces del menu a blanco para que se lean sobre el velo
+   oscuro de .lowe-page-header (en la home el menu ya se apoya sobre un
+   fondo claro y no necesita este cambio). */
+body:has(.lowe-page-header) .main-header .main-menu .main-menu__list > li > a {
+    color: rgba(255, 255, 255, 0.92);
+}
+
+body:has(.lowe-page-header) .main-header .main-menu .main-menu__list > li:hover > a,
+body:has(.lowe-page-header) .main-header .main-menu .main-menu__list > li.current > a {
+    color: var(--Freshflow-extra);
+}
+
+/* La miniatura de cada fila de servicios (services-two__hover-img) no tenia
+   ningun tamano definido en el CSS original: cada imagen se mostraba a su
+   tamano nativo, por eso una se veia mucho mas grande que las demas. */
+.services-two__hover-img {
+    flex-shrink: 0;
+    width: 140px;
+    height: 100px;
+    margin-left: 24px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.services-two__hover-img img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+@media (max-width: 767px) {
+    .services-two__hover-img {
+        display: none;
+    }
+}
+
+.lowe-page-header .container {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+}
+
+.lowe-page-header__tag {
+    color: var(--Freshflow-base);
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+}
+
+.lowe-page-header__title {
+    color: #fff;
+    font-family: var(--Freshflow-font-two);
+    font-size: 74px;
+    font-weight: 800;
+    line-height: 0.95;
+    margin: 0;
+}
+
+.lowe-page-header__text {
+    color: rgba(255, 255, 255, 0.82);
+    max-width: 720px;
+    margin-top: 24px;
+    font-size: 18px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.lowe-hero-carousel {
+    width: min(526px, 100%);
+    margin-left: auto;
+}
+
+.lowe-hero-carousel .carousel-item {
+    position: relative;
+    min-height: 621px;
+    text-align: center;
+}
+
+.lowe-hero-carousel .carousel-item img {
+    width: auto;
+    max-width: 100%;
+    height: 621px;
+    object-fit: contain;
+    object-position: center bottom;
+    animation: topBottom 3s ease-in-out infinite;
+}
+
+.lowe-hero-carousel__indicators {
+    margin: 0;
+    bottom: 18px;
+    justify-content: center;
+    gap: 8px;
+}
+
+.lowe-hero-carousel__indicators [data-bs-target] {
+    width: 10px;
+    height: 10px;
+    margin: 0;
+    border: 0;
+    border-radius: 50%;
+    background-color: var(--Freshflow-base);
+    opacity: 0.35;
+}
+
+.lowe-hero-carousel__indicators .active {
+    opacity: 1;
+}
+
+.lowe-hero-carousel__service-icon {
+    position: absolute;
+    right: 14px;
+    bottom: 42px;
+    display: grid;
+    place-items: center;
+    width: 92px;
+    height: 92px;
+    border: 2px solid var(--Freshflow-base);
+    border-radius: 50%;
+    background: rgba(255, 255, 255, .94);
+    box-shadow: 0 14px 35px rgba(4, 23, 72, .14);
+    z-index: 2;
+}
+
+.lowe-hero-carousel__service-icon img {
+    width: 54px !important;
+    height: 54px !important;
+    animation: none !important;
+}
+
+.lowe-promo-card {
+    overflow: hidden;
+    padding: 0;
+    border-left: 0;
+}
+
+.lowe-promo-card__image {
+    aspect-ratio: 16 / 10;
+    overflow: hidden;
+}
+
+.lowe-promo-card__image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.lowe-promo-card__body {
+    padding: 34px;
+}
+
+.lowe-promo-card__body .thm-btn {
+    margin-top: 26px;
+}
+
+.lowe-promo-card__status {
+    display: inline-flex;
+    margin-bottom: 18px;
+    padding: 7px 12px;
+    border-radius: 4px;
+    background: #f2e4e4;
+    color: #8f3030;
+    font-size: 13px;
+    font-weight: 800;
+    line-height: 1;
+    text-transform: uppercase;
+}
+
+.lowe-map-section {
+    padding: 0 0 120px;
+}
+
+.lowe-map {
+    display: block;
+    width: 100%;
+    height: 430px;
+    border: 0;
+    border-radius: 8px;
+}
+
+.lowe-content-section {
+    padding: 120px 0;
+}
+
+.lowe-content-card {
+    background: #fff;
+    border-radius: 8px;
+    padding: 34px;
+    height: 100%;
+    box-shadow: 0 18px 50px rgba(0, 0, 0, 0.07);
+}
+
+.lowe-content-card__icon {
+    width: 64px;
+    height: 64px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: var(--Freshflow-base);
+    color: #fff;
+    font-size: 30px;
+    margin-bottom: 22px;
+}
+
+.lowe-content-card h3 {
+    font-size: 27px;
+    font-weight: 800;
+    margin-bottom: 14px;
+}
+
+.lowe-content-card p {
+    margin: 0;
+}
+
+.lowe-promo-card {
+    background: var(--Freshflow-extra);
+    border-radius: 8px;
+    padding: 40px;
+    height: 100%;
+    border-left: 5px solid var(--Freshflow-base);
+}
+
+.lowe-promo-card__date {
+    display: inline-block;
+    margin-top: 22px;
+    color: var(--Freshflow-base);
+    font-weight: 800;
+}
+
+.lowe-contact-panel {
+    background: var(--Freshflow-black);
+    border-radius: 8px;
+    padding: 42px;
+    height: 100%;
+}
+
+.lowe-contact-panel h3,
+.lowe-contact-panel p,
+.lowe-contact-panel a {
+    color: #fff;
+}
+
+.lowe-contact-panel li + li {
+    margin-top: 22px;
+}
+
+.lowe-work-label {
+    display: block;
+    color: var(--Freshflow-base);
+    font-weight: 800;
+    margin-bottom: 6px;
+}
+
+.contact-one__input-box select {
+    width: 100%;
+    height: 60px;
+    border: 0;
+    outline: none;
+    background-color: var(--Freshflow-extra);
+    font-size: 16px;
+    color: var(--Freshflow-gray);
+    font-weight: 500;
+    padding: 0 30px;
+}
+
+.main-menu__list > li > a {
+    white-space: nowrap;
+}
+
+.lowe-native-mobile-nav { display: none; }
+
+@media (max-width: 1199px) {
+    .lowe-native-mobile-nav {
+        position: relative;
+        display: block;
+    }
+    .lowe-native-mobile-nav summary {
+        display: grid;
+        width: 44px;
+        height: 44px;
+        place-items: center;
+        border-radius: 50%;
+        background: #fff;
+        color: var(--Freshflow-black);
+        cursor: pointer;
+        list-style: none;
+    }
+    .lowe-native-mobile-nav summary::-webkit-details-marker { display: none; }
+    .lowe-native-mobile-nav > div {
+        position: absolute;
+        top: 52px;
+        right: 0;
+        display: grid;
+        width: 210px;
+        padding: 12px;
+        border-radius: 6px;
+        background: #fff;
+        box-shadow: 0 14px 35px rgba(4, 23, 72, .18);
+        z-index: 20;
+    }
+    .lowe-native-mobile-nav a {
+        padding: 9px 12px;
+        color: var(--Freshflow-black);
+        font-weight: 700;
+    }
+}
+
+@media (max-width: 767px) {
+    .main-menu__right {
+        min-width: 0;
+    }
+
+    .site-footer__top-right-heading-img {
+        flex-basis: 120px;
+        width: 120px;
+        height: 78px;
+        margin-left: 12px;
+    }
+
+    .lowe-page-header {
+        min-height: 360px;
+        padding: 70px 0;
+    }
+
+    .lowe-page-header__title {
+        font-size: 44px;
+    }
+
+    .lowe-content-section {
+        padding: 80px 0;
+    }
+
+    .lowe-hero-carousel {
+        width: min(360px, 100%);
+        margin: 40px auto 0;
+    }
+
+    .lowe-hero-carousel .carousel-item,
+    .lowe-hero-carousel .carousel-item img {
+        height: 440px;
+        min-height: 440px;
+    }
+
+    .lowe-client-strip__item--logo {
+        flex-basis: 190px;
+        width: 190px;
+        min-height: 94px;
+        padding: 16px;
+    }
+
+    .lowe-map-section {
+        padding-bottom: 80px;
+    }
+
+    .lowe-map {
+        height: 320px;
+    }
+}
+
+@media (max-width: 767px) {
+    .lowe-logo-text {
+        font-size: 24px;
+    }
+
+    .banner-one__title {
+        word-break: normal;
+        overflow-wrap: anywhere;
+    }
+}
+
+/* Enlaces largos del footer (ej. "Calidad y medio ambiente") rompian linea:
+   el bloque original tiene flex-wrap:wrap, asi que el texto entero saltaba
+   como item completo a la siguiente fila dejando el icono solo arriba.
+   Forzamos flex-wrap:nowrap para que icono+texto queden en la misma fila y
+   sea el TEXTO el que haga salto de linea interno si no cabe. */
+.footer-widget__quick-links .list-unstyled li a,
+.footer-widget__services .list-unstyled li a {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: flex-start;
+    gap: 6px;
+}
+.footer-widget__quick-links .list-unstyled li a span.icon-next,
+.footer-widget__services .list-unstyled li a span.icon-next {
+    flex: 0 0 auto;
+    margin-top: 3px;
+}
+
+/* Seccion "Sobre nosotros" (Home y Nosotros): el diseno original del primo
+   es una cuadricula limpia de 4 fotos con esquinas redondeadas, sin la
+   mascara organica que trae la plantilla de serie en la 3a imagen y sin
+   dejar la 4a foto (nosotros_04.jpg) sin usar. */
+.lowe-about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin: 0;
+}
+.lowe-about-grid > div {
+    position: relative;
+    margin: 0 !important;
+    border-radius: 12px;
+    overflow: hidden;
+    aspect-ratio: 3 / 4;
+    -webkit-mask: none !important;
+    mask: none !important;
+}
+.lowe-about-grid > div img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 12px;
+    margin: 0;
+}
+.lowe-about-grid .about-one__video-link { display: none; }
+@media (max-width: 575px) {
+    .lowe-about-grid { grid-template-columns: 1fr 1fr; gap: 10px; }
+}
+
+/* Seccion "Por que Lowe" (Home): el primo aporto 2 fotos reales para esta
+   seccion que no se estaban usando (solo habia iconos). Se anaden debajo
+   del texto existente, sin tocar el texto ni inventar cifras/badges. */
+.lowe-why-choose-photos {
+    display: flex;
+    gap: 14px;
+    margin-top: 28px;
+}
+.lowe-why-choose-photos img {
+    width: 50%;
+    height: 170px;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+/* Seccion "Nuestra filosofia" (Nosotros): el primo aporto 2 fotos reales
+   para este bloque. Se anaden entre el titulo y las 3 tarjetas, sin
+   rediseno ni cifras/badges inventados, tal y como se pidio. */
+.lowe-philosophy-photos {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin: 0 auto 50px;
+    max-width: 760px;
+}
+.lowe-philosophy-photos img {
+    width: 100%;
+    aspect-ratio: 475 / 600;
+    height: auto;
+    object-fit: cover;
+    object-position: center top;
+    border-radius: 12px;
+}
+@media (max-width: 767px) {
+    .lowe-philosophy-photos {
+        flex-direction: column;
+        margin-bottom: 40px;
+    }
+    .lowe-philosophy-photos img {
+        width: 100%;
+        height: 220px;
+    }
+}
+
+/* ==========================================================================
+   v3 - Ajustes para replicar las capturas del cliente (carpeta 01_MENU_HOME)
+   ========================================================================== */
+
+/* 05 Antes y despues: miniaturas circulares del diseno original. Las fuentes
+   son de 120px para que se vean nitidas en pantallas retina, pero se pintan
+   a 60px como en la captura. */
+.before-and-after__img-list-img {
+    width: 60px;
+}
+
+/* 02 Sobre nosotros (about-two): las 4 fotos del cliente tienen proporciones
+   distintas entre si; se fuerza una relacion de aspecto comun para que el
+   mosaico escalonado quede alineado y no aparezcan huecos. */
+.about-two__img-1 img,
+.about-two__img-2 img,
+.about-two__img-3 img,
+.about-two__img-4 img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.about-two__img-1 { aspect-ratio: 280 / 250; }
+.about-two__img-2 { aspect-ratio: 280 / 312; }
+.about-two__img-3,
+.about-two__img-4 { aspect-ratio: 297 / 313; }
+
+@media (max-width: 991px) {
+    .about-two__left-img-box-2 {
+        margin-left: 0;
+        margin-right: 0;
+    }
+    .about-two__img-shape-1 { display: none; }
+}
+
+/* 06 Por que Lowe: los circulos de la plantilla necesitan que la foto se
+   recorte en vertical; si no, la imagen se deforma dentro del borde
+   redondeado. */
+.why-choose-one__img-1,
+.why-choose-one__img-2 {
+    aspect-ratio: 285 / 378;
+}
+.why-choose-one__img-1 img,
+.why-choose-one__img-2 img {
+    display: block;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* 07 Nuestros trabajos: las fotos de proyecto son 409x386, se recortan para
+   que todas las tarjetas tengan la misma altura. */
+.project-one__img {
+    aspect-ratio: 409 / 386;
+    overflow: hidden;
+}
+.project-one__img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* 10 Footer: la foto de equipo es apaisada y con fondo transparente; se limita
+   para que no se salga de la caja azul. */
+.site-footer__top-right-heading-img {
+    flex: 0 0 auto;
+    align-self: flex-end;
+}
+.site-footer__top-right-heading-img img {
+    width: auto;
+    max-width: 100%;
+    max-height: 120px;
+    display: block;
+}
+
+/* 06 Por que Lowe: el parrafo necesita aire por debajo, porque el texto curvo
+   del segundo circulo esta posicionado por encima de su caja y si no se
+   superpone. */
+.why-choose-one__left .why-choose-one__text {
+    margin-bottom: 62px;
+}
+
+/* 07 Nuestros trabajos: la plantilla capitaliza cada palabra (ingles). En
+   castellano deja "Empresas Y Locales", asi que se respeta el texto original. */
+.project-one__title,
+.project-one__title-2 {
+    text-transform: none;
+}
+
+/* La plantilla capitaliza cada palabra en botones y titulares (funciona en
+   ingles, no en castellano: "Resolver Mi Duda", "Empresas Y Locales"). */
+.thm-btn,
+.services-two__title,
+.services-details__title-1,
+.faq-one .accrodion-title h4 {
+    text-transform: none;
+}
+.project-one__filter li p span {
+    margin-right: 9px;
+    font-size: 17px;
+    line-height: 1;
+}
+
+/* Formularios: la plantilla solo da estilo a input[type=text] y [type=email],
+   asi que el campo de telefono se quedaba sin formato y rompia la rejilla
+   (Home y Contacto). */
+.contact-one__input-box input[type="tel"] {
+    height: 60px;
+    width: 100%;
+    background-color: #F1F1F2;
+    border: none;
+    padding-left: 25px;
+    padding-right: 25px;
+    outline: none;
+    font-size: 16px;
+    font-weight: 400;
+    color: var(--Freshflow-black);
+    font-family: var(--Freshflow-font-two);
+    display: block;
+    border-radius: 12px;
+}
+.contact-one__input-box select {
+    border-radius: 12px;
+}
+
+/* Servicios: la tarjeta azul "Pide un estudio" lleva la foto en absoluto a la
+   derecha; hay que limitarla o tapa el titulo y el boton. */
+.project-details__get-touch {
+    padding-right: 150px;
+}
+.project-details__get-touch-img-1 {
+    top: auto;
+    bottom: 0;
+    transform: none;
+    width: 135px;
+    line-height: 0;
+    pointer-events: none;
+}
+.project-details__get-touch-img-1 img {
+    width: 100%;
+    height: auto;
+}
+@media (max-width: 991px) {
+    .project-details__get-touch { padding-right: 120px; }
+    .project-details__get-touch-img-1 { width: 110px; }
+}
+@media (max-width: 575px) {
+    .project-one__filter li p {
+        padding: 13px 18px;
+        font-size: 14px;
+    }
+}
+
+/* Ajustes de las composiciones aportadas por el equipo de Lowe. */
+.lowe-whatsapp-float {
+    position: fixed;
+    right: 24px;
+    bottom: 86px;
+    z-index: 999;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 54px;
+    height: 54px;
+    border-radius: 50%;
+    background: #25d366;
+    box-shadow: 0 12px 26px rgba(14, 71, 42, .24);
+    color: #fff;
+    line-height: 1;
+}
+.lowe-whatsapp-float:hover { color: #fff; background: #1dbb5b; }
+.lowe-whatsapp-float i { font-size: 25px; }
+
+/* Portada: se mantienen la composición y las tres fotografías indicadas en
+   la referencia. El bloque inferior integra todos los datos para que horario
+   y dirección no parezcan añadidos sueltos. */
+.contact-one__img-main {
+    min-height: 600px;
+    background: rgba(255, 255, 255, .96);
+}
+.contact-one__img-main img {
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    width: auto;
+    max-width: 82%;
+    height: 92%;
+    object-fit: contain;
+    transform: translateX(-50%);
+}
+.contact-one__call-box {
+    margin-top: 58px;
+    padding: 27px 30px;
+}
+.contact-one__call-list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 26px 34px;
+}
+.contact-one__call-list li {
+    min-width: 0;
+}
+.contact-one__call-list li::before {
+    display: none;
+}
+.contact-one__call-contact h4 {
+    margin: 2px 0 0;
+    color: #fff;
+    font-size: 17px;
+    line-height: 1.3;
+}
+.contact-one__call-contact h4 a {
+    overflow-wrap: anywhere;
+}
+.contact-one__call-icon i {
+    color: var(--Freshflow-black);
+    font-size: 20px;
+}
+
+.lowe-philosophy-feature { padding: 120px 0; }
+.lowe-philosophy-feature__wrap {
+    display: grid;
+    grid-template-columns: minmax(0, .92fr) minmax(0, 1.08fr);
+    overflow: hidden;
+    background: var(--Freshflow-black);
+}
+.lowe-philosophy-feature__gallery { display: grid; grid-template-columns: 1fr 1fr; min-height: 490px; }
+.lowe-philosophy-feature__gallery img { width: 100%; height: 100%; object-fit: cover; }
+.lowe-philosophy-feature__content {
+    padding: 68px 62px;
+    color: #fff;
+    background: linear-gradient(115deg, #071e58 0%, var(--Freshflow-base) 100%);
+}
+.lowe-philosophy-feature__eyebrow,
+.lowe-promo-feature__eyebrow,
+.lowe-contact-layout__eyebrow,
+.lowe-project-detail__eyebrow {
+    display: block;
+    margin-bottom: 12px;
+    color: #ffd447;
+    font-weight: 800;
+    font-size: 13px;
+    text-transform: uppercase;
+}
+.lowe-philosophy-feature h2 { margin: 0 0 18px; color: #fff; font-size: 44px; line-height: 1.14; }
+.lowe-philosophy-feature p { margin: 0; color: rgba(255,255,255,.86); }
+.lowe-philosophy-feature__list { margin: 28px 0 0; padding: 0; list-style: none; }
+.lowe-philosophy-feature__list li { position: relative; margin-top: 14px; padding-left: 25px; font-weight: 700; }
+.lowe-philosophy-feature__list li:before { content: '\2605'; position: absolute; left: 0; color: #ffd447; }
+
+.lowe-promo-feature { padding: 110px 0 25px; }
+.lowe-promo-feature__wrap { display: grid; grid-template-columns: minmax(260px, .85fr) minmax(0, 1.15fr); gap: 0; overflow: hidden; background: #f4f2f9; }
+.lowe-promo-feature__image { min-height: 405px; }
+.lowe-promo-feature__image img { width: 100%; height: 100%; object-fit: cover; }
+.lowe-promo-feature__content { padding: 58px 64px; align-self: center; }
+.lowe-promo-feature__eyebrow { color: var(--Freshflow-base); }
+.lowe-promo-feature h2 { margin: 0 0 20px; font-size: 42px; line-height: 1.16; }
+.lowe-promo-feature p { max-width: 610px; }
+.lowe-promo-feature__note { display: inline-block; margin-top: 20px; padding: 8px 13px; background: #fff; color: var(--Freshflow-base); font-weight: 800; font-size: 13px; }
+
+.lowe-contact-layout { padding: 115px 0; }
+.lowe-contact-layout__grid { display: grid; grid-template-columns: minmax(0, .88fr) minmax(370px, 1.12fr); gap: 64px; align-items: start; }
+.lowe-contact-layout__title { margin: 0 0 16px; font-size: 43px; line-height: 1.17; }
+.lowe-contact-layout__title span { color: var(--Freshflow-base); }
+.lowe-contact-layout__intro { margin-bottom: 28px; max-width: 500px; }
+.lowe-contact-layout__cards { display: grid; gap: 17px; }
+.lowe-contact-layout__card { display: flex; gap: 15px; align-items: flex-start; padding: 21px 23px; border: 1px solid #e6e7ed; border-radius: 8px; background: #fff; box-shadow: 0 12px 28px rgba(4, 23, 72, .06); }
+.lowe-contact-layout__card i { display: grid; width: 38px; height: 38px; place-items: center; flex: 0 0 38px; border-radius: 50%; background: #eaf2ff; color: var(--Freshflow-base); font-size: 17px; }
+.lowe-contact-layout__card h3 { margin: 0 0 5px; color: var(--Freshflow-base); font-size: 18px; }
+.lowe-contact-layout__card p { margin: 0; line-height: 1.55; }
+.lowe-contact-layout__portrait { width: 170px; margin: 30px 0 0 auto; overflow: hidden; border-radius: 8px; box-shadow: 0 14px 30px rgba(4, 23, 72, .12); }
+.lowe-contact-layout__portrait img { display: block; width: 100%; height: 170px; object-fit: cover; object-position: center top; }
+.lowe-contact-form-card { padding: 47px 40px; border-radius: 8px; background: #e6f3ff; }
+.lowe-contact-form-card h2 { margin: 0 0 26px; font-size: 31px; }
+.lowe-contact-form-card label { display: block; margin: 0 0 8px; color: var(--Freshflow-black); font-weight: 700; }
+.lowe-contact-form-card input,
+.lowe-contact-form-card select,
+.lowe-contact-form-card textarea { width: 100%; border: 0; border-radius: 8px; background: #fff; color: var(--Freshflow-gray); }
+.lowe-contact-form-card input,
+.lowe-contact-form-card select { height: 55px; padding: 0 19px; }
+.lowe-contact-form-card textarea { min-height: 150px; padding: 17px 19px; resize: vertical; }
+.lowe-contact-form-card .form-group { margin-bottom: 20px; }
+
+.lowe-project-detail { padding: 110px 0; }
+.lowe-project-detail__layout { display: grid; grid-template-columns: minmax(280px, .62fr) minmax(0, 1.38fr); gap: 48px; align-items: start; }
+.lowe-project-detail__info { padding: 31px; background: #f0eef9; border-radius: 8px; }
+.lowe-project-detail__info h2 { margin: 0 0 23px; font-size: 28px; }
+.lowe-project-detail__info-list { margin: 0; }
+.lowe-project-detail__info-list div { padding: 15px 0; border-bottom: 1px solid rgba(14, 35, 92, .12); }
+.lowe-project-detail__info-list div:last-child { border-bottom: 0; }
+.lowe-project-detail__info-list dt { margin-bottom: 4px; color: var(--Freshflow-base); font-size: 13px; text-transform: uppercase; }
+.lowe-project-detail__info-list dd { margin: 0; font-weight: 700; }
+.lowe-project-detail__cta { position: relative; overflow: hidden; margin-top: 24px; padding: 30px 132px 31px 30px; border-radius: 8px; background: var(--Freshflow-base); color: #fff; }
+.lowe-project-detail__cta h3 { margin: 0 0 11px; color: #fff; font-size: 26px; }
+.lowe-project-detail__cta p { margin: 0 0 19px; color: #fff; }
+.lowe-project-detail__cta img { position: absolute; right: 0; bottom: 0; width: 115px; height: 145px; object-fit: cover; }
+.lowe-project-detail__main-image { overflow: hidden; border-radius: 8px; }
+.lowe-project-detail__main-image img { display: block; width: 100%; aspect-ratio: 1.7; object-fit: cover; }
+.lowe-project-detail__content { padding: 35px 0 0; }
+.lowe-project-detail__content h1 { margin: 0 0 15px; font-size: 42px; line-height: 1.14; }
+.lowe-project-detail__content h2 { margin: 30px 0 12px; font-size: 27px; }
+.lowe-project-detail__gallery { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 30px; }
+.lowe-project-detail__gallery img { width: 100%; aspect-ratio: 1.25; border-radius: 8px; object-fit: cover; }
+
+@media (max-width: 991px) {
+    .lowe-philosophy-feature__wrap,
+    .lowe-promo-feature__wrap,
+    .lowe-contact-layout__grid,
+    .lowe-project-detail__layout { grid-template-columns: 1fr; }
+    .lowe-philosophy-feature__gallery { min-height: 330px; }
+    .lowe-contact-layout__portrait { display: none; }
+    .lowe-project-detail__layout { gap: 30px; }
+    .main-menu__btn-box { gap: 8px; }
+    .lowe-whatsapp-header { flex-basis: 46px; width: 46px; height: 46px; }
+}
+@media (max-width: 575px) {
+    .lowe-whatsapp-float { right: 16px; bottom: 76px; width: 48px; height: 48px; }
+    .lowe-whatsapp-float i { font-size: 23px; }
+    .lowe-hero-carousel__service-icon { right: 8px; bottom: 34px; width: 72px; height: 72px; }
+    .lowe-hero-carousel__service-icon img { width: 42px !important; height: 42px !important; }
+    .contact-one__img-main { min-height: 430px; }
+    .contact-one__call-list { grid-template-columns: 1fr; gap: 22px; }
+    .contact-one__call-box { margin-top: 45px; padding: 24px; }
+    .lowe-philosophy-feature,
+    .lowe-contact-layout { padding: 75px 0; }
+    .lowe-philosophy-feature__gallery { min-height: 215px; }
+    .lowe-philosophy-feature__content,
+    .lowe-promo-feature__content,
+    .lowe-contact-form-card { padding: 37px 25px; }
+    .lowe-philosophy-feature h2,
+    .lowe-promo-feature h2,
+    .lowe-contact-layout__title,
+    .lowe-project-detail__content h1 { font-size: 32px; }
+    .lowe-promo-feature { padding-top: 75px; }
+    .lowe-promo-feature__image { min-height: 280px; }
+    .lowe-contact-layout__grid { gap: 35px; }
+    .lowe-project-detail { padding: 75px 0; }
+    .lowe-project-detail__info { padding: 24px; }
+    .lowe-project-detail__gallery { grid-template-columns: 1fr; }
+}
