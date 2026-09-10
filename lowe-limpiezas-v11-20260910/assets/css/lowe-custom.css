@@ -2475,10 +2475,10 @@ body.home-page .contact-one__img-main img {
 /* V11: el CTA de presupuesto de la cabecera mantiene el color solicitado en
    todas las páginas, incluida la cabecera fija clonada. */
 .main-menu__btn-box .main-menu__btn > a {
-    background-color: #837fa7;
+    background-color: #f7902d;
 }
 .main-menu__btn-box .main-menu__btn > a::before {
-    background-color: #686486;
+    background-color: #cb6819;
 }
 @media (max-width: 767px) {
     .lowe-client-strip { padding: 42px 0 26px; }
