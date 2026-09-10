@@ -50,7 +50,7 @@
             if (inner.querySelector('.main-menu__top-social-box')) return;
             var socialBox = document.createElement('div');
             socialBox.className = 'main-menu__top-social-box';
-            socialBox.innerHTML = '<h4 class="main-menu__top-social-title">Síguenos</h4><div class="main-menu__top-social"><a href="https://www.facebook.com/" aria-label="Facebook"><span class="icon-facebook-app-symbol"></span></a><a href="https://es.linkedin.com/in/lowelimpiezas" aria-label="LinkedIn"><span class="icon-linkedin-big-logo"></span></a><a href="https://www.instagram.com/" aria-label="Instagram"><span class="icon-instagram"></span></a></div>';
+            socialBox.innerHTML = '<h4 class="main-menu__top-social-title">Síguenos</h4><div class="main-menu__top-social"><a href="https://www.facebook.com/lowelimpiezasmurcia/" aria-label="Facebook"><span class="icon-facebook-app-symbol"></span></a><a href="https://es.linkedin.com/in/lowelimpiezas" aria-label="LinkedIn"><span class="icon-linkedin-big-logo"></span></a><a href="https://www.instagram.com/lowelimpiezas/" aria-label="Instagram"><span class="icon-instagram"></span></a></div>';
             inner.appendChild(socialBox);
         });
         document.querySelectorAll('.main-menu__top-social a[aria-label="LinkedIn"]').forEach(function (link) {
