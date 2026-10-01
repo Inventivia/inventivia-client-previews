@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="robots" content="noindex, nofollow">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Quiénes somos YUAP</title>
+<title>Quiénes somos · YUAP</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@600;700;800;900&family=IBM+Plex+Mono:wght@400;500&family=Work+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap">
@@ -542,6 +542,34 @@ h1,h2,h3,.h2{font-family:var(--f-display);font-weight:800;letter-spacing:-.015em
   .tapa-frente,.tapa-dorso,.pasaporte:not(.abierto) .tapa-frente{border-radius:var(--radio) var(--radio) 0 0}
 }
 
+/* ===== v10 · Logo sobre el mapa + flecha de ascenso de fondo ===== */
+/* Logo YUAP "estampado" en el hueco vacío del pergamino (solo mapa horizontal) */
+.mapa-logo{position:absolute;left:var(--x);top:var(--y);width:var(--w,15%);height:auto;transform:translate(-50%,-50%) rotate(-5deg);
+  mix-blend-mode:multiply;opacity:.74;filter:sepia(.6) brightness(1.15);pointer-events:none;z-index:1}
+.escenario .mapa-logo{opacity:0}
+.escenario.desplegado .mapa-logo{animation:logoTinta 1.1s cubic-bezier(.3,1.3,.5,1) 2.9s both}
+@keyframes logoTinta{0%{opacity:0;transform:translate(-50%,-50%) rotate(-5deg) scale(1.5);filter:sepia(.6) brightness(1.15) blur(6px)}
+  60%{opacity:.9;filter:sepia(.6) brightness(1.15) blur(0)}100%{opacity:.74;transform:translate(-50%,-50%) rotate(-5deg) scale(1)}}
+
+/* El contenido queda por encima de la flecha (la flecha pinta sobre el fondo de cada sección, por debajo de textos y tarjetas) */
+.row,.franja-row,.c-grid,.q-cabecera,.pasaportes,.q-cinta-t,.q-cinta{position:relative;z-index:3}
+/* Flecha de ascenso: línea a mano que sube con altibajos y se dibuja al hacer scroll */
+.ascenso{position:fixed;inset:0;z-index:2;pointer-events:none;mix-blend-mode:multiply;opacity:0;transition:opacity .8s ease;color:var(--tinta)}
+.ascenso.visible{opacity:.11}
+.ascenso svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
+.ascenso .asc-v{display:none}
+.ascenso path{fill:none;stroke:currentColor;stroke-linecap:round;stroke-linejoin:round}
+.ascenso .asc-linea{stroke-width:11}
+.ascenso .asc-punta{stroke-width:11;opacity:0;transition:opacity .5s ease}
+.ascenso.llega .asc-punta{opacity:1}
+@media (max-aspect-ratio:1/1){
+  .ascenso .asc-h{display:none}
+  .ascenso .asc-v{display:block}
+  .ascenso .asc-linea,.ascenso .asc-punta{stroke-width:9}
+}
+@media (prefers-reduced-motion:reduce){ .ascenso{transition:none} .ascenso .asc-punta{opacity:1} }
+@media print{ .ascenso{display:none} }
+
 /* ================= PÁGINA QUIÉNES SOMOS ================= */
 .q-hero{background:var(--kraft);padding:calc(118px + env(safe-area-inset-top,0px)) var(--gutter) clamp(64px,8vw,110px);overflow:hidden}
 .q-cabecera{max-width:var(--ancho);margin:0 auto clamp(36px,5vw,60px);display:grid;grid-template-columns:7fr 5fr;gap:24px 56px;align-items:end}
@@ -636,7 +664,7 @@ h1,h2,h3,.h2{font-family:var(--f-display);font-weight:800;letter-spacing:-.015em
 }
 @media (prefers-reduced-motion:reduce){
   .q-cinta-pista{animation:none;flex-wrap:wrap;width:auto;padding-inline:var(--gutter)}
-  .q-cinta-pista span:nth-child(n+17){display:none}
+  .q-cinta-pista span:nth-child(n+18){display:none}
   .pas-tapa,.pasaporte{transition:none}
 }
 
@@ -650,6 +678,8 @@ h1,h2,h3,.h2{font-family:var(--f-display);font-weight:800;letter-spacing:-.015em
   .tapa-frente{z-index:2;transform-origin:50% 0;transition:transform 1.2s cubic-bezier(.35,.9,.25,1)}
   .pasaporte.abierto .tapa-frente{transform:rotateX(-180deg)}
 }
+
+.q-cifras--2{grid-template-columns:repeat(2,minmax(0,200px))}
 
 /* ================= v9 · Bordes redondeados y titulares redondeados (Nunito) =================
    En Divi: Diseño > Bordes > Esquinas redondeadas en los presets de Botón, Blurb, Imagen y Texto. */
@@ -725,24 +755,24 @@ h1,h2,h3,.h2{font-family:var(--f-display);font-weight:800;letter-spacing:-.015em
       </div>
       <div class="pas-tapa">
         <div class="tapa-frente"><span class="tapa-logo">yuap</span><span class="tapa-t">Pasaporte<br>de guía</span><span class="tapa-n">Nº 01</span></div>
-        <div class="tapa-dorso"><img src="img/maite-perez-diez-coach-yuap.webp" alt="Maite Pérez Díez" width="800" height="1000"></div>
+        <div class="tapa-dorso"><img src="img/maite-perez-diez-coach-retrato.webp" alt="Maite Pérez Díez" width="800" height="1000"></div>
       </div>
     </article>
     <article class="pasaporte" data-anim="subir" style="--d:.35s" id="pas-carmen">
       <div class="pas-der">
         <p class="pas-mono">Pasaporte de guía · Nº 02</p>
-        <h2 class="pas-nombre">Carmen Reales</h2>
-        <p class="pas-rol">Pedagoga · Cofundadora</p>
+        <h2 class="pas-nombre">Carmen Reales Álvarez</h2>
+        <p class="pas-rol">Pedagoga y coach creativa · Cofundadora</p>
         <dl class="pas-datos">
-          <dt>Diseña</dt><dd>Experiencias de aprendizaje</dd>
-          <dt>Herramientas</dt><dd>Creatividad y educación emocional</dd>
-          <dt>En YUAP</dt><dd>Retos para mirar distinto</dd>
+          <dt>Acredita</dt><dd>ICF · Educación emocional</dd>
+          <dt>Camino</dt><dd>20 años · fundadora de Imaginia</dd>
+          <dt>En YUAP</dt><dd>Creatividad y LEGO® Serious Play®</dd>
         </dl>
         <a class="pas-link" href="#carmen">Conocerla ↓</a>
       </div>
       <div class="pas-tapa">
         <div class="tapa-frente"><span class="tapa-logo">yuap</span><span class="tapa-t">Pasaporte<br>de guía</span><span class="tapa-n">Nº 02</span></div>
-        <div class="tapa-dorso"><img src="img/carmen-reales-pedagoga-yuap.webp" alt="Carmen Reales" width="800" height="1000"></div>
+        <div class="tapa-dorso"><img src="img/carmen-reales-pedagoga-yuap.webp" alt="Carmen Reales Álvarez" width="800" height="1000"></div>
       </div>
     </article>
   </div>
@@ -752,7 +782,7 @@ h1,h2,h3,.h2{font-family:var(--f-display);font-weight:800;letter-spacing:-.015em
 <section class="sec sec--pergamino" id="maite" data-divi="Sección · Pergamino">
   <div class="row row--5-7">
     <div class="col">
-      <div class="marco q-foto" data-anim="aparecer"><img data-scroll="parallax" src="img/maite-perez-diez-coach-murcia.webp" alt="Maite Pérez Díez sentada en su espacio de trabajo" width="900" height="1125" loading="lazy"></div>
+      <div class="marco q-foto" data-anim="aparecer"><img data-scroll="parallax" src="img/maite-perez-diez-coach-retrato.webp" alt="Maite Pérez Díez, coach profesional certificada y cofundadora de YUAP" width="800" height="1000" loading="lazy"></div>
     </div>
     <div class="col">
       <p class="eyebrow" data-anim="izq">Guía · Nº 01</p>
@@ -790,21 +820,35 @@ h1,h2,h3,.h2{font-family:var(--f-display);font-weight:800;letter-spacing:-.015em
   <div class="row row--5-7 q-invertida">
     <div class="col">
       <p class="eyebrow" data-anim="izq">Guía · Nº 02</p>
-      <h2 class="h2" data-anim="subir">Carmen Reales</h2>
-      <p class="q-rol" data-anim="subir" style="--d:.1s">Pedagoga · Cofundadora de YUAP</p>
+      <h2 class="h2" data-anim="subir">Carmen Reales Álvarez</h2>
+      <p class="q-rol" data-anim="subir" style="--d:.1s">Pedagoga, coach creativa y experta en educación emocional (ICF) · Cofundadora de YUAP</p>
       <div class="text" data-anim="subir" style="--d:.2s">
-        <p>Diseña y facilita experiencias de aprendizaje a través de la creatividad y la educación emocional. Propone retos que invitan a experimentar, expresarse y explorar nuevas perspectivas.</p>
-        <p><span class="pendiente">[Formación y trayectoria de Carmen: pendiente de recibir]</span></p>
+        <p>Pedagoga, coach creativa y experta en educación emocional, certificada y avalada por ICF. Es fundadora y directora de Imaginia, centro de pedagogía, formación y desarrollo personal en Caravaca de la Cruz.</p>
+        <p>Sus veinte años de trayectoria están guiados por una convicción personal: sentirse escuchado y valorado abre nuevas posibilidades. Desde esa mirada, diseña y facilita experiencias que combinan creatividad y educación emocional para reconocer fortalezas y explorar nuevas perspectivas.</p>
+        <p>Integra metodologías como LEGO® Serious Play® para profundizar en lo que las palabras por sí solas no alcanzan: construir permite descubrir conexiones, cuestionar nuestras interpretaciones y abrir caminos de pensamiento que antes no veíamos.</p>
       </div>
+      <blockquote class="q-cita" data-type>«La creatividad abre posibilidades. Sentirnos capaces nos permite explorarlas.»</blockquote>
+      <div class="q-cifras q-cifras--2" data-divi="Módulo Contador de números">
+        <div class="contador" data-anim="subir"><span class="n" data-count="20">20</span><span class="l">años de trayectoria</span></div>
+      </div>
+      <div class="q-sellos" data-divi="4 imágenes SVG · animación Zoom + rebote escalonada">
+        <span class="q-sello" data-anim="sello" style="--d:.1s">ICF<br><small>certificada</small></span>
+        <span class="q-sello" data-anim="sello" style="--d:.3s">Coach<br><small>creativa</small></span>
+        <span class="q-sello" data-anim="sello" style="--d:.5s">LEGO®<br><small>Serious Play®</small></span>
+        <span class="q-sello" data-anim="sello" style="--d:.7s">Experta<br><small>en educación emocional</small></span>
+      </div>
+      <ul class="q-colab" data-divi="Lista · cada fila con animación Plegar">
+        <li data-anim="desplegar"><strong>Imaginia</strong><span>Fundadora y directora · centro de pedagogía, formación y desarrollo personal en Caravaca de la Cruz</span></li>
+      </ul>
       <ul class="q-chips" data-divi="Botones o texto · animación Zoom escalonada">
         <li data-anim="zoom" style="--d:.2s">Creatividad</li>
         <li data-anim="zoom" style="--d:.3s">Educación emocional</li>
-        <li data-anim="zoom" style="--d:.4s">Aprender haciendo</li>
-        <li data-anim="zoom" style="--d:.5s">Retos</li>
+        <li data-anim="zoom" style="--d:.4s">LEGO® Serious Play®</li>
+        <li data-anim="zoom" style="--d:.5s">Aprender construyendo</li>
       </ul>
     </div>
     <div class="col">
-      <div class="marco q-foto" data-anim="aparecer"><img data-scroll="parallax" src="img/carmen-reales-pedagoga-yuap.webp" alt="Carmen Reales, pedagoga y cofundadora de YUAP" width="800" height="1000" loading="lazy"></div>
+      <div class="marco q-foto" data-anim="aparecer"><img data-scroll="parallax" src="img/carmen-reales-pedagoga-yuap.webp" alt="Carmen Reales Álvarez, pedagoga, coach creativa y cofundadora de YUAP" width="800" height="1000" loading="lazy"></div>
     </div>
   </div>
 </section>
@@ -817,7 +861,7 @@ h1,h2,h3,.h2{font-family:var(--f-display);font-weight:800;letter-spacing:-.015em
       <h2 class="h2" data-type>Lo que pasa en una expedición se vive, no se escucha.</h2>
     </div>
     <div class="col text" data-anim="subir" style="--d:.2s">
-      <p>Maite pone el método y la experiencia con personas y equipos; Carmen, la creatividad y la pedagogía. Juntas diseñan cada estación del mapa.</p>
+      <p>Maite pone el método y la experiencia con personas y equipos; Carmen, la pedagogía, la creatividad y la educación emocional. Juntas diseñan cada estación del mapa.</p>
     </div>
   </div>
   <div class="row q-principios" data-divi="Fila 4 columnas · Blurbs con animación Plegar escalonada">
@@ -830,11 +874,11 @@ h1,h2,h3,.h2{font-family:var(--f-display);font-weight:800;letter-spacing:-.015em
 
 <!-- ===== 5 · HAN CONFIADO EN MAITE (cinta en movimiento) ===== -->
 <section class="q-cinta-sec" data-divi="Sección · cinta de nombres en movimiento (clase CSS)">
-  <p class="q-cinta-t">Empresas y equipos que han confiado en el trabajo de Maite <span class="pendiente">[confirmar permiso para mostrarlas]</span></p>
-  <div class="q-cinta" aria-label="Salazones Garre, Peregrín, Azulejos J. Ramos, Guillén Export, ACM Carpintería, Mundosol, Morecar, Juanjor, Taller Sánchez Carreño, El Limonar de Santomera, La Mestiza, Bonnysa, KPE, Jera Avanza, Inserta Empleo, Imaginia">
+  <p class="q-cinta-t">Empresas e instituciones que han confiado en nosotras <span class="pendiente">[confirmar permiso para mostrarlas]</span></p>
+  <div class="q-cinta" aria-label="Salazones Garre, Peregrín, Azulejos J. Ramos, Guillén Export, ACM Carpintería, Mundosol, Morecar, Juanjor, Taller Sánchez Carreño, El Limonar de Santomera, La Mestiza, Bonnysa, KPE, Jera Avanza, Inserta Empleo, Imaginia, Ayuntamiento de Caravaca">
     <div class="q-cinta-pista" aria-hidden="true">
-      <span>Salazones Garre</span><span>Peregrín</span><span>Azulejos J. Ramos</span><span>Guillén Export</span><span>ACM Carpintería</span><span>Mundosol</span><span>Morecar</span><span>Juanjor</span><span>Taller Sánchez Carreño</span><span>El Limonar de Santomera</span><span>La Mestiza</span><span>Bonnysa</span><span>KPE</span><span>Jera Avanza</span><span>Inserta Empleo</span><span>Imaginia</span>
-      <span>Salazones Garre</span><span>Peregrín</span><span>Azulejos J. Ramos</span><span>Guillén Export</span><span>ACM Carpintería</span><span>Mundosol</span><span>Morecar</span><span>Juanjor</span><span>Taller Sánchez Carreño</span><span>El Limonar de Santomera</span><span>La Mestiza</span><span>Bonnysa</span><span>KPE</span><span>Jera Avanza</span><span>Inserta Empleo</span><span>Imaginia</span>
+      <span>Salazones Garre</span><span>Peregrín</span><span>Azulejos J. Ramos</span><span>Guillén Export</span><span>ACM Carpintería</span><span>Mundosol</span><span>Morecar</span><span>Juanjor</span><span>Taller Sánchez Carreño</span><span>El Limonar de Santomera</span><span>La Mestiza</span><span>Bonnysa</span><span>KPE</span><span>Jera Avanza</span><span>Inserta Empleo</span><span>Imaginia</span><span>Ayuntamiento de Caravaca</span>
+      <span>Salazones Garre</span><span>Peregrín</span><span>Azulejos J. Ramos</span><span>Guillén Export</span><span>ACM Carpintería</span><span>Mundosol</span><span>Morecar</span><span>Juanjor</span><span>Taller Sánchez Carreño</span><span>El Limonar de Santomera</span><span>La Mestiza</span><span>Bonnysa</span><span>KPE</span><span>Jera Avanza</span><span>Inserta Empleo</span><span>Imaginia</span><span>Ayuntamiento de Caravaca</span>
     </div>
   </div>
 </section>
@@ -843,7 +887,7 @@ h1,h2,h3,.h2{font-family:var(--f-display);font-weight:800;letter-spacing:-.015em
 <section class="sec sec--noche cta-final" data-divi="Sección · fondo imagen con Parallax real + degradado">
   <div class="row">
     <div class="col">
-      <p class="eyebrow" data-anim="izq">Expedición 01 · El Espejo · 14 y 15 de noviembre</p>
+      <p class="eyebrow" data-anim="izq">Expedición 01 · El Espejo · 17 y 18 de octubre</p>
       <h2 class="h2" data-type>¿Empezamos el viaje juntas?</h2>
       <div class="btns" data-anim="subir" style="--d:.3s">
         <a class="btn btn--oro" href="https://forms.gle/cJgzAfgGPiynrJRh9" target="_blank" rel="noopener">Solicitar mi plaza becada</a>
@@ -1024,6 +1068,38 @@ h1,h2,h3,.h2{font-family:var(--f-display);font-weight:800;letter-spacing:-.015em
     window.addEventListener('scroll', function(){ if (!pend) { pend = true; requestAnimationFrame(upd); } }, { passive: true });
     upd();
   }
+})();
+
+/* v10 · Flecha de ascenso de fondo (Divi 5: módulo Código con este SVG + script; alternativa nativa: imagen de fondo fija) */
+(function(){
+  var NS = 'http://www.w3.org/2000/svg';
+  var capa = document.createElement('div');
+  capa.className = 'ascenso'; capa.setAttribute('aria-hidden', 'true');
+  capa.innerHTML =
+    '<svg width="0" height="0" style="position:absolute"><filter id="asc-trazo"><feTurbulence type="fractalNoise" baseFrequency=".035" numOctaves="2" seed="7"/><feDisplacementMap in="SourceGraphic" scale="7"/></filter></svg>' +
+    '<svg class="asc-h" viewBox="0 0 1600 1000" preserveAspectRatio="xMidYMid meet">' +
+      '<g filter="url(#asc-trazo)"><path class="asc-linea" d="M80,920 C220,900 300,560 380,560 C450,560 470,700 520,700 C600,700 680,420 760,420 C830,420 850,560 900,560 C1000,560 1250,300 1500,90"/>' +
+      '<path class="asc-punta" d="M1411,102 L1500,90 L1472,176"/></g></svg>' +
+    '<svg class="asc-v" viewBox="0 0 600 1200" preserveAspectRatio="xMidYMid meet">' +
+      '<g filter="url(#asc-trazo)"><path class="asc-linea" d="M60,1140 C120,1120 150,820 200,820 C240,820 245,920 270,920 C320,920 330,600 360,600 C395,600 400,700 420,700 C480,700 520,330 540,90"/>' +
+      '<path class="asc-punta" d="M506,139 L540,90 L566,144"/></g></svg>';
+  document.body.appendChild(capa);
+  var reduce = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var lineas = [].slice.call(capa.querySelectorAll('.asc-linea')).map(function(p){
+    var L = p.getTotalLength ? p.getTotalLength() : 3000; p.style.strokeDasharray = L; p.style.strokeDashoffset = reduce ? 0 : L; return {p:p, L:L};
+  });
+  var pend = false;
+  function pinta(){
+    pend = false;
+    var max = document.documentElement.scrollHeight - innerHeight, y = scrollY || pageYOffset;
+    var prog = max > 0 ? Math.min(1, Math.max(0, y / max)) : 1;
+    capa.classList.toggle('visible', y > innerHeight * 0.45);
+    if (!reduce) lineas.forEach(function(o){ o.p.style.strokeDashoffset = o.L * (1 - Math.min(1, prog * 1.06)); });
+    capa.classList.toggle('llega', reduce || prog > 0.93);
+  }
+  addEventListener('scroll', function(){ if (!pend) { pend = true; requestAnimationFrame(pinta); } }, {passive:true});
+  addEventListener('resize', pinta);
+  pinta();
 })();
 
 </script>
