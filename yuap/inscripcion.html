@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="robots" content="noindex, nofollow">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Inicio YUAP en movimiento</title>
+<title>Inscripción · YUAP</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@600;700;800;900&family=IBM+Plex+Mono:wght@400;500&family=Work+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap">
@@ -623,6 +623,118 @@ h1,h2,h3,.h2{font-family:var(--f-display);font-weight:800;letter-spacing:-.015em
 
 .enlace-claro{color:var(--oro-claro);font-weight:600}
 
+/* ================= PÁGINA INSCRIPCIÓN ================= */
+.i-hero{background:var(--kraft);padding:calc(118px + env(safe-area-inset-top,0px)) var(--gutter) clamp(64px,8vw,110px);overflow:hidden}
+.i-grid{max-width:var(--ancho);margin-inline:auto;display:grid;grid-template-columns:5fr 6fr;gap:clamp(32px,5vw,72px);align-items:start;position:relative;z-index:3}
+.i-texto{display:grid;gap:18px}
+.i-titulo h1{font-size:clamp(2.3rem,4.4vw,3.9rem);color:var(--tinta)}
+.i-titulo h1 em{color:var(--lacre-osc)}
+.i-lead{font-size:1.1rem;color:#2F2A25;max-width:32em;margin:0}
+.i-mono{font-family:var(--f-mono);font-size:.72rem;letter-spacing:.05em;text-transform:uppercase;color:var(--tinta-suave)}
+.i-billete{background:var(--papel-2);border:1.5px solid var(--tinta);border-radius:var(--radio);padding:18px 22px;box-shadow:6px 6px 0 var(--tinta);position:relative}
+.i-billete::before,.i-billete::after{content:"";position:absolute;top:50%;width:18px;height:18px;border-radius:50%;background:var(--kraft);border:1.5px solid var(--tinta);transform:translateY(-50%)}
+.i-billete::before{left:-10px;clip-path:inset(0 0 0 50%)}.i-billete::after{right:-10px;clip-path:inset(0 50% 0 0)}
+.i-billete .i-mono{color:var(--lacre)}
+.i-billete-t{font-family:var(--f-display);font-weight:900;font-size:1.7rem;color:var(--tinta);margin:2px 0 10px;line-height:1.1}
+.i-billete-t span{display:block;font-family:var(--f-texto);font-weight:500;font-size:.95rem;color:var(--tinta-suave)}
+.i-billete dl{display:grid;grid-template-columns:auto 1fr;gap:6px 16px;margin:0;font-size:.93rem;color:var(--tinta);border-top:1.5px dashed rgba(31,29,26,.3);padding-top:10px}
+.i-billete dt{font-family:var(--f-mono);font-size:.66rem;letter-spacing:.05em;text-transform:uppercase;color:var(--tinta-suave);padding-top:3px}
+.i-billete dd{margin:0;font-weight:500}
+.i-mapa{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(6,1fr);gap:6px}
+.i-mapa li{display:grid;justify-items:center;text-align:center;gap:2px;font-size:.72rem;line-height:1.15;color:#3A342E}
+.i-mapa b{width:34px;height:34px;border-radius:50%;display:grid;place-items:center;background:var(--tinta);color:var(--papel);font:500 .78rem var(--f-mono);margin-bottom:2px}
+.i-mapa small{font-family:var(--f-mono);font-size:.6rem;text-transform:uppercase;color:var(--tinta-suave)}
+.i-mapa .on b{background:var(--lacre)}.i-mapa .on small{color:var(--lacre-osc);font-weight:700}
+/* Credencial con tapa que se abre */
+.i-cred-wrap{perspective:2200px}
+.i-cred{position:relative}
+.i-form{background:var(--papel-2);border:1.5px solid var(--tinta);border-radius:var(--radio);box-shadow:9px 9px 0 var(--tinta);padding:0 clamp(18px,3vw,32px) clamp(20px,3vw,28px);display:grid;gap:18px;overflow:hidden;
+  background-image:repeating-linear-gradient(to bottom,transparent 0 35px,rgba(31,29,26,.06) 35px 36px)}
+.i-cab{display:flex;justify-content:space-between;align-items:center;gap:12px;margin:0 calc(-1 * clamp(18px,3vw,32px));padding:14px clamp(18px,3vw,32px);background:var(--tinta);color:var(--papel)}
+.i-cab .i-mono{color:#CFC6B8}
+.i-logo,.i-tapa-logo{font-family:var(--f-display);font-weight:900;font-size:1.6rem;letter-spacing:-.03em}
+.i-paso{border:0;margin:0;padding:0;display:grid;gap:14px;min-width:0}
+.i-paso legend{display:flex;align-items:center;gap:10px;font-family:var(--f-display);font-weight:800;font-size:1.2rem;color:var(--tinta);margin-bottom:8px;padding:0}
+.i-paso legend small{font-family:var(--f-mono);font-weight:400;font-size:.68rem;letter-spacing:.05em;text-transform:uppercase;color:var(--tinta-suave)}
+.i-n{width:30px;height:30px;border-radius:50%;display:grid;place-items:center;background:var(--lacre);color:#FBF7F0;font:500 .82rem var(--f-mono)}
+.campo{display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 12px}
+.campo label{font-size:1.02rem;color:var(--tinta);white-space:nowrap}
+.campo input{flex:1 1 200px;min-width:0;border:0;border-bottom:1.5px solid var(--tinta);background:transparent;font:500 1.05rem/1.4 var(--f-texto);color:var(--tinta);padding:4px 2px;border-radius:0}
+.campo input::placeholder{color:#8B8276;font-style:italic;font-weight:400}
+.campo input:focus{outline:none;border-color:var(--lacre);background:rgba(184,67,47,.05);border-radius:6px 6px 0 0}
+.campo input.mal{border-color:var(--lacre);background:rgba(184,67,47,.08)}
+.i-elegida{display:flex;align-items:center;gap:14px;border:1.5px solid var(--tinta);border-radius:var(--radio);padding:12px 16px;background:var(--papel)}
+.i-elegida strong{display:block;color:var(--tinta)}.i-elegida span{font-size:.88rem}
+.i-sello-mini{width:52px;height:52px;flex:none;border-radius:50%;border:2.5px solid var(--lacre);outline:1px solid var(--lacre);outline-offset:-6px;display:grid;place-items:center;color:var(--lacre);font:700 1rem var(--f-mono);transform:rotate(-12deg)}
+.i-cond{border:1.5px solid var(--tinta);border-radius:var(--radio);background:var(--papel);overflow:hidden}
+.i-cond summary{cursor:pointer;padding:12px 16px;font-weight:600;color:var(--tinta);list-style:none;display:flex;justify-content:space-between}
+.i-cond summary::after{content:"+";font:500 1.2rem var(--f-mono);color:var(--lacre);transition:transform .3s}
+.i-cond[open] summary::after{transform:rotate(45deg)}
+.i-cond ol{margin:0;padding:0 18px 14px 34px;display:grid;gap:8px;font-size:.88rem;color:var(--tinta-suave)}
+.i-cond strong{color:var(--tinta)}
+.check{display:flex;gap:10px;align-items:flex-start;font-size:.92rem;color:var(--tinta)}
+.check input{width:18px;height:18px;margin-top:2px;flex:none;accent-color:var(--lacre)}
+.check a{color:var(--lacre-osc)}
+.i-firma{display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap;border-top:1.5px solid rgba(31,29,26,.25);padding-top:16px}
+.i-error{margin:0;color:var(--lacre-osc);font-weight:600;font-size:.9rem}
+.i-rgpd{margin:0;font-size:.74rem;line-height:1.5;color:var(--tinta-suave)}
+.i-tapa{position:absolute;top:0;left:0;bottom:0;width:100%;transform-origin:0 50%;transform-style:preserve-3d;transition:transform 1.5s cubic-bezier(.35,.9,.25,1);pointer-events:none}
+.i-tapa-frente{position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;border-radius:var(--radio);background:var(--tinta);color:var(--papel);display:flex;flex-direction:column;justify-content:center;align-items:center;gap:18px;text-align:center;
+  background-image:repeating-linear-gradient(45deg,rgba(239,233,221,.04) 0 6px,transparent 6px 12px);box-shadow:9px 9px 0 rgba(31,29,26,.5)}
+.i-tapa-logo{font-size:clamp(3rem,6vw,4.4rem)}
+.i-tapa-t{font-family:var(--f-mono);letter-spacing:.16em;text-transform:uppercase;line-height:1.6;color:var(--oro-claro)}
+.i-tapa-n{font-family:var(--f-mono);font-size:.78rem;color:var(--niebla)}
+.i-tapa{display:none}
+.js-mov .i-tapa{display:block}
+.i-cred.abierta .i-tapa{transform:rotateY(-178deg);opacity:0;transition:transform 1.5s cubic-bezier(.35,.9,.25,1),opacity .2s ease 1.3s}
+/* Enviada: sello INSCRITA */
+.i-ok,.i-fallo{display:grid;justify-items:center;text-align:center;gap:10px;padding:10px 0}
+.i-ok[hidden],.i-fallo[hidden]{display:none}
+.i-sello{width:150px;color:var(--lacre);animation:estampaI .6s cubic-bezier(.3,1.7,.5,1) both;transform:rotate(-12deg)}
+@keyframes estampaI{from{opacity:0;transform:rotate(-40deg) scale(2.6)}to{opacity:1;transform:rotate(-12deg) scale(1)}}
+.i-ok-t{font-family:var(--f-display);font-weight:900;font-size:1.6rem;color:var(--tinta);margin:0}
+.i-ok .btn--linea{color:var(--tinta);border-color:var(--tinta)}
+.i-form.enviada > :not(.i-cab):not(.i-ok){display:none}
+.i-form.fallida .i-fallo{display:grid}
+.i-fallo a{color:var(--lacre-osc)}
+/* Dudas */
+#antes .h2 em{font-style:normal;color:var(--lacre)}
+#antes .btn--linea{color:var(--tinta);border-color:var(--tinta)}
+.i-claves{list-style:none;margin:0;padding:0;display:grid;gap:14px;position:relative;z-index:3}
+.i-claves li{background:var(--papel-2);border:1.5px solid var(--tinta);border-radius:var(--radio);padding:16px 20px;display:grid;gap:4px}
+.i-claves strong{font-family:var(--f-display);font-weight:800;font-size:1.15rem;color:var(--tinta)}
+@media (max-width:900px){ .i-grid{grid-template-columns:1fr} }
+@media (max-width:520px){ .i-mapa{grid-template-columns:repeat(3,1fr);row-gap:12px} .campo label{white-space:normal} .i-firma .btn{width:100%;justify-content:center} }
+@media (prefers-reduced-motion:reduce){ .i-tapa{display:none} .i-sello{animation:none} }
+.i-elegida span{color:var(--tinta-suave)}
+
+/* ================= v9 · Bordes redondeados y titulares redondeados (Nunito) =================
+   En Divi: Diseño > Bordes > Esquinas redondeadas en los presets de Botón, Blurb, Imagen y Texto. */
+:root{--radio:18px;--radio-s:12px}
+h1,h2,h3,.h2{font-family:var(--f-display);font-weight:800;letter-spacing:-.015em}
+.territorio .nombre{font-weight:900;letter-spacing:0}
+.btn,.nav .btn{border-radius:999px}
+.estado,.q-chips li{border-radius:999px}
+.territorio{border-radius:var(--radio);overflow:hidden}
+.estacion,.tip,.ficha,.ficha-movil,.c-billete,.q-principio,.c-enviada,.hueco,.kit .hueco{border-radius:var(--radio)}
+.marco,.puerta,.q-foto,.mapa-img,.guia img{border-radius:var(--radio);overflow:hidden}
+.q-foto img,.marco img{border-radius:0}
+.pas-der{border-radius:0 var(--radio) var(--radio) 0}
+.tapa-frente,.tapa-dorso{border-radius:var(--radio) 0 0 var(--radio)}
+.pasaporte:not(.abierto) .tapa-frente{border-radius:0 var(--radio) var(--radio) 0}
+/* la carta: esquinas redondeadas arriba y abajo */
+.pl1 > .cara{border-radius:var(--radio) var(--radio) 0 0}
+.pl3 > .cara{border-radius:0 0 var(--radio) var(--radio)}
+.pl3::before{border-radius:0 0 var(--radio) var(--radio)}
+.carta::after{border-radius:var(--radio)}
+.duda-q{border-radius:var(--radio-s)}
+.campo input:focus,.campo textarea:focus{border-radius:6px 6px 0 0}
+.divi-toggle{border-radius:999px}
+@media (max-width:600px){
+  .pas-der{border-radius:0 0 var(--radio) var(--radio)}
+  .tapa-frente,.tapa-dorso,.pasaporte:not(.abierto) .tapa-frente{border-radius:var(--radio) var(--radio) 0 0}
+}
+
 </style>
 </head>
 <body>
@@ -630,14 +742,13 @@ h1,h2,h3,.h2{font-family:var(--f-display);font-weight:800;letter-spacing:-.015em
 
 <a class="skip" href="#contenido">Saltar al contenido</a>
 
-<!-- ===== THEME BUILDER · HEADER (transparente sobre el hero) ===== -->
 <header class="header" data-divi="Theme Builder · Header global">
   <div class="inner">
-    <a class="logo" href="#" data-divi="Imagen · logo tinta" aria-label="YUAP, inicio"><img src="img/yuap-logo-tinta.png" alt="YUAP · De tú a tú" width="118" height="45"></a>
+    <a class="logo" href="index.html" data-divi="Imagen · logo tinta" aria-label="YUAP, inicio"><img src="img/yuap-logo-tinta.png" alt="YUAP · De tú a tú" width="118" height="45"></a>
     <nav class="nav" aria-label="Principal" data-divi="Menú">
       <a href="el-mapa.html">El mapa</a>
-      <a href="#experiencia">La experiencia</a>
-      <a href="#pacto">El pacto</a>
+      <a href="index.html#experiencia">La experiencia</a>
+      <a href="index.html#pacto">El pacto</a>
       <a href="quienes-somos.html">Quiénes somos</a>
       <a href="contacto.html">Contacto</a>
       <a class="btn btn--oro" href="inscripcion.html">Reserva tu plaza</a>
@@ -647,400 +758,120 @@ h1,h2,h3,.h2{font-family:var(--f-display);font-weight:800;letter-spacing:-.015em
 
 <main id="contenido">
 
-<!-- ===== 1 · PORTADA · el mapa se despliega sobre la mesa; el título va fuera del mapa ===== -->
-<section class="portada" id="inicio" data-divi="Sección · Portada (fondo kraft = mesa de trabajo)">
-  <div class="portada-grid">
-    <div class="portada-titulo" data-divi="Texto · encima del mapa en ordenador / sobre el pergamino en móvil · efecto máquina de escribir">
-      <p class="coord" data-type>Campamento base · Murcia · 37°59′N 1°08′W</p>
-      <h1 data-type aria-label="6 expediciones para volver a ti">6 expediciones para <em>volver a ti</em></h1>
-    </div>
-    <div class="portada-accion" data-divi="Botón + Texto · animación Deslizar ↑">
-      <a class="btn btn--oro" href="inscripcion.html">Reserva tu plaza becada</a>
-      <p class="fecha">Expedición 01 · 17–18 oct · plazas limitadas</p>
-    </div>
-    <div class="escenario" id="escenario">
-    <div class="lienzo lienzo--h" data-divi="Fila ancho completo · visible en ordenador y tablet">
-      <div class="capa">
-        <video class="despliegue" muted playsinline preload="auto" aria-hidden="true" tabindex="-1"><source src="img/yuap-mapa-despliegue.mp4" type="video/mp4"><source src="img/yuap-mapa-despliegue.webm" type="video/webm"></video>
-        <img class="mapa-logo" src="img/yuap-logo-tinta.png" alt="" width="763" height="288" style="--x:22.5%;--y:79%;--w:13.5%" data-divi="Imagen · posición absoluta · animación Zoom (retardo 2,9 s)">
-        <img class="mapa-quieto" src="img/yuap-mapa-desplegado.webp" alt="Mapa YUAP: un lago al amanecer, un paso de montaña y un bosque con una cabaña, unidos por un sendero con seis estaciones" width="1920" height="1080">
-          <a class="hot e-ser hot--abierta" style="--x:30%;--y:38%;--i:0" href="#reserva" aria-label="Estación 01, El Espejo" data-divi="Blurb · posición absoluta · animación Zoom (retardo escalonado)">
-            <span class="pin">01</span>
-            <span class="tip tip--der"><span class="terr">Territorio SER</span><b>01 · El Espejo</b><span class="tag">Mirarte para reconocerte</span><span class="pregunta">¿Quién soy cuando dejo de ser lo que los demás esperan de mí?</span><span class="estado estado--abierta">Becada · 17–18 oct</span></span>
-          </a>
-          <a class="hot e-ser" style="--x:43%;--y:37.2%;--i:1" href="#estaciones" aria-label="Estación 02, La Llamada" data-divi="Blurb · posición absoluta · animación Zoom (retardo escalonado)">
-            <span class="pin">02</span>
-            <span class="tip "><span class="terr">Territorio SER</span><b>02 · La Llamada</b><span class="tag">Elegir quién quieres ser</span><span class="pregunta">¿Qué quiere empezar a despertar en mí?</span><span class="estado">14–15 nov</span></span>
-          </a>
-          <a class="hot e-hacer" style="--x:53.4%;--y:37.9%;--i:2" href="#estaciones" aria-label="Estación 03, El Paso" data-divi="Blurb · posición absoluta · animación Zoom (retardo escalonado)">
-            <span class="pin">03</span>
-            <span class="tip "><span class="terr">Territorio HACER</span><b>03 · El Paso</b><span class="tag">Decidir y actuar</span><span class="pregunta">¿Qué decisión estoy evitando tomar?</span><span class="estado">Próximamente</span></span>
-          </a>
-          <a class="hot e-tener" style="--x:48.5%;--y:74.7%;--i:3" href="#estaciones" aria-label="Estación 04, Los Cimientos" data-divi="Blurb · posición absoluta · animación Zoom (retardo escalonado)">
-            <span class="pin">04</span>
-            <span class="tip tip--up"><span class="terr">Territorio TENER</span><b>04 · Los Cimientos</b><span class="tag">La vida que sostienes</span><span class="pregunta">¿Sobre qué estoy construyendo mi vida?</span><span class="estado">Próximamente</span></span>
-          </a>
-          <a class="hot e-tener" style="--x:61.3%;--y:76.8%;--i:4" href="#estaciones" aria-label="Estación 05, Los Vínculos" data-divi="Blurb · posición absoluta · animación Zoom (retardo escalonado)">
-            <span class="pin">05</span>
-            <span class="tip tip--up tip--izq"><span class="terr">Territorio TENER</span><b>05 · Los Vínculos</b><span class="tag">La vida que compartes</span><span class="pregunta">¿Qué relaciones quiero construir y qué lugar quiero ocupar en ellas?</span><span class="estado">Próximamente</span></span>
-          </a>
-          <a class="hot e-tener" style="--x:71.7%;--y:80.7%;--i:5" href="#estaciones" aria-label="Estación 06, La Celebración" data-divi="Blurb · posición absoluta · animación Zoom (retardo escalonado)">
-            <span class="pin">06</span>
-            <span class="tip tip--up tip--izq"><span class="terr">Territorio TENER</span><b>06 · La Celebración</b><span class="tag">La vida que reconoces</span><span class="pregunta">¿Soy capaz de reconocer todo lo que ya he recorrido?</span><span class="estado">Próximamente</span></span>
-          </a>
+<!-- ===== HOJA DE INSCRIPCIÓN · la credencial se abre y dentro está el formulario ===== -->
+<section class="i-hero" id="inscripcion" data-divi="Sección · fondo kraft">
+  <div class="i-grid">
+    <div class="i-texto">
+      <div class="q-titulo i-titulo">
+        <p class="coord" data-type>Hoja de inscripción · Beca Primera Expedición</p>
+        <h1 data-type aria-label="Tu plaza en El Espejo" data-divi="Texto · H1 · efecto máquina de escribir">Tu plaza en <em>El Espejo</em></h1>
       </div>
-    </div>
-    <div class="lienzo lienzo--v" data-divi="Fila ancho completo · visible solo en móvil">
-      <div class="capa">
-        <video class="despliegue" muted playsinline preload="auto" aria-hidden="true" tabindex="-1"><source src="img/yuap-mapa-despliegue-vertical.mp4" type="video/mp4"><source src="img/yuap-mapa-despliegue-vertical.webm" type="video/webm"></video>
-        <img class="mapa-quieto" src="img/yuap-mapa-desplegado-vertical.webp" alt="" width="1152" height="2048">
-          <a class="hot e-ser hot--abierta" style="--x:28.5%;--y:42%;--i:0" href="#reserva" aria-label="Estación 01, El Espejo" data-divi="Blurb · posición absoluta · animación Zoom (retardo escalonado)">
-            <span class="pin">01</span>
-            <span class="tip "><span class="terr">Territorio SER</span><b>01 · El Espejo</b><span class="tag">Mirarte para reconocerte</span><span class="pregunta">¿Quién soy cuando dejo de ser lo que los demás esperan de mí?</span><span class="estado estado--abierta">Becada · 17–18 oct</span></span>
-          </a>
-          <a class="hot e-ser" style="--x:73%;--y:43%;--i:1" href="#estaciones" aria-label="Estación 02, La Llamada" data-divi="Blurb · posición absoluta · animación Zoom (retardo escalonado)">
-            <span class="pin">02</span>
-            <span class="tip "><span class="terr">Territorio SER</span><b>02 · La Llamada</b><span class="tag">Elegir quién quieres ser</span><span class="pregunta">¿Qué quiere empezar a despertar en mí?</span><span class="estado">14–15 nov</span></span>
-          </a>
-          <a class="hot e-hacer" style="--x:53.4%;--y:62%;--i:2" href="#estaciones" aria-label="Estación 03, El Paso" data-divi="Blurb · posición absoluta · animación Zoom (retardo escalonado)">
-            <span class="pin">03</span>
-            <span class="tip "><span class="terr">Territorio HACER</span><b>03 · El Paso</b><span class="tag">Decidir y actuar</span><span class="pregunta">¿Qué decisión estoy evitando tomar?</span><span class="estado">Próximamente</span></span>
-          </a>
-          <a class="hot e-tener" style="--x:33.8%;--y:76%;--i:3" href="#estaciones" aria-label="Estación 04, Los Cimientos" data-divi="Blurb · posición absoluta · animación Zoom (retardo escalonado)">
-            <span class="pin">04</span>
-            <span class="tip "><span class="terr">Territorio TENER</span><b>04 · Los Cimientos</b><span class="tag">La vida que sostienes</span><span class="pregunta">¿Sobre qué estoy construyendo mi vida?</span><span class="estado">Próximamente</span></span>
-          </a>
-          <a class="hot e-tener" style="--x:65.8%;--y:82%;--i:4" href="#estaciones" aria-label="Estación 05, Los Vínculos" data-divi="Blurb · posición absoluta · animación Zoom (retardo escalonado)">
-            <span class="pin">05</span>
-            <span class="tip "><span class="terr">Territorio TENER</span><b>05 · Los Vínculos</b><span class="tag">La vida que compartes</span><span class="pregunta">¿Qué relaciones quiero construir y qué lugar quiero ocupar en ellas?</span><span class="estado">Próximamente</span></span>
-          </a>
-          <a class="hot e-tener" style="--x:46.3%;--y:90.4%;--i:5" href="#estaciones" aria-label="Estación 06, La Celebración" data-divi="Blurb · posición absoluta · animación Zoom (retardo escalonado)">
-            <span class="pin">06</span>
-            <span class="tip "><span class="terr">Territorio TENER</span><b>06 · La Celebración</b><span class="tag">La vida que reconoces</span><span class="pregunta">¿Soy capaz de reconocer todo lo que ya he recorrido?</span><span class="estado">Próximamente</span></span>
-          </a>
-      </div>
-    </div>
-      <div class="ficha-movil" id="ficha-movil" hidden role="dialog" aria-label="Estación del mapa" data-divi="Blurb oculto · Divi 5 Interactions: al tocar la estación se muestra">
-        <button type="button" class="fm-cerrar" aria-label="Cerrar">×</button>
-        <div class="fm-cuerpo"></div>
-        <a class="fm-accion" href="#reserva">Reservar mi plaza becada →</a>
-      </div>
-    </div>
-    <p class="pista"><span class="solo-raton">Pasa el cursor por cada estación para leer su pregunta · </span><button type="button" class="replay" id="replay">↺ Desplegar otra vez</button></p>
-  </div>
-</section>
-
-<!-- ===== 1b · FRANJA DE CONTADORES (módulo Contador de números de Divi) ===== -->
-<section class="franja" data-divi="Sección · 4 columnas · módulo Contador de números">
-  <div class="franja-row">
-    <div class="contador" data-anim="subir"><span class="n" data-count="6">6</span><span class="l">expediciones</span></div>
-    <div class="contador" data-anim="subir" style="--d:.12s"><span class="n" data-count="3">3</span><span class="l">territorios</span></div>
-    <div class="contador" data-anim="subir" style="--d:.24s"><span class="n" data-count="7">7</span><span class="l">compromisos del Pacto</span></div>
-    <div class="contador" data-anim="subir" style="--d:.36s"><span class="n" data-count="1">1</span><span class="l">viaje: volver a ti</span></div>
-  </div>
-</section>
-
-<!-- ===== 1c · EL VIAJE DE REGRESO (texto de Maite) ===== -->
-<section class="sec sec--kraft regreso" id="regreso" data-divi="Sección · fondo kraft">
-  <div class="row regreso-row">
-    <div class="puerta-esc" data-anim="aparecer" data-divi="Código/Imagen · puerta que se entreabre (clase CSS) · en Divi también vale una imagen con animación Voltear">
-      <div class="p-marco" aria-hidden="true"><div class="p-hoja"><span class="p-pomo"></span><span class="p-cerradura"></span></div></div>
-      <p class="p-pie">Solo se abre desde dentro</p>
-    </div>
-    <div class="regreso-texto" data-divi="Textos · cada línea con animación Deslizar ↑ (retardo escalonado)">
-      <p class="eyebrow" data-anim="izq">El Viaje de Regreso</p>
-      <p class="linea" data-anim="subir" style="--d:.1s">Quizá llevas años intentando avanzar.</p>
-      <p class="linea" data-anim="subir" style="--d:.45s">Pero tal vez lo que necesitas no es ir más lejos.</p>
-      <h2 class="h2" data-anim="subir" style="--d:.8s">Sino <em>volver a ti.</em></h2>
-      <p class="linea" data-anim="subir" style="--d:1.2s">La primera puerta sigue cerrada.</p>
-      <p class="linea" data-anim="subir" style="--d:1.5s">No porque alguien la haya bloqueado.</p>
-      <p class="linea linea--fuerte" data-anim="subir" style="--d:1.8s">Sino porque solo puede abrirse desde dentro.</p>
-      <p class="regreso-pregunta" data-type>¿Estás preparado para comenzar El Viaje de Regreso?</p>
-      <div class="btns" data-anim="subir" style="--d:.3s"><a class="btn btn--oro" href="inscripcion.html">Comenzar el viaje</a><a class="btn btn--linea" href="el-mapa.html">Ver el mapa completo</a></div>
-    </div>
-  </div>
-</section>
-
-<!-- ===== 2 · MANIFIESTO ===== -->
-<section class="sec sec--pergamino manifiesto" data-divi="Sección · Pergamino">
-  <div class="row row--2-top">
-    <div class="col">
-      <p class="eyebrow" data-anim="izq" data-divi="Texto · animación Deslizar →">El camino YUAP</p>
-      <h2 class="h2" data-type data-divi="Texto · H2 · efecto máquina de escribir">No vienes a escuchar. Vienes a <em>experimentar, descubrir, decidir y transformar.</em></h2>
-    </div>
-    <div class="col text" data-anim="subir" style="--d:.2s" data-divi="Texto · animación Desvanecer">
-      <p class="lead">YUAP es un recorrido experiencial pensado para explorar las distintas dimensiones de tu vida.</p>
-      <p>Durante el camino atravesarás tres grandes territorios y vivirás seis expediciones. Cada una te lleva a un lugar diferente de tu mapa interior.</p>
-      <p>No es un curso ni una charla. Es un viaje presencial, en grupo reducido, que se vive con el cuerpo, la emoción y la decisión.</p>
-    </div>
-  </div>
-</section>
-
-<!-- ===== 3 · TERRITORIOS · Fila 3 columnas ===== -->
-<section class="sec sec--noche" id="territorios" data-divi="Sección · Noche">
-  <div class="row row--2">
-    <div class="col">
-      <p class="eyebrow" data-anim="izq" data-divi="Texto · animación Deslizar →">3 territorios</p>
-      <h2 class="h2" data-anim="subir" data-divi="Texto · H2 · animación Deslizar ↑">Ser, hacer y tener. Un solo viaje.</h2>
-    </div>
-    <div class="col text" data-anim="subir" style="--d:.2s" data-divi="Texto · animación Deslizar ↑">
-      <p>Antes de cambiar lo que haces o lo que tienes, necesitas detenerte y mirar hacia dentro. Por eso el recorrido tiene un orden: primero descubres, luego actúas y después construyes.</p>
-    </div>
-  </div>
-  <div class="row row--3">
-    <article class="territorio t-ser" data-anim="voltear" style="--d:0.00s" data-divi="Columna · Imagen (Scroll Effects: movimiento vertical) + Texto · animación Voltear, retardo 0 ms">
-      <div class="marco" data-anim="aparecer" style="--d:.35s"><img data-scroll="parallax" src="img/yuap-territorio-ser-el-espejo.webp" alt="Lago de montaña al amanecer que refleja el paisaje como un espejo" width="800" height="993" loading="lazy"></div>
-      <div class="body">
-        <p class="eyebrow">Territorio</p>
-        <h3 class="nombre">SER</h3>
-        <p class="claim">Descubrir quién eres</p>
-        <p>Aquí comienza la exploración: mirar hacia dentro antes de mover nada fuera.</p>
-        <ul class="estaciones" data-anim="subir" style="--d:.5s">
-          <li><b>01</b>El Espejo</li>
-          <li><b>02</b>La Llamada</li>
-        </ul>
-        <a class="mas" href="el-mapa.html#ser">Explorar el territorio SER →</a>
-      </div>
-    </article>
-    <article class="territorio t-hacer" data-anim="voltear" style="--d:0.18s" data-divi="Columna · Imagen (Scroll Effects: movimiento vertical) + Texto · animación Voltear, retardo 180 ms">
-      <div class="marco" data-anim="aparecer" style="--d:.35s"><img data-scroll="parallax" src="img/yuap-territorio-hacer-el-paso.webp" alt="Bota de montaña dando un paso en un sendero de piedra al atardecer" width="800" height="993" loading="lazy"></div>
-      <div class="body">
-        <p class="eyebrow">Territorio</p>
-        <h3 class="nombre">HACER</h3>
-        <p class="claim">Convertir lo que descubres en acción</p>
-        <p>Saber quién eres no basta. El mapa solo cambia cuando decides caminar.</p>
-        <ul class="estaciones" data-anim="subir" style="--d:.5s">
-          <li><b>03</b>El Paso</li>
-        </ul>
-        <a class="mas" href="el-mapa.html#hacer">Explorar el territorio HACER →</a>
-      </div>
-    </article>
-    <article class="territorio t-tener" data-anim="voltear" style="--d:0.36s" data-divi="Columna · Imagen (Scroll Effects: movimiento vertical) + Texto · animación Voltear, retardo 360 ms">
-      <div class="marco" data-anim="aparecer" style="--d:.35s"><img data-scroll="parallax" src="img/yuap-territorio-tener-vinculos.webp" alt="Grupo de personas conversando alrededor de una hoguera en el bosque al anochecer" width="800" height="993" loading="lazy"></div>
-      <div class="body">
-        <p class="eyebrow">Territorio</p>
-        <h3 class="nombre">TENER</h3>
-        <p class="claim">Construir la vida que quieres habitar</p>
-        <p>No hablamos de tener más, sino de tener una vida que tenga sentido para ti.</p>
-        <ul class="estaciones" data-anim="subir" style="--d:.5s">
-          <li><b>04</b>Los Cimientos</li>
-          <li><b>05</b>Los Vínculos</li>
-          <li><b>06</b>La Celebración</li>
-        </ul>
-        <a class="mas" href="el-mapa.html#tener">Explorar el territorio TENER →</a>
-      </div>
-    </article>
-  </div>
-</section>
-
-<!-- ===== 4 · TU MAPA YUAP ===== -->
-<section class="sec sec--pergamino" id="estaciones" data-divi="Sección · Pergamino">
-  <div class="row row--2">
-    <div class="col">
-      <p class="eyebrow" data-anim="izq" data-divi="Texto · animación Deslizar →">Las 6 estaciones</p>
-      <h2 class="h2" data-anim="subir" data-divi="Texto · H2 · animación Deslizar ↑">6 estaciones. Una pregunta en cada una.</h2>
-    </div>
-    <div class="col text" data-anim="subir" style="--d:.2s" data-divi="Texto · animación Deslizar ↑">
-      <p>Cada estación del mapa es una expedición presencial con su propia pregunta del explorador. Cuando completas las seis, tu mapa ha cambiado: no porque alguien haya dibujado el camino por ti, sino porque tú has recorrido cada coordenada.</p>
-    </div>
-  </div>
-    <div class="row row--3 row--tablet-2 pliegues" data-divi="Fila 3 columnas">
-    <article class="estacion e-ser" data-anim="desplegar" style="--d:0.00s" data-divi="Blurb · animación Plegar (Fold) desde arriba, retardo 0 ms">
-      <div class="top"><span class="num">01</span><span class="estado estado--abierta">Becada · 17–18 oct</span></div>
-      <p class="terr">Territorio SER</p>
-      <h3>El Espejo</h3>
-      <p class="tag">Mirarte para reconocerte</p>
-      <p class="pregunta">¿Quién soy cuando dejo de ser lo que los demás esperan de mí?</p>
-      <a class="ver-est" href="el-mapa.html#estacion-01">Ver la estación →</a>
-    </article>
-    <article class="estacion e-ser" data-anim="desplegar" style="--d:0.15s" data-divi="Blurb · animación Plegar (Fold) desde arriba, retardo 150 ms">
-      <div class="top"><span class="num">02</span><span class="estado">14–15 nov</span></div>
-      <p class="terr">Territorio SER</p>
-      <h3>La Llamada</h3>
-      <p class="tag">Elegir quién quieres ser</p>
-      <p class="pregunta">¿Qué quiere empezar a despertar en mí?</p>
-      <a class="ver-est" href="el-mapa.html#estacion-02">Ver la estación →</a>
-    </article>
-    <article class="estacion e-hacer" data-anim="desplegar" style="--d:0.30s" data-divi="Blurb · animación Plegar (Fold) desde arriba, retardo 300 ms">
-      <div class="top"><span class="num">03</span><span class="estado">Próximamente</span></div>
-      <p class="terr">Territorio HACER</p>
-      <h3>El Paso</h3>
-      <p class="tag">Decidir y actuar</p>
-      <p class="pregunta">¿Qué decisión estoy evitando tomar?</p>
-      <a class="ver-est" href="el-mapa.html#estacion-03">Ver la estación →</a>
-    </article>
-    <article class="estacion e-tener" data-anim="desplegar" style="--d:0.10s" data-divi="Blurb · animación Plegar (Fold) desde arriba, retardo 100 ms">
-      <div class="top"><span class="num">04</span><span class="estado">Próximamente</span></div>
-      <p class="terr">Territorio TENER</p>
-      <h3>Los Cimientos</h3>
-      <p class="tag">La vida que sostienes</p>
-      <p class="pregunta">¿Sobre qué estoy construyendo mi vida?</p>
-      <a class="ver-est" href="el-mapa.html#estacion-04">Ver la estación →</a>
-    </article>
-    <article class="estacion e-tener" data-anim="desplegar" style="--d:0.25s" data-divi="Blurb · animación Plegar (Fold) desde arriba, retardo 250 ms">
-      <div class="top"><span class="num">05</span><span class="estado">Próximamente</span></div>
-      <p class="terr">Territorio TENER</p>
-      <h3>Los Vínculos</h3>
-      <p class="tag">La vida que compartes</p>
-      <p class="pregunta">¿Qué relaciones quiero construir y qué lugar quiero ocupar en ellas?</p>
-      <a class="ver-est" href="el-mapa.html#estacion-05">Ver la estación →</a>
-    </article>
-    <article class="estacion e-tener" data-anim="desplegar" style="--d:0.40s" data-divi="Blurb · animación Plegar (Fold) desde arriba, retardo 400 ms">
-      <div class="top"><span class="num">06</span><span class="estado">Próximamente</span></div>
-      <p class="terr">Territorio TENER</p>
-      <h3>La Celebración</h3>
-      <p class="tag">La vida que reconoces</p>
-      <p class="pregunta">¿Soy capaz de reconocer todo lo que ya he recorrido?</p>
-      <a class="ver-est" href="el-mapa.html#estacion-06">Ver la estación →</a>
-    </article>
-  </div>
-  <div class="row">
-    <div class="mapa-cta" data-divi="Fila 2 col · Texto + Botón">
-      <p data-type>¿Te atreves a descubrir dónde estás en tu mapa?</p>
-      <a class="btn btn--oro" data-anim="zoom" style="--d:.2s" href="#reserva">Comenzar el viaje</a>
-    </div>
-  </div>
-</section>
-
-<!-- ===== 5 · LA EXPERIENCIA INMERSIVA ===== -->
-<section class="sec sec--noche" id="experiencia" data-divi="Sección · Noche">
-  <div class="row row--2">
-    <div class="col">
-      <div class="marco marco--puerta" data-anim="aparecer"><img class="puerta" data-scroll="zoom" src="img/yuap-experiencia-inmersiva-puerta.webp" alt="Puerta de madera antigua entreabierta en un muro de piedra, con luz cálida saliendo del interior" width="1400" height="933" loading="lazy" data-divi="Imagen · Scroll Effects: Escalado (te acercas a la puerta)"></div>
-    </div>
-    <div class="col">
-      <p class="eyebrow" data-anim="izq" data-divi="Texto · animación Deslizar →">La experiencia inmersiva</p>
-      <h2 class="h2" data-type data-divi="Texto · H2 · efecto máquina de escribir">No tienes que escapar de una habitación. Tienes que entrar en ti.</h2>
-      <p class="text" data-anim="subir" style="--d:.25s" data-divi="Texto · animación Deslizar ↑">Cada expedición es una vivencia presencial: dinámicas, retos y conversaciones que te sacan del papel de espectador. Sales con algo decidido, no con apuntes.</p>
-      <div class="blurbs">
-        <div class="blurb" data-anim="der" style="--d:0.00s" data-divi="Blurb · animación Deslizar ←, retardo 0 ms">
-          <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="24" cy="24" r="19"/><path d="M24 5v5M24 38v5M5 24h5M38 24h5"/><path d="M29.5 18.5l-3.5 9-7.5 2 3.5-9z"/></svg>
-          <div><h3>Presencial, en Murcia y en grupo reducido</h3><p>Un espacio cuidado para vivir cada estación con otras personas que también están en camino.</p></div>
-        </div>
-        <div class="blurb" data-anim="der" style="--d:0.15s" data-divi="Blurb · animación Deslizar ←, retardo 150 ms">
-          <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="9" y="6" width="30" height="36" rx="2"/><path d="M15 14h18M15 20h12"/><circle cx="30" cy="32" r="6"/><path d="M27.5 32l1.8 1.8 3.2-3.6"/></svg>
-          <div><h3>Tu Credencial YUAP</h3><p>Un documento físico que recibes en el primer taller y donde vas sellando cada estación de tu mapa. <a class="enlace-claro" href="el-mapa.html#credencial">Cómo es la credencial →</a></p></div>
-        </div>
-        <div class="blurb" data-anim="der" style="--d:0.30s" data-divi="Blurb · animación Deslizar ←, retardo 300 ms">
-          <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M13 8h24v28a4 4 0 0 1-4 4H11"/><path d="M13 8a4 4 0 0 0-4 4v4h4M11 40a4 4 0 0 0 4-4V8"/><path d="M19 16h12M19 22h12M19 28h8"/></svg>
-          <div><h3>El Pacto del Explorador</h3><p>Antes de cruzar la primera puerta, todo el grupo hace el mismo compromiso.</p></div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ===== 5b · EL UNIVERSO YUAP (diccionario del explorador) ===== -->
-<section class="sec sec--kraft universo" id="universo" data-divi="Sección · fondo kraft">
-  <div class="row row--2">
-    <div class="col">
-      <p class="eyebrow" data-anim="izq" data-divi="Texto · animación Deslizar →">El universo YUAP</p>
-      <h2 class="h2" data-type data-divi="Texto · H2 · efecto máquina de escribir">Todo gira alrededor <em>del mapa.</em></h2>
-    </div>
-    <div class="col text" data-anim="subir" style="--d:.2s" data-divi="Texto · animación Deslizar ↑">
-      <p>En YUAP cambiamos las palabras porque cambia la experiencia. Este es el diccionario del explorador: lo que encontrarías en cualquier formación, tachado, y cómo se vive aquí.</p>
-    </div>
-  </div>
-  <ul class="voces" data-divi="11 Blurbs · palabra tachada (clase CSS) + palabra nueva con animación Deslizar →">
-    <li class="voz" data-anim="subir" style="--d:0.00s"><span class="voz-no">No existen <s>alumnos</s></span><span class="voz-si">Exploradores</span></li>
-    <li class="voz" data-anim="subir" style="--d:0.12s"><span class="voz-no">No existen <s>profesores</s></span><span class="voz-si">Cartógrafos</span></li>
-    <li class="voz" data-anim="subir" style="--d:0.24s"><span class="voz-no">No existen <s>clases</s></span><span class="voz-si">Estaciones</span></li>
-    <li class="voz" data-anim="subir" style="--d:0.36s"><span class="voz-no">No existen <s>ejercicios</s></span><span class="voz-si">Misiones</span></li>
-    <li class="voz" data-anim="subir" style="--d:0.00s"><span class="voz-no">No existen <s>módulos</s></span><span class="voz-si">Territorios</span></li>
-    <li class="voz" data-anim="subir" style="--d:0.12s"><span class="voz-no">No existen <s>objetivos</s></span><span class="voz-si">Coordenadas</span></li>
-    <li class="voz" data-anim="subir" style="--d:0.24s"><span class="voz-no">No existen <s>certificados</s></span><span class="voz-si">Pasaportes del Explorador</span></li>
-    <li class="voz" data-anim="subir" style="--d:0.36s"><span class="voz-no">No existen <s>diplomas</s></span><span class="voz-si">Mapas completados</span></li>
-    <li class="voz" data-anim="subir" style="--d:0.00s"><span class="voz-no">No existen <s>grupos</s></span><span class="voz-si">Expediciones</span></li>
-    <li class="voz" data-anim="subir" style="--d:0.12s"><span class="voz-no">No existen <s>dinámicas</s></span><span class="voz-si">Rituales</span></li>
-    <li class="voz" data-anim="subir" style="--d:0.24s"><span class="voz-no">No existen <s>salas</s></span><span class="voz-si">Espacios del viaje</span></li>
-    <li class="voz voz--fin" data-anim="subir" style="--d:.36s"><span class="voz-no">Y no existe <s>un curso</s></span><span class="voz-si">Existe tu mapa</span></li>
-  </ul>
-</section>
-
-<!-- ===== 6 · EL PACTO DEL EXPLORADOR ===== -->
-<section class="sec sec--pergamino" id="pacto" data-divi="Sección · Pergamino">
-  <div class="row row--5-7">
-    <div class="col pacto-fijo" data-divi="Columna · Sticky (se queda fija al hacer scroll)">
-      <p class="eyebrow" data-anim="izq" data-divi="Texto · animación Deslizar →">El Pacto del Explorador</p>
-      <h2 class="h2" data-anim="subir" data-divi="Texto · H2 · animación Deslizar ↑">En YUAP, la palabra vale más que cualquier contrato.</h2>
-      <p class="text" data-anim="subir" style="--d:.25s" data-divi="Texto · animación Deslizar ↑">Antes de cruzar la primera puerta, todos los exploradores hacemos el mismo compromiso. Son siete acuerdos sencillos que protegen el viaje de cada persona.</p>
-      <p class="pacto-firma" data-type data-divi="Texto · cita · efecto máquina de escribir">Decido recorrer el Camino YUAP con honestidad, respeto y compromiso, y recordar que ninguna puerta puede abrirse sin mi decisión.</p>
-    </div>
-    <div class="col">
-      <ol class="pacto-lista" data-divi="Texto · cada punto con animación Plegar (Fold), retardo escalonado">
-        <li data-anim="desplegar" style="--d:0.00s"><strong>Protege el camino <small>Confidencialidad</small></strong><span>Lo que ocurre aquí pertenece a las personas que lo viven.</span></li>
-        <li data-anim="desplegar" style="--d:0.08s"><strong>No abandones el viaje <small>Compromiso</small></strong><span>Las puertas solo se abren cuando completas el camino.</span></li>
-        <li data-anim="desplegar" style="--d:0.16s"><strong>Honra el tiempo <small>Puntualidad</small></strong><span>Cada misión empieza exactamente cuando debe empezar.</span></li>
-        <li data-anim="desplegar" style="--d:0.24s"><strong>Permanece presente <small>Atención total</small></strong><span>Sin móvil ni conversaciones paralelas. La puerta se abre cuando estás del todo.</span></li>
-        <li data-anim="desplegar" style="--d:0.32s"><strong>Cuida tu vehículo <small>Cuerpo y mente</small></strong><span>Tu cuerpo te acompaña en todo el camino: aliméntalo, descansa y escúchalo.</span></li>
-        <li data-anim="desplegar" style="--d:0.40s"><strong>Respeta el camino de los demás <small>Respeto</small></strong><span>No compares, no juzgues, no rescates. Cada explorador tiene su tiempo.</span></li>
-        <li data-anim="desplegar" style="--d:0.48s"><strong>Vive la experiencia <small>Sin registros</small></strong><span>Sin fotos, vídeos ni apuntes. Lo importante no es lo que escribas, sino en quién te conviertas.</span></li>
-      </ol>
-    </div>
-  </div>
-</section>
-
-<!-- ===== 7 · BECA PRIMERA EXPEDICIÓN (sin precio) ===== -->
-<section class="sec sec--noche beca" id="reserva" data-divi="Sección · Noche (degradado radial)">
-  <div class="row row--2">
-    <div class="col">
-      <p class="eyebrow" data-anim="izq" data-divi="Texto · animación Deslizar →">Primera edición</p>
-      <h2 class="h2" data-anim="subir" data-divi="Texto · H2 · animación Deslizar ↑">Beca Primera Expedición</h2>
-      <div class="text" data-anim="subir" style="--d:.2s" data-divi="Texto · animación Deslizar ↑">
-        <p class="lead">Tu viaje empieza en la Expedición 01 · El Espejo, becada para quienes se inscriben en esta primera edición.</p>
-        <p>Las plazas becadas son limitadas y se asignan por orden de inscripción. Reserva la tuya y te contamos por WhatsApp o email todos los detalles prácticos. Las siguientes estaciones se abrirán por orden.</p>
-      </div>
-      <div class="btns" data-anim="subir" style="--d:.35s" data-divi="Botón ×2 · animación Deslizar ↑">
-        <a class="btn btn--oro" href="inscripcion.html">Solicitar mi plaza becada</a>
-        <a class="btn btn--linea" href="#">Escríbenos por WhatsApp</a>
-      </div>
-      <p class="nota" data-divi="Texto">El botón abre el formulario de solicitud de la beca en una pestaña nueva.</p>
-    </div>
-    <div class="col">
-      <div class="ficha" data-anim="voltear" data-divi="Texto · ficha de expedición · animación Voltear">
-        <svg class="sello" data-anim="sello" style="--d:.8s" viewBox="0 0 120 120" aria-hidden="true" data-divi="Imagen · sello SVG · animación Zoom + rebote, retardo 800 ms"><g fill="none" stroke="currentColor"><circle cx="60" cy="60" r="54" stroke-width="3"/><circle cx="60" cy="60" r="45" stroke-width="1.5"/></g><path id="arco" d="M22 60a38 38 0 0 1 76 0" fill="none"/><text font-family="IBM Plex Mono, monospace" font-size="11" font-weight="700" letter-spacing="3" fill="currentColor"><textPath href="#arco" startOffset="50%" text-anchor="middle">PRIMERA EDICIÓN</textPath></text><text x="60" y="72" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="17" font-weight="700" letter-spacing="2" fill="currentColor">BECADA</text><text x="60" y="90" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="8.5" letter-spacing="1.5" fill="currentColor">YUAP · 2026</text></svg>
-        <p class="eyebrow">Credencial de expedición</p>
-        <h3>01 · El Espejo</h3>
+      <p class="i-lead" data-anim="subir" style="--d:.3s" data-divi="Texto · animación Deslizar ↑">Rellena tu credencial de explorador. Te escribimos por WhatsApp o email para confirmar tu plaza becada y contarte los detalles prácticos.</p>
+      <div class="i-billete" data-anim="voltear" style="--d:.5s" data-divi="Texto · billete de la expedición · animación Voltear">
+        <p class="i-mono">Expedición 01 · Territorio SER</p>
+        <p class="i-billete-t">El Espejo <span>Mirarte para reconocerte</span></p>
         <dl>
-          <dt data-anim="subir">Territorio</dt><dd data-anim="subir">SER · Descubrir quién eres</dd>
-          <dt data-anim="subir">Fechas</dt><dd data-anim="subir">17 y 18 de octubre de 2026</dd>
-          <dt data-anim="subir">Lugar</dt><dd data-anim="subir">Centro Aspaym · C/ Infanta Cristina, 21 · Murcia</dd>
-          <dt data-anim="subir">Modalidad</dt><dd data-anim="subir">Presencial, grupo reducido</dd>
-          <dt data-anim="subir">Plazas</dt><dd data-anim="subir">Becadas y limitadas, por orden de inscripción</dd>
-          <dt data-anim="subir">Incluye</dt><dd data-anim="subir">Tu Credencial YUAP para sellar el mapa</dd>
-          <dt data-anim="subir">Siguiente</dt><dd data-anim="subir">02 · La Llamada · 14 y 15 de noviembre</dd>
+          <dt>Fechas</dt><dd>17 y 18 de octubre de 2026</dd>
+          <dt>Horario</dt><dd>Sábado 10:00–22:00 · Domingo 10:00–17:00</dd>
+          <dt>Lugar</dt><dd>Centro Aspaym · C/ Infanta Cristina, 21 · Murcia</dd>
+          <dt>Plaza</dt><dd>Becada · limitadas, por orden de inscripción</dd>
         </dl>
       </div>
+      <ol class="i-mapa" data-anim="subir" style="--d:.7s" aria-label="Tu mapa YUAP: 3 territorios, 6 expediciones" data-divi="Fila 6 columnas · Blurbs (la 01 marcada como becada)">
+        <li class="on"><b>01</b>El Espejo<small>Becada</small></li>
+        <li><b>02</b>La Llamada<small>14–15 nov</small></li>
+        <li><b>03</b>El Paso<small>Pronto</small></li>
+        <li><b>04</b>Los Cimientos<small>Pronto</small></li>
+        <li><b>05</b>Los Vínculos<small>Pronto</small></li>
+        <li><b>06</b>La Celebración<small>Pronto</small></li>
+      </ol>
+    </div>
+
+    <div class="i-cred-wrap" data-divi="Columna · credencial: tapa con animación Voltear (Flip) sobre el Formulario de contacto de Divi">
+      <div class="i-cred" id="cred">
+        <form class="i-form" id="i-form" novalidate data-divi="Módulo Formulario (Divi Contact Form o Fluent Forms) · en WordPress los datos llegan por email">
+          <div class="i-cab">
+            <span class="i-logo">yuap</span>
+            <span class="i-mono">Credencial de explorador · Nº <span id="i-num">0001</span></span>
+          </div>
+          <fieldset class="i-paso" data-anim="desplegar" style="--d:1.6s">
+            <legend><span class="i-n">1</span>Tus datos <small>explorador / exploradora</small></legend>
+            <div class="campo"><label for="i-nombre">Me llamo</label><input id="i-nombre" name="nombre" type="text" autocomplete="name" required placeholder="nombre y apellidos"></div>
+            <div class="campo"><label for="i-tel">Mi móvil es</label><input id="i-tel" name="telefono" type="tel" autocomplete="tel" required placeholder="para el WhatsApp de confirmación"></div>
+            <div class="campo"><label for="i-email">y mi email</label><input id="i-email" name="email" type="email" autocomplete="email" required placeholder="tu@email.com"></div>
+            <div class="campo"><label for="i-invito">Me invitó</label><input id="i-invito" name="invito" type="text" required placeholder="¿quién te invitó a la experiencia?"></div>
+          </fieldset>
+          <fieldset class="i-paso" data-anim="desplegar" style="--d:1.8s">
+            <legend><span class="i-n">2</span>Tu primera expedición</legend>
+            <div class="i-elegida"><span class="i-sello-mini" aria-hidden="true">01</span><div><strong>El Espejo · 17 y 18 de octubre</strong><span>Plaza becada · Centro Aspaym, Murcia</span></div></div>
+          </fieldset>
+          <fieldset class="i-paso" data-anim="desplegar" style="--d:.3s">
+            <legend><span class="i-n">3</span>Condiciones de la beca</legend>
+            <details class="i-cond" data-divi="Módulo Toggle (Conmutador)">
+              <summary>Leer las condiciones</summary>
+              <ol>
+                <li><strong>La beca.</strong> Por inscribirte en esta primera edición, YUAP te concede una beca para la Expedición 01 · El Espejo y solo aportas una pequeña cantidad para reservar tu plaza <span class="pendiente">[importe: confirmar si se muestra]</span>. Las plazas becadas son limitadas y se asignan por orden de inscripción.</li>
+                <li><strong>Confirmación.</strong> Tu plaza queda confirmada cuando recibimos tu aportación. Te enviaremos la confirmación por WhatsApp o correo electrónico.</li>
+                <li><strong>Si no puedes venir.</strong> Avísanos al menos <span class="pendiente">[7]</span> días antes y trasladamos tu plaza becada a la siguiente edición. Si no asistes sin avisar, la aportación no se devuelve, porque la plaza ya no se puede ofrecer a otra persona.</li>
+                <li><strong>Si cambia la fecha.</strong> Si YUAP tuviera que cambiar o cancelar el taller, podrás elegir entre la nueva fecha o la devolución íntegra de tu aportación.</li>
+                <li><strong>Tu credencial.</strong> En el taller recibirás tu Credencial YUAP, el documento físico donde irás sellando cada estación de tu mapa.</li>
+              </ol>
+            </details>
+            <label class="check" for="i-acepto"><input id="i-acepto" name="acepto" type="checkbox" required><span>He leído y acepto las condiciones de la beca y la <a href="#">información sobre protección de datos</a>.</span></label>
+            <label class="check" for="i-info"><input id="i-info" name="info" type="checkbox"><span>Quiero recibir información de las próximas expediciones (opcional).</span></label>
+          </fieldset>
+          <div class="i-firma" data-anim="subir" style="--d:.3s">
+            <span class="i-mono">Firma: el explorador o la exploradora</span>
+            <button class="btn btn--oro" type="submit" id="i-enviar">Sellar mi inscripción</button>
+          </div>
+          <p class="i-error" id="i-error" role="alert" hidden>Faltan datos: nombre, móvil, email, quién te invitó y aceptar las condiciones.</p>
+          <p class="i-rgpd">Responsable: YUAP <span class="pendiente">[razón social y NIF]</span>. Finalidad: gestionar tu inscripción y comunicarte la información práctica del taller. Puedes ejercer tus derechos escribiendo a info@yuapdesarrollo.com. <span class="pendiente">[texto legal completo en WordPress]</span></p>
+          <div class="i-ok" id="i-ok" hidden role="status">
+            <svg class="i-sello" viewBox="0 0 120 120" aria-hidden="true"><g fill="none" stroke="currentColor"><circle cx="60" cy="60" r="54" stroke-width="3"/><circle cx="60" cy="60" r="45" stroke-width="1.5"/></g><text x="60" y="56" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="15" font-weight="700" fill="currentColor" letter-spacing="1">INSCRITA</text><text x="60" y="74" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="8" fill="currentColor" letter-spacing="1">EXPEDICIÓN 01</text></svg>
+            <p class="i-ok-t">Te damos la bienvenida al viaje<span id="i-ok-nom"></span>.</p>
+            <p>Hemos recibido tu solicitud de plaza becada para El Espejo. Te escribiremos por WhatsApp o email para confirmarla.</p>
+            <a class="btn btn--linea" href="el-mapa.html">Mientras, mira tu mapa</a>
+          </div>
+          <div class="i-fallo" id="i-fallo" hidden role="alert">
+            <p>No hemos podido enviar tu inscripción. Escríbenos a <a href="mailto:info@yuapdesarrollo.com">info@yuapdesarrollo.com</a> y te reservamos la plaza.</p>
+          </div>
+        </form>
+        <div class="i-tapa" aria-hidden="true">
+          <div class="i-tapa-frente"><span class="i-tapa-logo">yuap</span><span class="i-tapa-t">Credencial<br>de explorador</span><span class="i-tapa-n">Expedición 01 · El Espejo</span></div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- ===== 9 · CTA FINAL ===== -->
-<section class="sec sec--noche cta-final" data-divi="Sección · fondo imagen con Parallax real + degradado">
-  <div class="row">
+<!-- ===== DUDAS RÁPIDAS ===== -->
+<section class="sec sec--pergamino" id="antes" data-divi="Sección · Pergamino">
+  <div class="row row--2-top">
     <div class="col">
-      <p class="eyebrow" data-anim="izq" data-divi="Texto · animación Deslizar →">6 expediciones · 3 territorios · 1 mapa · una transformación</p>
-      <h2 class="h2" data-type data-divi="Texto · H2 · efecto máquina de escribir">¿Te atreves a descubrir dónde estás en tu mapa?</h2>
-      <div class="btns" data-anim="subir" style="--d:.3s" data-divi="Botón ×2 · animación Deslizar ↑">
-        <a class="btn btn--oro" href="#reserva">Comenzar el viaje</a>
-        <a class="btn btn--linea" href="#">Hablar por WhatsApp</a>
-      </div>
+      <p class="eyebrow" data-anim="izq">Antes de inscribirte</p>
+      <h2 class="h2" data-anim="subir">¿Y si tengo <em>dudas</em>?</h2>
+      <div class="text" data-anim="subir" style="--d:.2s"><p>Escríbenos y te respondemos de tú a tú. También puedes ver qué vivirás en cada estación del mapa.</p></div>
+      <div class="btns" data-anim="subir" style="--d:.3s"><a class="btn btn--linea" href="contacto.html">Escribirnos</a><a class="btn btn--linea" href="el-mapa.html">Ver el mapa</a></div>
     </div>
+    <ul class="i-claves" data-divi="Blurbs · animación Plegar escalonada">
+      <li data-anim="desplegar"><strong>Presencial y en grupo reducido</strong><span>En Murcia, con otras personas que también están en camino.</span></li>
+      <li data-anim="desplegar" style="--d:.12s"><strong>Sin móviles ni apuntes</strong><span>Antes de empezar, todo el grupo hace el Pacto del Explorador.</span></li>
+      <li data-anim="desplegar" style="--d:.24s"><strong>Tu Credencial YUAP</strong><span>La recibes en el primer taller y sellas en ella cada estación.</span></li>
+    </ul>
   </div>
 </section>
 
 </main>
 
-<!-- ===== THEME BUILDER · FOOTER ===== -->
 <footer class="footer" data-divi="Theme Builder · Footer global">
   <div class="row" data-anim="subir">
     <div>
-      <a class="logo" href="#"><img src="img/yuap-logo-papel.png" alt="YUAP" width="110" height="42" loading="lazy"></a>
+      <a class="logo" href="index.html"><img src="img/yuap-logo-papel.png" alt="YUAP" width="110" height="42" loading="lazy"></a>
       <p>6 expediciones para volver a ti.<br>Desarrollo personal experiencial en Murcia.</p>
     </div>
     <div>
       <h4>Explora</h4>
-      <ul><li><a href="el-mapa.html">El mapa</a></li><li><a href="#experiencia">La experiencia</a></li><li><a href="inscripcion.html">Inscripción</a></li><li><a href="quienes-somos.html">Quiénes somos</a></li><li><a href="contacto.html">Contacto</a></li></ul>
+      <ul><li><a href="el-mapa.html">El mapa</a></li><li><a href="index.html#experiencia">La experiencia</a></li><li><a href="inscripcion.html">Inscripción</a></li><li><a href="quienes-somos.html">Quiénes somos</a></li><li><a href="contacto.html">Contacto</a></li></ul>
     </div>
     <div>
       <h4>Contacto</h4>
@@ -1247,73 +1078,56 @@ h1,h2,h3,.h2{font-family:var(--f-display);font-weight:800;letter-spacing:-.015em
 </script>
 <script>
 (function(){
-  var esc = document.getElementById('escenario');
-  if (!esc) return;
-  var tactil = window.matchMedia('(max-width:900px), (hover:none)');
-
-  /* ---------- Escritorio: la ficha nunca se corta (se da la vuelta si no cabe) ---------- */
-  function colocar(hot){
-    var tip = hot.querySelector('.tip'); if (!tip || tactil.matches) return;
-    var caja = hot.closest('.lienzo').getBoundingClientRect();
-    tip.classList.remove('tip--flip-v','tip--flip-izq','tip--flip-der');
-    var r = tip.getBoundingClientRect();
-    if (r.top < caja.top + 6 || r.bottom > caja.bottom - 6) tip.classList.add('tip--flip-v');
-    r = tip.getBoundingClientRect();
-    if (r.right > caja.right - 6) tip.classList.add('tip--flip-izq');
-    else if (r.left < caja.left + 6) tip.classList.add('tip--flip-der');
-  }
-  esc.querySelectorAll('.lienzo--h .hot').forEach(function(h){
-    h.addEventListener('mouseenter', function(){ colocar(h); });
-    h.addEventListener('focus', function(){ colocar(h); });
-  });
-
-  /* ---------- Móvil y tablet: tocar una estación abre su ficha (no salta a otra sección) ---------- */
-  var panel = document.getElementById('ficha-movil');
-  var cuerpo = panel && panel.querySelector('.fm-cuerpo');
-  var accionP = panel && panel.querySelector('.fm-accion');
-  var activa = null;
-  function cerrar(){ if (!panel) return; panel.hidden = true; if (activa) activa.classList.remove('activa'); activa = null; }
-  esc.querySelectorAll('.hot').forEach(function(h){
-    h.addEventListener('click', function(e){
-      if (!tactil.matches || !panel) return;
-      e.preventDefault();
-      if (activa === h) { cerrar(); return; }
-      if (activa) activa.classList.remove('activa');
-      activa = h; h.classList.add('activa');
-      cuerpo.innerHTML = h.querySelector('.tip').innerHTML;
-      var abierta = h.classList.contains('hot--abierta');
-      accionP.textContent = abierta ? 'Reservar mi plaza becada →' : 'Ver la estación en el mapa →';
-      accionP.setAttribute('href', abierta ? 'inscripcion.html' : 'el-mapa.html');
-      panel.hidden = false;
+  var mov = document.documentElement.classList.contains('js-mov');
+  var t = document.querySelector('.i-titulo'), cred = document.getElementById('cred');
+  /* La tapa de la credencial se abre cuando el título ya está escrito y la credencial está a la vista (en móvil, al llegar a ella) */
+  var listo = false, visible = false;
+  function intentar(){ if (cred && listo && visible) cred.classList.add('abierta'); }
+  function yaListo(){ listo = true; intentar(); }
+  if (mov && window.__yuapEscribir && t) {
+    window.__yuapEscribir(t.querySelector('.coord'), 16).then(function(){ return window.__yuapEscribir(t.querySelector('h1'), 55); }).then(yaListo);
+    setTimeout(yaListo, 4200);
+    var io = new IntersectionObserver(function(es){ es.forEach(function(e){ if (e.isIntersecting) { visible = true; io.disconnect(); setTimeout(intentar, 350); } }); }, {threshold:.25});
+    if (cred) io.observe(cred);
+  } else if (cred) cred.classList.add('abierta');
+  /* Nº de credencial: cuenta hasta un número al azar */
+  var num = document.getElementById('i-num');
+  if (num && mov) { var fin = 12 + Math.floor(Math.random()*40), n = 0, iv = setInterval(function(){ n++; num.textContent = ('000' + n).slice(-4); if (n >= fin) clearInterval(iv); }, 45); }
+  /* Envío: en el prototipo se manda al Google Form actual de la beca; en WordPress lo sustituye el formulario de Divi */
+  var GF = 'https://docs.google.com/forms/d/e/1FAIpQLSeFpDNEsHdxgWnZxUnQCgYJRiYg7r2GNbYdg0yHq9-t8wBJ6w/formResponse';
+  var f = document.getElementById('i-form');
+  if (f) f.addEventListener('submit', function(ev){
+    ev.preventDefault();
+    var campos = ['i-nombre','i-tel','i-email','i-invito'].map(function(id){ return document.getElementById(id); });
+    var ok = true;
+    campos.forEach(function(c){ var v = c.value.trim(); var bien = v.length > 1 && (c.type !== 'email' || /^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(v)); c.classList.toggle('mal', !bien); if (!bien) ok = false; });
+    var acepto = document.getElementById('i-acepto'); if (!acepto.checked) ok = false;
+    document.getElementById('i-error').hidden = ok;
+    if (!ok) return;
+    var btn = document.getElementById('i-enviar'); btn.disabled = true; btn.textContent = 'Sellando…';
+    var datos = new URLSearchParams();
+    datos.append('entry.2080569311', campos[0].value.trim());
+    datos.append('entry.1594324279', campos[1].value.trim());
+    datos.append('entry.1863816225', campos[2].value.trim());
+    datos.append('entry.1679108273', campos[3].value.trim() + (document.getElementById('i-info').checked ? ' · quiere info de próximas expediciones' : ''));
+    fetch(GF, { method:'POST', mode:'no-cors', body: datos }).then(function(){
+      var nom = campos[0].value.trim().split(/\s+/)[0];
+      document.getElementById('i-ok-nom').textContent = nom ? ', ' + nom : '';
+      document.getElementById('i-ok').hidden = false; f.classList.add('enviada');
+      f.scrollIntoView({behavior:'smooth', block:'center'});
+    }).catch(function(){
+      document.getElementById('i-fallo').hidden = false; f.classList.add('fallida'); btn.disabled = false; btn.textContent = 'Sellar mi inscripción';
     });
   });
-  if (panel) {
-    panel.querySelector('.fm-cerrar').addEventListener('click', cerrar);
-    document.addEventListener('keydown', function(e){ if (e.key === 'Escape') cerrar(); });
-    document.addEventListener('click', function(e){ if (activa && !panel.contains(e.target) && !e.target.closest('.hot')) cerrar(); });
-  }
-
-  /* ---------- Sonido del camino: nunca suena solo; lo activa la persona ---------- */
+  /* Sonido del camino (apagado por defecto) */
   var btn = document.getElementById('sonido'), audio = document.getElementById('audio-camino');
   if (btn && audio) {
     var VOL = 0.16, fade;
-    function rampa(obj, fin){
-      clearInterval(fade);
-      fade = setInterval(function(){
-        var v = audio.volume + (obj > audio.volume ? 0.02 : -0.02);
-        if ((obj > audio.volume && v >= obj) || (obj <= audio.volume && v <= obj)) { v = obj; clearInterval(fade); if (fin) fin(); }
-        audio.volume = Math.max(0, Math.min(1, v));
-      }, 60);
-    }
+    function rampa(obj, fin){ clearInterval(fade); fade = setInterval(function(){ var v = audio.volume + (obj > audio.volume ? 0.02 : -0.02); if ((obj > audio.volume && v >= obj) || (obj <= audio.volume && v <= obj)) { v = obj; clearInterval(fade); if (fin) fin(); } audio.volume = Math.max(0, Math.min(1, v)); }, 60); }
     function pintar(on){ btn.setAttribute('aria-pressed', on ? 'true' : 'false'); btn.querySelector('.sn-txt').textContent = on ? 'Sonido del camino: activado' : 'Sonido del camino'; btn.classList.toggle('on', on); }
     btn.addEventListener('click', function(){
-      if (audio.paused) {
-        audio.volume = 0; var pr = audio.play();
-        if (pr && pr.then) pr.then(function(){ rampa(VOL); pintar(true); }).catch(function(){ pintar(false); });
-        else { rampa(VOL); pintar(true); }
-      } else {
-        rampa(0, function(){ audio.pause(); }); pintar(false);
-      }
+      if (audio.paused) { audio.volume = 0; var pr = audio.play(); if (pr && pr.then) pr.then(function(){ rampa(VOL); pintar(true); }).catch(function(){ pintar(false); }); else { rampa(VOL); pintar(true); } }
+      else { rampa(0, function(){ audio.pause(); }); pintar(false); }
     });
   }
 })();
