@@ -7,7 +7,7 @@
 <title>Contacto YUAP</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=IBM+Plex+Mono:wght@400;500&family=Work+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@600;700;800;900&family=IBM+Plex+Mono:wght@400;500&family=Work+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap">
 <style>
 /* Layout: secciones a ancho completo que alternan NOCHE (inmersión) y PERGAMINO (lectura).
    Cada <section> = Sección Divi · .row = Fila · .col = Columna · [data-divi] = módulo nativo.
@@ -31,7 +31,7 @@
   --hacer:#D6CDBD; --hacer-osc:#57514A;
   --tener:#A9B792; --tener-osc:#4E5D3E;
 
-  --f-display:"Bricolage Grotesque", "Arial Narrow", system-ui, sans-serif;
+  --f-display:"Nunito", "Arial Rounded MT Bold", system-ui, sans-serif;
   --f-mono:"IBM Plex Mono", ui-monospace, "Courier New", monospace;
   --f-texto:"Work Sans", system-ui, sans-serif;
 
@@ -515,6 +515,33 @@ em{font-style:normal}
 @media (max-width:700px){ .portada-accion{padding-inline:68px} }
 
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+/* ================= v9 · Bordes redondeados y titulares redondeados (Nunito) =================
+   En Divi: Diseño > Bordes > Esquinas redondeadas en los presets de Botón, Blurb, Imagen y Texto. */
+:root{--radio:18px;--radio-s:12px}
+h1,h2,h3,.h2{font-family:var(--f-display);font-weight:800;letter-spacing:-.015em}
+.territorio .nombre{font-weight:900;letter-spacing:0}
+.btn,.nav .btn{border-radius:999px}
+.estado,.q-chips li{border-radius:999px}
+.territorio{border-radius:var(--radio);overflow:hidden}
+.estacion,.tip,.ficha,.ficha-movil,.c-billete,.q-principio,.c-enviada,.hueco,.kit .hueco{border-radius:var(--radio)}
+.marco,.puerta,.q-foto,.mapa-img,.guia img{border-radius:var(--radio);overflow:hidden}
+.q-foto img,.marco img{border-radius:0}
+.pas-der{border-radius:0 var(--radio) var(--radio) 0}
+.tapa-frente,.tapa-dorso{border-radius:var(--radio) 0 0 var(--radio)}
+.pasaporte:not(.abierto) .tapa-frente{border-radius:0 var(--radio) var(--radio) 0}
+/* la carta: esquinas redondeadas arriba y abajo */
+.pl1 > .cara{border-radius:var(--radio) var(--radio) 0 0}
+.pl3 > .cara{border-radius:0 0 var(--radio) var(--radio)}
+.pl3::before{border-radius:0 0 var(--radio) var(--radio)}
+.carta::after{border-radius:var(--radio)}
+.duda-q{border-radius:var(--radio-s)}
+.campo input:focus,.campo textarea:focus{border-radius:6px 6px 0 0}
+.divi-toggle{border-radius:999px}
+@media (max-width:600px){
+  .pas-der{border-radius:0 0 var(--radio) var(--radio)}
+  .tapa-frente,.tapa-dorso,.pasaporte:not(.abierto) .tapa-frente{border-radius:var(--radio) var(--radio) 0 0}
+}
+
 /* ================= PÁGINA DE CONTACTO ================= */
 .c-hero{background:var(--kraft);padding:calc(118px + env(safe-area-inset-top,0px)) var(--gutter) clamp(64px,8vw,110px);overflow:hidden}
 .c-grid{max-width:var(--ancho);margin-inline:auto;display:grid;grid-template-columns:5fr 6fr;gap:clamp(32px,5vw,72px);align-items:start}
@@ -622,6 +649,33 @@ em{font-style:normal}
 
 .carta.plegando::after,.carta.enviada::after{opacity:0;transition-delay:0s}
 .c-enviada{background:var(--papel-2);border:1.5px solid var(--tinta);box-shadow:7px 7px 0 var(--tinta)}
+
+/* ================= v9 · Bordes redondeados y titulares redondeados (Nunito) =================
+   En Divi: Diseño > Bordes > Esquinas redondeadas en los presets de Botón, Blurb, Imagen y Texto. */
+:root{--radio:18px;--radio-s:12px}
+h1,h2,h3,.h2{font-family:var(--f-display);font-weight:800;letter-spacing:-.015em}
+.territorio .nombre{font-weight:900;letter-spacing:0}
+.btn,.nav .btn{border-radius:999px}
+.estado,.q-chips li{border-radius:999px}
+.territorio{border-radius:var(--radio);overflow:hidden}
+.estacion,.tip,.ficha,.ficha-movil,.c-billete,.q-principio,.c-enviada,.hueco,.kit .hueco{border-radius:var(--radio)}
+.marco,.puerta,.q-foto,.mapa-img,.guia img{border-radius:var(--radio);overflow:hidden}
+.q-foto img,.marco img{border-radius:0}
+.pas-der{border-radius:0 var(--radio) var(--radio) 0}
+.tapa-frente,.tapa-dorso{border-radius:var(--radio) 0 0 var(--radio)}
+.pasaporte:not(.abierto) .tapa-frente{border-radius:0 var(--radio) var(--radio) 0}
+/* la carta: esquinas redondeadas arriba y abajo */
+.pl1 > .cara{border-radius:var(--radio) var(--radio) 0 0}
+.pl3 > .cara{border-radius:0 0 var(--radio) var(--radio)}
+.pl3::before{border-radius:0 0 var(--radio) var(--radio)}
+.carta::after{border-radius:var(--radio)}
+.duda-q{border-radius:var(--radio-s)}
+.campo input:focus,.campo textarea:focus{border-radius:6px 6px 0 0}
+.divi-toggle{border-radius:999px}
+@media (max-width:600px){
+  .pas-der{border-radius:0 0 var(--radio) var(--radio)}
+  .tapa-frente,.tapa-dorso,.pasaporte:not(.abierto) .tapa-frente{border-radius:var(--radio) var(--radio) 0 0}
+}
 
 </style>
 </head>
