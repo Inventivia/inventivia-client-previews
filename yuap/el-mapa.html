@@ -623,6 +623,23 @@ h1,h2,h3,.h2{font-family:var(--f-display);font-weight:800;letter-spacing:-.015em
 
 .enlace-claro{color:var(--oro-claro);font-weight:600}
 
+/* ===== v12 · Frase en el hueco del mapa + logo a la derecha + precios ===== */
+.mapa-frase{position:absolute;left:var(--x);top:var(--y);transform:translate(-50%,-50%) rotate(-5deg);margin:0;text-align:left;pointer-events:none;z-index:1;
+  font-family:var(--f-display);font-weight:900;font-size:2.7cqw;line-height:1;letter-spacing:-.02em;color:#2B241E;mix-blend-mode:multiply;opacity:.86;white-space:nowrap;text-align:center}
+.lienzo--h .capa{container-type:size}
+.mapa-frase em{font-size:1.25em}
+.mapa-frase em{font-style:normal;color:var(--lacre)}
+.escenario .mapa-frase{opacity:0}
+.escenario.desplegado .mapa-frase{animation:fraseTinta 1.2s cubic-bezier(.3,1.3,.5,1) 3.3s both}
+@keyframes fraseTinta{0%{opacity:0;filter:blur(6px);transform:translate(-50%,-50%) rotate(-5deg) scale(1.3)}100%{opacity:.86;filter:blur(0);transform:translate(-50%,-50%) rotate(-5deg) scale(1)}}
+.precio{display:inline-flex;align-items:baseline;gap:8px;flex-wrap:wrap}
+.precio s{color:var(--tinta-suave);text-decoration-color:var(--lacre);text-decoration-thickness:2px}
+.precio b{font-family:var(--f-display);font-weight:900;font-size:1.25em;color:var(--lacre-osc)}
+.precio small{font-family:var(--f-mono);font-size:.7rem;letter-spacing:.04em;text-transform:uppercase;color:var(--tinta-suave)}
+.sec--noche .precio s{color:var(--niebla)}
+.ficha .precio b{color:var(--lacre-osc)}
+.ficha .precio s,.m-billete .precio s{color:var(--tinta-suave)}
+
 /* ================= PÁGINA EL MAPA ================= */
 .sec--papel{background:var(--papel-2);color:var(--tinta-suave)}
 .sec--papel .h2,.sec--papel h3{color:var(--tinta)}
@@ -845,7 +862,7 @@ h1,h2,h3,.h2{font-family:var(--f-display);font-weight:800;letter-spacing:-.015em
       <p class="m-llevas borrador" data-anim="subir" style="--d:.25s"><span class="m-sub">Te llevas</span>Una mirada más honesta sobre quién eres y el primer sello de tu credencial.</p>
         <div class="m-billete" data-anim="voltear" style="--d:.3s" data-divi="Texto · ficha práctica · animación Voltear">
           <p class="m-mono">Próxima salida</p>
-          <dl><dt>Fechas</dt><dd>17 y 18 de octubre de 2026</dd><dt>Horario</dt><dd>Sábado 10:00–22:00 · Domingo 10:00–17:00</dd><dt>Lugar</dt><dd>Centro Aspaym · C/ Infanta Cristina, 21 · Murcia</dd><dt>Plaza</dt><dd>Becada · plazas limitadas</dd></dl>
+          <dl><dt>Fechas</dt><dd>17 y 18 de octubre de 2026</dd><dt>Horario</dt><dd>Sábado 10:00–22:00 · Domingo 10:00–17:00</dd><dt>Lugar</dt><dd>Centro Aspaym · C/ Infanta Cristina, 21 · Murcia</dd><dt>Inversión</dt><dd><span class="precio"><s>150 €</s><b>29 €</b><small>con la beca · última vez</small></span></dd><dt>Plaza</dt><dd>Becada · plazas limitadas</dd></dl>
           <a class="btn btn--oro" href="inscripcion.html">Inscribirme en El Espejo</a>
         </div>
     </div>
@@ -865,7 +882,7 @@ h1,h2,h3,.h2{font-family:var(--f-display);font-weight:800;letter-spacing:-.015em
       <p class="m-llevas borrador" data-anim="subir" style="--d:.25s"><span class="m-sub">Te llevas</span>Una dirección: aquello que eliges empezar a ser.</p>
         <div class="m-billete" data-anim="voltear" style="--d:.3s" data-divi="Texto · ficha práctica · animación Voltear">
           <p class="m-mono">Siguiente salida</p>
-          <dl><dt>Fechas</dt><dd>14 y 15 de noviembre de 2026</dd><dt>Lugar</dt><dd>Murcia <span class="pendiente">[confirmar lugar y horario]</span></dd></dl>
+          <dl><dt>Fechas</dt><dd>14 y 15 de noviembre de 2026</dd><dt>Lugar</dt><dd>Murcia <span class="pendiente">[confirmar lugar y horario]</span></dd><dt>Inversión</dt><dd><span class="precio"><s>150 €</s><b>49 €</b><small>con la beca</small></span></dd></dl>
           <a class="btn btn--linea" href="contacto.html">Quiero que me aviséis</a>
         </div>
     </div>

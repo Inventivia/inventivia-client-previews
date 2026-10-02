@@ -623,6 +623,23 @@ h1,h2,h3,.h2{font-family:var(--f-display);font-weight:800;letter-spacing:-.015em
 
 .enlace-claro{color:var(--oro-claro);font-weight:600}
 
+/* ===== v12 · Frase en el hueco del mapa + logo a la derecha + precios ===== */
+.mapa-frase{position:absolute;left:var(--x);top:var(--y);transform:translate(-50%,-50%) rotate(-5deg);margin:0;text-align:left;pointer-events:none;z-index:1;
+  font-family:var(--f-display);font-weight:900;font-size:2.7cqw;line-height:1;letter-spacing:-.02em;color:#2B241E;mix-blend-mode:multiply;opacity:.86;white-space:nowrap;text-align:center}
+.lienzo--h .capa{container-type:size}
+.mapa-frase em{font-size:1.25em}
+.mapa-frase em{font-style:normal;color:var(--lacre)}
+.escenario .mapa-frase{opacity:0}
+.escenario.desplegado .mapa-frase{animation:fraseTinta 1.2s cubic-bezier(.3,1.3,.5,1) 3.3s both}
+@keyframes fraseTinta{0%{opacity:0;filter:blur(6px);transform:translate(-50%,-50%) rotate(-5deg) scale(1.3)}100%{opacity:.86;filter:blur(0);transform:translate(-50%,-50%) rotate(-5deg) scale(1)}}
+.precio{display:inline-flex;align-items:baseline;gap:8px;flex-wrap:wrap}
+.precio s{color:var(--tinta-suave);text-decoration-color:var(--lacre);text-decoration-thickness:2px}
+.precio b{font-family:var(--f-display);font-weight:900;font-size:1.25em;color:var(--lacre-osc)}
+.precio small{font-family:var(--f-mono);font-size:.7rem;letter-spacing:.04em;text-transform:uppercase;color:var(--tinta-suave)}
+.sec--noche .precio s{color:var(--niebla)}
+.ficha .precio b{color:var(--lacre-osc)}
+.ficha .precio s,.m-billete .precio s{color:var(--tinta-suave)}
+
 /* ================= PÁGINA QUIÉNES SOMOS ================= */
 .q-hero{background:var(--kraft);padding:calc(118px + env(safe-area-inset-top,0px)) var(--gutter) clamp(64px,8vw,110px);overflow:hidden}
 .q-cabecera{max-width:var(--ancho);margin:0 auto clamp(36px,5vw,60px);display:grid;grid-template-columns:7fr 5fr;gap:24px 56px;align-items:end}
@@ -717,7 +734,7 @@ h1,h2,h3,.h2{font-family:var(--f-display);font-weight:800;letter-spacing:-.015em
 }
 @media (prefers-reduced-motion:reduce){
   .q-cinta-pista{animation:none;flex-wrap:wrap;width:auto;padding-inline:var(--gutter)}
-  .q-cinta-pista span:nth-child(n+22){display:none}
+  .q-cinta-pista span:nth-child(n+23){display:none}
   .pas-tapa,.pasaporte{transition:none}
 }
 
@@ -928,10 +945,10 @@ h1,h2,h3,.h2{font-family:var(--f-display);font-weight:800;letter-spacing:-.015em
 <!-- ===== 5 · HAN CONFIADO EN MAITE (cinta en movimiento) ===== -->
 <section class="q-cinta-sec" data-divi="Sección · cinta de nombres en movimiento (clase CSS)">
   <p class="q-cinta-t">Empresas e instituciones que han confiado en nosotras <span class="pendiente">[confirmar permiso para mostrarlas]</span></p>
-  <div class="q-cinta" aria-label="Salazones Garre, Peregrín, Azulejos J. Ramos, Guillén Export, ACM Carpintería, Mundosol, Morecar, Juanjor, Taller Sánchez Carreño, El Limonar de Santomera, La Mestiza, Bonnysa, KPE, Jera Avanza, Inserta Empleo, Imaginia, Ayuntamiento de Caravaca, Supermercados Montalbán, Gesdeco, Aguas de Alicante, Jisap">
+  <div class="q-cinta" aria-label="Salazones Garre, Peregrín, Azulejos J. Ramos, Guillén Export, ACM Carpintería, Mundosol, Morecar, Juanjor, Taller Sánchez Carreño, El Limonar de Santomera, La Mestiza, Bonnysa, KPE, Jera Avanza, Inserta Empleo, Imaginia, Ayuntamiento de Caravaca, Supermercados Montalbán, Gesdeco, Aguas de Alicante, Jisap, Ayuntamiento de San Javier">
     <div class="q-cinta-pista" aria-hidden="true">
-      <span>Salazones Garre</span><span>Peregrín</span><span>Azulejos J. Ramos</span><span>Guillén Export</span><span>ACM Carpintería</span><span>Mundosol</span><span>Morecar</span><span>Juanjor</span><span>Taller Sánchez Carreño</span><span>El Limonar de Santomera</span><span>La Mestiza</span><span>Bonnysa</span><span>KPE</span><span>Jera Avanza</span><span>Inserta Empleo</span><span>Imaginia</span><span>Ayuntamiento de Caravaca</span><span>Supermercados Montalbán</span><span>Gesdeco</span><span>Aguas de Alicante</span><span>Jisap</span>
-      <span>Salazones Garre</span><span>Peregrín</span><span>Azulejos J. Ramos</span><span>Guillén Export</span><span>ACM Carpintería</span><span>Mundosol</span><span>Morecar</span><span>Juanjor</span><span>Taller Sánchez Carreño</span><span>El Limonar de Santomera</span><span>La Mestiza</span><span>Bonnysa</span><span>KPE</span><span>Jera Avanza</span><span>Inserta Empleo</span><span>Imaginia</span><span>Ayuntamiento de Caravaca</span><span>Supermercados Montalbán</span><span>Gesdeco</span><span>Aguas de Alicante</span><span>Jisap</span>
+      <span>Salazones Garre</span><span>Peregrín</span><span>Azulejos J. Ramos</span><span>Guillén Export</span><span>ACM Carpintería</span><span>Mundosol</span><span>Morecar</span><span>Juanjor</span><span>Taller Sánchez Carreño</span><span>El Limonar de Santomera</span><span>La Mestiza</span><span>Bonnysa</span><span>KPE</span><span>Jera Avanza</span><span>Inserta Empleo</span><span>Imaginia</span><span>Ayuntamiento de Caravaca</span><span>Supermercados Montalbán</span><span>Gesdeco</span><span>Aguas de Alicante</span><span>Jisap</span><span>Ayuntamiento de San Javier</span>
+      <span>Salazones Garre</span><span>Peregrín</span><span>Azulejos J. Ramos</span><span>Guillén Export</span><span>ACM Carpintería</span><span>Mundosol</span><span>Morecar</span><span>Juanjor</span><span>Taller Sánchez Carreño</span><span>El Limonar de Santomera</span><span>La Mestiza</span><span>Bonnysa</span><span>KPE</span><span>Jera Avanza</span><span>Inserta Empleo</span><span>Imaginia</span><span>Ayuntamiento de Caravaca</span><span>Supermercados Montalbán</span><span>Gesdeco</span><span>Aguas de Alicante</span><span>Jisap</span><span>Ayuntamiento de San Javier</span>
     </div>
   </div>
 </section>
