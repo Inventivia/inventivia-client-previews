@@ -640,6 +640,29 @@ h1,h2,h3,.h2{font-family:var(--f-display);font-weight:800;letter-spacing:-.015em
 .ficha .precio b{color:var(--lacre-osc)}
 .ficha .precio s,.m-billete .precio s{color:var(--tinta-suave)}
 
+/* ===== v13 · Ajustes tras la valoración: qué es YUAP, equipo arriba, seguridad, versión limpia ===== */
+.portada-sub{margin:10px 0 0;font-size:clamp(.95rem,1.25vw,1.12rem);font-weight:500;color:#2F2A25;max-width:34em}
+@media (max-width:900px){ .portada-sub{font-size:.8rem;line-height:1.35;margin-top:6px;max-width:24em} }
+/* Quién te acompaña */
+.guias-mini .row--2{align-items:center}
+.gm-tarjetas{display:grid;grid-template-columns:1fr 1fr;gap:18px;position:relative;z-index:3}
+.gm{background:var(--papel-2);border:1.5px solid var(--tinta);border-radius:var(--radio);overflow:hidden;box-shadow:6px 6px 0 var(--tinta);display:grid;text-decoration:none;color:var(--tinta-suave);transition:transform .25s ease}
+.gm:hover{transform:translateY(-4px)}
+.gm img{width:100%;aspect-ratio:4/4.2;object-fit:cover;object-position:50% 22%}
+.gm-cuerpo{padding:14px 16px 18px;display:grid;gap:4px}
+.gm-nom{font-family:var(--f-display);font-weight:900;font-size:1.25rem;color:var(--tinta);line-height:1.1}
+.gm-rol{font-family:var(--f-mono);font-size:.68rem;letter-spacing:.04em;text-transform:uppercase;color:var(--lacre)}
+.gm-txt{font-size:.9rem;line-height:1.45;margin:4px 0 0}
+.guias-mini .btn--linea{color:var(--tinta);border-color:var(--tinta)}
+@media (max-width:520px){ .gm-tarjetas{gap:10px} .gm-cuerpo{padding:10px 10px 14px} .gm-nom{font-size:1.05rem} .gm-txt{display:none} }
+/* Pacto: libertad del explorador */
+.pacto-libre{margin-top:18px;background:var(--papel-2);border:1.5px dashed var(--musgo);border-radius:var(--radio);padding:16px 18px;display:flex;gap:12px;align-items:flex-start;color:var(--tinta)}
+.pacto-libre b{display:block;font-family:var(--f-display);font-weight:800;color:var(--musgo)}
+.pacto-libre svg{flex:none;width:28px;height:28px;color:var(--musgo);margin-top:2px}
+/* Versión limpia para la clienta: sin marcas internas ni ayudas de prototipo */
+.pendiente,.divi-toggle,.kit .hueco,.wa{display:none!important}
+.borrador{border-left:0;padding-left:0}
+
 /* ================= PÁGINA INSCRIPCIÓN ================= */
 .i-hero{background:var(--kraft);padding:calc(118px + env(safe-area-inset-top,0px)) var(--gutter) clamp(64px,8vw,110px);overflow:hidden}
 .i-grid{max-width:var(--ancho);margin-inline:auto;display:grid;grid-template-columns:5fr 6fr;gap:clamp(32px,5vw,72px);align-items:start;position:relative;z-index:3}
@@ -834,7 +857,7 @@ h1,h2,h3,.h2{font-family:var(--f-display);font-weight:800;letter-spacing:-.015em
               <ol>
                 <li><strong>La beca.</strong> La Expedición 01 · El Espejo tiene un precio oficial de 150 €. Por inscribirte en esta primera edición, YUAP te concede una beca y solo aportas 29 € para reservar tu plaza. Es la última edición con este importe: en las próximas, la aportación con beca será de 49 €. Las plazas becadas son limitadas y se asignan por orden de inscripción.</li>
                 <li><strong>Confirmación.</strong> Tu plaza queda confirmada cuando recibimos tu aportación. Te enviaremos la confirmación por WhatsApp o correo electrónico.</li>
-                <li><strong>Si no puedes venir.</strong> Avísanos al menos <span class="pendiente">[7]</span> días antes y trasladamos tu plaza becada a la siguiente edición. Si no asistes sin avisar, la aportación no se devuelve, porque la plaza ya no se puede ofrecer a otra persona.</li>
+                <li><strong>Si no puedes venir.</strong> Avísanos al menos 7 días antes y trasladamos tu plaza becada a la siguiente edición. Si no asistes sin avisar, la aportación no se devuelve, porque la plaza ya no se puede ofrecer a otra persona.</li>
                 <li><strong>Si cambia la fecha.</strong> Si YUAP tuviera que cambiar o cancelar el taller, podrás elegir entre la nueva fecha o la devolución íntegra de tu aportación.</li>
                 <li><strong>Tu credencial.</strong> En el taller recibirás tu Credencial YUAP, el documento físico donde irás sellando cada estación de tu mapa.</li>
               </ol>
@@ -897,7 +920,7 @@ h1,h2,h3,.h2{font-family:var(--f-display);font-weight:800;letter-spacing:-.015em
     </div>
     <div>
       <h4>Contacto</h4>
-      <ul><li><a href="mailto:info@yuapdesarrollo.com">info@yuapdesarrollo.com</a></li><li>WhatsApp <span class="pendiente" style="color:var(--tinta)">[pendiente]</span></li><li>C/ Infanta Cristina, 21 (Centro Aspaym) · Murcia</li></ul>
+      <ul><li><a href="mailto:info@yuapdesarrollo.com">info@yuapdesarrollo.com</a></li><li>C/ Infanta Cristina, 21 (Centro Aspaym) · Murcia</li></ul>
     </div>
     <div>
       <h4>Legal</h4>

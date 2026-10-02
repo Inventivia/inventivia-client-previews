@@ -640,6 +640,29 @@ h1,h2,h3,.h2{font-family:var(--f-display);font-weight:800;letter-spacing:-.015em
 .ficha .precio b{color:var(--lacre-osc)}
 .ficha .precio s,.m-billete .precio s{color:var(--tinta-suave)}
 
+/* ===== v13 · Ajustes tras la valoración: qué es YUAP, equipo arriba, seguridad, versión limpia ===== */
+.portada-sub{margin:10px 0 0;font-size:clamp(.95rem,1.25vw,1.12rem);font-weight:500;color:#2F2A25;max-width:34em}
+@media (max-width:900px){ .portada-sub{font-size:.8rem;line-height:1.35;margin-top:6px;max-width:24em} }
+/* Quién te acompaña */
+.guias-mini .row--2{align-items:center}
+.gm-tarjetas{display:grid;grid-template-columns:1fr 1fr;gap:18px;position:relative;z-index:3}
+.gm{background:var(--papel-2);border:1.5px solid var(--tinta);border-radius:var(--radio);overflow:hidden;box-shadow:6px 6px 0 var(--tinta);display:grid;text-decoration:none;color:var(--tinta-suave);transition:transform .25s ease}
+.gm:hover{transform:translateY(-4px)}
+.gm img{width:100%;aspect-ratio:4/4.2;object-fit:cover;object-position:50% 22%}
+.gm-cuerpo{padding:14px 16px 18px;display:grid;gap:4px}
+.gm-nom{font-family:var(--f-display);font-weight:900;font-size:1.25rem;color:var(--tinta);line-height:1.1}
+.gm-rol{font-family:var(--f-mono);font-size:.68rem;letter-spacing:.04em;text-transform:uppercase;color:var(--lacre)}
+.gm-txt{font-size:.9rem;line-height:1.45;margin:4px 0 0}
+.guias-mini .btn--linea{color:var(--tinta);border-color:var(--tinta)}
+@media (max-width:520px){ .gm-tarjetas{gap:10px} .gm-cuerpo{padding:10px 10px 14px} .gm-nom{font-size:1.05rem} .gm-txt{display:none} }
+/* Pacto: libertad del explorador */
+.pacto-libre{margin-top:18px;background:var(--papel-2);border:1.5px dashed var(--musgo);border-radius:var(--radio);padding:16px 18px;display:flex;gap:12px;align-items:flex-start;color:var(--tinta)}
+.pacto-libre b{display:block;font-family:var(--f-display);font-weight:800;color:var(--musgo)}
+.pacto-libre svg{flex:none;width:28px;height:28px;color:var(--musgo);margin-top:2px}
+/* Versión limpia para la clienta: sin marcas internas ni ayudas de prototipo */
+.pendiente,.divi-toggle,.kit .hueco,.wa{display:none!important}
+.borrador{border-left:0;padding-left:0}
+
 </style>
 </head>
 <body>
@@ -670,6 +693,7 @@ h1,h2,h3,.h2{font-family:var(--f-display);font-weight:800;letter-spacing:-.015em
     <div class="portada-titulo" data-divi="Texto · encima del mapa en ordenador / sobre el pergamino en móvil · efecto máquina de escribir">
       <p class="coord" data-type>Campamento base · Murcia · 37°59′N 1°08′W</p>
       <h1 data-type aria-label="6 expediciones para volver a ti">6 expediciones para <em>volver a ti</em></h1>
+      <p class="portada-sub" data-anim="subir" style="--d:1.2s" data-divi="Texto · animación Deslizar ↑">Experiencias presenciales de desarrollo personal en Murcia, en grupo reducido.</p>
     </div>
     <div class="portada-accion" data-divi="Botón + Texto · animación Deslizar ↑">
       <a class="btn btn--oro" href="inscripcion.html">Reserva tu plaza becada</a>
@@ -790,6 +814,30 @@ h1,h2,h3,.h2{font-family:var(--f-display);font-weight:800;letter-spacing:-.015em
       <p class="lead">YUAP es un recorrido experiencial pensado para explorar las distintas dimensiones de tu vida.</p>
       <p>Durante el camino atravesarás tres grandes territorios y vivirás seis expediciones. Cada una te lleva a un lugar diferente de tu mapa interior.</p>
       <p>No es un curso ni una charla. Es un viaje presencial, en grupo reducido, que se vive con el cuerpo, la emoción y la decisión.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 2b · QUIÉN TE ACOMPAÑA ===== -->
+<section class="sec sec--pergamino guias-mini" id="guias" data-divi="Sección · Pergamino">
+  <div class="row row--2">
+    <div class="col">
+      <p class="eyebrow" data-anim="izq" data-divi="Texto · animación Deslizar →">Quién te acompaña</p>
+      <h2 class="h2" data-anim="subir" data-divi="Texto · H2 · animación Deslizar ↑">Dos guías, <em>de tú a tú.</em></h2>
+      <div class="text" data-anim="subir" style="--d:.2s" data-divi="Texto · animación Deslizar ↑">
+        <p>YUAP une el coaching ejecutivo de Maite y la pedagogía creativa de Carmen. Diseñan y acompañan cada expedición en persona, con metodologías vivenciales, creatividad y educación emocional.</p>
+      </div>
+      <div class="btns" data-anim="subir" style="--d:.3s"><a class="btn btn--linea" href="quienes-somos.html">Conocer a Maite y Carmen</a></div>
+    </div>
+    <div class="gm-tarjetas" data-divi="Fila 2 columnas · Imagen + Texto · animación Voltear escalonada">
+      <a class="gm" href="quienes-somos.html#maite" data-anim="voltear" style="--d:.1s">
+        <img src="img/maite-perez-diez-coach-retrato.webp" alt="Maite Pérez Díez, coach profesional certificada y cofundadora de YUAP" width="800" height="1000" loading="lazy">
+        <span class="gm-cuerpo"><span class="gm-nom">Maite Pérez Díez</span><span class="gm-rol">Coach certificada CPC · ASESCO</span><span class="gm-txt">Acompaña a personas, equipos y organizaciones a crecer desde dentro.</span></span>
+      </a>
+      <a class="gm" href="quienes-somos.html#carmen" data-anim="voltear" style="--d:.3s">
+        <img src="img/carmen-reales-pedagoga-yuap.webp" alt="Carmen Reales Álvarez, pedagoga, coach creativa y cofundadora de YUAP" width="800" height="1000" loading="lazy">
+        <span class="gm-cuerpo"><span class="gm-nom">Carmen Reales Álvarez</span><span class="gm-rol">Pedagoga · Coach creativa · ICF</span><span class="gm-txt">20 años diseñando experiencias de creatividad y educación emocional.</span></span>
+      </a>
     </div>
   </div>
 </section>
@@ -948,33 +996,6 @@ h1,h2,h3,.h2{font-family:var(--f-display);font-weight:800;letter-spacing:-.015em
   </div>
 </section>
 
-<!-- ===== 5b · EL UNIVERSO YUAP (diccionario del explorador) ===== -->
-<section class="sec sec--kraft universo" id="universo" data-divi="Sección · fondo kraft">
-  <div class="row row--2">
-    <div class="col">
-      <p class="eyebrow" data-anim="izq" data-divi="Texto · animación Deslizar →">El universo YUAP</p>
-      <h2 class="h2" data-type data-divi="Texto · H2 · efecto máquina de escribir">Todo gira alrededor <em>del mapa.</em></h2>
-    </div>
-    <div class="col text" data-anim="subir" style="--d:.2s" data-divi="Texto · animación Deslizar ↑">
-      <p>En YUAP cambiamos las palabras porque cambia la experiencia. Este es el diccionario del explorador: lo que encontrarías en cualquier formación, tachado, y cómo se vive aquí.</p>
-    </div>
-  </div>
-  <ul class="voces" data-divi="11 Blurbs · palabra tachada (clase CSS) + palabra nueva con animación Deslizar →">
-    <li class="voz" data-anim="subir" style="--d:0.00s"><span class="voz-no">No existen <s>alumnos</s></span><span class="voz-si">Exploradores</span></li>
-    <li class="voz" data-anim="subir" style="--d:0.12s"><span class="voz-no">No existen <s>profesores</s></span><span class="voz-si">Cartógrafos</span></li>
-    <li class="voz" data-anim="subir" style="--d:0.24s"><span class="voz-no">No existen <s>clases</s></span><span class="voz-si">Estaciones</span></li>
-    <li class="voz" data-anim="subir" style="--d:0.36s"><span class="voz-no">No existen <s>ejercicios</s></span><span class="voz-si">Misiones</span></li>
-    <li class="voz" data-anim="subir" style="--d:0.00s"><span class="voz-no">No existen <s>módulos</s></span><span class="voz-si">Territorios</span></li>
-    <li class="voz" data-anim="subir" style="--d:0.12s"><span class="voz-no">No existen <s>objetivos</s></span><span class="voz-si">Coordenadas</span></li>
-    <li class="voz" data-anim="subir" style="--d:0.24s"><span class="voz-no">No existen <s>certificados</s></span><span class="voz-si">Pasaportes del Explorador</span></li>
-    <li class="voz" data-anim="subir" style="--d:0.36s"><span class="voz-no">No existen <s>diplomas</s></span><span class="voz-si">Mapas completados</span></li>
-    <li class="voz" data-anim="subir" style="--d:0.00s"><span class="voz-no">No existen <s>grupos</s></span><span class="voz-si">Expediciones</span></li>
-    <li class="voz" data-anim="subir" style="--d:0.12s"><span class="voz-no">No existen <s>dinámicas</s></span><span class="voz-si">Rituales</span></li>
-    <li class="voz" data-anim="subir" style="--d:0.24s"><span class="voz-no">No existen <s>salas</s></span><span class="voz-si">Espacios del viaje</span></li>
-    <li class="voz voz--fin" data-anim="subir" style="--d:.36s"><span class="voz-no">Y no existe <s>un curso</s></span><span class="voz-si">Existe tu mapa</span></li>
-  </ul>
-</section>
-
 <!-- ===== 6 · EL PACTO DEL EXPLORADOR ===== -->
 <section class="sec sec--pergamino" id="pacto" data-divi="Sección · Pergamino">
   <div class="row row--5-7">
@@ -983,11 +1004,12 @@ h1,h2,h3,.h2{font-family:var(--f-display);font-weight:800;letter-spacing:-.015em
       <h2 class="h2" data-anim="subir" data-divi="Texto · H2 · animación Deslizar ↑">En YUAP, la palabra vale más que cualquier contrato.</h2>
       <p class="text" data-anim="subir" style="--d:.25s" data-divi="Texto · animación Deslizar ↑">Antes de cruzar la primera puerta, todos los exploradores hacemos el mismo compromiso. Son siete acuerdos sencillos que protegen el viaje de cada persona.</p>
       <p class="pacto-firma" data-type data-divi="Texto · cita · efecto máquina de escribir">Decido recorrer el Camino YUAP con honestidad, respeto y compromiso, y recordar que ninguna puerta puede abrirse sin mi decisión.</p>
+      <div class="pacto-libre" data-anim="subir" style="--d:.3s" data-divi="Blurb · borde discontinuo · animación Deslizar ↑"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 21s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 11c0 5.6-7 10-7 10z"/></svg><p style="margin:0"><b>Y siempre, tu libertad</b>Puedes parar, preguntar, descansar y decidir cuánto quieres compartir en cada momento.</p></div>
     </div>
     <div class="col">
       <ol class="pacto-lista" data-divi="Texto · cada punto con animación Plegar (Fold), retardo escalonado">
         <li data-anim="desplegar" style="--d:0.00s"><strong>Protege el camino <small>Confidencialidad</small></strong><span>Lo que ocurre aquí pertenece a las personas que lo viven.</span></li>
-        <li data-anim="desplegar" style="--d:0.08s"><strong>No abandones el viaje <small>Compromiso</small></strong><span>Las puertas solo se abren cuando completas el camino.</span></li>
+        <li data-anim="desplegar" style="--d:0.08s"><strong>Recorre el camino completo <small>Compromiso</small></strong><span>Las puertas se abren cuando vives cada sesión de principio a fin.</span></li>
         <li data-anim="desplegar" style="--d:0.16s"><strong>Honra el tiempo <small>Puntualidad</small></strong><span>Cada misión empieza exactamente cuando debe empezar.</span></li>
         <li data-anim="desplegar" style="--d:0.24s"><strong>Permanece presente <small>Atención total</small></strong><span>Sin móvil ni conversaciones paralelas. La puerta se abre cuando estás del todo.</span></li>
         <li data-anim="desplegar" style="--d:0.32s"><strong>Cuida tu vehículo <small>Cuerpo y mente</small></strong><span>Tu cuerpo te acompaña en todo el camino: aliméntalo, descansa y escúchalo.</span></li>
@@ -1010,7 +1032,7 @@ h1,h2,h3,.h2{font-family:var(--f-display);font-weight:800;letter-spacing:-.015em
       </div>
       <div class="btns" data-anim="subir" style="--d:.35s" data-divi="Botón ×2 · animación Deslizar ↑">
         <a class="btn btn--oro" href="inscripcion.html">Solicitar mi plaza becada</a>
-        <a class="btn btn--linea" href="#">Escríbenos por WhatsApp</a>
+        <a class="btn btn--linea" href="contacto.html">Escríbenos</a>
       </div>
     </div>
     <div class="col">
@@ -1042,7 +1064,7 @@ h1,h2,h3,.h2{font-family:var(--f-display);font-weight:800;letter-spacing:-.015em
       <h2 class="h2" data-type data-divi="Texto · H2 · efecto máquina de escribir">¿Te atreves a descubrir dónde estás en tu mapa?</h2>
       <div class="btns" data-anim="subir" style="--d:.3s" data-divi="Botón ×2 · animación Deslizar ↑">
         <a class="btn btn--oro" href="#reserva">Comenzar el viaje</a>
-        <a class="btn btn--linea" href="#">Hablar por WhatsApp</a>
+        <a class="btn btn--linea" href="contacto.html">Escríbenos</a>
       </div>
     </div>
   </div>
@@ -1063,7 +1085,7 @@ h1,h2,h3,.h2{font-family:var(--f-display);font-weight:800;letter-spacing:-.015em
     </div>
     <div>
       <h4>Contacto</h4>
-      <ul><li><a href="mailto:info@yuapdesarrollo.com">info@yuapdesarrollo.com</a></li><li>WhatsApp <span class="pendiente" style="color:var(--tinta)">[pendiente]</span></li><li>C/ Infanta Cristina, 21 (Centro Aspaym) · Murcia</li></ul>
+      <ul><li><a href="mailto:info@yuapdesarrollo.com">info@yuapdesarrollo.com</a></li><li>C/ Infanta Cristina, 21 (Centro Aspaym) · Murcia</li></ul>
     </div>
     <div>
       <h4>Legal</h4>
