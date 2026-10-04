@@ -663,10 +663,48 @@ h1,h2,h3,.h2{font-family:var(--f-display);font-weight:800;letter-spacing:-.015em
 .pendiente,.divi-toggle,.kit .hueco{display:none!important}
 .borrador{border-left:0;padding-left:0}
 
+/* ===== v15 · Viaje de Regreso sin puerta, tres guías y preguntas frecuentes ===== */
+.regreso-row{grid-template-columns:1fr!important;justify-items:center;text-align:center}
+.regreso-texto{max-width:760px;justify-items:center}
+.regreso-texto .btns{justify-content:center}
+.regreso-texto .h2{font-size:clamp(2.6rem,6vw,4.6rem)}
+/* Quién te acompaña: tres guías */
+.guias-mini .gm-cab{max-width:var(--ancho);margin:0 auto clamp(28px,4vw,44px);display:grid;grid-template-columns:1fr 1fr;gap:20px 56px;align-items:end}
+.guias-mini .gm-tarjetas{max-width:var(--ancho);margin-inline:auto;grid-template-columns:repeat(3,1fr);gap:22px}
+@media (max-width:900px){ .guias-mini .gm-cab{grid-template-columns:1fr} }
+@media (max-width:640px){
+  .guias-mini .gm-tarjetas{grid-template-columns:1fr;gap:14px}
+  .guias-mini .gm{grid-template-columns:38% 1fr}
+  .guias-mini .gm img{height:100%;aspect-ratio:auto;min-height:150px}
+  .guias-mini .gm-txt{display:block;font-size:.84rem}
+}
+/* Preguntas frecuentes */
+.faq-sec .faq-cab{max-width:var(--ancho);margin:0 auto clamp(32px,4vw,52px);display:grid;grid-template-columns:6fr 5fr;gap:20px 56px;align-items:end}
+.faq-sec .faq-cab .h2 em{font-style:normal;color:var(--lacre)}
+.faq-frase{font-size:1.08rem;line-height:1.6;color:var(--tinta);border-left:3px solid var(--lacre);padding-left:18px;margin:0}
+.faq{max-width:var(--ancho);margin-inline:auto;display:grid;grid-template-columns:1fr 1fr;gap:0 40px;align-items:start;position:relative;z-index:3}
+.faq-col{border-top:1.5px solid var(--tinta)}
+.faq-item{border-bottom:1px solid var(--arena)}
+.faq-q{width:100%;display:flex;justify-content:space-between;align-items:center;gap:16px;background:none;border:0;color:var(--tinta);font:800 1.08rem/1.3 var(--f-display);text-align:left;padding:18px 0;cursor:pointer}
+.faq-q span{flex:none;width:30px;height:30px;border-radius:50%;display:grid;place-items:center;border:1.5px solid var(--tinta);font:400 1.2rem/1 var(--f-mono);color:var(--lacre);transition:transform .35s ease,background .2s}
+.faq-item.abierta .faq-q span{transform:rotate(45deg);background:var(--tinta);color:var(--papel)}
+.faq-a{display:grid;grid-template-rows:0fr;transition:grid-template-rows .45s cubic-bezier(.3,.8,.3,1)}
+.faq-a > div{overflow:hidden}
+.faq-a p,.faq-a ul{margin:0 0 12px;color:var(--tinta-suave);max-width:38em}
+.faq-a > div > :last-child{margin-bottom:20px}
+.faq-a ul{padding-left:20px;display:grid;gap:4px}
+.faq-a li::marker{color:var(--lacre)}
+.faq-item.abierta .faq-a{grid-template-rows:1fr}
+.faq-pie{max-width:var(--ancho);margin:28px auto 0;display:flex;flex-wrap:wrap;gap:12px 24px;align-items:center;justify-content:space-between;position:relative;z-index:3}
+.faq-pie p{margin:0;font-family:var(--f-display);font-weight:800;font-size:1.2rem;color:var(--tinta)}
+.faq-sec .btn--linea{color:var(--tinta);border-color:var(--tinta)}
+@media (max-width:900px){ .faq-sec .faq-cab,.faq{grid-template-columns:1fr} .faq-col + .faq-col{border-top:0} }
+
 </style>
 </head>
 <body>
 
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "¿Qué es YUAP?", "acceptedAnswer": {"@type": "Answer", "text": "YUAP es un programa experiencial de desarrollo personal que propone un recorrido por diferentes áreas de tu vida para conocerte, comprenderte, transformar aquello que necesites y avanzar hacia tus objetivos, tanto personales como profesionales."}}, {"@type": "Question", "name": "¿Cuál es el propósito de YUAP?", "acceptedAnswer": {"@type": "Answer", "text": "El propósito es acompañarte en un recorrido de autoconocimiento, crecimiento y transformación, ofreciéndote diferentes herramientas para que puedas entender dónde estás, descubrir qué necesitas y avanzar hacia donde quieres llegar."}}, {"@type": "Question", "name": "¿Qué disciplinas se trabajan en YUAP?", "acceptedAnswer": {"@type": "Answer", "text": "YUAP integra diferentes disciplinas y enfoques, entre ellos coaching, Programación Neurolingüística (PNL), inteligencia emocional y humanidades, combinándolos con dinámicas y experiencias prácticas."}}, {"@type": "Question", "name": "¿Qué beneficios me llevo de YUAP?", "acceptedAnswer": {"@type": "Answer", "text": "A lo largo del viaje podrás: Conocerte y comprenderte mejor. Descubrir y potenciar tus fortalezas y recursos. Conectar con tu mejor versión, desde quién eres realmente. Identificar creencias, patrones y comportamientos que pueden estar limitándote. Aprender a gestionar y comprender mejor tus emociones. Definir objetivos claros y aprender a declararlos, pasando de querer algo a comprometerte con ello. Adquirir herramientas para ir a por tus objetivos y pasar a la acción. Creer más en ti, fortaleciendo tu confianza y tu autoestima desde el amor propio. Mejorar la relación contigo y con los demás. Trabajar aquello que quieras transformar, soltar o sanar. Ganar claridad sobre lo que quieres en tu vida personal y profesional. Llevarte herramientas prácticas que puedas aplicar en tu día a día."}}, {"@type": "Question", "name": "¿YUAP sirve para sanar?", "acceptedAnswer": {"@type": "Answer", "text": "YUAP propone un espacio de revisión, comprensión y transformación personal, en el que puedes trabajar experiencias, emociones y patrones que quieras revisar. No sustituye un proceso psicológico o terapéutico cuando este sea necesario, pero sí puede aportarte herramientas de autoconocimiento y crecimiento."}}, {"@type": "Question", "name": "¿Tengo que tener un objetivo concreto?", "acceptedAnswer": {"@type": "Answer", "text": "No. Puedes comenzar simplemente con la intención de conocerte mejor. Durante el recorrido pueden aparecer nuevas preguntas, necesidades y objetivos. El propósito es que puedas ir descubriendo qué quieres para ti y qué necesitas para avanzar."}}, {"@type": "Question", "name": "¿Es un programa personal o profesional?", "acceptedAnswer": {"@type": "Answer", "text": "Ambos. Porque muchas veces lo que ocurre en una esfera de nuestra vida también influye en la otra. YUAP te proporciona herramientas que puedes aplicar en tu vida personal, en tus relaciones y también en tu ámbito profesional."}}, {"@type": "Question", "name": "¿Cómo se estructura el viaje?", "acceptedAnswer": {"@type": "Answer", "text": "YUAP se organiza en tres territorios: SER · HACER · TENER. Cada territorio contiene diferentes estaciones y experiencias que te permiten avanzar progresivamente en tu recorrido."}}, {"@type": "Question", "name": "¿Qué hace diferente a YUAP?", "acceptedAnswer": {"@type": "Answer", "text": "Que no se basa únicamente en aprender conceptos. Lo vives. Lo experimentas. Te miras. Te haces preguntas. Descubres herramientas y decides qué hacer con ellas. Tú eres el protagonista del viaje."}}, {"@type": "Question", "name": "¿Tengo que hacer todo el recorrido o puedo empezar por una estación?", "acceptedAnswer": {"@type": "Answer", "text": "No es obligatorio hacer todo el recorrido. Cada estación tiene su propio propósito y se vive de manera independiente. Sin embargo, YUAP está diseñado como un viaje en el que todo está conectado. Cada estación te aporta algo específico y te prepara para la siguiente, permitiéndote avanzar progresivamente en diferentes aspectos de tu vida. El recorrido comienza desde el SER, porque la relación que tienes contigo, lo que piensas, lo que sientes y cómo te ves influye en todo lo demás: en lo que haces, en cómo te relacionas y en lo que eres capaz de crear. Por eso, lo ideal es comenzar en la primera estación y recorrer el viaje completo, para vivir cada etapa, integrar todos los aprendizajes y llegar hasta el final del recorrido: sanar, verte, reconocerte y comenzar a crear la vida que mereces. Y celebrarlo. Tú decides hasta dónde quieres llegar. Nosotras te acompañamos en el viaje."}}, {"@type": "Question", "name": "¿Tengo que compartir cosas personales con el grupo?", "acceptedAnswer": {"@type": "Answer", "text": "No. Compartir es siempre una elección personal. Cada persona decide qué quiere contar, cuándo y hasta dónde quiere llegar. Puedes participar, escuchar, reflexionar y vivir la experiencia sin tener que compartir nada que no quieras. No hay obligación de exponerse."}}, {"@type": "Question", "name": "¿Es un espacio seguro y confidencial?", "acceptedAnswer": {"@type": "Answer", "text": "Sí. En YUAP cuidamos especialmente que cada persona pueda sentirse segura y respetada. Al comenzar, todos los participantes firman un pacto de confidencialidad, y las guardianas que acompañan el viaje han firmado el código deontológico correspondiente a sus profesiones y acreditaciones. Creemos que para poder mirar hacia dentro necesitamos sentir que estamos en un espacio de respeto, confianza y libertad."}}, {"@type": "Question", "name": "¿Necesito tener experiencia previa en desarrollo personal?", "acceptedAnswer": {"@type": "Answer", "text": "No. No necesitas conocimientos previos, ni haber hecho coaching, PNL o ningún otro proceso de desarrollo personal. Solo necesitas algo mucho más sencillo: ser persona y tener una vida que quieras comprender, disfrutar, transformar o seguir construyendo. YUAP parte de ahí: de tu propia experiencia y de lo que estás viviendo hoy."}}]}</script>
 
 <a class="skip" href="#contenido">Saltar al contenido</a>
 
@@ -679,6 +717,7 @@ h1,h2,h3,.h2{font-family:var(--f-display);font-weight:800;letter-spacing:-.015em
       <a href="#experiencia">La experiencia</a>
       <a href="#pacto">El pacto</a>
       <a href="quienes-somos.html">Quiénes somos</a>
+      <a href="#preguntas">Preguntas</a>
       <a href="contacto.html">Contacto</a>
       <a class="btn btn--oro" href="inscripcion.html">Reserva tu plaza</a>
     </nav>
@@ -785,10 +824,6 @@ h1,h2,h3,.h2{font-family:var(--f-display);font-weight:800;letter-spacing:-.015em
 <!-- ===== 1c · EL VIAJE DE REGRESO (texto de Maite) ===== -->
 <section class="sec sec--kraft regreso" id="regreso" data-divi="Sección · fondo kraft">
   <div class="row regreso-row">
-    <div class="puerta-esc" data-anim="aparecer" data-divi="Código/Imagen · puerta que se entreabre (clase CSS) · en Divi también vale una imagen con animación Voltear">
-      <div class="p-marco" aria-hidden="true"><div class="p-hoja"><span class="p-pomo"></span><span class="p-cerradura"></span></div></div>
-      <p class="p-pie">Solo se abre desde dentro</p>
-    </div>
     <div class="regreso-texto" data-divi="Textos · cada línea con animación Deslizar ↑ (retardo escalonado)">
       <p class="eyebrow" data-anim="izq">El Viaje de Regreso</p>
       <p class="linea" data-anim="subir" style="--d:.1s">Quizá llevas años intentando avanzar.</p>
@@ -820,25 +855,29 @@ h1,h2,h3,.h2{font-family:var(--f-display);font-weight:800;letter-spacing:-.015em
 
 <!-- ===== 2b · QUIÉN TE ACOMPAÑA ===== -->
 <section class="sec sec--pergamino guias-mini" id="guias" data-divi="Sección · Pergamino">
-  <div class="row row--2">
-    <div class="col">
+  <div class="gm-cab" data-divi="Fila 2 columnas · Texto">
+    <div>
       <p class="eyebrow" data-anim="izq" data-divi="Texto · animación Deslizar →">Quién te acompaña</p>
-      <h2 class="h2" data-anim="subir" data-divi="Texto · H2 · animación Deslizar ↑">Dos guías, <em>de tú a tú.</em></h2>
-      <div class="text" data-anim="subir" style="--d:.2s" data-divi="Texto · animación Deslizar ↑">
-        <p>YUAP une el coaching ejecutivo de Maite y la pedagogía creativa de Carmen. Diseñan y acompañan cada expedición en persona, con metodologías vivenciales, creatividad y educación emocional.</p>
-      </div>
-      <div class="btns" data-anim="subir" style="--d:.3s"><a class="btn btn--linea" href="quienes-somos.html">Conocer a Maite y Carmen</a></div>
+      <h2 class="h2" data-anim="subir" data-divi="Texto · H2 · animación Deslizar ↑">Tres guías, <em>de tú a tú.</em></h2>
     </div>
-    <div class="gm-tarjetas" data-divi="Fila 2 columnas · Imagen + Texto · animación Voltear escalonada">
-      <a class="gm" href="quienes-somos.html#maite" data-anim="voltear" style="--d:.1s">
-        <img src="img/maite-perez-diez-coach-retrato.webp" alt="Maite Pérez Díez, coach profesional certificada y cofundadora de YUAP" width="800" height="1000" loading="lazy">
-        <span class="gm-cuerpo"><span class="gm-nom">Maite Pérez Díez</span><span class="gm-rol">Coach certificada CPC · ASESCO</span><span class="gm-txt">Acompaña a personas, equipos y organizaciones a crecer desde dentro.</span></span>
-      </a>
-      <a class="gm" href="quienes-somos.html#carmen" data-anim="voltear" style="--d:.3s">
-        <img src="img/carmen-reales-pedagoga-yuap.webp" alt="Carmen Reales Álvarez, pedagoga, coach creativa y cofundadora de YUAP" width="800" height="1000" loading="lazy">
-        <span class="gm-cuerpo"><span class="gm-nom">Carmen Reales Álvarez</span><span class="gm-rol">Pedagoga · Coach creativa · ICF</span><span class="gm-txt">20 años diseñando experiencias de creatividad y educación emocional.</span></span>
-      </a>
+    <div>
+      <div class="text" data-anim="subir" style="--d:.2s"><p>YUAP une el coaching ejecutivo de Maite, la pedagogía creativa de Carmen y la psicología de María José. Diseñan y acompañan cada expedición en persona, con metodologías vivenciales.</p></div>
+      <div class="btns" data-anim="subir" style="--d:.3s"><a class="btn btn--linea" href="quienes-somos.html">Conocer a las guías</a></div>
     </div>
+  </div>
+  <div class="gm-tarjetas" data-divi="Fila 3 columnas · Imagen + Texto · animación Voltear escalonada">
+    <a class="gm" href="quienes-somos.html#maite" data-anim="voltear" style="--d:.1s">
+      <img src="img/maite-perez-diez-coach-retrato.webp" alt="Maite Pérez Díez, coach profesional certificada y cofundadora de YUAP" width="800" height="1000" loading="lazy">
+      <span class="gm-cuerpo"><span class="gm-nom">Maite Pérez Díez</span><span class="gm-rol">Coach certificada CPC · ASESCO</span><span class="gm-txt">Acompaña a personas, equipos y organizaciones a crecer desde dentro.</span></span>
+    </a>
+    <a class="gm" href="quienes-somos.html#carmen" data-anim="voltear" style="--d:.25s">
+      <img src="img/carmen-reales-pedagoga-yuap.webp" alt="Carmen Reales Álvarez, pedagoga, coach creativa y cofundadora de YUAP" width="800" height="1000" loading="lazy">
+      <span class="gm-cuerpo"><span class="gm-nom">Carmen Reales Álvarez</span><span class="gm-rol">Pedagoga · Coach creativa · ICF</span><span class="gm-txt">20 años diseñando experiencias de creatividad y educación emocional.</span></span>
+    </a>
+    <a class="gm" href="quienes-somos.html#maria-jose" data-anim="voltear" style="--d:.4s">
+      <img src="img/maria-jose-sanchez-terrones-psicologa-yuap.webp" alt="María José Sánchez Terrones, psicóloga especialista en risoterapia" width="800" height="1000" loading="lazy">
+      <span class="gm-cuerpo"><span class="gm-nom">María José Sánchez Terrones</span><span class="gm-rol">Psicóloga · Risoterapia</span><span class="gm-txt">El humor y la risa como herramientas de bienestar personal y grupal.</span></span>
+    </a>
   </div>
 </section>
 
@@ -1018,6 +1057,76 @@ h1,h2,h3,.h2{font-family:var(--f-display);font-weight:800;letter-spacing:-.015em
       </ol>
     </div>
   </div>
+</section>
+
+<!-- ===== 6b · PREGUNTAS FRECUENTES ===== -->
+<section class="sec sec--pergamino faq-sec" id="preguntas" data-divi="Sección · Pergamino">
+  <div class="faq-cab">
+    <div>
+      <p class="eyebrow" data-anim="izq" data-divi="Texto · animación Deslizar →">Preguntas frecuentes</p>
+      <h2 class="h2" data-anim="subir" data-divi="Texto · H2 · animación Deslizar ↑">No se trata de decirte quién tienes que ser. <em>Se trata de ayudarte a descubrir quién eres.</em></h2>
+    </div>
+    <p class="faq-frase" data-anim="subir" style="--d:.2s" data-divi="Texto · cita">YUAP es un viaje hacia ti: un recorrido por diferentes disciplinas y experiencias para conocerte, sanar, adquirir herramientas y avanzar hacia aquello que quieres conseguir, tanto en tu vida personal como profesional.</p>
+  </div>
+  <div class="faq" data-divi="2 columnas · 13 módulos Toggle de Divi · animación Deslizar ↑ escalonada">
+    <div class="faq-col">
+        <div class="faq-item" data-anim="subir" style="--d:0.00s">
+          <button type="button" class="faq-q" aria-expanded="false">¿Qué es YUAP?<span aria-hidden="true">+</span></button>
+          <div class="faq-a"><div><p>YUAP es un programa experiencial de desarrollo personal que propone un recorrido por diferentes áreas de tu vida para conocerte, comprenderte, transformar aquello que necesites y avanzar hacia tus objetivos, tanto personales como profesionales.</p></div></div>
+        </div>
+        <div class="faq-item" data-anim="subir" style="--d:0.05s">
+          <button type="button" class="faq-q" aria-expanded="false">¿Cuál es el propósito de YUAP?<span aria-hidden="true">+</span></button>
+          <div class="faq-a"><div><p>El propósito es acompañarte en un recorrido de autoconocimiento, crecimiento y transformación, ofreciéndote diferentes herramientas para que puedas entender dónde estás, descubrir qué necesitas y avanzar hacia donde quieres llegar.</p></div></div>
+        </div>
+        <div class="faq-item" data-anim="subir" style="--d:0.10s">
+          <button type="button" class="faq-q" aria-expanded="false">¿Qué disciplinas se trabajan en YUAP?<span aria-hidden="true">+</span></button>
+          <div class="faq-a"><div><p>YUAP integra diferentes disciplinas y enfoques, entre ellos coaching, Programación Neurolingüística (PNL), inteligencia emocional y humanidades, combinándolos con dinámicas y experiencias prácticas.</p></div></div>
+        </div>
+        <div class="faq-item" data-anim="subir" style="--d:0.15s">
+          <button type="button" class="faq-q" aria-expanded="false">¿Qué beneficios me llevo de YUAP?<span aria-hidden="true">+</span></button>
+          <div class="faq-a"><div><p>A lo largo del viaje podrás:</p><ul><li>Conocerte y comprenderte mejor.</li><li>Descubrir y potenciar tus fortalezas y recursos.</li><li>Conectar con tu mejor versión, desde quién eres realmente.</li><li>Identificar creencias, patrones y comportamientos que pueden estar limitándote.</li><li>Aprender a gestionar y comprender mejor tus emociones.</li><li>Definir objetivos claros y aprender a declararlos, pasando de querer algo a comprometerte con ello.</li><li>Adquirir herramientas para ir a por tus objetivos y pasar a la acción.</li><li>Creer más en ti, fortaleciendo tu confianza y tu autoestima desde el amor propio.</li><li>Mejorar la relación contigo y con los demás.</li><li>Trabajar aquello que quieras transformar, soltar o sanar.</li><li>Ganar claridad sobre lo que quieres en tu vida personal y profesional.</li><li>Llevarte herramientas prácticas que puedas aplicar en tu día a día.</li></ul></div></div>
+        </div>
+        <div class="faq-item" data-anim="subir" style="--d:0.20s">
+          <button type="button" class="faq-q" aria-expanded="false">¿YUAP sirve para sanar?<span aria-hidden="true">+</span></button>
+          <div class="faq-a"><div><p>YUAP propone un espacio de revisión, comprensión y transformación personal, en el que puedes trabajar experiencias, emociones y patrones que quieras revisar. No sustituye un proceso psicológico o terapéutico cuando este sea necesario, pero sí puede aportarte herramientas de autoconocimiento y crecimiento.</p></div></div>
+        </div>
+        <div class="faq-item" data-anim="subir" style="--d:0.25s">
+          <button type="button" class="faq-q" aria-expanded="false">¿Tengo que tener un objetivo concreto?<span aria-hidden="true">+</span></button>
+          <div class="faq-a"><div><p>No. Puedes comenzar simplemente con la intención de conocerte mejor. Durante el recorrido pueden aparecer nuevas preguntas, necesidades y objetivos. El propósito es que puedas ir descubriendo qué quieres para ti y qué necesitas para avanzar.</p></div></div>
+        </div>
+        <div class="faq-item" data-anim="subir" style="--d:0.30s">
+          <button type="button" class="faq-q" aria-expanded="false">¿Es un programa personal o profesional?<span aria-hidden="true">+</span></button>
+          <div class="faq-a"><div><p>Ambos. Porque muchas veces lo que ocurre en una esfera de nuestra vida también influye en la otra. YUAP te proporciona herramientas que puedes aplicar en tu vida personal, en tus relaciones y también en tu ámbito profesional.</p></div></div>
+        </div>
+    </div>
+    <div class="faq-col">
+        <div class="faq-item" data-anim="subir" style="--d:0.00s">
+          <button type="button" class="faq-q" aria-expanded="false">¿Cómo se estructura el viaje?<span aria-hidden="true">+</span></button>
+          <div class="faq-a"><div><p>YUAP se organiza en tres territorios: SER · HACER · TENER. Cada territorio contiene diferentes estaciones y experiencias que te permiten avanzar progresivamente en tu recorrido.</p></div></div>
+        </div>
+        <div class="faq-item" data-anim="subir" style="--d:0.05s">
+          <button type="button" class="faq-q" aria-expanded="false">¿Qué hace diferente a YUAP?<span aria-hidden="true">+</span></button>
+          <div class="faq-a"><div><p>Que no se basa únicamente en aprender conceptos. Lo vives. Lo experimentas. Te miras. Te haces preguntas. Descubres herramientas y decides qué hacer con ellas. Tú eres el protagonista del viaje.</p></div></div>
+        </div>
+        <div class="faq-item" data-anim="subir" style="--d:0.10s">
+          <button type="button" class="faq-q" aria-expanded="false">¿Tengo que hacer todo el recorrido o puedo empezar por una estación?<span aria-hidden="true">+</span></button>
+          <div class="faq-a"><div><p>No es obligatorio hacer todo el recorrido. Cada estación tiene su propio propósito y se vive de manera independiente.</p><p>Sin embargo, YUAP está diseñado como un viaje en el que todo está conectado. Cada estación te aporta algo específico y te prepara para la siguiente, permitiéndote avanzar progresivamente en diferentes aspectos de tu vida.</p><p>El recorrido comienza desde el SER, porque la relación que tienes contigo, lo que piensas, lo que sientes y cómo te ves influye en todo lo demás: en lo que haces, en cómo te relacionas y en lo que eres capaz de crear.</p><p>Por eso, lo ideal es comenzar en la primera estación y recorrer el viaje completo, para vivir cada etapa, integrar todos los aprendizajes y llegar hasta el final del recorrido: sanar, verte, reconocerte y comenzar a crear la vida que mereces. Y celebrarlo.</p><p>Tú decides hasta dónde quieres llegar. Nosotras te acompañamos en el viaje.</p></div></div>
+        </div>
+        <div class="faq-item" data-anim="subir" style="--d:0.15s">
+          <button type="button" class="faq-q" aria-expanded="false">¿Tengo que compartir cosas personales con el grupo?<span aria-hidden="true">+</span></button>
+          <div class="faq-a"><div><p>No. Compartir es siempre una elección personal. Cada persona decide qué quiere contar, cuándo y hasta dónde quiere llegar.</p><p>Puedes participar, escuchar, reflexionar y vivir la experiencia sin tener que compartir nada que no quieras. No hay obligación de exponerse.</p></div></div>
+        </div>
+        <div class="faq-item" data-anim="subir" style="--d:0.20s">
+          <button type="button" class="faq-q" aria-expanded="false">¿Es un espacio seguro y confidencial?<span aria-hidden="true">+</span></button>
+          <div class="faq-a"><div><p>Sí. En YUAP cuidamos especialmente que cada persona pueda sentirse segura y respetada.</p><p>Al comenzar, todos los participantes firman un pacto de confidencialidad, y las guardianas que acompañan el viaje han firmado el código deontológico correspondiente a sus profesiones y acreditaciones.</p><p>Creemos que para poder mirar hacia dentro necesitamos sentir que estamos en un espacio de respeto, confianza y libertad.</p></div></div>
+        </div>
+        <div class="faq-item" data-anim="subir" style="--d:0.25s">
+          <button type="button" class="faq-q" aria-expanded="false">¿Necesito tener experiencia previa en desarrollo personal?<span aria-hidden="true">+</span></button>
+          <div class="faq-a"><div><p>No. No necesitas conocimientos previos, ni haber hecho coaching, PNL o ningún otro proceso de desarrollo personal.</p><p>Solo necesitas algo mucho más sencillo: ser persona y tener una vida que quieras comprender, disfrutar, transformar o seguir construyendo.</p><p>YUAP parte de ahí: de tu propia experiencia y de lo que estás viviendo hoy.</p></div></div>
+        </div>
+    </div>
+  </div>
+  <div class="faq-pie" data-anim="subir"><p>¿Te queda alguna duda?</p><div class="btns"><a class="btn btn--linea" href="contacto.html">Escríbenos</a><a class="btn btn--oro" href="inscripcion.html">Reservar mi plaza</a></div></div>
 </section>
 
 <!-- ===== 7 · BECA PRIMERA EXPEDICIÓN (sin precio) ===== -->
@@ -1283,6 +1392,13 @@ h1,h2,h3,.h2{font-family:var(--f-display);font-weight:800;letter-spacing:-.015em
   if (!mov || !('IntersectionObserver' in window)) { r.classList.add('abierta'); return; }
   var io = new IntersectionObserver(function(es){ es.forEach(function(e){ if (e.isIntersecting) { io.disconnect(); setTimeout(function(){ r.classList.add('abierta'); }, 2600); } }); }, {threshold:.45});
   io.observe(r);
+})();
+
+/* v15 · Preguntas frecuentes (Divi: módulo Toggle) */
+(function(){
+  document.querySelectorAll('.faq-q').forEach(function(b){
+    b.addEventListener('click', function(){ var it = b.closest('.faq-item'), o = it.classList.toggle('abierta'); b.setAttribute('aria-expanded', o ? 'true' : 'false'); });
+  });
 })();
 
 </script>
