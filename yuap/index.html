@@ -700,6 +700,21 @@ h1,h2,h3,.h2{font-family:var(--f-display);font-weight:800;letter-spacing:-.015em
 .faq-sec .btn--linea{color:var(--tinta);border-color:var(--tinta)}
 @media (max-width:900px){ .faq-sec .faq-cab,.faq{grid-template-columns:1fr} .faq-col + .faq-col{border-top:0} }
 
+/* ===== v16 · Guardianas (creadoras) y guías ===== */
+.gm-roles{display:flex;flex-wrap:wrap;gap:6px;margin:2px 0 4px}
+.rol{font:600 .62rem/1 var(--f-mono);letter-spacing:.06em;text-transform:uppercase;padding:5px 9px;border-radius:999px;border:1.5px solid var(--tinta);color:var(--tinta)}
+.rol--guardiana{background:var(--lacre);border-color:var(--lacre);color:#FBF7F0}
+.gm-grupos{max-width:var(--ancho);margin-inline:auto;display:grid;grid-template-columns:2fr 1fr;gap:22px;position:relative;z-index:3}
+.gm-grupo{display:grid;gap:12px;align-content:start}
+.gm-grupo-t{font-family:var(--f-mono);font-size:.74rem;letter-spacing:.06em;text-transform:uppercase;color:var(--lacre-osc);border-bottom:1.5px solid var(--tinta);padding-bottom:8px;margin:0}
+.gm-grupo-t b{font-family:var(--f-display);font-weight:900;font-size:1.05rem;letter-spacing:0;text-transform:none;color:var(--tinta);margin-right:6px}
+.gm-grupo--g .gm-grupo-t{border-bottom-style:dashed}
+.guias-mini .gm-grupo .gm-tarjetas{grid-template-columns:repeat(2,1fr);max-width:none}
+.guias-mini .gm-grupo--g .gm-tarjetas{grid-template-columns:1fr}
+.gm-nota{font-size:.86rem;color:var(--tinta-suave);margin:0}
+@media (max-width:900px){ .gm-grupos{grid-template-columns:1fr} .guias-mini .gm-grupo .gm-tarjetas{grid-template-columns:repeat(2,1fr)} .guias-mini .gm-grupo--g .gm-tarjetas{grid-template-columns:repeat(2,1fr)} }
+@media (max-width:640px){ .guias-mini .gm-grupo .gm-tarjetas,.guias-mini .gm-grupo--g .gm-tarjetas{grid-template-columns:1fr} }
+
 </style>
 </head>
 <body>
@@ -858,26 +873,37 @@ h1,h2,h3,.h2{font-family:var(--f-display);font-weight:800;letter-spacing:-.015em
   <div class="gm-cab" data-divi="Fila 2 columnas · Texto">
     <div>
       <p class="eyebrow" data-anim="izq" data-divi="Texto · animación Deslizar →">Quién te acompaña</p>
-      <h2 class="h2" data-anim="subir" data-divi="Texto · H2 · animación Deslizar ↑">Tres guías, <em>de tú a tú.</em></h2>
+      <h2 class="h2" data-anim="subir" data-divi="Texto · H2 · animación Deslizar ↑">Dos guardianas, <em>dos guías.</em></h2>
     </div>
     <div>
-      <div class="text" data-anim="subir" style="--d:.2s"><p>YUAP une el coaching ejecutivo de Maite, la pedagogía creativa de Carmen y la psicología de María José. Diseñan y acompañan cada expedición en persona, con metodologías vivenciales.</p></div>
-      <div class="btns" data-anim="subir" style="--d:.3s"><a class="btn btn--linea" href="quienes-somos.html">Conocer a las guías</a></div>
+      <div class="text" data-anim="subir" style="--d:.2s"><p>Maite y Carmen son las guardianas: crearon YUAP y cuidan cada estación del mapa. En las expediciones te acompañan dos guías, Maite y María José, de tú a tú.</p></div>
+      <div class="btns" data-anim="subir" style="--d:.3s"><a class="btn btn--linea" href="quienes-somos.html">Conocerlas</a></div>
     </div>
   </div>
-  <div class="gm-tarjetas" data-divi="Fila 3 columnas · Imagen + Texto · animación Voltear escalonada">
-    <a class="gm" href="quienes-somos.html#maite" data-anim="voltear" style="--d:.1s">
-      <img src="img/maite-perez-diez-coach-retrato.webp" alt="Maite Pérez Díez, coach profesional certificada y cofundadora de YUAP" width="800" height="1000" loading="lazy">
-      <span class="gm-cuerpo"><span class="gm-nom">Maite Pérez Díez</span><span class="gm-rol">Coach certificada CPC · ASESCO</span><span class="gm-txt">Acompaña a personas, equipos y organizaciones a crecer desde dentro.</span></span>
-    </a>
-    <a class="gm" href="quienes-somos.html#carmen" data-anim="voltear" style="--d:.25s">
-      <img src="img/carmen-reales-pedagoga-yuap.webp" alt="Carmen Reales Álvarez, pedagoga, coach creativa y cofundadora de YUAP" width="800" height="1000" loading="lazy">
-      <span class="gm-cuerpo"><span class="gm-nom">Carmen Reales Álvarez</span><span class="gm-rol">Pedagoga · Coach creativa · ICF</span><span class="gm-txt">20 años diseñando experiencias de creatividad y educación emocional.</span></span>
-    </a>
-    <a class="gm" href="quienes-somos.html#maria-jose" data-anim="voltear" style="--d:.4s">
-      <img src="img/maria-jose-sanchez-terrones-psicologa-yuap.webp" alt="María José Sánchez Terrones, psicóloga especialista en risoterapia" width="800" height="1000" loading="lazy">
-      <span class="gm-cuerpo"><span class="gm-nom">María José Sánchez Terrones</span><span class="gm-rol">Psicóloga · Risoterapia</span><span class="gm-txt">El humor y la risa como herramientas de bienestar personal y grupal.</span></span>
-    </a>
+  <div class="gm-grupos" data-divi="Fila 2 columnas (2/3 + 1/3) · Imagen + Texto · animación Voltear escalonada">
+    <div class="gm-grupo">
+      <p class="gm-grupo-t" data-anim="izq"><b>Las guardianas</b>creadoras de YUAP</p>
+      <div class="gm-tarjetas">
+        <a class="gm" href="quienes-somos.html#maite" data-anim="voltear" style="--d:.1s">
+          <img src="img/maite-perez-diez-coach-retrato.webp" alt="Maite Pérez Díez, coach profesional certificada, guardiana y cofundadora de YUAP" width="800" height="1000" loading="lazy">
+          <span class="gm-cuerpo"><span class="gm-nom">Maite Pérez Díez</span><span class="gm-roles"><span class="rol rol--guardiana">Guardiana</span><span class="rol rol--guía">Guía</span></span><span class="gm-rol">Coach certificada CPC · ASESCO</span><span class="gm-txt">Acompaña a personas, equipos y organizaciones a crecer desde dentro.</span></span>
+        </a>
+        <a class="gm" href="quienes-somos.html#carmen" data-anim="voltear" style="--d:.25s">
+          <img src="img/carmen-reales-pedagoga-yuap.webp" alt="Carmen Reales Álvarez, pedagoga, coach creativa, guardiana y cofundadora de YUAP" width="800" height="1000" loading="lazy">
+          <span class="gm-cuerpo"><span class="gm-nom">Carmen Reales Álvarez</span><span class="gm-roles"><span class="rol rol--guardiana">Guardiana</span></span><span class="gm-rol">Pedagoga · Coach creativa · ICF</span><span class="gm-txt">20 años diseñando experiencias de creatividad y educación emocional.</span></span>
+        </a>
+      </div>
+    </div>
+    <div class="gm-grupo gm-grupo--g">
+      <p class="gm-grupo-t" data-anim="izq" style="--d:.2s"><b>Las guías</b>en cada expedición</p>
+      <div class="gm-tarjetas">
+        <a class="gm" href="quienes-somos.html#maria-jose" data-anim="voltear" style="--d:.4s">
+          <img src="img/maria-jose-sanchez-terrones-psicologa-yuap.webp" alt="María José Sánchez Terrones, psicóloga especialista en risoterapia y guía de YUAP" width="800" height="1000" loading="lazy">
+          <span class="gm-cuerpo"><span class="gm-nom">María José Sánchez Terrones</span><span class="gm-roles"><span class="rol rol--guía">Guía</span></span><span class="gm-rol">Psicóloga · Risoterapia</span><span class="gm-txt">El humor y la risa como herramientas de bienestar personal y grupal.</span></span>
+        </a>
+      </div>
+      <p class="gm-nota" data-anim="subir" style="--d:.5s">Maite es guardiana y también guía: acompaña las expediciones junto a María José.</p>
+    </div>
   </div>
 </section>
 

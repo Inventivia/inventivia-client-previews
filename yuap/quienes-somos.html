@@ -700,6 +700,21 @@ h1,h2,h3,.h2{font-family:var(--f-display);font-weight:800;letter-spacing:-.015em
 .faq-sec .btn--linea{color:var(--tinta);border-color:var(--tinta)}
 @media (max-width:900px){ .faq-sec .faq-cab,.faq{grid-template-columns:1fr} .faq-col + .faq-col{border-top:0} }
 
+/* ===== v16 · Guardianas (creadoras) y guías ===== */
+.gm-roles{display:flex;flex-wrap:wrap;gap:6px;margin:2px 0 4px}
+.rol{font:600 .62rem/1 var(--f-mono);letter-spacing:.06em;text-transform:uppercase;padding:5px 9px;border-radius:999px;border:1.5px solid var(--tinta);color:var(--tinta)}
+.rol--guardiana{background:var(--lacre);border-color:var(--lacre);color:#FBF7F0}
+.gm-grupos{max-width:var(--ancho);margin-inline:auto;display:grid;grid-template-columns:2fr 1fr;gap:22px;position:relative;z-index:3}
+.gm-grupo{display:grid;gap:12px;align-content:start}
+.gm-grupo-t{font-family:var(--f-mono);font-size:.74rem;letter-spacing:.06em;text-transform:uppercase;color:var(--lacre-osc);border-bottom:1.5px solid var(--tinta);padding-bottom:8px;margin:0}
+.gm-grupo-t b{font-family:var(--f-display);font-weight:900;font-size:1.05rem;letter-spacing:0;text-transform:none;color:var(--tinta);margin-right:6px}
+.gm-grupo--g .gm-grupo-t{border-bottom-style:dashed}
+.guias-mini .gm-grupo .gm-tarjetas{grid-template-columns:repeat(2,1fr);max-width:none}
+.guias-mini .gm-grupo--g .gm-tarjetas{grid-template-columns:1fr}
+.gm-nota{font-size:.86rem;color:var(--tinta-suave);margin:0}
+@media (max-width:900px){ .gm-grupos{grid-template-columns:1fr} .guias-mini .gm-grupo .gm-tarjetas{grid-template-columns:repeat(2,1fr)} .guias-mini .gm-grupo--g .gm-tarjetas{grid-template-columns:repeat(2,1fr)} }
+@media (max-width:640px){ .guias-mini .gm-grupo .gm-tarjetas,.guias-mini .gm-grupo--g .gm-tarjetas{grid-template-columns:1fr} }
+
 /* ================= PÁGINA QUIÉNES SOMOS ================= */
 .q-hero{background:var(--kraft);padding:calc(118px + env(safe-area-inset-top,0px)) var(--gutter) clamp(64px,8vw,110px);overflow:hidden}
 .q-cabecera{max-width:var(--ancho);margin:0 auto clamp(36px,5vw,60px);display:grid;grid-template-columns:7fr 5fr;gap:24px 56px;align-items:end}
@@ -877,21 +892,21 @@ h1,h2,h3,.h2{font-family:var(--f-display);font-weight:800;letter-spacing:-.015em
 
 <main id="contenido">
 
-<!-- ===== 1 · PORTADA · dos pasaportes de guía que se abren ===== -->
+<!-- ===== 1 · PORTADA · pasaportes de guardianas y guía que se abren ===== -->
 <section class="q-hero" id="guias" data-divi="Sección · fondo kraft">
   <div class="q-cabecera">
     <div class="q-titulo">
-      <p class="coord" data-type>Quiénes somos · Las guías de YUAP</p>
-      <h1 data-type aria-label="Tres guías para un mismo mapa">Tres guías para <em>un mismo mapa</em></h1>
+      <p class="coord" data-type>Quiénes somos · Guardianas y guías de YUAP</p>
+      <h1 data-type aria-label="Dos guardianas, dos guías, un mismo mapa">Dos guardianas, dos guías, <em>un mismo mapa</em></h1>
     </div>
-    <p class="q-lead" data-anim="subir" style="--d:.4s" data-divi="Texto · animación Deslizar ↑">YUAP une el coaching ejecutivo de Maite, la pedagogía creativa de Carmen y la psicología de María José. Diseñan cada expedición para que lo vivas de tú a tú.</p>
+    <p class="q-lead" data-anim="subir" style="--d:.4s" data-divi="Texto · animación Deslizar ↑">Maite y Carmen son las guardianas: crearon YUAP y cuidan el mapa. En cada expedición te acompañan dos guías, Maite y María José, para que lo vivas de tú a tú.</p>
   </div>
   <div class="pasaportes pasaportes--3" data-divi="Fila 3 columnas · cada pasaporte: imagen de tapa con animación Voltear (Flip) sobre la ficha">
     <article class="pasaporte" data-anim="subir" style="--d:.2s" id="pas-maite">
       <div class="pas-der">
-        <p class="pas-mono">Pasaporte de guía · Nº 01</p>
+        <p class="pas-mono">Guardiana y guía · Nº 01</p>
         <h2 class="pas-nombre">Maite Pérez Díez</h2>
-        <p class="pas-rol">Coach profesional certificada · Cofundadora</p>
+        <p class="pas-rol">Coach profesional certificada · Creadora de YUAP</p>
         <dl class="pas-datos">
           <dt>Acredita</dt><dd>CPC · ASESCO</dd>
           <dt>Camino</dt><dd>7 años acompañando personas y equipos</dd>
@@ -900,15 +915,15 @@ h1,h2,h3,.h2{font-family:var(--f-display);font-weight:800;letter-spacing:-.015em
         <a class="pas-link" href="#maite">Leer su historia ↓</a>
       </div>
       <div class="pas-tapa">
-        <div class="tapa-frente"><span class="tapa-logo">yuap</span><span class="tapa-t">Pasaporte<br>de guía</span><span class="tapa-n">Nº 01</span></div>
+        <div class="tapa-frente"><span class="tapa-logo">yuap</span><span class="tapa-t">Pasaporte<br>de guardiana</span><span class="tapa-n">Nº 01</span></div>
         <div class="tapa-dorso"><img src="img/maite-perez-diez-coach-retrato.webp" alt="Maite Pérez Díez" width="800" height="1000"></div>
       </div>
     </article>
     <article class="pasaporte" data-anim="subir" style="--d:.35s" id="pas-carmen">
       <div class="pas-der">
-        <p class="pas-mono">Pasaporte de guía · Nº 02</p>
+        <p class="pas-mono">Guardiana · Nº 02</p>
         <h2 class="pas-nombre">Carmen Reales Álvarez</h2>
-        <p class="pas-rol">Pedagoga y coach creativa · Cofundadora</p>
+        <p class="pas-rol">Pedagoga y coach creativa · Creadora de YUAP</p>
         <dl class="pas-datos">
           <dt>Acredita</dt><dd>ICF · Educación emocional</dd>
           <dt>Camino</dt><dd>20 años · fundadora de Imaginia</dd>
@@ -917,13 +932,13 @@ h1,h2,h3,.h2{font-family:var(--f-display);font-weight:800;letter-spacing:-.015em
         <a class="pas-link" href="#carmen">Conocerla ↓</a>
       </div>
       <div class="pas-tapa">
-        <div class="tapa-frente"><span class="tapa-logo">yuap</span><span class="tapa-t">Pasaporte<br>de guía</span><span class="tapa-n">Nº 02</span></div>
+        <div class="tapa-frente"><span class="tapa-logo">yuap</span><span class="tapa-t">Pasaporte<br>de guardiana</span><span class="tapa-n">Nº 02</span></div>
         <div class="tapa-dorso"><img src="img/carmen-reales-pedagoga-yuap.webp" alt="Carmen Reales Álvarez" width="800" height="1000"></div>
       </div>
     </article>
     <article class="pasaporte" data-anim="subir" style="--d:.5s" id="pas-mj">
       <div class="pas-der">
-        <p class="pas-mono">Pasaporte de guía · Nº 03</p>
+        <p class="pas-mono">Guía</p>
         <h2 class="pas-nombre">María José Sánchez Terrones</h2>
         <p class="pas-rol">Psicóloga · Especialista en risoterapia</p>
         <dl class="pas-datos">
@@ -934,7 +949,7 @@ h1,h2,h3,.h2{font-family:var(--f-display);font-weight:800;letter-spacing:-.015em
         <a class="pas-link" href="#maria-jose">Conocerla ↓</a>
       </div>
       <div class="pas-tapa">
-        <div class="tapa-frente"><span class="tapa-logo">yuap</span><span class="tapa-t">Pasaporte<br>de guía</span><span class="tapa-n">Nº 03</span></div>
+        <div class="tapa-frente"><span class="tapa-logo">yuap</span><span class="tapa-t">Pasaporte<br>de guía</span><span class="tapa-n">Guía de expedición</span></div>
         <div class="tapa-dorso"><img src="img/maria-jose-sanchez-terrones-psicologa-yuap.webp" alt="María José Sánchez Terrones" width="800" height="1000"></div>
       </div>
     </article>
@@ -948,7 +963,7 @@ h1,h2,h3,.h2{font-family:var(--f-display);font-weight:800;letter-spacing:-.015em
       <div class="marco q-foto" data-anim="aparecer"><img data-scroll="parallax" src="img/maite-perez-diez-coach-retrato.webp" alt="Maite Pérez Díez, coach profesional certificada y cofundadora de YUAP" width="800" height="1000" loading="lazy"></div>
     </div>
     <div class="col">
-      <p class="eyebrow" data-anim="izq">Guía · Nº 01</p>
+      <p class="eyebrow" data-anim="izq">Guardiana y guía · Creadora de YUAP</p>
       <h2 class="h2" data-anim="subir">Maite Pérez Díez</h2>
       <p class="q-rol" data-anim="subir" style="--d:.1s">Coach profesional certificada (CPC · ASESCO) · Cofundadora de YUAP</p>
       <div class="text" data-anim="subir" style="--d:.2s">
@@ -982,7 +997,7 @@ h1,h2,h3,.h2{font-family:var(--f-display);font-weight:800;letter-spacing:-.015em
 <section class="sec q-sec-carmen" id="carmen" data-divi="Sección · Papel claro">
   <div class="row row--5-7 q-invertida">
     <div class="col">
-      <p class="eyebrow" data-anim="izq">Guía · Nº 02</p>
+      <p class="eyebrow" data-anim="izq">Guardiana · Creadora de YUAP</p>
       <h2 class="h2" data-anim="subir">Carmen Reales Álvarez</h2>
       <p class="q-rol" data-anim="subir" style="--d:.1s">Pedagoga, coach creativa y experta en educación emocional (ICF) · Cofundadora de YUAP</p>
       <div class="text" data-anim="subir" style="--d:.2s">
@@ -1020,10 +1035,10 @@ h1,h2,h3,.h2{font-family:var(--f-display);font-weight:800;letter-spacing:-.015em
 <section class="sec sec--pergamino" id="maria-jose" data-divi="Sección · Pergamino">
   <div class="row row--5-7">
     <div class="col">
-      <div class="marco q-foto" data-anim="aparecer"><img data-scroll="parallax" src="img/maria-jose-sanchez-terrones-psicologa-yuap.webp" alt="María José Sánchez Terrones, psicóloga especialista en risoterapia y guía de YUAP" width="800" height="1000" loading="lazy"></div>
+      <div class="marco q-foto" data-anim="aparecer"><img data-scroll="parallax" src="img/maria-jose-sanchez-terrones-psicologa-yuap.webp" alt="María José Sánchez Terrones, psicóloga especialista en risoterapia y guía de las expediciones YUAP" width="800" height="1000" loading="lazy"></div>
     </div>
     <div class="col">
-      <p class="eyebrow" data-anim="izq">Guía · Nº 03</p>
+      <p class="eyebrow" data-anim="izq">Guía de expedición</p>
       <h2 class="h2" data-anim="subir">María José Sánchez Terrones</h2>
       <p class="q-rol" data-anim="subir" style="--d:.1s">Psicóloga · Especialista en risoterapia</p>
       <div class="text" data-anim="subir" style="--d:.2s">
@@ -1053,7 +1068,7 @@ h1,h2,h3,.h2{font-family:var(--f-display);font-weight:800;letter-spacing:-.015em
       <h2 class="h2" data-type>Lo que pasa en una expedición se vive, no se escucha.</h2>
     </div>
     <div class="col text" data-anim="subir" style="--d:.2s">
-      <p>Maite pone el método y la experiencia con personas y equipos; Carmen, la pedagogía, la creatividad y la educación emocional; María José, la psicología y el humor como herramienta de bienestar. Juntas diseñan cada estación del mapa.</p>
+      <p>Las guardianas, Maite y Carmen, diseñan cada estación del mapa: Maite pone el método y la experiencia con personas y equipos; Carmen, la pedagogía, la creatividad y la educación emocional. En las expediciones guían Maite y María José, que suma la psicología y el humor como herramienta de bienestar.</p>
     </div>
   </div>
   <div class="row q-principios" data-divi="Fila 4 columnas · Blurbs con animación Plegar escalonada">

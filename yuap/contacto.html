@@ -700,6 +700,21 @@ h1,h2,h3,.h2{font-family:var(--f-display);font-weight:800;letter-spacing:-.015em
 .faq-sec .btn--linea{color:var(--tinta);border-color:var(--tinta)}
 @media (max-width:900px){ .faq-sec .faq-cab,.faq{grid-template-columns:1fr} .faq-col + .faq-col{border-top:0} }
 
+/* ===== v16 · Guardianas (creadoras) y guías ===== */
+.gm-roles{display:flex;flex-wrap:wrap;gap:6px;margin:2px 0 4px}
+.rol{font:600 .62rem/1 var(--f-mono);letter-spacing:.06em;text-transform:uppercase;padding:5px 9px;border-radius:999px;border:1.5px solid var(--tinta);color:var(--tinta)}
+.rol--guardiana{background:var(--lacre);border-color:var(--lacre);color:#FBF7F0}
+.gm-grupos{max-width:var(--ancho);margin-inline:auto;display:grid;grid-template-columns:2fr 1fr;gap:22px;position:relative;z-index:3}
+.gm-grupo{display:grid;gap:12px;align-content:start}
+.gm-grupo-t{font-family:var(--f-mono);font-size:.74rem;letter-spacing:.06em;text-transform:uppercase;color:var(--lacre-osc);border-bottom:1.5px solid var(--tinta);padding-bottom:8px;margin:0}
+.gm-grupo-t b{font-family:var(--f-display);font-weight:900;font-size:1.05rem;letter-spacing:0;text-transform:none;color:var(--tinta);margin-right:6px}
+.gm-grupo--g .gm-grupo-t{border-bottom-style:dashed}
+.guias-mini .gm-grupo .gm-tarjetas{grid-template-columns:repeat(2,1fr);max-width:none}
+.guias-mini .gm-grupo--g .gm-tarjetas{grid-template-columns:1fr}
+.gm-nota{font-size:.86rem;color:var(--tinta-suave);margin:0}
+@media (max-width:900px){ .gm-grupos{grid-template-columns:1fr} .guias-mini .gm-grupo .gm-tarjetas{grid-template-columns:repeat(2,1fr)} .guias-mini .gm-grupo--g .gm-tarjetas{grid-template-columns:repeat(2,1fr)} }
+@media (max-width:640px){ .guias-mini .gm-grupo .gm-tarjetas,.guias-mini .gm-grupo--g .gm-tarjetas{grid-template-columns:1fr} }
+
 /* ================= PÁGINA DE CONTACTO ================= */
 .c-hero{background:var(--kraft);padding:calc(118px + env(safe-area-inset-top,0px)) var(--gutter) clamp(64px,8vw,110px);overflow:hidden}
 .c-grid{max-width:var(--ancho);margin-inline:auto;display:grid;grid-template-columns:5fr 6fr;gap:clamp(32px,5vw,72px);align-items:start}
